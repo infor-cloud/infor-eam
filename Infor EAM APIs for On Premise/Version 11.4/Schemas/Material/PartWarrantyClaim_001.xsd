@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+   Copyright (c) 2014 Infor. All rights reserved. The word and design marks set forth herein are trademarks 
+   and/or registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+   All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+   This schema defines MP entity Part Warranty Claim
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PartWarrantyClaim_001" 
+    xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="http://schemas.datastream.net/MP_entities/PartWarrantyClaim_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="PartWarrantyClaim">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WARRANTYCLAIMID"/>		
+				<xs:element ref="dsf:WARRANTYID"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:DATEFILED"/>
+				<xs:element ref="dsf:DATEREPORTED" minOccurs="0"/>
+				<xs:element ref="dsf:APPROVEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:DATERESOLVED" minOccurs="0"/>
+				<xs:element ref="dsf:PRIMARYMANUFACTURERCODE" minOccurs="0"/>
+				<xs:element ref="dsf:RMANUMBER" minOccurs="0"/>
+                <xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>		
+</xs:schema>

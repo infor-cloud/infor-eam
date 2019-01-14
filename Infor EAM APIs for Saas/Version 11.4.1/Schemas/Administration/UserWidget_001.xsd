@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2016 Infor. All rights reserved. 
+    The word and design marks set forth herein are trademarks and/or registered trademarks 
+    of Infor and/or related affiliates and subsidiaries. All rights reserved. All other 
+    trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business function request UserWidget_001
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/UserWidget_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/UserWidget_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:dse-UserWidgetGrid="http://schemas.datastream.net/MP_entities/UserWidgetGrid_001"
+	xmlns:dse-UserWidgetKPI="http://schemas.datastream.net/MP_entities/UserWidgetKPI_001"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/UserWidgetGrid_001" schemaLocation="UserWidgetGrid_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/UserWidgetKPI_001" schemaLocation="UserWidgetKPI_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+
+	<!--===============================================================================-->
+	<!--====  Begining of UserWidget_001 ======================================-->
+	<xs:element name="UserWidget">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WIDGETID"/>
+				<xs:element ref="dsf:FUNCTIONTABID"/>
+				<xs:element ref="dsf:USERCODE"/>
+				<xs:element ref="dsf:SYSTEMFUNCTION" minOccurs="0"/>
+				<xs:element ref="dsf:WIDGETCONTAINER"/>
+				<xs:element ref="dsf:WIDGETPOSITION"/>
+				<xs:element ref="dsf:COLOR" minOccurs="0"/>
+				<xs:element ref="dsf:HEIGHT" minOccurs="0"/>
+				<xs:element ref="dsf:TYPECODE"/>
+				<xs:choice minOccurs="0">
+					<xs:element ref="dse-UserWidgetGrid:UserWidgetGrid" minOccurs="0"/>
+					<xs:element ref="dse-UserWidgetKPI:UserWidgetKPI" minOccurs="0"/>
+				</xs:choice>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003,	Datastream Systems,	Inc.
+	50 Datastream Plaza, Greenville, SC	29605, USA.
+	All	rights reserved.
+
+		This schema	defines	MP entity PositionEquipment
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PositionEquipment_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:dse-poshierarchy="http://schemas.datastream.net/MP_entities/PositionHierarchy_002" xmlns:dse-asset="http://schemas.datastream.net/MP_entities/AssetEquipment_001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/PositionEquipment_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/AssetEquipment_001" schemaLocation="AssetEquipment_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/PositionHierarchy_002" schemaLocation="PositionHierarchy_002.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of PositionEquipment_001======================================-->
+	<xs:element name="PositionEquipment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:POSITIONID"/>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:CATEGORYID" minOccurs="0"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:DEPARTMENTID"/>
+				<xs:element ref="dsf:OPERATIONALSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:LOANEDTODEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:PMWODEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:INPRODUCTION" minOccurs="0"/>
+				<xs:element ref="dsf:SAFETY" minOccurs="0"/>
+				<xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+				<xs:element ref="dsf:PROFILEID" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:COMMISSIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSFERDATE" minOccurs="0"/>
+				<xs:element ref="dsf:WITHDRAWALDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+				<xs:element ref="dsf:METERUNIT" minOccurs="0"/>
+				<xs:element ref="dsf:CRITICALITYID" minOccurs="0"/>
+				<xs:element ref="dsf:SOLDDATE" minOccurs="0"/> 
+				<xs:element name="DORMANT" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dsf:DORMANTSTART" minOccurs="0"/>
+							<xs:element ref="dsf:DORMANTEND" minOccurs="0"/>
+							<xs:element ref="dsf:DORMANTREUSE" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="dsf:PREVENTWOCOMPLETION" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:GISOBJID" minOccurs="0"/>
+				<xs:element ref="dsf:GISPROFILE" minOccurs="0"/>
+				<xs:element ref="dsf:CGMP" minOccurs="0"/>
+				<xs:element ref="dsf:LINKGISWO" minOccurs="0"/>
+				<xs:element ref="dsf:VMRSCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PARTLOCATIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:GISMAPID" minOccurs="0"/>
+				<xs:element ref="dsf:GISLAYER" minOccurs="0"/>
+				<xs:element ref="dsf:XLOCATION" minOccurs="0"/>
+				<xs:element ref="dsf:YLOCATION" minOccurs="0"/>
+				<xs:element ref="dsf:LINEARREFERENCEDETAILS" minOccurs="0"/>
+				<xs:element ref="ManufacturerInfo" minOccurs="0"/>
+				<xs:element ref="Variables" minOccurs="0"/>
+				<xs:element ref="CallCenterDetails" minOccurs="0"/>
+				<xs:element ref="dse-poshierarchy:PositionParentHierarchy" minOccurs="0"/>
+				<xs:element ref="UserDefinedFields" minOccurs="0"/>
+				<xs:element ref="FacilityConditionIndex" minOccurs="0"/>
+				<xs:element ref="dsf:RESOURCEENABLED" minOccurs="0"/>
+				<xs:element ref="dsf:RELIABILITYRANKINGDETAILS" minOccurs="0"/>
+				<xs:element ref="dsf:CONTRACTANDRENTALDETAILS" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTALIAS" minOccurs="0"/>
+				<xs:element ref="dse-asset:EnergyPerformance" minOccurs="0"/>
+				<xs:element ref="dsf:LOCKOUT" minOccurs="0"/>
+				<xs:element ref="dsf:PERSONALPROTECTIVEEQUIP" minOccurs="0"/>
+				<xs:element ref="dsf:CONFINEDSPACE" minOccurs="0"/>
+				<xs:element ref="dsf:STATEMENTOFCOND" minOccurs="0"/>
+				<xs:element ref="dsf:BUILDMAINTPROGRAM" minOccurs="0"/>
+				<xs:element ref="dsf:HIPAACONFIDENTIALITY" minOccurs="0"/>
+				<xs:element ref="dsf:OWNERSHIPTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:INVENTORYVERIFICATIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ASSETVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:PURCHASEORDERCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PURCHASEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:PURCHASECOST" minOccurs="0"/>
+				<xs:element ref="dsf:PURCHASECURRENCY" minOccurs="0"/>
+				<xs:element ref="dsf:DISPOSALTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:SAFETYDATEREVIEWREQUIRED" minOccurs="0"/>	            
+				<xs:element ref="dsf:SAFETYREVIEWEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:PERMITDATEREVIEWREQUIRED" minOccurs="0"/>
+				<xs:element ref="dsf:PERMITREVIEWEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:LOTODATEREVIEWREQUIRED" minOccurs="0"/>
+				<xs:element ref="dsf:LOTOREVIEWEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTCONFIGURATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:RCMLEVELID" minOccurs="0"/>
+				<xs:element ref="dsf:RISKMATRIXSETUPID" minOccurs="0"/>
+				<xs:element ref="dsf:RISKPRIORITYNUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:ORIGINALRECEIPTDATE" minOccurs="0"/>
+				<xs:element ref="dsf:LATESTRECEIPTDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ORIGINALINSTALLDATE" minOccurs="0"/>
+				<xs:element ref="dsf:LATESTINSTALLDATE" minOccurs="0"/>
+				<xs:element ref="dsf:DOCUMOTOBOOKID" minOccurs="0"/>
+				<xs:element ref="dsf:RESERVATIONCALENDAROWNER" minOccurs="0"/>
+				<xs:element ref="dsf:RESERVATIONCALENDAROWNERSLIST" minOccurs="0"/>
+				<xs:element ref="dsf:WORKSPACEID" minOccurs="0"/>
+				<xs:element ref="dsf:SETID" minOccurs="0" />
+				<xs:element ref="dsf:SETPOSITION" minOccurs="0" />
+				<xs:element ref="dsf:CONSISTID" minOccurs="0" />
+				<xs:element ref="dsf:CONSISTPOSITION" minOccurs="0" />
+				<xs:element ref="dsf:URL" minOccurs="0"/>
+				<xs:element ref="dsf:CONDITIONINDEX" minOccurs="0"/>
+				<xs:element ref="dsf:CONDITIONSCORE" minOccurs="0"/>
+				<xs:element ref="dsf:PROCESSERROR" minOccurs="0"/>
+				<xs:element ref="dsf:LINEARUOMID" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTLENGTHOVERRIDE" minOccurs="0"/>
+				<xs:element ref="dsf:CHECKLISTFILTER" minOccurs="0"/>
+				<xs:element ref="dsf:TOLERANCESIZE" minOccurs="0"/>
+				<xs:element ref="dsf:TEMPMONITORED" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="user_entity" type="xs:string"/>
+			<xs:attribute name="system_entity" type="xs:string"/>
+			<xs:attribute name="autonumber" type="xs:string" default="default"/>
+			<xs:attribute name="creategis" type="dsf:FLAG_Type" default="true"/>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+			<xs:attribute name="has_readonly_department_security_for_createwo" type="dsf:FLAG_Type"/>
+			<xs:attribute name="is_associated_to_current_consist" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="is_default_rankings_available" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="instructure" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="haswo" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="confirm_delete_surveryanswers" type="dsf:CONFIRMATION_Type" default="confirmed"/>
+		</xs:complexType>
+	</xs:element>
+	<!-- Position Hierarchy	Structure definitions -->
+	<xs:element name="PositionChildHierarchy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:POSITIONID"/>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="ChildPosition" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-asset:ChildAsset" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ChildPosition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:POSITIONID"/>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="dsf:COSTROLLUP"/>
+				<xs:element ref="dsf:DEPENDENTON"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="ChildPosition" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-asset:ChildAsset" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PositionParentHierarchy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:POSITIONID" minOccurs="0"/>
+				<xs:element ref="dsf:TYPE" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:choice minOccurs="0">
+					<xs:element ref="PositionDependency" minOccurs="0"/>
+					<xs:element ref="SystemDependency" minOccurs="0"/>
+					<xs:element ref="PrimarySystemDependency" minOccurs="0"/>
+					<xs:element ref="LocationDependency" minOccurs="0"/>
+					<xs:element ref="NonDependentParents" minOccurs="0"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PositionDependency">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPENDENTPOSITION"/>
+				<xs:element ref="dsf:NONDEPENDENTPRIMARYSYSTEM" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTSYSTEM" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SystemDependency">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPENDENTSYSTEM"/>
+				<xs:element ref="dsf:NONDEPENDENTPOSITION" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTPRIMARYSYSTEM" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTSYSTEM" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PrimarySystemDependency">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPENDENTPRIMARYSYSTEM"/>
+				<xs:element ref="dsf:NONDEPENDENTASSET" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTPOSITION" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTSYSTEM" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LocationDependency">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPENDENTLOCATION"/>
+				<xs:element ref="dsf:NONDEPENDENTPOSITION" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTPRIMARYSYSTEM" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTSYSTEM" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NonDependentParents" type="NonDependentParents_Type"/>
+	<xs:complexType name="NonDependentParents_Type">
+		<xs:sequence>
+			<xs:element ref="dsf:NONDEPENDENTPOSITION" minOccurs="0"/>
+			<xs:element ref="dsf:NONDEPENDENTPRIMARYSYSTEM" minOccurs="0"/>
+			<xs:element ref="dsf:NONDEPENDENTSYSTEM" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="defaultdependency" type="dsf:FLAG_Type" default="false"/>
+	</xs:complexType>
+	<xs:element name="NoParents" type="dsf:FLAG_Type"/>
+	<xs:element name="ManufacturerInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:MANUFACTURERCODE" minOccurs="0"/>
+				<xs:element ref="dsf:SERIALNUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:MODEL" minOccurs="0"/>
+				<xs:element ref="dsf:MODELREVISION" minOccurs="0"/>
+				<xs:element ref="dsf:HARDWAREVER" minOccurs="0"/>
+				<xs:element ref="dsf:SOFTWAREVER" minOccurs="0"/>
+				<xs:element ref="dsf:PURCHASINGASSET" minOccurs="0"/>
+				<xs:element ref="dsf:BIOMEDICALASSET" minOccurs="0"/>
+				<xs:element ref="dsf:UMDNS" minOccurs="0"/>
+				<xs:element ref="dsf:OEMSITE" minOccurs="0"/>
+				<xs:element ref="dsf:VENDOR" minOccurs="0"/>
+				<xs:element ref="dsf:COVERAGETYPE" minOccurs="0"/>
+				<xs:element ref="dsf:XCOORDINATE" minOccurs="0"/>
+				<xs:element ref="dsf:YCOORDINATE" minOccurs="0"/>
+				<xs:element ref="dsf:ZCOORDINATE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Variables">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="VARIABLE1" type="dsf:VARIABLE_Type" minOccurs="0"/>
+				<xs:element name="VARIABLE2" type="dsf:VARIABLE_Type" minOccurs="0"/>
+				<xs:element name="VARIABLE3" type="dsf:VARIABLE_Type" minOccurs="0"/>
+				<xs:element name="VARIABLE4" type="dsf:VARIABLE_Type" minOccurs="0"/>
+				<xs:element name="VARIABLE5" type="dsf:VARIABLE_Type" minOccurs="0"/>
+				<xs:element name="VARIABLE6" type="dsf:VARIABLE_Type" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CallCenterDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PENALTYFACTOR" minOccurs="0"/>
+				<xs:element ref="dsf:PENALTYAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:ORGCURRENCY" minOccurs="0"/>
+				<xs:element ref="dsf:CALENDARGROUPID" minOccurs="0"/>
+				<xs:element ref="dsf:SDMFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:ENABLESDMCHECK" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserDefinedFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UDFCHAR01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR11" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR12" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR13" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR14" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR15" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR16" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR17" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR18" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR19" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR20" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR21" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR22" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR23" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR24" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR25" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR26" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR27" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR28" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR29" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR30" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR31" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR32" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR33" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR34" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR35" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR36" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR37" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR38" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR39" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR40" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR41" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR42" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR43" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR44" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR45" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNOTE01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNOTE02" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FacilityConditionIndex">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:COSTOFNEEDEDREPAIRS" minOccurs="0"/>
+				<xs:element ref="dsf:REPLACEMENTVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:FACILITYCONDITIONINDEX" minOccurs="0"/>
+				<xs:element ref="dsf:UTILITYBILLLEVEL" minOccurs="0"/>
+				<xs:element ref="dsf:GASTRACKED" minOccurs="0"/>
+				<xs:element ref="dsf:FLOORAREA" minOccurs="0"/>
+				<xs:element ref="dsf:FLOORAREAUOM" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDREVENUE" minOccurs="0"/>
+				<xs:element ref="dsf:REGION" minOccurs="0"/>
+				<xs:element ref="dsf:REGIONID" minOccurs="0"/>
+				<xs:element ref="dsf:PRIMARYUSE" minOccurs="0"/>
+				<xs:element ref="dsf:YEARBUILT" minOccurs="0"/>
+				<xs:element ref="dsf:SERVICELIFE" minOccurs="0"/>
+				<xs:element ref="dsf:ENERGYSTARELIGIBLE" minOccurs="0"/>
+				<xs:element ref="dsf:ISFACILITY" minOccurs="0"/>
+				<xs:element ref="dsf:COUNTRYID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+</xs:schema>

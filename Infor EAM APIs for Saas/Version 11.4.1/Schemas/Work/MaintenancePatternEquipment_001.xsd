@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+* Copyright (c) 2009 Infor. All rights reserved. The word and design marks set forth herein are trademarks and/or 
+* registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved. All other trademarks 
+* listed herein are the property of their respective owners. www.infor.com.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/MaintenancePatternEquipment_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns="http://schemas.datastream.net/MP_entities/MaintenancePatternEquipment_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Begining of MaintenancePatternEquipment_001 ======================================-->
+	<xs:element name="MaintenancePatternEquipment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:MAINTENANCEPATTERNEQUIPMENTID"/>
+				<xs:element ref="dsf:ORGANIZATIONID"/>
+				<xs:element ref="dsf:EQUIPMENTLINESTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:TESTPOINTSET" minOccurs="0"/>
+				<xs:element name="DORMANT" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dsf:DORMANTSTART" minOccurs="0"/>
+							<xs:element ref="dsf:DORMANTEND" minOccurs="0"/>
+							<xs:element ref="dsf:DORMANTREUSE" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="dsf:DEACTIVATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:SUPERVISORID" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+				<xs:element ref="dsf:LASTWODATE" minOccurs="0"/>
+				<xs:element ref="dsf:JOBNUM" minOccurs="0"/>
+				<xs:element ref="dsf:MINDUEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:MAINTENANCEPATTERNSEQUENCE" minOccurs="0"/>
+				<xs:element ref="dsf:SEQUENCETYPE" minOccurs="0"/>
+				<xs:element ref="dsf:DUEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:PERIODINTERVAL" minOccurs="0"/>
+				<xs:element ref="dsf:METER1DUEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:METER1INTERVAL" minOccurs="0"/>
+				<xs:element ref="dsf:METER2DUEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:METER2INTERVAL" minOccurs="0"/>
+				<xs:element ref="dsf:CCTRSPCVALIDATION" minOccurs="0"/>
+				<xs:element ref="dsf:SDMFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:ROUTE" minOccurs="0"/>
+				<xs:element ref="dsf:INCLUDENONCONFORMITIES"  minOccurs="0"/>
+				<xs:element ref="dsf:DUENONCONFORMITIESONLY"  minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

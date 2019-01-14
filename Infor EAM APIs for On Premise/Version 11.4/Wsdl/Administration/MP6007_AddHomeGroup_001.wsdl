@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<definitions targetNamespace="http://wsdls.datastream.net/MP6007_AddHomeGroup_001" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wssi="http://schemas.xmlsoap.org/ws/2002/04/secext" xmlns:resp0="http://schemas.datastream.net/MP_results/MP6007_001" xmlns:hdr="http://schemas.datastream.net/MP_functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdls.datastream.net/MP6007_AddHomeGroup_001" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rqst0="http://schemas.datastream.net/MP_functions/MP6007_001">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:import namespace="http://schemas.datastream.net/MP_functions" schemaLocation="../../schemas/headers.xsd"/><xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/secext" schemaLocation="../../schemas/secext.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_functions/MP6007_001" schemaLocation="../../schemas/Administration/MP6007_AddHomeGroup_001.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_results/MP6007_001" schemaLocation="../../schemas/Administration/MP6007_AddHomeGroup_001_Result.xsd"/></xsd:schema>
+  </types>
+  <message name="AddHomeGroupRequestMsg">
+    <part name="AddHomeGroupRequestMsg" element="rqst0:MP6007_AddHomeGroup_001"/>
+  </message>
+  <message name="securityHeader">
+    <part name="securityHeader" element="wssi:Security"/>
+  </message>
+  <message name="sessionScenarioHeader">
+    <part name="sessionScenarioHeader" element="hdr:SessionScenario"/>
+  </message>
+  <message name="organizationHeader">
+    <part name="organizationHeader" element="hdr:Organization"/>
+  </message>
+  <message name="messageConfigHeader">
+    <part name="messageConfigHeader" element="hdr:MessageConfig"/>
+  </message>
+  <message name="sessionHeader">
+    <part name="sessionHeader" element="hdr:Session"/>
+  </message>
+  <message name="tenantHeader">
+    <part name="tenantHeader" element="hdr:Tenant"/>
+  </message>
+  <message name="AddHomeGroupResponseMsg">
+    <part name="AddHomeGroupResponseMsg" element="resp0:MP6007_AddHomeGroup_001_Result"/>
+  </message>
+  <portType name="AddHomeGroupPT">
+    <operation name="AddHomeGroupOp">
+      <input name="AddHomeGroupRequestMsg" message="tns:AddHomeGroupRequestMsg"/>
+      <output name="AddHomeGroupResponseMsg" message="tns:AddHomeGroupResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="AddHomeGroupSoapBinding" type="tns:AddHomeGroupPT">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="AddHomeGroupOp">
+      <wsdlsoap:operation soapAction="processMessage"/>
+      <input name="AddHomeGroupRequestMsg">
+        <wsdlsoap:header message="tns:organizationHeader" part="organizationHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:securityHeader" part="securityHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionScenarioHeader" part="sessionScenarioHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:messageConfigHeader" part="messageConfigHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:tenantHeader" part="tenantHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="AddHomeGroupRequestMsg" use="literal"/>
+      </input>
+      <output name="AddHomeGroupResponseMsg">
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="AddHomeGroupResponseMsg" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="AddHomeGroupService">
+    <port name="AddHomeGroupSoapBinding" binding="tns:AddHomeGroupSoapBinding">
+      <wsdlsoap:address location="http://localhost/axis/services/EWSConnector"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP business function result for function request MP7155_GetRouteEquipment_001.
+================================================================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7155_001"
+	xmlns="http://schemas.datastream.net/MP_results/MP7155_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:dse-routeequipment="http://schemas.datastream.net/MP_entities/RouteEquipment_001" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/RouteEquipment_001" 
+		schemaLocation="RouteEquipment_001.xsd"/>	
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" 
+		schemaLocation="../MP_fields.xsd"/>
+	<!--======================================================================-->
+	<!--================  Begining of MP7155_GetRouteEquipment_001_Result ================-->
+	<xs:element name="MP7155_GetRouteEquipment_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref = "dse-routeequipment:RouteEquipment"/>
+				<xs:element ref = "dsf:EQUIPMENTREVISIONSTATUS"/>
+				<xs:element ref = "dsf:PMRVCTRL"/>
+				<xs:element ref = "dsf:OBJTYPEDESC"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

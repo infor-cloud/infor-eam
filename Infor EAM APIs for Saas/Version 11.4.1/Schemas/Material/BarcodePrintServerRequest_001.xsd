@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Weikang Ding (Datastream Systems, Inc) -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/BarcodePrintServerRequest_001" xmlns:dse-IssueReturnTransactionLine="http://schemas.datastream.net/MP_entities/IssueReturnTransactionLine_001" xmlns="http://schemas.datastream.net/MP_entities/BarcodePrintServerRequest_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/IssueReturnTransactionLine_001" schemaLocation="IssueReturnTransactionLine_001.xsd"/>
+	<xs:element name="BarcodePrintServerRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="JOBNAME"/>
+				<xs:element ref="dsf:USERCODE"/>
+				<xs:element ref="SOURCE"/>
+				<xs:element ref="PRINTINGFOR"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="JOBNAME" type="xs:string"/>
+	<xs:element name="SOURCE" type="xs:string"/>
+	<xs:element name="PRINTINGFOR">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="TRANSACTIONINFO"/>
+				<xs:element ref="EQUIPMENTBARCODEINFO"/>
+				<xs:element ref="ISSUERETURNBARCODEINFO"/>
+				<xs:element ref="CORERETURNBARCODEINFO"/>
+				<xs:element ref="WARRANTYRETURNBARCODEINFO"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TRANSACTIONINFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BARCODEHEADERID"/>
+				<xs:element ref="BARCODELINES"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BARCODEHEADERID" type="xs:string"/>
+	<xs:element name="BARCODELINES">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="BARCODELINEINFO"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BARCODELINEINFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LINEID" type="xs:integer"/>
+				<xs:element name="PRINTQTY" type="xs:integer"/>
+				<xs:element ref="TEMPLATE"/>
+				<xs:element ref="dsf:PRINTERID"/>
+				<xs:element name="PRINTERPATH" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TEMPLATE" type="xs:string"/>
+	<xs:element name="EQUIPMENTBARCODEINFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EQUIPMENTCODE"/>
+				<xs:element ref="dsf:ORGANIZATIONCODE"/>
+				<xs:element ref="TEMPLATE"/>
+				<xs:element ref="dsf:PRINTERID"/>
+				<xs:element name="PRINTERPATH" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ISSUERETURNBARCODEINFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TRANSACTIONID"/>
+				<xs:element ref="dsf:ISSUERETURNTYPE"/>
+				<xs:element ref="dsf:ACTIVITYID" minOccurs="0"/>
+				<xs:element ref="dsf:PROJECTBUDGET" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:STOREID"/>
+				<xs:element ref="dsf:MATERIALLISTID" minOccurs="0"/>
+				<xs:element ref="dsf:PICKLISTID" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSACTIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ISSUETO" minOccurs="0"/>
+				<xs:element ref="dsf:ADVICENUMBER" minOccurs="0"/>
+				<xs:element ref="ISSUERETURNBARCODELINES"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ISSUERETURNBARCODELINES">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="ISSUERETURNBARCODELINEINFO"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ISSUERETURNBARCODELINEINFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-IssueReturnTransactionLine:IssueReturnTransactionLine"/>
+				<xs:element name="LINEID" type="xs:integer"/>
+				<xs:element name="PRINTQTY" type="xs:integer"/>
+				<xs:element ref="TEMPLATE"/>
+				<xs:element ref="dsf:PRINTERID"/>
+				<xs:element name="PRINTERPATH" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CORERETURNBARCODEINFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ENTITYRECORDID"/>
+				<xs:element ref="dsf:STOREID"/>
+				<xs:element ref="dsf:TRANSACTIONDATE"/>
+				<xs:element ref="CORERETURNBARCODELINES"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ENTITYRECORDID">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ENTITYID"/>
+				<xs:element ref="dsf:ENTITYCODE30"/>
+				<xs:element ref="dsf:ORGANIZATIONID"/>
+				<xs:element ref="dsf:DESCRIPTION" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CORERETURNBARCODELINES">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="CORERETURNBARCODELINEINFO"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CORERETURNBARCODELINEINFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-IssueReturnTransactionLine:IssueReturnTransactionLine"/>
+				<xs:element name="LINEID" type="xs:integer"/>
+				<xs:element name="PRINTQTY" type="xs:integer"/>
+				<xs:element ref="dsf:COREVALUE" minOccurs="0"/>
+				<xs:element ref="TEMPLATE"/>
+				<xs:element ref="dsf:PRINTERID"/>
+				<xs:element name="PRINTERPATH" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WARRANTYRETURNBARCODEINFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ACTIVITYID" minOccurs="0"/>
+				<xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSACTIONDATE" minOccurs="0"/>
+				<xs:element ref="WARRANTYRETURNBARCODELINES"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WARRANTYRETURNBARCODELINES">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="WARRANTYRETURNBARCODELINEINFO"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WARRANTYRETURNBARCODELINEINFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-IssueReturnTransactionLine:IssueReturnTransactionLine"/>
+				<xs:element name="LINEID" type="xs:integer"/>
+				<xs:element name="PRINTQTY" type="xs:integer"/>
+				<xs:element ref="dsf:WARRANTYPERIOD" minOccurs="0"/>
+				<xs:element ref="TEMPLATE"/>
+				<xs:element ref="dsf:PRINTERID"/>
+				<xs:element name="PRINTERPATH" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

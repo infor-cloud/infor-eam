@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- ==== This schema defines MP business function result MP6143_GetDepartmentToolDefault_001_Result ==== -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP6143_001" 
+		xmlns="http://schemas.datastream.net/MP_results/MP6143_001" 
+		xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+		xmlns:dse-SupervisorsDefault="http://schemas.datastream.net/MP_entities/DepartmentToolDefault_001" 
+		elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+
+	<!-- ====  Begining of MP6143_GetDepartmentToolDefault_001_Result ================ -->
+	<xs:element name="MP6143_GetDepartmentToolDefault_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+			<xs:attribute name="multiorg" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

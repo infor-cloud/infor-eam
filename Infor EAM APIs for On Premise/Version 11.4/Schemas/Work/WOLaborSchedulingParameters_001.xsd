@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2011 Infor Global Solutions Technology GmbH and/or its affiliates
+  and subsidiaries. All rights reserved. The word and design marks set forth
+  herein are trademarks and/or registered trademarks of
+  Infor Global Solutions Technology GmbH and/or its affiliates and subsidiaries.
+  All rights reserved. All other trademarks listed herein are the property of
+  their respective owners.
+ 
+  This document may not be reproduced in whole or in part or used for tendering
+  or manufacturing purposes except under an agreement or with the written
+  consent of the copyright holder and then only under the condition that this
+  notice is included in any such reproduction. No information regarding the
+  contents or subject matter of this document or any part thereof arising
+  directly or indirectly thereof shall be given orally or in writing or
+  communicated in any manner whatsoever to any third party without the prior
+  written consent of the copyright holder.
+  
+  This schema defines MP entity WOLaborSchedulingParameters
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WOLaborSchedulingParameters_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/WOLaborSchedulingParameters_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="WOLaborSchedulingParameters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WOLABORSCHEDULINGID"/>
+				<xs:element ref="dsf:ORGANIZATIONID"/>
+				<xs:element ref="dsf:PARAMETERLISTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PARAMETERLISTNAME" minOccurs="0"/>
+				<xs:element ref="dsf:DEFAULT" minOccurs="0"/>
+				<xs:element ref="dsf:DBSESSIONID" minOccurs="0"/>
+				<xs:element ref="dsf:WOSCHEDULEDSTARTDATE" minOccurs="0"/>
+				<xs:element ref="dsf:WOSCHEDULEDENDDATE" minOccurs="0"/>
+				<xs:element ref="WOSelectionParameters" minOccurs="0"/>
+				<xs:element ref="EquipmentSelectionParameters" minOccurs="0"/>
+				<xs:element ref="ActivitySelectionParameters" minOccurs="0"/>
+				<xs:element ref="EmployeeSelectionParameters" minOccurs="0"/>
+				<xs:element ref="SchedulingOptions"/>
+				<!-- PARAMETERLISTCODE, PARAMTERLISTNAME and DEFAULT will be filled in or DBSESSIONID.  They are mutually exclusive of each other. -->
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WOSelectionParameters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:JOBNUM" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTCODES" minOccurs="0"/>
+				<xs:element ref="dsf:PPMCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PROJECTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PROJECTBUDGETCODE" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERTYPES" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERPRIORITIES" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERSTATUSES" minOccurs="0"/>
+				<xs:element ref="dsf:REQUESTEDBYCODE" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDTOCODE" minOccurs="0"/>
+				<xs:element ref="dsf:SCHEDGROUP" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERCLASSCODES" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERCLASSORGID" minOccurs="0"/>
+				<xs:element ref="dsf:CRITICALITYCODES" minOccurs="0"/>
+				<xs:element ref="dsf:SHIFTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:MAINTENANCEPATTERNID" minOccurs="0"/>
+				<xs:element ref="dsf:MAINTENANCEPATTERNSEQUENCE" minOccurs="0"/>
+				<xs:element ref="dsf:CAMPAIGNCODE" minOccurs="0"/>
+				<xs:element ref="dsf:CAMPAIGNEVENT" minOccurs="0"/>
+				<xs:element ref="dsf:MAXCALCULATEDPRIORITY" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EquipmentSelectionParameters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:OBJTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:INCLUDECHILDEQUIP" minOccurs="0"/>
+				<xs:element ref="dsf:EQPSTATUSCODE" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTCLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:CATEGORYCODE" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PARENTEQUIPMENTCODES" minOccurs="0"/>
+				<xs:element ref="dsf:PARENTEQUIPORGANIZATIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:SKIPEQUIPSELECTIONPROCESS" minOccurs="0"/>
+				<xs:element ref="dsf:OPERATIONALSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:CONSISTID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ActivitySelectionParameters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TRADECODE" minOccurs="0"/>
+				<xs:element ref="dsf:TASKCODE" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVITYSTARTDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVITYENDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWACTSONDIFFERENTSESSION" minOccurs="0"/>
+				<xs:element ref="dsf:AUTOSELECTWOACTIVITY" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EmployeeSelectionParameters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPARTMENTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:TRADECODE" minOccurs="0"/>
+				<xs:element ref="dsf:SHIFTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:CREWID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SchedulingOptions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UNSCHEDULEDCOLOR"/>
+				<xs:element ref="dsf:LIGHTLYSCHEDULEDCOLOR"/>
+				<xs:element ref="dsf:MODERATELYSCHEDULEDCOLOR"/>
+				<xs:element ref="dsf:FULLYSCHEDULEDCOLOR"/>
+				<xs:element ref="dsf:OVERSCHEDULEDCOLOR"/>
+				<xs:element ref="dsf:GENERATEAVAILABILITYTHROUGH"/>
+				<xs:element ref="dsf:THRESHOLDPERCENT"/>
+				<xs:element ref="dsf:SHIFTSTARTDATE" minOccurs="0"/>
+				<xs:element ref="dsf:SHIFTSCHEDULING" minOccurs="0"/>
+				<xs:element ref="dsf:SHIFTDURATION" minOccurs="0"/>
+				<xs:element ref="dsf:EXCLUDEDURATION" minOccurs="0"/>
+				<xs:element ref="dsf:EXCLUDEPEOPLEREQUIRED" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

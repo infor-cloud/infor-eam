@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2004, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity AnalyticsVariableSymbol_001.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/AnalyticsVariableSymbol_001" xmlns="http://schemas.datastream.net/MP_entities/AnalyticsVariableSymbol_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:element name="AnalyticsVariableSymbol">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:OVS_ID"/>
+				<xs:element ref="dsf:OVS_VARID" minOccurs="0"/>
+				<xs:element ref="dsf:OVS_SYMBOLID" minOccurs="0"/>
+				<xs:element ref="dsf:OVS_SYMBOLRULE" minOccurs="0"/>
+				<xs:element ref="dsf:OVS_SYMBOLFACTOR" minOccurs="0"/>
+				<xs:element ref="dsf:OVS_AUDITUSER" minOccurs="0"/>
+				<xs:element ref="dsf:OVS_AUDITTIMESTAMP" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

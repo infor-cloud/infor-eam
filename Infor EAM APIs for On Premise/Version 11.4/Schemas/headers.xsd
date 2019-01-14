@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://schemas.datastream.net/MP_functions">
+
+	<xs:simpleType name="SessionScenario">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="Organization">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<xs:complexType name="SessionType">
+		<xs:sequence>
+			<xs:element name="sessionId" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="TenantType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+    <xs:complexType name="MessageItemConfigType">
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="name" use="required" type="xs:string"/>      
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="MessageConfigType">
+      <xs:sequence>
+        <xs:element name="configItem" type="MessageItemConfigType" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+
+	<xs:element name="Session" type="SessionType"/>
+	<xs:element name="SessionScenario" type="SessionScenario"/>
+	<xs:element name="Organization" type="Organization"/>
+	<xs:element name="Tenant" type="TenantType"/>
+	<xs:element name="MessageConfig" type="MessageConfigType"/>
+</xs:schema>

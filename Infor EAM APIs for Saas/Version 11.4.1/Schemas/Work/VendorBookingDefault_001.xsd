@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+    This schema defines MP business function entity VendorBookingDefault_001
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/VendorBookingDefault_001"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.datastream.net/MP_entities/VendorBookingDefault_001"
+	xmlns:osf="http://www.openapplications.org/oagis_fields"
+	xmlns:os="http://www.openapplications.org/oagis_segments"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_segments" schemaLocation="../oagis_segments.xsd"/>
+
+	<xs:import namespace="http://www.openapplications.org/oagis_fields" schemaLocation="../oagis_fields.xsd"/>
+
+
+<!--===============================================================================-->
+
+	<!--====  Begining of VendorBookingDefault_001 ======================================-->
+	<xs:element name="VendorBookingDefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:STATUS" minOccurs="0"/>
+				<xs:element ref="dsf:OCCUPATIONTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:DATEWORKED" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENTDATETIME" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="number_of_activities" type="xs:nonNegativeInteger"/>
+			<xs:attribute name="is_exceeded_comdays" type="dsf:FLAG_Type"/>
+			<xs:attribute name="is_scheduled_by_msproject" type="dsf:FLAG_Type"/>
+			<xs:attribute name="is_scheduled_by_woloadbalance" type="dsf:FLAG_Type"/>
+			<xs:attribute name="is_scheduled_by_wodailysched" type="dsf:FLAG_Type"/>
+			<xs:attribute name="is_scheduling" type="dsf:FLAG_Type"/>
+			<xs:attribute name="is_project_frozen" type="dsf:FLAG_Type"/>
+			<xs:attribute name="is_campaign_onhold" type="dsf:FLAG_Type"/>
+			<xs:attribute name="jtauth_can_update" type="dsf:FLAG_Type"/>
+			<xs:attribute name="is_booplan_on" type="dsf:FLAG_Type"/>
+			<xs:attribute name="is_multi_equip_child" type="dsf:FLAG_Type"/>
+			<xs:attribute name="is_multi_equip_parent" type="dsf:FLAG_Type"/>
+			<xs:attribute name="has_multi_child_closed" type="dsf:FLAG_Type"/>
+			<xs:attribute name="all_multi_child_closed" type="dsf:FLAG_Type"/>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

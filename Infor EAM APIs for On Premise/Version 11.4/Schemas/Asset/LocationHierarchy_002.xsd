@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+	This schema defines MP entity Location 
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/LocationHierarchy_002" 
+	xmlns="http://schemas.datastream.net/MP_entities/LocationHierarchy_002"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dse-system2="http://schemas.datastream.net/MP_entities/SystemHierarchy_002" 
+	xmlns:dse-position2="http://schemas.datastream.net/MP_entities/PositionHierarchy_002" 
+	xmlns:dse-asset2="http://schemas.datastream.net/MP_entities/AssetHierarchy_002"           
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/AssetHierarchy_002" schemaLocation="AssetHierarchy_002.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/PositionHierarchy_002" schemaLocation="PositionHierarchy_002.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/SystemHierarchy_002" schemaLocation="SystemHierarchy_002.xsd"/> 
+	<!--===============================================================================-->
+	<!-- Location Hierarchy Structure Definitions -->
+	<xs:element name="LocationChildHierarchy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LOCATIONID"/>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="ChildLocation" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-system2:ChildSystem" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-position2:ChildPosition" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-asset2:ChildAsset" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="structure_sort_option" type="dsf:CODE1_Type" default="S"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ChildLocation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LOCATIONID"/>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="ChildLocation" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-system2:ChildSystem" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-position2:ChildPosition" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-asset2:ChildAsset" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="structure_sort_option" type="dsf:CODE1_Type" default="S"/>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2012 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+  This schema defines MP business function entity Objective
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Objective_001"
+        xmlns="http://schemas.datastream.net/MP_entities/Objective_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="Objective">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:OBJECTIVEID"/>
+                    <xs:element ref="dsf:CURRENCYID"/>
+                    <xs:element ref="dsf:STRATEGYID"/>
+                    <xs:element ref="dsf:EMPLOYEEID" minOccurs="0"/>
+                    <xs:element ref="dsf:APPROVEDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+                    <xs:element ref="dsf:TARGETTYPE"/>
+                    <xs:element ref="dsf:TARGETSUBTYPE" minOccurs="0"/>
+                    <xs:element ref="dsf:RELIABILITYCALCULATIONS" minOccurs="0"/>
+                    <xs:element ref="dsf:PARAMETERS" minOccurs="0"/>
+                    <xs:element ref="dsf:CONVERSIONTYPE"/>
+                    <xs:element ref="dsf:UOMID"/>
+                    <xs:element ref="dsf:CATEGORYOPTIONS"/>
+                    <xs:element ref="dsf:BASELINEFROMDATE"/>
+                    <xs:element ref="dsf:BASELINETODATE"/>
+                    <xs:element ref="dsf:BASELINEDAYS" minOccurs="0"/>
+                    <xs:element ref="dsf:KICKOFFDATE"/>
+                    <xs:element ref="dsf:GOALDATE"/>
+                    <xs:element ref="dsf:BASELINEAMOUNT"/>
+                    <xs:element ref="AMOUNTDETAILS" minOccurs="0"/>
+                    <xs:element ref="dsf:OBJECTIVESTATEMENT"/>
+                    <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="recordid" type="xs:long"/>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="AMOUNTDETAILS">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:CHANGEAMOUNT"/>
+                    <xs:element ref="dsf:TARGETAMOUNT" minOccurs="0"/>
+                    <xs:element ref="dsf:TARGETCHANGEPERCENTAGE" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

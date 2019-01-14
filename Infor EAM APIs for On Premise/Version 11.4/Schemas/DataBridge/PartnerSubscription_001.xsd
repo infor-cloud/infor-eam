@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity PartnerSubscription
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PartnerSubscription_001" 
+	   xmlns="http://schemas.datastream.net/MP_entities/PartnerSubscription_001" 
+	   xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	   xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	   elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<!-- ======= Beginning of PartnerSubscription_001 ======= -->
+	<xs:element name="PartnerSubscription">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PARTNERID" type="dsf:PARTNERID_Type"/>
+				<xs:element name="EVENTID" type="dsf:WSEVENTID_Type"/>
+				<xs:element name="DOCUMENTTYPE" type="dsf:WSDOCUMENT_Type"/>
+				<xs:element name="Enabled" type="dsf:FLAG_Type"/>				
+				<xs:element name="MessageDelivery" type="MessageDelivery_Type" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="MessageDelivery_Type">
+		<xs:sequence>
+			<xs:element ref="dsf:URL" minOccurs="0"/>			
+			<xs:element name="Credential" type="dsf:CREDENTIAL_Type" minOccurs="0"/>
+			<xs:element name="SpecialProcessor" type="dsf:WSPROCESSOR_Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

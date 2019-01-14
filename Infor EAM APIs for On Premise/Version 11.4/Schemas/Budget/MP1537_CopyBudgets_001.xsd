@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP business function request MP1537_CopyBudgets_001.
+====================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP1537_001" 
+	xmlns="http://schemas.datastream.net/MP_functions/MP1537_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====================================================================================-->
+	<!--================Begining of MP1537_CopyBudgets_001=====================-->
+	<xs:element name="MP1537_CopyBudgets_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CopyBudgetDetails"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Copy"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="Budgets"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CopyBudgetDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:FROMBUDGETSID"/>
+				<xs:element ref="dsf:TOBUDGETSID"/>
+				<xs:element ref="CopyBudgetOptions"/>
+				<xs:element ref="dsf:BUDGETAMOUNTPERCENTAGE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="confirm_CreateToBudgetsOrOverWriteDetails" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CopyBudgetOptions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element ref="dsf:COPYBUDGETEDAMOUNTS"/>
+					<xs:element ref="dsf:CALCULATEZEROBASEDBUDGET"/>
+					<xs:element ref="dsf:COPYACTUALCOSTS"/>
+					<xs:element ref="dsf:RESETAMOUNTSTOZERO"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

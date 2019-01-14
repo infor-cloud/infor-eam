@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Suresh Ramayanam (Development) -->
+<!-- ================================================================================
+    This schema defines MP entity Properties for Customers
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CustomerProperties_001" 
+          xmlns="http://schemas.datastream.net/MP_entities/CustomerProperties_001"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"            
+          xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+          elementFormDefault="qualified">
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="CustomerProperties">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CUSTOMERPROPERTIESID"/>
+				<xs:element ref="dsf:LEVEL1"/>
+				<xs:element ref="dsf:LEVEL2" minOccurs="0"/>
+				<xs:element ref="dsf:LEVEL3" minOccurs="0"/>
+			</xs:sequence>
+		        <xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

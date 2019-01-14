@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--===================================================================
+   Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth herein are trademarks
+   and/or registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+   All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+   This schema defines the CommodityFuel entity
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CommodityFuel_001" xmlns="http://schemas.datastream.net/MP_entities/Commodity_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====================  Begining of CommodityFuel ====================-->
+	<xs:element name="CommodityFuel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:COMMODITYID"/>
+				<xs:element ref="dsf:SURROGATEKEY" minOccurs="0"/>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="dsf:FROMDATE"/>
+				<xs:element ref="dsf:TODATE" minOccurs="0"/> <!-- Read only field and not used for Add, Sync, or Delete operations -->
+				<xs:element ref="dsf:EMISSION"/>
+				<xs:element ref="dsf:UOMID" minOccurs="0"/> <!-- Read only field and not used for Add, Sync, or Delete operations -->
+				<xs:element ref="dsf:GREENHOUSEGASID"/>
+				<xs:element ref="dsf:CO2ERATIO" minOccurs="0"/> <!-- Read only field and not used for Add, Sync, or Delete operations -->
+				<xs:element ref="dsf:CO2EAMOUNT" minOccurs="0"/> <!-- Read only field and not used for Add, Sync, or Delete operations -->
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="hasuoms" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

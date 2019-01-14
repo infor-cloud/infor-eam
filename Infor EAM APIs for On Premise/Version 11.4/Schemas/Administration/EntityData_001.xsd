@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2008 Infor. All rights reserved. The word and design marks set forth 
+	herein are trademarks and/or registered trademarks of Infor and/or related affiliates 
+	and subsidiaries. All rights reserved. All other trademarks listed herein are the 
+	property of their respective owners. www.infor.com.
+
+	This schema defines MP entity for Exporting and Importing(Exim) EWS data across EWS Applications.
+	The Entities which would Exported using this structure would be as follows - 
+	Inbox Data including Queries
+	KPI Data including Structures, Ranges and Queries
+	Customefields
+	The translations of the descriptions in all languages would also be exported for all the above entities
+================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EntityData_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dse-FlexSql="http://schemas.datastream.net/MP_entities/FlexSql_001" xmlns:dse-MPClass="http://schemas.datastream.net/MP_entities/MPClass_001" xmlns:dse-CustomFieldsLOV="http://schemas.datastream.net/MP_entities/CustomFieldsLOV_001" xmlns:dse-AssociateCustomFields="http://schemas.datastream.net/MP_entities/AssociateCustomFields_001" xmlns:dse-CustomFieldElement="http://schemas.datastream.net/MP_entities/CustomFieldElement_001" xmlns:dse-Desc="http://schemas.datastream.net/MP_entities/Description_001" xmlns:dse-Query="http://schemas.datastream.net/MP_entities/Query_001" xmlns:dse-KPIStructure="http://schemas.datastream.net/MP_entities/KPIStructure_001" xmlns:dse-KPIRange="http://schemas.datastream.net/MP_entities/KPIRange_001" xmlns:dse-HomeEntry="http://schemas.datastream.net/MP_entities/HomeEntry_001" xmlns:dse-RepParameter="http://schemas.datastream.net/MP_entities/RepParameter_001" xmlns:dse-Report="http://schemas.datastream.net/MP_entities/Report_001" xmlns:dse-TextForReports="http://schemas.datastream.net/MP_entities/TextForReports_001" xmlns:dse-ReportOption="http://schemas.datastream.net/MP_entities/ReportOption_001" xmlns:dse-ReportFilter="http://schemas.datastream.net/MP_entities/ReportFilter_001" 
+	xmlns:dse-GridSetup="http://schemas.datastream.net/MP_entities/GridSetup_001"
+	xmlns:dse-GridField="http://schemas.datastream.net/MP_entities/GridField_001"
+	xmlns:dse-GridParameters="http://schemas.datastream.net/MP_entities/GridParameters_001"
+	xmlns:dse-GridValidation="http://schemas.datastream.net/MP_entities/GridValidation_001"
+	xmlns:dse-Hyperlink="http://schemas.datastream.net/MP_entities/Hyperlink_001"
+	xmlns:dse-Data="http://schemas.datastream.net/MP_entities/Data_001"
+	xmlns:dse-Alert="http://schemas.datastream.net/MP_entities/Alert_001"
+	xmlns:dse-AlertSQL="http://schemas.datastream.net/MP_entities/AlertSQL_001"
+	xmlns:dse-AlertMail="http://schemas.datastream.net/MP_entities/AlertMail_001"
+	xmlns:dse-Screen="http://schemas.datastream.net/MP_entities/Screen_001"
+	xmlns:dse-AlertGridParameter="http://schemas.datastream.net/MP_entities/AlertGridParameter_001"
+	xmlns:dse-AlertException="http://schemas.datastream.net/MP_entities/AlertException_001"
+	xmlns:dse-AlertWO="http://schemas.datastream.net/MP_entities/AlertWO_001"
+	xmlns:dse-MailTemplate="http://schemas.datastream.net/MP_entities/MailTemplate_001"
+	xmlns:dse-AlertTextParameter="http://schemas.datastream.net/MP_entities/AlertTextParameter_001"
+	xmlns:dse-WebServicePrompt="http://schemas.datastream.net/MP_entities/WebServicePrompt_001"
+	xmlns:dse-WebServiceForWSPrompt="http://schemas.datastream.net/MP_entities/WebServiceForWSPrompt_001"
+	xmlns:dse-WSPromptField="http://schemas.datastream.net/MP_entities/WSPromptField_001"
+    xmlns:dse-RetrievedValue="http://schemas.datastream.net/MP_entities/RetrievedValue_001"
+	xmlns:dse-FieldFilterSetup="http://schemas.datastream.net/MP_entities/FieldFilterSetup_001"
+	xmlns:dse-ScreenRememberField="http://schemas.datastream.net/MP_entities/ScreenRememberField_001"
+	xmlns:dse-ScreenUserTab="http://schemas.datastream.net/MP_entities/ScreenUserTab_001"
+	xmlns:dse-URLParameter="http://schemas.datastream.net/MP_entities/URLParameter_001"
+	xmlns:dse-ScreenUserTabReportParameterMapping="http://schemas.datastream.net/MP_entities/ScreenUserTabReportParameterMapping_001"
+	xmlns:dse-FieldFilterSetupType="http://schemas.datastream.net/MP_entities/FieldFilterSetupType_001"
+	xmlns:dse-FieldFilterSetupClass="http://schemas.datastream.net/MP_entities/FieldFilterSetupClass_001"
+	xmlns:dse-FieldFilterSetupWOEquipmentType="http://schemas.datastream.net/MP_entities/FieldFilterSetupWOEquipmentType_001"
+	xmlns:dse-FieldFilterSetupOperatorChecklist="http://schemas.datastream.net/MP_entities/FieldFilterSetupOperatorChecklist_001"
+	xmlns:dse-Task="http://schemas.datastream.net/MP_entities/Task_001"
+	xmlns:dse-ServiceCatalogue="http://schemas.datastream.net/MP_entities/ServiceCatalogue_001"
+	xmlns:dse-TaskPlanTool="http://schemas.datastream.net/MP_entities/TaskPlanTool_001"
+	xmlns:dse-TaskPlanPart="http://schemas.datastream.net/MP_entities/TaskPlanPart_001"
+	xmlns:dse-TaskPlanLabor="http://schemas.datastream.net/MP_entities/TaskPlanLabor_001"
+	xmlns:dse-EntitySalesPrice="http://schemas.datastream.net/MP_entities/EntitySalesPrice_001"
+	xmlns:dse-TaskPlanJob="http://schemas.datastream.net/MP_entities/TaskPlanJob_001"
+	xmlns:dse-TaskChecklist="http://schemas.datastream.net/MP_entities/TaskChecklist_001"
+	xmlns:dse-TaskQualification="http://schemas.datastream.net/MP_entities/TaskQualification_001"
+	xmlns:dse-TaskPrice="http://schemas.datastream.net/MP_entities/TaskPrice_001"
+	xmlns:dse-Comments="http://schemas.datastream.net/MP_entities/Comments_001"
+	xmlns="http://schemas.datastream.net/MP_entities/EntityData_001" elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/HomeEntry_001" schemaLocation="HomeEntry_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/KPIRange_001" schemaLocation="KPIRange_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/KPIStructure_001" schemaLocation="KPIStructure_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Query_001" schemaLocation="Query_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Description_001" schemaLocation="Description_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/CustomFieldElement_001" schemaLocation="CustomFieldElement_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/AssociateCustomFields_001" schemaLocation="AssociateCustomFields_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/CustomFieldsLOV_001" schemaLocation="CustomFieldsLOV_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/MPClass_001" schemaLocation="MPClass_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/FlexSql_001" schemaLocation="FlexSql_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/TextForReports_001" schemaLocation="TextForReports_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Report_001" schemaLocation="Report_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/RepParameter_001" schemaLocation="RepParameter_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/ReportOption_001" schemaLocation="../Base/ReportOption_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/ReportFilter_001" schemaLocation="../Base/ReportFilter_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/GridSetup_001" schemaLocation="GridSetup_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/GridField_001" schemaLocation="GridField_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/GridParameters_001" schemaLocation="GridParameters_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/GridValidation_001" schemaLocation="GridValidation_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Hyperlink_001" schemaLocation="../Base/Hyperlink_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Data_001" schemaLocation="MData_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Alert_001" schemaLocation="Alert_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/AlertSQL_001" schemaLocation="AlertSQL_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/AlertMail_001" schemaLocation="AlertMail_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Screen_001" schemaLocation="Screen_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/AlertGridParameter_001" schemaLocation="AlertGridParameter_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/AlertException_001" schemaLocation="AlertException_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/AlertWO_001" schemaLocation="AlertWO_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/MailTemplate_001" schemaLocation="MailTemplate_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/AlertTextParameter_001" schemaLocation="AlertTextParameter_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/WebServicePrompt_001" schemaLocation="WebServicePrompt_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/WebServiceForWSPrompt_001" schemaLocation="WebServiceForWSPrompt_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/WSPromptField_001" schemaLocation="WSPromptField_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/RetrievedValue_001" schemaLocation="RetrievedValue_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/ScreenRememberField_001" schemaLocation="ScreenRememberField_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/ScreenUserTab_001" schemaLocation="ScreenUserTab_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/URLParameter_001" schemaLocation="URLParameter_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/ScreenUserTabReportParameterMapping_001" schemaLocation="ScreenUserTabReportParameterMapping_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/FieldFilterSetupType_001" schemaLocation="FieldFilterSetupType_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/FieldFilterSetup_001" schemaLocation="FieldFilterSetup_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/FieldFilterSetupClass_001" schemaLocation="FieldFilterSetupClass_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/FieldFilterSetupWOEquipmentType_001" schemaLocation="FieldFilterSetupWOEquipmentType_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/FieldFilterSetupOperatorChecklist_001" schemaLocation="FieldFilterSetupOperatorChecklist_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Task_001" schemaLocation="../Work/Task_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/ServiceCatalogue_001" schemaLocation="../Material/ServiceCatalogue_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/TaskPlanTool_001" schemaLocation="../Work/TaskPlanTool_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/TaskPlanPart_001" schemaLocation="../Work/TaskPlanPart_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/TaskChecklist_001" schemaLocation="../Work/TaskChecklist_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/TaskQualification_001" schemaLocation="../Work/TaskQualification_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/TaskPlanJob_001" schemaLocation="../Work/TaskPlanJob_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/EntitySalesPrice_001" schemaLocation="../Material/EntitySalesPrice_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/TaskPlanLabor_001" schemaLocation="../Work/TaskPlanLabor_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/TaskPrice_001" schemaLocation="../Work/TaskPrice_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Comments_001" schemaLocation="../Base/Comments_001.xsd"/>
+	<!-- ======= Beginning of EntityData_001 ======= -->
+	<xs:element name="EntityData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="HeaderData" minOccurs="0"/>
+				<xs:element name="EntityDataAll" type="EntityDataAllType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HeaderData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:USERID"/>
+				<xs:element ref="dsf:CREATEDDATE"/>
+				<xs:element ref="dsf:ENTITYDBSCHEMA"/>
+				<xs:element ref="dsf:DATABASETYPE"/>
+				<xs:element ref="dsf:DATABASEVERSION"/>
+				<xs:element ref="dsf:LANGUAGEID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="EntityDataAllType">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element ref="EximKPIData" minOccurs="0"/>
+				<xs:element ref="EximInboxData" minOccurs="0"/>
+				<xs:element ref="EximCustomFieldData" minOccurs="0"/>
+				<xs:element ref="EximFlexSqlData" minOccurs="0"/>
+				<xs:element ref="EximCustomReportsData" minOccurs="0"/>
+				<xs:element ref="EximUserDefinedGridData" minOccurs="0"/>
+				<xs:element ref="EximAlertData" minOccurs="0"/>
+				<xs:element ref="EximWebServicePromptData" minOccurs="0"/>
+				<xs:element ref="EximCopiedScreenData" minOccurs="0"/>
+				<xs:element ref="EximTaskPlanData" minOccurs="0"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ========================================= -->
+	<xs:element name="Translations">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-Desc:Description" maxOccurs="unbounded"/>
+				<xs:element ref="dsf:RENTITYID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- =========== KPIData ============ -->
+	<xs:element name="EximKPIData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-Query:Query" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="KPIDataAll" maxOccurs="unbounded"/>
+				<xs:element ref="KPIStructureAll" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="KPIDataAll">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-HomeEntry:HomeEntry"/>
+				<xs:element ref="dse-KPIRange:KPIRange" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Translations"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="KPIStructureAll">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:HOMEENTRYID"/>
+				<xs:element ref="dse-KPIStructure:KPIStructure" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- =========== InboxData ============ -->
+	<xs:element name="EximInboxData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-Query:Query" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="InboxData" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InboxData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-HomeEntry:HomeEntry"/>
+				<xs:element ref="Translations"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- =========== CustomFieldData ============ -->
+	<xs:element name="EximCustomFieldData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ClassData" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="EximCustomFieldDataAll" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EximCustomFieldDataAll">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-CustomFieldElement:CustomFieldElement"/>
+				<xs:element ref="AssociateCustomFieldsData" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Translations"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AssociateCustomFieldsData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-AssociateCustomFields:AssociateCustomFields"/>
+				<xs:element ref="dse-CustomFieldsLOV:CustomFieldsLOV" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ClassData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-MPClass:MPClass"/>
+				<xs:element ref="dsf:RENTITYID"/>
+				<xs:element ref="Translations"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- =========== FlexSql ============ -->
+	<xs:element name="EximFlexSqlData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FlexSqlData" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FlexSqlData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-FlexSql:FlexSql"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- =========== Custom Reports ============ -->
+	<xs:element name="EximCustomReportsData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CustomReportsData" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CustomReportsData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-Report:Report"/>
+				<xs:element ref="dse-TextForReports:TextForReports" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-ReportFilter:ReportFilter" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="RepParameterData" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Translations"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RepParameterData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-RepParameter:RepParameter"/>
+				<xs:element ref="dse-ReportOption:ReportOption" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- =========== UserDefined Grid ============ -->
+	<xs:element name="EximUserDefinedGridData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="UserDefinedGridData" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserDefinedGridData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-GridSetup:GridSetup"/>
+				<xs:element ref="dse-GridField:GridField" minOccurs="0" maxOccurs="unbounded"/>
+				<!-- in case a query is associated to the grid field-->
+				<xs:element ref="dse-Query:Query" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="EximCustomFieldData" minOccurs="0"/>
+				<xs:element ref="dse-GridParameters:GridParameters" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="DataSpies"/>
+				<xs:element ref="dse-Hyperlink:Hyperlink" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DataSpies">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DataSpy" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DataSpy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-Data:R5DDDATASPY"/>
+				<xs:element ref="dse-Data:R5QUERYFIELD" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- ============== Alert Data ========================-->
+	<xs:element name="EximAlertData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AlertData" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AlertData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-Alert:Alert"/>
+				<!-- in case the UDG is not exists in the Import schema -->
+				<xs:element ref="UserDefinedGridData" minOccurs="0"/>
+				<xs:element ref="dse-AlertSQL:AlertSQL" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-AlertMail:AlertMail" minOccurs="0" maxOccurs="unbounded"/>
+				<!-- in case the MailTemplate is not exists in the Import schema -->
+				<xs:element ref="dse-MailTemplate:MailTemplate" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-AlertException:AlertException" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-AlertGridParameter:AlertGridParameter" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-AlertTextParameter:AlertTextParameter" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-AlertWO:AlertWO" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- ============== Copied Screen Data ========================-->
+	<xs:element name="EximCopiedScreenData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CopiedScreenData" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CopiedScreenData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-Screen:Screen"/>
+				<xs:element ref="dse-ScreenRememberField:ScreenRememberField" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-URLParameter:URLParameter" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-ScreenUserTabReportParameterMapping:ScreenUserTabReportParameterMapping" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-ScreenUserTab:ScreenUserTab" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-FieldFilterSetup:FieldFilterSetup" minOccurs="0"/>
+				<xs:element ref="dse-FieldFilterSetupType:FieldFilterSetupType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-FieldFilterSetupClass:FieldFilterSetupClass" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-FieldFilterSetupWOEquipmentType:FieldFilterSetupWOEquipmentType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-FieldFilterSetupOperatorChecklist:FieldFilterSetupOperatorChecklist" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dsf:LAYOUTMETA" minOccurs="0"/>
+				<xs:element ref="DataSpies" minOccurs="0"/>
+				<xs:element ref="dse-Hyperlink:Hyperlink" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="CopiedScreenTabData" minOccurs="0"  maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+    <xs:element name="CopiedScreenTabData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:LAYOUTMETA" minOccurs="0"/>
+                <xs:element ref="dsf:GRIDNAME" minOccurs="0"/>
+                <xs:element ref="DataSpies" minOccurs="0"/>
+                <xs:element ref="dse-Hyperlink:Hyperlink" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<!-- ============== WebService Prompt Data ========================-->
+	<xs:element name="EximWebServicePromptData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="WebServicePromptData" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="WebServicePromptData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-WebServicePrompt:WebServicePrompt"/>
+				<xs:element ref="dse-WebServiceForWSPrompt:WebServiceForWSPrompt" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-WSPromptField:WSPromptField" minOccurs="0" maxOccurs="unbounded"/>
+				<!-- in case a query or mobile query is associated to the WSP field-->
+				<xs:element ref="dse-Query:Query" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="dse-RetrievedValue:RetrievedValue" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="EximCustomFieldData" minOccurs="0"/>
+				<!-- All WSP boilertexts -->
+				<xs:element ref="BoilerTexts" minOccurs="0" maxOccurs="unbounded"/>
+				<!-- All Translations -->
+				<xs:element ref="Translations"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BoilerTexts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LANGUAGECODE"/>
+				<xs:element ref="dse-Data:R5BOILERTEXTS" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- ============== Task Plan Data ========================-->
+	<xs:element name="EximTaskPlanData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TaskPlanData" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TaskPlanData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-Task:Task"/>
+				<xs:element ref="dse-ServiceCatalogue:ServiceCatalogue" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-TaskPlanTool:TaskPlanTool" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-TaskPlanPart:TaskPlanPart" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-TaskChecklist:TaskChecklist" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-TaskQualification:TaskQualification" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-TaskPlanJob:TaskPlanJob" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-EntitySalesPrice:EntitySalesPrice" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-TaskPlanLabor:TaskPlanLabor" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-TaskPrice:TaskPrice" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-Comments:Comments" minOccurs="0"/>
+				<xs:element ref="Translations" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

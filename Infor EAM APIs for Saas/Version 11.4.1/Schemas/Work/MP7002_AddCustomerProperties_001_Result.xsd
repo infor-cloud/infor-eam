@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- ================================================================================
+    This schema defines MP business function result MP7002_AddCustomerProperties_001_Result
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7002_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_results/MP7002_001">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP7002_CustomerProperties_001_Result=============================-->
+	<xs:element name="MP7002_AddCustomerProperties_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CUSTOMERPROPERTIESID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

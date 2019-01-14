@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity InspectionsForWorkOrder    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/InspectionsForWorkOrderDefault_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/InspectionsForWorkOrderDefault_001" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+
+    <!--=====================================================================-->
+    <!--====  Begining of InspectionsForWorkOrderDefault_001 ======================================-->
+    <xs:element name="InspectionsForWorkOrderDefault">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:INSPECTIONSEQUENCENUMBER"/>
+                <xs:element ref="dsf:ORGANIZATIONID"        minOccurs="0"/>
+                <xs:element ref="dsf:STATUS"                minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONROUTESTATUS" minOccurs="0"/>
+                <xs:element ref="dsf:ROUTEID"               minOccurs="0"/>
+                <xs:element ref="dsf:WORKORDEREXT"/>
+                <xs:element ref="dsf:INSPECTIONRESULT"      minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONRESULTDATE"  minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

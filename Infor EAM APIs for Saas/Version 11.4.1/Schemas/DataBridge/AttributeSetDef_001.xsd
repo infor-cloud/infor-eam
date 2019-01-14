@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Mi Zhou (Datastream Systems, Inc) -->
+<!-- ================================================================================
+	Copyright 2006, Infor
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity AttributeSetDef
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/AttributeSetDef_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/AttributeSetDef_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of AttributeSetDef_001 ======================================-->
+	<xs:element name="AttributeSetDef">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ATTRIBUTESETDEFID"/>
+				<xs:element name="AttributeName1" type="dsf:XREFATTRIBUTENAME_Type"/>
+				<xs:element name="AttributeName2" type="dsf:XREFATTRIBUTENAME_Type"/>
+				<xs:element name="AttributeName3" type="dsf:XREFATTRIBUTENAME_Type"/>
+				<xs:element name="AttributeName4" type="dsf:XREFATTRIBUTENAME_Type"/>
+				<xs:element name="AttributeName5" type="dsf:XREFATTRIBUTENAME_Type"/>
+				<xs:element name="AttributeName6" type="dsf:XREFATTRIBUTENAME_Type"/>
+				<xs:element name="AttributeName7" type="dsf:XREFATTRIBUTENAME_Type"/>
+				<xs:element name="AttributeName8" type="dsf:XREFATTRIBUTENAME_Type"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

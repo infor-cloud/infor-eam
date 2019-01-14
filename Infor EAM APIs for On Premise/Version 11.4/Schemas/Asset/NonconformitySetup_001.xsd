@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+	Copyright (c) 2016 Infor. All rights reserved.
+	The word and design marks set forth herein are trademarks and/or registered
+	trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+	This schema defines MP entity NonconformitySetup
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/NonconformitySetup_001"
+		xmlns="http://schemas.datastream.net/MP_entities/NonconformitySetup_001"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:dsf="http://schemas.datastream.net/MP_fields"
+		elementFormDefault="qualified">
+		<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+		<!--===============================================================================-->
+		<xs:element name="NonconformitySetup">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="dsf:ORGANIZATIONID" />
+					<xs:element ref="dsf:PROTECTHEADERDATA" minOccurs="0" />
+					<xs:element ref="dsf:PROTECTOBSERVATIONDATAONHEADER" minOccurs="0" />
+					<xs:element ref="dsf:SYNCHEADERWITHOBSERVATION" />
+					<xs:element ref="dsf:MERGERESTRICTIONS" />
+					<xs:element ref="dsf:USEOBSERVATIONSTATUS" />
+					<xs:element ref="dsf:SUPERSEDEDSTATUS" minOccurs="0" />
+					<xs:element ref="dsf:REINSPECTIONSTATUS" minOccurs="0" />
+					<xs:element ref="dsf:AUTOAPPROVESTATUS" minOccurs="0" />
+					<xs:element ref="dsf:AUTOSKIPSTATUS" minOccurs="0"/>
+					<xs:element ref="dsf:INCLUDEREINSPECTIONCONDITION" minOccurs="0" />
+					<xs:element ref="dsf:CREATEFROMCHECKLISTOPTION" minOccurs="0" />
+					<xs:element ref="dsf:PREVIOUSOBSERVATIONCOUNT" minOccurs="0" />
+					<xs:element ref="dsf:UPDATEDBY" minOccurs="0" />
+					<xs:element ref="dsf:DATEUPDATED" minOccurs="0" />
+				</xs:sequence>
+				<xs:attribute name="recordid" type="xs:long"></xs:attribute>
+			</xs:complexType>
+		</xs:element>
+</xs:schema>
+

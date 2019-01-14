@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2004, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity AnalyticsBulkData.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/AnalyticsBulkData_001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/AnalyticsBulkData_001" elementFormDefault="qualified">
+	<xs:element name="AnalyticsBulkData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MetaData"/>
+				<xs:element ref="Data"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="MetaData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RowSetCacheId" type="xs:string" minOccurs="0"/>
+				<xs:element ref="Cols"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Cols">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Col" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Col">
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:long" use="required"/>
+			<xs:attribute name="type" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="R" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="R">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="C" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="C">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+				<xs:attribute name="id" type="xs:long" use="optional"/>
+				<xs:attribute name="updatecount" type="xs:long" use="optional"/>
+				<xs:attribute name="forced" type="xs:boolean" use="optional"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

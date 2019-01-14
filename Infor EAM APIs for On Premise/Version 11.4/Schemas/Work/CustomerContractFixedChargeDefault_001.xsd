@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP Default entity for Fixed Charges for Customer Contract
+================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CustomerContractFixedChargeDefault_001"
+	xmlns="http://schemas.datastream.net/MP_entities/CustomerContractFixedChargeDefault_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of CustomerContractFixedChargeDefault_001 ======= -->
+	<xs:element name="CustomerContractFixedChargeDefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:FIXEDCHARGELINENUM"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:CURRENCYID"/>
+				<xs:element ref="dsf:STARTDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ENDDATE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

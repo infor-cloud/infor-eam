@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- ================================================================================ 
+	Copyright 2003, Datastream Systems, Inc. 
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP business function request MP7379_SyncFleetBill_001
+==================================================================================--> 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP7379_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:dse-FleetBill="http://schemas.datastream.net/MP_entities/FleetBill_001" 
+	xmlns="http://schemas.datastream.net/MP_functions/MP7379_001" 
+	elementFormDefault="qualified">
+	<!-- ============================= Imported schemas ======================================= -->
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/FleetBill_001" schemaLocation="FleetBill_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ====================================================================================== -->
+	<!-- =============  Begining of MP7379_SyncFleetBill_001 ============================= -->
+	<xs:element name="MP7379_SyncFleetBill_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-FleetBill:FleetBillBasicInformation"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Sync"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="FleetBill"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

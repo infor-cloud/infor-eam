@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP business function result MP6140_GetScreenDefault_001_Result
+================================================================================== -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP6140_001"
+							xmlns:dsf="http://schemas.datastream.net/MP_fields"
+							xmlns:xs="http://www.w3.org/2001/XMLSchema"
+							xmlns="http://schemas.datastream.net/MP_results/MP6140_001"
+							elementFormDefault="qualified">
+	<!-- =========== Imported namespaces =========== -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--=============================================-->
+	<!--========  Begining of MP6140_GetScreenDefault_001_Result ====================-->
+	<xs:element name="MP6140_GetScreenDefault_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:SELECTPERMISSION" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATEPERMISSION" minOccurs="0"/>
+				<xs:element ref="dsf:INSERTPERMISSION" minOccurs="0"/>
+				<xs:element ref="dsf:DELETEPERMISSION" minOccurs="0"/>
+				<xs:element ref="dsf:FORMTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:OPENURLNEW" minOccurs="0"/>
+				<xs:element ref="dsf:QUERYATSTARTUP" minOccurs="0"/>
+				<xs:element ref="dsf:STARTUPVIEWID" minOccurs="0"/>
+				<xs:element ref="dsf:SPLITVIEWDISPLAY" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

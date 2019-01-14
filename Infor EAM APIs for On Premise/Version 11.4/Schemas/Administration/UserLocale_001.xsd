@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- ================================================================================ 
+	Copyright 2003, Datastream Systems, Inc. 
+	50 Datastream Plaza, Greenville, SC 29605, USA. 
+	All rights reserved. 
+
+	This schema defines MP entity UserLocale
+================================================================================== --> 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/UserLocale_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/UserLocale_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of UserLocale_001 ======= -->
+	<xs:element name="UserLocale">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LOCALEID"/>
+				<xs:element ref="dsf:MONETARYSYMBOL"/>
+				<xs:element ref="dsf:DECIMALSYMBOL"/>
+				<xs:element ref="dsf:MONETARYGROUPSEPARATOR" minOccurs="0"/>
+				<xs:element ref="dsf:GROUPSYMBOLS"/>
+				<xs:element ref="dsf:MONETARYGROUPDIGITS" minOccurs="0"/>
+				<xs:element ref="dsf:GROUPDIGITS"/>
+				<xs:element ref="dsf:DECIMALPLACES"/>
+				<xs:element ref="dsf:MONETARYDECIMALPLACES"/>
+				<xs:element ref="dsf:NEGATIVESYMBOL"/>
+				<xs:element ref="dsf:POSITIVESYMBOL"/>
+				<xs:element ref="dsf:DATEFORMAT"/>
+				<xs:element ref="dsf:FIRSTDAYOFWEEK"/>
+			</xs:sequence>
+		<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

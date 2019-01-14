@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================ 
+	Copyright 2003, Datastream Systems, Inc. 
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP business function result for function request MP7224_GetWorkOrderQualificationDefault_001
+==================================================================================--> 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7224_001" 
+	xmlns:dse-WorkOrderQualificationDefault="http://schemas.datastream.net/MP_entities/WorkOrderQualificationDefault_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://schemas.datastream.net/MP_results/MP7224_001" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/WorkOrderQualificationDefault_001" schemaLocation="WorkOrderQualificationDefault_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Begining of MP7224_GetWorkOrderQualificationDefault_001_Result ======================================-->
+	<xs:element name="MP7224_GetWorkOrderQualificationDefault_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultData">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dse-WorkOrderQualificationDefault:WorkOrderQualificationDefault"/>
+						</xs:sequence>
+						<xs:attribute name="multiorg" type="dsf:FLAG_Type" default="false"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

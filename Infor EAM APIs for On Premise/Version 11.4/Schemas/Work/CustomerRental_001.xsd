@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+Copyright (c) 2012 Infor. All rights reserved.
+The word and design marks set forth herein are trademarks and/or registered
+trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+  This schema defines MP business function entity CustomerRental
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CustomerRental_001"
+        xmlns="http://schemas.datastream.net/MP_entities/CustomerRental_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="CustomerRental">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:CUSTOMERRENTALID"/>
+                    <xs:element ref="RentalDetails"/>
+                    <xs:element ref="dsf:ISCUSTOMERRENTALREQUEST" minOccurs="0"/>
+                    <xs:element ref="IssueDetails" minOccurs="0"/>
+                    <xs:element ref="ReturnDetails" minOccurs="0"/>
+                    <xs:element ref="InvoicingDetails" minOccurs="0"/>
+                    <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+                    <xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0" />
+                </xs:sequence>
+                <xs:attribute name="recordid" type="xs:long"/>
+             </xs:complexType>
+        </xs:element>
+        <xs:element name="RentalDetails">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:RENTALTYPE"/>
+                    <xs:element ref="dsf:STATUS"/>
+                    <xs:element ref="dsf:VEHICLETYPE" minOccurs="0"/>
+                    <xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+                    <xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+                    <xs:element ref="dsf:RECEIVEDEQUIPMENTID" minOccurs="0"/>
+                    <xs:element ref="dsf:RENTALTEMPLATEID" minOccurs="0"/>
+                    <xs:element ref="dsf:CLASSID" minOccurs="0"/>
+                    <xs:element ref="dsf:ISSUETO" minOccurs="0"/>
+                    <xs:element ref="dsf:REFERENCE" minOccurs="0"/>
+                    <xs:element ref="dsf:CUSTOMERID" minOccurs="0"/>
+                    <xs:element ref="dsf:CONTACTINFO" minOccurs="0"/>
+                    <xs:element ref="dsf:EMAILINVOICE" minOccurs="0"/>
+                    <xs:element ref="dsf:SECONDARYPHONE" minOccurs="0"/>
+                    <xs:element ref="dsf:LICENSENO" minOccurs="0"/>
+                    <xs:element ref="dsf:COSTCODE" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXCODE" minOccurs="0"/>
+                    <xs:element ref="dsf:REJECTIONREASON" minOccurs="0"/>
+                    <xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+                    <xs:element ref="dsf:COMPLETEDDATE" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="equipmentvehicletype" type="dsf:CODE8_Type"/>
+                <xs:attribute name="equipmentlocation" type="xs:string"/>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="IssueDetails">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:ISSUEDDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:ESTIMATEDISSUEDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:ISSUEREADING" minOccurs="0"/>
+                    <xs:element ref="dsf:UOMID" minOccurs="0"/>
+                    <xs:element ref="dsf:ISSUELOCATION" minOccurs="0"/>
+                    <xs:element ref="dsf:ISSUEVEFUELLEVEL" minOccurs="0"/>
+                    <xs:element ref="dsf:ISSUEDBY" minOccurs="0"/>
+                    </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="ReturnDetails">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:RETURNDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:ESTIMATEDRETURNDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:RETURNREADING" minOccurs="0"/>
+                    <xs:element ref="dsf:RETURNUOM" minOccurs="0"/>
+                    <xs:element ref="dsf:RETURNLOCATION" minOccurs="0"/>
+                    <xs:element ref="dsf:RETURNFUELLEVEL" minOccurs="0"/>
+                    <xs:element ref="dsf:RETURNEDTO" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="InvoicingDetails">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:CALCULATEDHOURS" minOccurs="0"/>
+                    <xs:element ref="dsf:CALCULATEDDAYS" minOccurs="0"/>
+                    <xs:element ref="dsf:CALCULATEDUSAGE" minOccurs="0"/>
+                    <xs:element ref="dsf:CALCULATEDUSAGEUOM" minOccurs="0"/>
+                    <xs:element ref="dsf:CALCULATEDFUELUSAGE" minOccurs="0"/>
+                    <xs:element ref="dsf:CORRECTEDHOURS" minOccurs="0"/>
+                    <xs:element ref="dsf:CORRECTEDDAYS" minOccurs="0"/>
+                    <xs:element ref="dsf:CORRECTEDUSAGE" minOccurs="0"/>
+                    <xs:element ref="dsf:CORRECTEDUSAGEUOM" minOccurs="0"/>
+                    <xs:element ref="dsf:CORRECTEDFUELUSAGE" minOccurs="0"/>
+                    <xs:element ref="dsf:CORRECTEDBY" minOccurs="0"/>
+                    <xs:element ref="dsf:NETAMOUNT" minOccurs="0"/>
+                    <xs:element ref="dsf:NETAMOUNTCURRENCY" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTMENTS" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTMENTSCURRENCY" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXAMOUNT" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXAMOUNTCURRENCY" minOccurs="0"/>
+                    <xs:element ref="dsf:GROSSAMOUNT" minOccurs="0"/>
+                    <xs:element ref="dsf:GROSSAMOUNTCURRENCY" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICEDAMOUNT" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICEDAMOUNTCURRENCY" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

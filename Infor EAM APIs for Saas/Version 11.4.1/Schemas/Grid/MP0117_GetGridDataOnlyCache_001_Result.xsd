@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request MP0117_GetGridDataOnlyCache_001_Result
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0117_GetGridDataOnlyCache_001_Result" xmlns="http://schemas.datastream.net/MP_functions/MP0117_GetGridDataOnlyCache_001_Result" xmlns:dsg="http://schemas.datastream.net/MP_functions/GridResult" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_functions/GridResult" schemaLocation="GridResult.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0117_GetGridDataOnlyCache_001_Result ======================================-->
+	<xs:element name="MP0117_GetGridDataOnlyCache_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="GRIDRESULT">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="DATASPY"/>
+							<xs:element ref="TOOLBAR"/>
+							<xs:element ref="GRID"/>
+						</xs:sequence>
+						<xs:attribute name="type" type="FUNCTION_REQUEST_TYPE"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GRID">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="METADATA"/>
+				<xs:element ref="DATA"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="FUNCTION_REQUEST_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LIST.DATA_ONLY.CACHE"/>
+			<xs:enumeration value="LOV.DATA_ONLY.CACHE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="METADATA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="REQUEST_TYPE_META" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="RECORDS" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="BLACKLISTVIOLATIONS" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CLIENTROWS" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ISSYSTEMUSER" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ISR5USER" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="CUSTOM_FIELD_ENTITY" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="PORTLETROWS" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MORERECORDPRESENT" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="+"/>
+							<xs:enumeration value="-"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CURRENTCURSORPOSITION" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SERVERTIMESTAMP" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MULTIORGCOLUMN" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="PORTLETFLAG" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="+"/>
+							<xs:enumeration value="-"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="HASCREATEAUTH" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="hasauth" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="EDITABLE" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="+"/>
+							<xs:enumeration value="-"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="GRIDID" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="GRIDNAME" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="GRIDLABEL" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="GRIDTYPE" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DATASPYID" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="GLOBALDATASPY" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="DATASPYHIDDEN" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="ALLOWEDITGLOBALDATASPY" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="DSUPDATECOUNT" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:integer"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="MULTIORG" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="ON"/>
+							<xs:enumeration value="OFF"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>				
+				<xs:element name="ISTAB" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="+"/>
+							<xs:enumeration value="-"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="EDITDATASPY" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DATASPY">
+		<xs:complexType>
+			<xs:attribute name="id" type="xs:string"/>
+			<xs:attribute name="label" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DATA">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element name="ROW" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="D" maxOccurs="unbounded">
+									<xs:complexType mixed="true">
+										<xs:attribute name="n" type="xs:integer"/>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+							<xs:attribute name="id" type="xs:integer"/>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="R" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="D" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="jsonclass" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="option">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="display" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="value" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="TOOLBAR">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FIELD" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="name" type="xs:string"/>
+						<xs:attribute name="type" type="xs:string"/>
+						<xs:attribute name="width" type="xs:string"/>
+						<xs:attribute name="jsonclass" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FIELDVALUES" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ROW" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dataspylist_options" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="option" maxOccurs="unbounded"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="dataspylist_display" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="dataspylist" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="filterfields_options" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="option" maxOccurs="unbounded"/>
+												</xs:sequence>
+												<xs:attribute name="jsonclass" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="filterfields_display" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="filterfields" type="filterfields_Type" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="jsonclass" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="editdataspy" type="xs:string"/>
+			<xs:attribute name="jsonclass" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="filterfields_Type">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="jsonclass" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

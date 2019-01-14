@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function request MP6169_GetCommentAuditTrail_001 
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP6169_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_functions/MP6169_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP6169_GetCommentAuditTrail_001 ======================================-->
+	<xs:element name="MP6169_GetCommentAuditTrail_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CommentAuditRequest"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Get"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="CommentAuditTrail"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CommentAuditRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ENTITY"/>
+				<xs:element ref="dsf:COMMENTTYPE"/>
+				<xs:element ref="dsf:ENTITYKEYCODE"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

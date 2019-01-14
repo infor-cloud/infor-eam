@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2006, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+     This schema defines MP entity IPShoppingCartRequestBody
+     ============================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/IPShoppingCartRequestBody_001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/IPShoppingCartRequestBody_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:ipf="http://schemas.datastream.net/IP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/IP_fields" schemaLocation="../IP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Begining of IPShoppingCartRequestBody_001 ======================================-->
+	<xs:element name="BLOCKREMOTECONTROLRESPONSE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SESSION"/>
+				<xs:element ref="ipf:BUTTONPRESSED"/>
+				<xs:element ref="ipf:ACTIONTYPE"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

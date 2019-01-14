@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2007 Infor.All rights reserved.The word and design marks set
+	forth herein are trademarks and/or registered trademarks of Infor and/or
+	related affiliates and subsidiaries.All rights reserved.All other trademarks
+	listed herein are the property of their respective owners.www.infor.com.
+
+     This schema defines MP entity IPShoppingCartResponse
+     ============================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/IPShoppingCartResponse_001" xmlns:ipf="http://schemas.datastream.net/IP_fields" xmlns="http://schemas.datastream.net/MP_entities/IPShoppingCartResponse_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/IP_fields" schemaLocation="../IP_fields.xsd"/>
+
+	<!--====  Begining of IPShoppingCartResponse_001 ======================================-->
+	<xs:element name="BLOCKACTSEARCH">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BLOCKITEMLIST"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKITEMLIST">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BLOCKITEM" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKITEM">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BLOCKVENDOR"/>
+				<xs:element ref="ipf:VENDORITEMNUM"/>
+				<xs:element ref="ipf:NOTES" minOccurs="0"/>
+				<xs:element ref="ipf:LEADTIME" minOccurs="0"/>
+				<xs:element ref="ipf:MINORDERQTY" minOccurs="0"/>
+				<xs:element ref="ipf:UNITCOST" minOccurs="0"/>
+				<xs:element ref="ipf:ORDERQTY" minOccurs="0"/>
+				<xs:element ref="ipf:UOP" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKVENDOR">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ipf:VENDORNUM"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

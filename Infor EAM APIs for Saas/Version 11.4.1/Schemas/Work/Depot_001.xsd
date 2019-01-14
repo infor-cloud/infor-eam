@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    	Copyright (c) 2008 Infor. All rights reserved. The word and design marks set forth 
+    	herein are trademarks and/or registered trademarks of Infor and/or related affiliates 
+    	and subsidiaries. All rights reserved. All other trademarks listed herein are the 
+	property of their respective owners. www.infor.com.
+	
+    This schema defines MP entity Depot
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Depot_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/Depot_001" elementFormDefault="qualified">
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<!--===============================================================================-->
+	<xs:element name="Depot">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPOTID"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:EXTERNAL" minOccurs="0"/>
+				<xs:element ref="dsf:MARKUP" minOccurs="0"/>
+				<xs:element ref="dsf:FIXEDMARKUP" minOccurs="0"/>
+				<xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+				<xs:element ref="dsf:TANKVOLEXCEEDCAP" minOccurs="0"/>
+				<xs:element ref="dsf:NEGATIVETANKVOL" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+				<xs:element ref="UserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserDefinedFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UDFCHAR01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR11" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR12" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR13" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR14" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR15" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR16" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR17" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR18" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR19" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR20" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR21" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR22" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR23" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR24" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR25" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR26" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR27" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR28" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR29" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR30" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX05" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

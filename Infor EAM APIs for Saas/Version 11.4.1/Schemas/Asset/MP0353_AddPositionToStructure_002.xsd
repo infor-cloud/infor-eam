@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+	This schema defines MP business function request MP0353_AddPositionToStructure_002
+==================================================================================-->  
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0353_002" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:dse-position2="http://schemas.datastream.net/MP_entities/PositionHierarchy_002"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://schemas.datastream.net/MP_functions/MP0353_002" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/PositionHierarchy_002" schemaLocation="PositionHierarchy_002.xsd"/>	
+	<!--===============================================================================-->
+	<!--====  Begining of MP0353_AddPositionToStructure_002 ======================================-->
+	<xs:element name="MP0353_AddPositionToStructure_002">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:POSITIONID"/>
+				<xs:element ref="ParentsForPosition" minOccurs="0"/>
+				<xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Add"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="PositionStructure"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="002"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ParentsForPosition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:choice minOccurs="0">
+					<xs:element ref="dse-position2:AssetDependency" minOccurs="0"/>
+					<xs:element ref="dse-position2:PositionDependency" minOccurs="0"/>
+					<xs:element ref="dse-position2:SystemDependency" minOccurs="0"/>
+					<xs:element ref="dse-position2:LocationDependency" minOccurs="0"/>
+					<xs:element ref="dse-position2:NonDependentParents" minOccurs="0"/>					
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+	Copyright (c) 2013 Infor. All rights reserved. 
+	The word and design marks set forth herein are trademarks
+	and/or registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+	This schema defines MP entity WorkOrderPermit
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WorkOrderPermit_001"
+	xmlns="http://schemas.datastream.net/MP_entities/WorkOrderPermit_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:of="http://www.openapplications.org/oagis_fields"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="WorkOrderPermit">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Permit"/>
+				<xs:element ref="dsf:ACTIVE"/>
+				<xs:element ref="dsf:MANDATORY" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:RELATEDWORKORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:PRINTDATE" minOccurs="0"/>
+				<xs:element ref="dsf:PERMITREFERENCE" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVITYCODE" minOccurs="0"/>
+				<xs:element ref="dsf:AUTOCREATEPERMITTOWORK" minOccurs="0"/>
+				<xs:element ref="dsf:PERMITTOWORKTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:TYPEOFWORK" minOccurs="0"/>
+				<xs:element ref="dsf:PRIORITY" minOccurs="0"/>
+				<xs:element ref="dsf:PERMITRISK" minOccurs="0"/>
+				<xs:element ref="dsf:LOTOREQUIRED" minOccurs="0"/>
+				<xs:element ref="dsf:ISOLATIONTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:DELETEPENDING" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCEBY" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCEID" minOccurs="0"/>
+				<xs:element ref="dsf:DATEVALIDUNTIL" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+				<xs:element ref="dsf:REVIEWEDBYESIGN" minOccurs="0"/>
+				<xs:element ref="dsf:DATEREVIEWED" minOccurs="0"/>
+				<xs:element ref="dsf:LOTOFROMEQUIPMENTREVIEWEDBYESIGN" minOccurs="0"/>
+				<xs:element ref="dsf:LOTOFROMEQUIPMENTDATEREVIEWED" minOccurs="0"/>
+				<xs:element ref="dsf:PERMITTOWORKID" minOccurs="0"/>
+				<xs:element ref="dsf:STATUS" minOccurs="0"/>
+				<xs:element ref="dsf:MULTIEQUIP" minOccurs="0"/>
+				<xs:element ref="dsf:WOMECTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long" use="optional"/>
+			<xs:attribute name="ispermitmandatory" type="dsf:FLAG_Type"/>
+			<xs:attribute name="openptwlimited" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Permit">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PERMITID"/>
+				<xs:element ref="Comments" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Comments">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PERMITCOMMENT" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

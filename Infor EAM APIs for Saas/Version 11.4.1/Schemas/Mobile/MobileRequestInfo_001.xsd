@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Weikang Ding (Datastream Systems, Inc) -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/MobileRequestInfo_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/MobileRequestInfo_001" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="MOBILE_REQUEST_INFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SYSTABLEORGS"/>
+				<xs:element ref="USERTABLEORGS"/>
+				<xs:element ref="SYNCCONFIG"/>
+				<xs:element ref="SYNCPROFILE"/>
+				<xs:element ref="GRIDLIST"/>
+				<xs:element ref="DESKVERSION"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SYNCCONFIG" type="xs:string"/>
+	<xs:element name="SYNCPROFILE" type="xs:string"/>
+	<xs:element name="SYSTABLEORGS" type="ORGANIZATIONS"/>
+	<xs:element name="USERTABLEORGS" type="ORGANIZATIONS"/>
+	<xs:simpleType name="ORGANIZATIONS">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:element name="GRIDLIST">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="GRIDINFO" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GRIDINFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="GRIDNAME"/>
+				<xs:element ref="LASTUPDATED"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GRIDNAME" type="xs:string"/>
+	<xs:element name="LASTUPDATED" type="xs:string"/>
+	<xs:element name="DESKVERSION" type="xs:string"/>
+	<xs:element name="REQUESTID" type="xs:string"/>
+	<xs:element name="GROUPID" type="xs:int"/>
+	<xs:element name="SUCCESS" type="xs:string"/>
+	<xs:element name="MESSAGE" type="xs:string"/>
+</xs:schema>

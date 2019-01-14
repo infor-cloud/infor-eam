@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+        This schema defines MP entity PMScheduleDefault    
+==================================================================================-->  
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PMScheduleDefaultForWork_001"
+           xmlns="http://schemas.datastream.net/MP_entities/PMScheduleDefaultForWork_001"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="PMScheduleDefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PPMREVISION"/>
+				<xs:element ref="dsf:REVISIONSTATUS"/>
+				<xs:element ref="dsf:DATEREQUESTED"/>
+				<xs:element ref="dsf:REQUESTEDBY"/>
+				<xs:element ref="dsf:PMSCHEDULETYPE"/>
+				<xs:element ref="dsf:WORKORDERTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:PMDURATION"/>
+				<xs:element ref="dsf:ISWORKPACKAGE"/>
+				<xs:element ref="dsf:OUTOFSERVICE"/>
+				<xs:element name="PERIODNESTINGBUFFER" type="dsf:NESTINGBUFFER_Type"/>
+				<xs:element name="METER1NESTINGBUFFER" type="dsf:NESTINGBUFFER_Type"/>
+				<xs:element name="METER2NESTINGBUFFER" type="dsf:NESTINGBUFFER_Type"/>
+				<xs:element ref="dsf:PERCENTAGEWINDOW"/>
+				<xs:element ref="dsf:REQUESTEDSTARTDATEBUFFER"/>
+				<xs:element ref="dsf:REQUESTEDENDDATEBUFFER"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

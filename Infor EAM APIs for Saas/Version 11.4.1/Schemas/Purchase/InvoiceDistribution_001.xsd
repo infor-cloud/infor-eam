@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by Mi Zhou (Development) -->
+<!-- ================================================================================
+    This schema defines MP entity InvoiceDistribution
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/InvoiceDistribution_001" xmlns="http://schemas.datastream.net/MP_entities/InvoiceDistribution_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of InvoiceDistribution_001 ======================================-->
+	<xs:element name="InvoiceDistribution">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:INVOICELINEID"/>
+				<xs:element ref="dsf:IVDCCID"/>
+				<xs:element ref="dsf:IVDAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:IVDTYPE"/>
+				<xs:element ref="dsf:IVDPERCENTAGE" minOccurs="0"/>
+				<xs:element ref="dsf:IVDACD" minOccurs="0"/>
+				<xs:element ref="dsf:RTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:TAXID" minOccurs="0"/>
+				<xs:element ref="dsf:TAX2ID" minOccurs="0"/>
+				<xs:element ref="dsf:TAXAMOUNT" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="user_entity" type="xs:string"/>
+			<xs:attribute name="system_entity" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

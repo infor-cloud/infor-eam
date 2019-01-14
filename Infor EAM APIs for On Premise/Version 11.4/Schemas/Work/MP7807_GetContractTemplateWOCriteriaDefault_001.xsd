@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    //#Header: #
+ 
+    #Revision: #                     #Date: #
+ 
+    Copyright © COPYRIGHT_YEAR Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+   
+    //#Log:#
+    
+    This schema defines MP business function request MP7807_GetContractTemplateWOCriteriaDefault_001
+ ============================================================================= -->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP7807_001" 
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           xmlns="http://schemas.datastream.net/MP_functions/MP7807_001" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"                  
+           xmlns:dse="http://schemas.datastream.net/MP_entities/ContractTemplateWOCriteria_001" 
+           elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/ContractTemplateWOCriteria_001" schemaLocation="ContractTemplateWOCriteria_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP7807_GetContractTemplateWOCriteriaDefault_001 ======================================-->
+	<xs:element name="MP7807_GetContractTemplateWOCriteriaDefault_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CONTRACTTEMPLATEID"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Get"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="ContractTemplateWOCriteriaDefault"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

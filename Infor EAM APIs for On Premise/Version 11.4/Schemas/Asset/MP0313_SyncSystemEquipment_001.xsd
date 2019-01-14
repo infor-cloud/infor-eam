@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+Copyright (c) 2012 Infor. All rights reserved.
+The word and design marks set forth herein are trademarks and/or registered
+trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+All other trademarks listed herein are the property of their respective owners. www.infor.com.
+	
+         This schema defines MP business function request MP0313_SyncSystemEquipment_001
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0313_001" 
+           xmlns="http://schemas.datastream.net/MP_functions/MP0313_001" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"                  
+           xmlns:dse-SystemEquipment="http://schemas.datastream.net/MP_entities/SystemEquipment_001" 
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/SystemEquipment_001" schemaLocation="SystemEquipment_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<!--===============================================================================-->
+<!--====  Begining of MP0313_SyncSystemEquipment_001 ======================================-->
+	<xs:element name="MP0313_SyncSystemEquipment_001">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="dsf:BaseSchemaRequestElement">
+
+			<xs:sequence>
+				<xs:element ref="dse-SystemEquipment:SystemEquipment"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Sync"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="SystemEquipment"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+			<xs:attribute name="confirm_availability_status" type="dsf:CONFIRMATION_Type"/>
+			<xs:attribute name="confirmaddlinearreferences" type="dsf:CONFIRMATION_Type"/>
+			<xs:attribute name="confirmnewequipmentlength" type="dsf:CONFIRMATION_Type"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

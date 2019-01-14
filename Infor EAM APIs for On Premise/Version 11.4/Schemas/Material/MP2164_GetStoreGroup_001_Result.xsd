@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+  This schema defines MP business function result MP2164_GetStoreGroup_001_Result
+ ============================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP2164_001" xmlns="http://schemas.datastream.net/MP_results/MP2164_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dse-StoreGroup="http://schemas.datastream.net/MP_entities/StoreGroup_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/StoreGroup_001" schemaLocation="StoreGroup_001.xsd"/>
+	<!--====  Begining of MP2164_GetStoreGroup_001_Result ======================================-->
+	<xs:element name="MP2164_GetStoreGroup_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-StoreGroup:StoreGroup"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2014 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+    This schema defines MP business function entity TaskCostsDefault
+==================================================================================-->
+    <xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/TaskCostsDefault_001"
+        xmlns="http://schemas.datastream.net/MP_entities/TaskCostsDefault_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+        <xs:element name="TaskCostsDefault">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:STANDWOACTID" minOccurs="0"/>
+                    <xs:element ref="dsf:PMSCHEDULEACTID" minOccurs="0"/>
+                    <xs:element ref="dsf:TASKLISTID" minOccurs="0"/>
+                    <xs:element ref="dsf:JOBPLANID" minOccurs="0"/>
+                    <xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+                    <xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+                    <xs:element ref="dsf:STOREID" minOccurs="0"/>
+                    <xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+                    <xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+                    <xs:element ref="dsf:PLANNINGLEVEL" minOccurs="0"/>
+                    <xs:element ref="dsf:STATUS" minOccurs="0"/>
+                    <xs:element ref="dsf:CHANGED" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>

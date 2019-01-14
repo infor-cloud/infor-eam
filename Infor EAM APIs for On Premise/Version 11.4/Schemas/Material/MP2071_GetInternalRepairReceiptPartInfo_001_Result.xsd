@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function result MP2071_GetInternalRepairPartInfo_001_Result    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP2071_001" xmlns:dsf="http://schemas.datastream.net/MP_fields"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_results/MP2071_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP2071_GetInternalRepairReceiptPartInfo_001_Result ======================================-->
+	<xs:element name="MP2071_GetInternalRepairReceiptPartInfo_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TRANSACTIONID"/>
+				<xs:element ref="dsf:PARTID"/>
+				<xs:element ref="dsf:BYASSET"/>
+				<xs:element ref="dsf:REPAIRPRICE"/>
+				<xs:element name="Lot" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dsf:LOTID" minOccurs="0"/>
+							<xs:element ref="dsf:EXPIRATIONDATE" minOccurs="0"/>
+							<xs:element ref="dsf:MANUFACTLOT" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Asset" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dsf:ASSETID" minOccurs="0"/>
+							<xs:element ref="dsf:TYPE" minOccurs="0"/>
+							<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+							<xs:element ref="dsf:SERIALNUMBER" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="dsf:OUTSTANDINGQTY"/>
+				<xs:element ref="dsf:REPAIRCONDITIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRCONDITIONPARTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:BINID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

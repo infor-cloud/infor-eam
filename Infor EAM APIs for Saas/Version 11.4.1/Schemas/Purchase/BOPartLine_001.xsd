@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Sureshr (Datastream Systems, Inc) -->
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function entity BOPartLine
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/BOPartLine_001" xmlns="http://schemas.datastream.net/MP_entities/BOPartLine_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====================  Begining of BOPartLine ====================-->
+	<xs:element name="BOPartLine">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BOLineBasicInformation"/>
+				<xs:element ref="OrderingEntityInformation"/>
+				<xs:element ref="MaximumValueDetails"/>
+				<xs:element ref="PurchasingInformation" minOccurs="0"/>
+				<xs:element ref="CurrencyInformation" minOccurs="0"/>
+				<xs:element ref="OtherExchangeDetails" minOccurs="0"/>
+				<xs:element ref="ReleaseDetails" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BOLineBasicInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BLANKETORDERLINEID"/>
+				<xs:element ref="dsf:BLANKETORDERLINETYPE"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OrderingEntityInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element ref="CommodityInformation"/>
+					<xs:element ref="PartInformation"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PartInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PARTID"/>
+				<xs:element ref="dsf:PARTINSPECTIONREQUIRED"/>
+				<xs:element ref="dsf:SUPPLIERREFERENCE" minOccurs="0"/>
+				<xs:element ref="dsf:PARTCONDITIONTEMPLATECONDITIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:LONGDESCRIPTION" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CommodityInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:COMMODITYID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MaximumValueDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element ref="dsf:MAXIMUMLINEAMOUNT"/>
+					<xs:element ref="dsf:MAXIMUMLINEQUANTITY"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PurchasingInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ORDERQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:UNITPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:UOMID" minOccurs="0"/>
+				<xs:element ref="dsf:PARTCONVERSIONFACTOR" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CurrencyInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+				<xs:element ref="dsf:EXCHRATE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OtherExchangeDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EXCHTODUAL" minOccurs="0"/>
+				<xs:element ref="dsf:EXCHFROMDUAL" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReleaseDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:NUMRELEASED" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENTLINEAMOUNTRELEASED" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENTLINEQUANTITYRELEASED" minOccurs="0"/>
+				<xs:element ref="dsf:LASTPURCHASEORDERID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

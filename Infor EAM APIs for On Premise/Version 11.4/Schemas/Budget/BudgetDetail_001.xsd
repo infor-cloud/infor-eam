@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity  BudgetDetail_001.
+====================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/BudgetDetail_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns="http://schemas.datastream.net/MP_entities/BudgetDetail_001" elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Begining of BudgetDetail_001 ======================================-->
+	<xs:element name="BudgetDetail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BUDGETSID" minOccurs="0"/>
+				<xs:element ref="dsf:BUDGETDETAILID" minOccurs="0"/>
+				<xs:element ref="PARENTBUDGETDETAILID" minOccurs="0"/>
+				<xs:element ref="BudgetEntityData" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PARENTBUDGETDETAILID">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BUDGETDETAILID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BudgetEntityData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BUDGETENTITYID" minOccurs="0"/>
+				<xs:element ref="dsf:BUDGETAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENTBUDGET" minOccurs="0"/>
+				<xs:element ref="dsf:CALCULATEDBUDGET" minOccurs="0"/>
+				<xs:element ref="dsf:ORIGINALAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="isgroup" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

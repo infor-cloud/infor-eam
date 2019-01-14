@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+    This schema defines MP entity WorkOrderEquipment
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WorkOrderEquipment_001" xmlns="http://schemas.datastream.net/MP_entities/WorkOrderEquipment_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===========================================================================================-->
+	<!--====  Begining of WorkOrderEquipment_001 ===========================================-->
+	<xs:element name="WorkOrderEquipment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:sequence>
+					<xs:element ref="dsf:WORKORDERID"/>
+					<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+					<xs:element ref="AdditionalDetails" minOccurs="0"/>
+				</xs:sequence>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AdditionalDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:RELATEDWORKORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:OBJTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:SAFETY" minOccurs="0"/>
+				<xs:element ref="dsf:WARRANTY" minOccurs="0"/>
+				<xs:element ref="LinearReferenceInfo" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LinearReferenceInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LINEARREFERENCEEVENT"/>
+				<xs:element ref="dsf:INSPECTIONDIRECTIONCODE" minOccurs="0"/>
+                <xs:element ref="dsf:FLOWCODE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

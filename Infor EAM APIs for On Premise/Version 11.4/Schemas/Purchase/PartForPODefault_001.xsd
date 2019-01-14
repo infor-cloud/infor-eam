@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function entity PartForPODefault
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PartForPODefault_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/PartForPODefault_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====================  Begining of PartForPODefault ====================-->
+	<xs:element name="PartForPODefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PURCHASEORDERTYPE"/>
+				<xs:element ref="dsf:PURCHASEORDERSTATUS"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:SEQUENCENUMBER"/>
+				<xs:element ref="dsf:CURRENCYID"/>
+				<xs:element ref="dsf:EXCHRATE"/>
+				<xs:element ref="dsf:DUEDATE"/>
+				<xs:element ref="dsf:ISPOLINEACTIVE"/>
+				<xs:element ref="dsf:FREEZE" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:DELIVERYADDRESSID" minOccurs="0"/>
+				<xs:element ref="dsf:BASECURRENCYID"/>	
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,71 @@
+<?xml	version="1.0"	encoding="UTF-8"?>
+<!--	================================================================================
+	Copyright	(c)	2012	Infor.	All	rights	reserved.
+	The	word	and	design	marks	set	forth	herein	are	trademarks	and/or	registered
+	trademarks	of	Infor	and/or	related	affiliates	and	subsidiaries.	All	rights	reserved.
+	All	other	trademarks	listed	herein	are	the	property	of	their	respective	owners.	www.infor.com.
+	
+	This	schema	defines	MP	entity	OperatorChecklist_001
+==================================================================================-->
+<xs:schema	targetNamespace="http://schemas.datastream.net/MP_entities/OperatorChecklist_001"
+	xmlns="http://schemas.datastream.net/MP_entities/OperatorChecklist_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element	name="OperatorChecklist">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element	ref="dsf:OPERATORCHECKLISTID"/>
+				<xs:element	ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element	ref="dsf:TASKLISTID"/>
+				<xs:element	ref="dsf:STATUS" minOccurs="0"/>
+				<xs:element	ref="dsf:EQUIPMENTCLASSID" minOccurs="0"/>
+				<xs:element	ref="dsf:JOBPLANID" minOccurs="0"/>
+				<xs:element	ref="dsf:STARTDATE" minOccurs="0"/>
+				<xs:element	ref="dsf:ENDDATE" minOccurs="0"/>
+				<xs:element	ref="dsf:ADVICENUMBER" minOccurs="0"/>
+				<xs:element	ref="dsf:CREATEDBY" minOccurs="0"/>
+				<xs:element	ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element	ref="dsf:UPDATEDBY" minOccurs="0"/>
+				<xs:element	ref="dsf:DATEUPDATED" minOccurs="0"/>
+				<xs:element	ref="dsf:PERFORMEDBYESIGN" minOccurs="0"/>
+				<xs:element	ref="dsf:REVIEWEDBYESIGN" minOccurs="0"/>
+				<xs:element	ref="UserDefinedFields" minOccurs="0"/>
+				<xs:element ref="dsf:FUNCTIONCODE" minOccurs="0"/>
+				<xs:element	ref="JobPlans" minOccurs="0"/>
+				<xs:element ref="dsf:CONDITIONOPTION" minOccurs="0"/>
+				<xs:element ref="dsf:REVIEWRESPONSIBILITY" minOccurs="0"/>
+				<xs:element ref="dsf:PERFORMBYRESPONSIBILITY" minOccurs="0"/>
+				<xs:element ref="dsf:USERRESPONSIBILITY" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute	name="recordid"	type="xs:long"/>
+			<xs:attribute name="view_only_access" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element	name="UserDefinedFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element	ref="dsf:UDFCHAR01" minOccurs="0"/>
+				<xs:element	ref="dsf:UDFCHAR02" minOccurs="0"/>
+				<xs:element	ref="dsf:UDFCHAR03" minOccurs="0"/>
+				<xs:element	ref="dsf:UDFCHAR04" minOccurs="0"/>
+				<xs:element	ref="dsf:UDFNUM01" minOccurs="0"/>
+				<xs:element	ref="dsf:UDFNUM02" minOccurs="0"/>
+				<xs:element	ref="dsf:UDFDATE01" minOccurs="0"/>
+				<xs:element	ref="dsf:UDFDATE02" minOccurs="0"/>
+				<xs:element	ref="dsf:UDFCHKBOX01" minOccurs="0"/>
+				<xs:element	ref="dsf:UDFCHKBOX02" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element	name="JobPlans">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element	ref="dsf:JOBPLANID" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

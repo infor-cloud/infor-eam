@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<definitions targetNamespace="http://wsdls.datastream.net/MP3156_SyncEquipmentHospitalityFacility_001" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wssi="http://schemas.xmlsoap.org/ws/2002/04/secext" xmlns:resp0="http://schemas.datastream.net/MP_results/MP3156_001" xmlns:hdr="http://schemas.datastream.net/MP_functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdls.datastream.net/MP3156_SyncEquipmentHospitalityFacility_001" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rqst0="http://schemas.datastream.net/MP_functions/MP3156_001">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:import namespace="http://schemas.datastream.net/MP_functions" schemaLocation="../../schemas/headers.xsd"/><xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/secext" schemaLocation="../../schemas/secext.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_functions/MP3156_001" schemaLocation="../../schemas/Asset/MP3156_SyncEquipmentHospitalityFacility_001.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_results/MP3156_001" schemaLocation="../../schemas/Asset/MP3156_SyncEquipmentHospitalityFacility_001_Result.xsd"/></xsd:schema>
+  </types>
+  <message name="SyncEquipmentHospitalityFacilityRequestMsg">
+    <part name="SyncEquipmentHospitalityFacilityRequestMsg" element="rqst0:MP3156_SyncEquipmentHospitalityFacility_001"/>
+  </message>
+  <message name="tenantHeader">
+    <part name="tenantHeader" element="hdr:Tenant"/>
+  </message>
+  <message name="SyncEquipmentHospitalityFacilityResponseMsg">
+    <part name="SyncEquipmentHospitalityFacilityResponseMsg" element="resp0:MP3156_SyncEquipmentHospitalityFacility_001_Result"/>
+  </message>
+  <message name="sessionHeader">
+    <part name="sessionHeader" element="hdr:Session"/>
+  </message>
+  <message name="messageConfigHeader">
+    <part name="messageConfigHeader" element="hdr:MessageConfig"/>
+  </message>
+  <message name="organizationHeader">
+    <part name="organizationHeader" element="hdr:Organization"/>
+  </message>
+  <message name="sessionScenarioHeader">
+    <part name="sessionScenarioHeader" element="hdr:SessionScenario"/>
+  </message>
+  <message name="securityHeader">
+    <part name="securityHeader" element="wssi:Security"/>
+  </message>
+  <portType name="SyncEquipmentHospitalityFacilityPT">
+    <operation name="SyncEquipmentHospitalityFacilityOp">
+      <input name="SyncEquipmentHospitalityFacilityRequestMsg" message="tns:SyncEquipmentHospitalityFacilityRequestMsg"/>
+      <output name="SyncEquipmentHospitalityFacilityResponseMsg" message="tns:SyncEquipmentHospitalityFacilityResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="SyncEquipmentHospitalityFacilitySoapBinding" type="tns:SyncEquipmentHospitalityFacilityPT">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="SyncEquipmentHospitalityFacilityOp">
+      <wsdlsoap:operation soapAction="processMessage"/>
+      <input name="SyncEquipmentHospitalityFacilityRequestMsg">
+        <wsdlsoap:header message="tns:organizationHeader" part="organizationHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:securityHeader" part="securityHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionScenarioHeader" part="sessionScenarioHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:messageConfigHeader" part="messageConfigHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:tenantHeader" part="tenantHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="SyncEquipmentHospitalityFacilityRequestMsg" use="literal"/>
+      </input>
+      <output name="SyncEquipmentHospitalityFacilityResponseMsg">
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="SyncEquipmentHospitalityFacilityResponseMsg" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SyncEquipmentHospitalityFacilityService">
+    <port name="SyncEquipmentHospitalityFacilitySoapBinding" binding="tns:SyncEquipmentHospitalityFacilitySoapBinding">
+      <wsdlsoap:address location="http://localhost/axis/services/EWSConnector"/>
+    </port>
+  </service>
+</definitions>

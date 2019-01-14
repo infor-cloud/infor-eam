@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- ================================================================================
+    This schema defines MP business function result MP0405_GetClause_001_Result
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0405_001" 
+           xmlns:dse-clause="http://schemas.datastream.net/MP_entities/Clause_001" 
+           xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://schemas.datastream.net/MP_results/MP0405_001" 
+           elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" 
+        schemaLocation="../MP_fields.xsd"/>
+        <xs:import namespace="http://schemas.datastream.net/MP_entities/Clause_001" 
+        schemaLocation="Clause_001.xsd"/>
+        <!--=============================================================================-->
+        <!--================  Begining of MP0405_GetClause_001_Result ================-->
+        <xs:element name="MP0405_GetClause_001_Result">
+                <xs:complexType>
+                        <xs:sequence>
+                                <xs:element ref="ResultData"/>
+                        </xs:sequence>
+                </xs:complexType>
+        </xs:element>
+        <xs:element name="ResultData">
+                <xs:complexType>
+                        <xs:sequence>
+                                <xs:element ref="dse-clause:Clause"/>
+                        </xs:sequence>
+                </xs:complexType>
+        </xs:element>
+</xs:schema>

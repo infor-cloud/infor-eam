@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by Mi Zhou (Development) -->
+<!-- ================================================================================
+    This schema defines MP entity Invoice
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Invoice_001" xmlns:dse-InvoiceVoucherUtilityBills="http://schemas.datastream.net/MP_entities/InvoiceVoucherUtilityBills_001" xmlns:dse-invline="http://schemas.datastream.net/MP_entities/InvoiceLine_001" xmlns:dse-invdistribution="http://schemas.datastream.net/MP_entities/InvoiceDistribution_001" xmlns:dse-acctdetail="http://schemas.datastream.net/MP_entities/AccountDetail_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/Invoice_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/AccountDetail_001" schemaLocation="AccountDetail_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/InvoiceDistribution_001" schemaLocation="InvoiceDistribution_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/InvoiceLine_001" schemaLocation="InvoiceLine_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/InvoiceVoucherUtilityBills_001" schemaLocation="InvoiceVoucherUtilityBills_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of Invoice_001 ======================================-->
+	<xs:element name="Invoice">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:INVOICEID"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:PARENTINVOICEID" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID"/>
+				<xs:element ref="dsf:INVOICETYPE"/>
+				<xs:element ref="dsf:AUTHORIZER" minOccurs="0"/>
+				<xs:element ref="dsf:EXTRACHARGE" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID"/>
+				<xs:element ref="dsf:EXCHANGE"/>
+				<xs:element ref="dsf:INVOICEDATE"/>
+				<xs:element ref="dsf:DISCOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:PAYDATE" minOccurs="0"/>
+				<xs:element ref="dsf:INVOICEREFERENCE"/>
+				<xs:element ref="dsf:RECORDDATE"/>
+				<xs:element ref="dsf:MATCHDATE" minOccurs="0"/>
+				<xs:element ref="dsf:APPROVEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:TAXAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:INVOICETOTAL" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCESYSTEM" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCECODE" minOccurs="0"/>
+				<xs:element ref="dsf:INTERFACE" minOccurs="0"/>
+				<xs:element ref="dsf:PAYSUPPLIER" minOccurs="0"/>
+				<xs:element ref="dsf:PAIDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:PURCHASEORDERLINEID" minOccurs="0"/>
+				<xs:element ref="dsf:PREMATCHUSER" minOccurs="0"/>
+				<xs:element ref="dsf:ISRETURN" minOccurs="0"/>
+				<xs:element ref="dsf:ISDELETE" minOccurs="0"/>
+				<xs:element ref="dsf:RSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:RTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:EXCHFROMDUAL" minOccurs="0"/>
+				<xs:element ref="dsf:EXCHTODUAL" minOccurs="0"/>
+				<xs:element ref="dsf:COMMENT" minOccurs="0" maxOccurs="500"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dse-invline:DistributionDetails" minOccurs="0"/>
+				<xs:element ref="InvoiceLines" minOccurs="0"/>
+				<xs:element ref="UtilityBills" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="user_entity" type="xs:string"/>
+			<xs:attribute name="system_entity" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InvoiceLines">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-invline:InvoiceLine" maxOccurs="500"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UtilityBills">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-InvoiceVoucherUtilityBills:InvoiceVoucherUtilityBills" maxOccurs="500"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

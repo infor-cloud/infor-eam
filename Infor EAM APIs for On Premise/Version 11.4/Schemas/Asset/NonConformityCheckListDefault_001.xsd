@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2016 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+    This schema defines MP business function entity NonConformityCheckListDefault
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/NonConformityCheckListDefault_001"
+	xmlns="http://schemas.datastream.net/MP_entities/NonConformityCheckListDefault_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="NonConformityCheckListDefault">
+		<xs:complexType>
+			<xs:sequence>
+                <xs:element ref="dsf:TASKSID" minOccurs="0"/>
+                <xs:element ref="dsf:PERFORMEDBYESIGN" minOccurs="0"/>
+                <xs:element ref="dsf:REVIEWEDBYESIGN" minOccurs="0"/>
+                <xs:element ref="dsf:PBSIGNATURETYPE" minOccurs="0"/>
+                <xs:element ref="dsf:RBSIGNATURETYPE" minOccurs="0"/>
+                <xs:element ref="dsf:NONCONFORMITYOBSERVATIONID" minOccurs="0"/>
+			</xs:sequence>
+            <xs:attribute name="has_readonly_department_security" type="dsf:FLAG_Type" default="false"/>
+            <xs:attribute name="nonconformity_status_can_update" type="dsf:FLAG_Type" default="true"/>
+			<xs:attribute name="nonconformity_has_checklists" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

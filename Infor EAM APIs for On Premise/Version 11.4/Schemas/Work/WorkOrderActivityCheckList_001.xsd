@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth 
+	herein are trademarks and/or registered trademarks of Infor and/or related affiliates
+	and subsidiaries. All rights reserved. All other trademarks listed herein are the
+	property of their respective owners. www.infor.com
+
+    This schema defines MP entity WorkOrderActivityCheckList
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WorkOrderActivityCheckList_001"
+	xmlns="http://schemas.datastream.net/MP_entities/WorkOrderActivityCheckList_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:of="http://www.openapplications.org/oagis_fields"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="WorkOrderActivityCheckList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CHECKLISTCODE"/>
+				<xs:element ref="dsf:ENTITYKEY" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVITYID" minOccurs="0"/>
+				<xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/>
+				<xs:element ref="dsf:SEQUENCE" minOccurs="0"/>
+				<xs:element ref="dsf:DESCRIPTION" minOccurs="0"/>
+				<xs:element ref="dsf:COMPLETED" minOccurs="0"/>
+				<xs:element ref="dsf:NOTES" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+                <xs:element ref="dsf:FINDINGID" minOccurs="0"/>
+                <xs:element ref="dsf:RESULTVALUE" minOccurs="0"/>
+                <xs:element ref="dsf:YES" minOccurs="0"/>
+                <xs:element ref="dsf:NO" minOccurs="0"/>
+                <xs:element ref="dsf:FINALOCCURANCE" minOccurs="0"/>
+                <xs:element ref="dsf:FOLLOWUP" minOccurs="0"/>
+				<xs:element ref="dsf:LINEARREFERENCEEVENT" minOccurs="0"/>
+				<xs:element ref="dsf:OKFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRSNEEDED" minOccurs="0"/>
+				<xs:element ref="dsf:RESOLUTIONID" minOccurs="0"/>
+				<xs:element ref="dsf:REGULATED" minOccurs="0"/>
+				<xs:element ref="dsf:HASCOMMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:COLOR" minOccurs="0"/>
+				<xs:element ref="dsf:REFERENCE" minOccurs="0"/>
+				<xs:element ref="dsf:GOOD" minOccurs="0"/>
+				<xs:element ref="dsf:POOR" minOccurs="0"/>
+				<xs:element ref="dsf:ADJUSTED" minOccurs="0"/>
+				<xs:element ref="dsf:NONCONFORMITYFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:MINIMUMSLIDERVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:MAXIMUMSLIDERVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:CALCULATEDVALUESOURCE" minOccurs="0"/>
+				<xs:element ref="dsf:CALCULATEDVALUEFORMULA" minOccurs="0"/>
+				<xs:element ref="dsf:DIRECTIONOPTION" minOccurs="0"/>
+				<xs:element ref="dsf:CONDITIONOPTION" minOccurs="0"/>
+				<xs:element ref="dsf:NOTAPPLICABLEOPTION" minOccurs="0"/>
+				<xs:element ref="dsf:CHECKLISTSEVERITY" minOccurs="0"/>
+				<xs:element ref="dsf:NONCONFORMITYTYPEID" minOccurs="0"/>
+				<xs:element ref="dsf:NONCONFORMITYCHECKLIST" minOccurs="0"/>
+				<xs:element ref="dsf:TOLERANCESEVERITY" minOccurs="0"/>
+				<xs:element ref="dsf:TOLERANCENONCONFORMITYTYPEID" minOccurs="0"/>
+				<xs:element ref="dsf:TOLERANCECREATENONCONFORMITY" minOccurs="0"/>
+				<xs:element ref="dsf:CHECKLISTRESPONSIBILITY" minOccurs="0"/>
+				<xs:element ref="dsf:MEASUREMENTRESPONSIBILITY" minOccurs="0"/>
+				<xs:element ref="dsf:METRICFRACTIONSLIDER" minOccurs="0"/>
+				<xs:element ref="dsf:HIDEFOLLOWUP" minOccurs="0"/>
+				<xs:element ref="dsf:HIDELINEARFIELDS" minOccurs="0"/>
+				<xs:element ref="dsf:ENABLENONCONFORMITIES" minOccurs="0"/>
+				<xs:element ref="dsf:MOBILEDATEUPDATED" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/TempWorkOrder_001"
+	   xmlns="http://schemas.datastream.net/MP_entities/TempWorkOrder_001"
+	   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	   xmlns:of="http://www.openapplications.org/oagis_fields"
+	   xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	   elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="TempWorkOrder">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="TEMPWORKORDERID"/>
+				<xs:element ref="dsf:SELECT"/>
+				<xs:element ref="dsf:EVTISSTYPE" minOccurs="0"/>
+				<xs:element name="REPORTSELECTOR" type="xs:long"/>
+				<xs:element ref="dsf:NEWSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:WORKPACKAGE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TEMPWORKORDERID">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SEQUENCENUMBER"/>
+				<xs:element ref="dsf:JOBNUM"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

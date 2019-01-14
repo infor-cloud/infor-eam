@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2009 Infor.All rights reserved.The word and design marks set
+    forth herein are trademarks and/or registered trademarks of Infor and/or
+    related affiliates and subsidiaries.All rights reserved.All other trademarks
+    listed herein are the property of their respective owners.www.infor.com.
+
+    This schema defines MP business function request MP5044_GenerateCampaignEquipmentWorkOrders_001
+ ================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP5044_001"
+    xmlns="http://schemas.datastream.net/MP_functions/MP5044_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    xmlns:dse-cam="http://schemas.datastream.net/MP_entities/CampaignEquipmentWorkOrder_001"
+    elementFormDefault="qualified">
+    <!--============================= Imported Schemas ============================================-->
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <xs:import namespace="http://schemas.datastream.net/MP_entities/CampaignEquipmentWorkOrder_001" schemaLocation="CampaignEquipmentWorkOrder_001.xsd"/>
+    <!--===========================================================================================-->
+    <!--====================  Beginning of MP5044_GenerateCampaignEquipmentWorkOrders_001========-->
+    <xs:element name="MP5044_GenerateCampaignEquipmentWorkOrders_001">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dse-cam:CampaignEquipmentWorkOrder"/>
+                <xs:element ref="dsf:ESIGNATURE" minOccurs="0"/>
+                <xs:element ref="CampaignEquipmentList"/>
+            </xs:sequence>
+            <xs:attribute name="verb" type="dsf:VERB_Type" fixed="Generate"/>
+            <xs:attribute name="noun" type="dsf:NOUN_Type" fixed="CampaignEquipmentWorkOrders"/>
+            <xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CampaignEquipmentList">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="EquipmentDetail" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EquipmentDetail">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:EQUIPMENTID"/>
+                <xs:element ref="dsf:ESIGNATURE" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+

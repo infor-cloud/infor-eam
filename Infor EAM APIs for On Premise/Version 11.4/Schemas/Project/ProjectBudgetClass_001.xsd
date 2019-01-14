@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity ProjectBudgetClass
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ProjectBudgetClass_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/ProjectBudgetClass_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of InvoiceBudgetClass_001 ======================================-->
+	<xs:element name="ProjectBudgetClass">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PROJECTID"/>
+				<xs:element ref="dsf:PROJBUD"/>
+				<xs:element ref="dsf:PROJBUDAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:PROJBUDDESC" minOccurs="0"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:COSTAREA" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCENTER" minOccurs="0"/>
+				<xs:element ref="dsf:ACCOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:ETC" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="user_entity" type="xs:string"/>
+			<xs:attribute name="system_entity" type="xs:string"/>			
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

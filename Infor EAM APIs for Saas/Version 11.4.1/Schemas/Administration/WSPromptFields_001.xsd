@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity - WSPromptFields
+======================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WSPromptFields_001" xmlns="http://schemas.datastream.net/MP_entities/WSPromptFields_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dse-pf="http://schemas.datastream.net/MP_entities/WSPromptField_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/WSPromptField_001" schemaLocation="WSPromptField_001.xsd"/>
+	<!--===============================================================================-->
+	<!--======================  Begining of WSPromptFields_001======= ===================-->
+	<xs:element name="WSPromptFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-pf:WSPromptField" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="GROUPCUSTOMFIELDS" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="GROUPUDFENTITIES" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GROUPCUSTOMFIELDS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WSPROMPTPROCESSGROUP"/>
+				<xs:element ref="dsf:ENTITY"/>
+				<xs:element ref="dsf:KEYCODEFIELDS"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GROUPUDFENTITIES">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WSPROMPTPROCESSGROUP"/>
+				<xs:element ref="dsf:ENTITY"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+         This schema defines MP business function request MP0349_GetPositionStructure_002
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0349_002"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://schemas.datastream.net/MP_functions/MP0349_002" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <!--====  Begining of MP0349_GetPositionStructure_002 ======================================-->
+    <xs:element name="MP0349_GetPositionStructure_002">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:POSITIONID"/>
+            </xs:sequence>
+            <xs:attribute name="destination_xpath" type="xs:string"/>
+            <xs:attribute name="ROWNUM" type="xs:long"/>
+            <xs:attribute name="verb" type="dsf:VERB_Type" fixed="Get"/>
+            <xs:attribute name="noun" type="dsf:NOUN_Type" fixed="PositionStructure"/>
+            <xs:attribute name="version" type="dsf:VERSION" fixed="002"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

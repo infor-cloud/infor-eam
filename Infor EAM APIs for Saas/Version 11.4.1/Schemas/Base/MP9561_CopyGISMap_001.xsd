@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--================================================================================
+	Copyright (c) 2010 Infor.All rights reserved.The word and design marks set
+	forth herein are trademarks and/or registered trademarks of Infor and/or
+	related affiliates and subsidiaries.All rights reserved.All other trademarks
+	listed herein are the property of their respective owners.www.infor.com.
+	This schema defines MP entity GISMap_001
+ =================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP9561_001" 
+	xmlns="http://schemas.datastream.net/MP_functions/MP9561_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--==========================================================================-->
+	<!--====  Begining of MP9561_CopyGISMap_001 ==================================-->
+	<xs:element name="MP9561_CopyGISMap_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CopyGISMapDetails"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Copy"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="GISMap"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CopyGISMapDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="OLDGISMAPID"/>
+				<xs:element ref="NEWGISMAPID"/>
+				<xs:element ref="dsf:COPYPARAMETERS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYCOMMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYDOCUMENTS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OLDGISMAPID">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:GISMAPID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NEWGISMAPID">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:GISMAPID"/>
+			</xs:sequence>
+		</xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--=================================================================== 
+    Copyright (c) 2018 Infor. All rights reserved. The word and design marks set forth 
+    herein are trademarks and/or registered trademarks of Infor and/or related 
+    affiliates and subsidiaries. All rights reserved. All other trademarks listed 
+    herein are the property of their respective owners. www.infor.com. 
+    
+    This schema defines MP entity SM SafetyMatrix
+    =================================================================== -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/SafetyMatrix_001"
+    xmlns="http://schemas.datastream.net/MP_entities/SafetyMatrix_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields"
+        schemaLocation="../MP_fields.xsd" />
+    <!--=============================================================================== -->
+    <xs:element name="SafetyMatrix">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:SAFETYMATRIXID" />
+                <xs:element ref="dsf:SAFETYHAZARDID" />
+                <xs:element ref="dsf:HAZARDTYPE" minOccurs="0" />
+                <xs:element ref="dsf:SAFETYPRECAUTIONID" />
+                <xs:element ref="dsf:TIMINGID" minOccurs="0" />
+                <xs:element ref="dsf:SEQUENCENUM" minOccurs="0" />
+                <xs:element ref="dsf:HEALTHHAZARDID" minOccurs="0" />
+                <xs:element ref="dsf:FLAMMABILITYID" minOccurs="0" />
+                <xs:element ref="dsf:INSTABILITYID" minOccurs="0" />
+                <xs:element ref="dsf:SPECIALHAZARDID" minOccurs="0" />
+                <xs:element ref="dsf:CREATEDDATE" minOccurs="0" />
+                <xs:element ref="dsf:CREATEDBY" minOccurs="0" />
+                <xs:element ref="dsf:DATEUPDATED" minOccurs="0" />
+                <xs:element ref="dsf:UPDATEDBY" minOccurs="0" />
+                <xs:element ref="dsf:EQUIPMENTCLASSID" minOccurs="0" />
+                <xs:element ref="dsf:CATEGORYID" minOccurs="0" />
+                <xs:element ref="dsf:EQUIPMENTID" minOccurs="0" />
+                <xs:element ref="dsf:APPLYTOCHILDREN" minOccurs="0" />
+                <xs:element ref="dsf:SAFETYPPMID" minOccurs="0" />
+                <xs:element ref="dsf:STANDARDWO" minOccurs="0" />
+                <xs:element ref="dsf:TASKLISTID" minOccurs="0" />
+                <xs:element ref="dsf:DATEREVIEWREQUIRED" minOccurs="0" />
+                <xs:element ref="dsf:REVIEWEDBYESIGN" minOccurs="0" />
+                <xs:element ref="dsf:DATEREVIEWED" minOccurs="0" />
+                <xs:element ref="dsf:REVIEWTRIGGER" minOccurs="0" />
+                <xs:element ref="dsf:JOBPLANID" minOccurs="0" />
+                <xs:element ref="dsf:StandardUserDefinedFields"  minOccurs="0" />
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

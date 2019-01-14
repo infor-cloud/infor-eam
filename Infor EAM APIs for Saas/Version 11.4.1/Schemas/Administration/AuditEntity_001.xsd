@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+    This schema defines MP entity AuditEntity
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/AuditEntity_001" xmlns="http://schemas.datastream.net/MP_entities/AuditEntity_001"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--=====================================================================-->
+	<!--====  Begining of AuditEntity_001 ======================================-->
+	<xs:element name="AuditEntity">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ENTITYID"/>
+				<xs:element ref="FORMATTRIBUTES" minOccurs="0"/>
+				<xs:element ref="CMTCFAUDITFLAGS"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FORMATTRIBUTES">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TABLENAME"/>
+				<xs:element name="STATUSENTITY" type="dsf:MPENTITY_Type" minOccurs="0"/>
+				<xs:element name="TYPEENTITY" type="dsf:MPENTITY_Type" minOccurs="0"/>
+				<xs:element name="CLASSIFIABLE" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="CUSTOMFIELDS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="MULTILIINGUAL" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="COMMENTS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="ADDRESSES" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="AUDITS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="DOCUMENT" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="ERECORD" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="PERMITS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="PARTSASSOCIATED" type="dsf:FLAG_Type" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CMTCFAUDITFLAGS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AUDITCUSTOMFIELDS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="AUDITCOMMENTS" type="dsf:FLAG_Type" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

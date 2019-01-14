@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function entity PurchasingContractPart
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PurchasingContractPart_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/PurchasingContractPart_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>	
+	<!--====  Begining of PurchasingContractPart_001 ======================================-->
+	<xs:element name="PurchasingContractPart">	
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PURCHASINGCONTRACTPARTID"/>
+				<xs:element ref="dsf:PURCHASEUOM"/>
+				<xs:element ref="dsf:UOMID" minOccurs="0"/>
+                                <xs:element ref="dsf:CONVERSIONFACTOR"/>
+				<xs:element ref="dsf:SUPPLIERREFERENCE"/>				
+				<xs:element ref="dsf:NETPRICE"/>
+				<xs:element ref="dsf:LEADTIMES" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PARTCONDITIONTEMPLATECONDITIONCODE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

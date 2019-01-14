@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- ================================================================================
+    This schema defines MP entity InvoiceAllocation
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/InvoiceAllocation_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/InvoiceAllocation_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of AccountDetail_001 ======================================-->
+	<xs:element name="InvoiceAllocation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:INVOICEALLOCATIONPK"/>
+				<xs:element ref="dsf:INVOICELINEID"/>
+				<xs:element ref="dsf:PARTID" minOccurs="0"/>
+				<xs:element ref="dsf:QTYTOALLOCATE" minOccurs="0"/>
+				<xs:element ref="dsf:ORIGINALUNALLOCATEDQTY" minOccurs="0"/>
+				<xs:element ref="dsf:UNALLOCATEDQTY" minOccurs="0"/>
+				<xs:element ref="dsf:UNALLOCATEDUNITCOST" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVEALLOCATION" minOccurs="0"/>
+				<xs:element ref="dsf:DATEINACTIVATED" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERACTIVITY" minOccurs="0"/>
+				<xs:element ref="dsf:ISSUEDQTY" minOccurs="0"/>
+				<xs:element ref="dsf:UNALLOCATEDTOTALCOST" minOccurs="0"/>
+				<xs:element ref="dsf:TOTALCURRENCYID" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOCATEDQTY" minOccurs="0"/>
+				<xs:element ref="dsf:PRIMARYMANUFACTURERID" minOccurs="0"/>
+				<xs:element ref="dsf:PRIMARYMANUFACTURERPARTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:double"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!--===================================================================
+   Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth herein are trademarks
+   and/or registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+   All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+   This schema defines the CapitalPlanRequest entity
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CapitalPlanRequest_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/CapitalPlanRequest_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====================  Begining of CapitalPlanRequest ====================-->
+	<xs:element name="CapitalPlanRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CAPITALPLANREQUESTID"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:PRIORITY" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:SUSTAINABLE" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:REQUESTEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+				<xs:element ref="dsf:SCHEDGROUP" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDLABORCOST" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDMATERIALCOST" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDTOTALCOST" minOccurs="0"/>
+				<xs:element ref="dsf:COSTAVOIDANCE" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+				<xs:element ref="dsf:APPROPRIATIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:REQUESTEDAPPROPRIATIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:MAJORGROUPELEMENTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:GROUPELEMENTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:INDIVIDUALELEMENTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:CODESTRUCTURE" minOccurs="0"/>
+				<xs:element ref="dsf:ADDITIONALINFO" minOccurs="0"/>
+				<xs:element ref="dsf:DEFAULTAPPROVER" minOccurs="0"/>
+				<xs:element ref="dsf:APPROVER" minOccurs="0"/>
+				<xs:element ref="dsf:APPROVEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:OBJECTIVEID" minOccurs="0"/>
+				<xs:element ref="dsf:RETURNONINVESTMENT" minOccurs="0"/>
+				<xs:element ref="dsf:NETPRESENTVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:INTERNALRATEOFRETURN" minOccurs="0"/>
+				<xs:element ref="dsf:NONCONFORMITYID" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="UserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+			<xs:attribute name="cctrspcvalidation" type="xs:string" default="D"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserDefinedFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UDFCHAR01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX05" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

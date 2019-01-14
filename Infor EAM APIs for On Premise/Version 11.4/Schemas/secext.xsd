@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<xsd:schema targetNamespace="http://schemas.xmlsoap.org/ws/2002/04/secext" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/ws/2002/04/secext"
+	xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/04/secext"
+	elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.2">
+
+	<xsd:element name="Security">
+
+	<xsd:annotation>
+
+	<xsd:documentation>
+
+                This element defines header block to use for security-relevant data directed at a specific SOAP actor.
+           
+</xsd:documentation>
+</xsd:annotation>
+
+	<xsd:complexType>
+
+	<xsd:sequence>
+
+	<xsd:any processContents="lax" minOccurs="0" maxOccurs="unbounded">
+
+	<xsd:annotation>
+
+	<xsd:documentation>
+
+                                The use of "any" is to allow extensibility and different forms of security data.
+                        
+</xsd:documentation>
+</xsd:annotation>
+</xsd:any>
+</xsd:sequence>
+<xsd:anyAttribute processContents="lax"/>
+</xsd:complexType>
+</xsd:element>
+
+	<xsd:element name="UsernameToken">
+
+	<xsd:complexType>
+
+	<xsd:sequence>
+<xsd:element ref="Username"/>
+<xsd:element ref="Password" minOccurs="0"/>
+</xsd:sequence>
+<xsd:attribute name="Id" type="xsd:ID"/>
+<xsd:attribute name="Tenant" type="xsd:string"/>
+<xsd:attribute name="ContainsTenant" type="xsd:string"/>
+<xsd:anyAttribute namespace="##other"/>
+</xsd:complexType>
+</xsd:element>
+
+	<xsd:element name="Username">
+
+	<xsd:complexType>
+
+	<xsd:simpleContent>
+
+	<xsd:extension base="xsd:string">
+<xsd:anyAttribute namespace="##other"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+	<xsd:element name="Password">
+
+	<xsd:complexType>
+
+	<xsd:simpleContent>
+
+	<xsd:extension base="xsd:string">
+<xsd:attribute name="Type" type="xsd:QName"/>
+<xsd:anyAttribute namespace="##other"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+	<xsd:element name="BinarySecurityToken">
+
+	<xsd:annotation>
+<xsd:documentation>A security token that is encoded in binary</xsd:documentation>
+</xsd:annotation>
+
+	<xsd:complexType>
+
+	<xsd:simpleContent>
+
+	<xsd:extension base="xsd:string">
+<xsd:anyAttribute namespace="##other" processContents="strict"/>
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+</xsd:element>
+
+	<xsd:element name="SecurityTokenReference">
+
+	<xsd:annotation>
+
+	<xsd:documentation>
+
+            This element is used reference a security token.
+            
+</xsd:documentation>
+</xsd:annotation>
+
+	<xsd:complexType>
+
+	<xsd:choice minOccurs="0" maxOccurs="unbounded">
+<xsd:element ref="Reference"/>
+<xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+</xsd:choice>
+<xsd:attribute name="Id" type="xsd:ID"/>
+<xsd:anyAttribute namespace="##other" processContents="lax"/>
+</xsd:complexType>
+</xsd:element>
+
+	<xsd:element name="Reference">
+
+	<xsd:complexType>
+<xsd:attribute name="URI" type="xsd:anyURI"/>
+</xsd:complexType>
+</xsd:element>
+
+	<xsd:simpleType name="PasswordTypeEnum">
+
+	<xsd:restriction base="xsd:QName">
+<xsd:enumeration value="wsse:PasswordText"/>
+<xsd:enumeration value="wsse:PasswordDigest"/>
+</xsd:restriction>
+</xsd:simpleType>
+
+	<xsd:simpleType name="ValueTypeEnum">
+
+	<xsd:restriction base="xsd:QName">
+<xsd:enumeration value="wsse:X509v3"/>
+<xsd:enumeration value="wsse:Kerberosv5TGT"/>
+<xsd:enumeration value="wsse:Kerberosv5ST"/>
+</xsd:restriction>
+</xsd:simpleType>
+
+	<xsd:simpleType name="EncodingTypeEnum">
+
+	<xsd:restriction base="xsd:QName">
+<xsd:enumeration value="wsse:Base64Binary"/>
+<xsd:enumeration value="wsse:HexBinary"/>
+</xsd:restriction>
+</xsd:simpleType>
+
+	<xsd:simpleType name="FaultcodeEnum">
+
+	<xsd:restriction base="xsd:QName">
+<xsd:enumeration value="wsse:UnsupportedSecurityToken"/>
+<xsd:enumeration value="wsse:UnsupportedAlgorithm"/>
+<xsd:enumeration value="wsse:InvalidSecurity"/>
+<xsd:enumeration value="wsse:InvalidSecurityToken"/>
+<xsd:enumeration value="wsse:FailedAuthentication"/>
+<xsd:enumeration value="wsse:FailedCheck"/>
+<xsd:enumeration value="wsse:SecurityTokenUnavailable"/>
+</xsd:restriction>
+</xsd:simpleType>
+</xsd:schema>
+

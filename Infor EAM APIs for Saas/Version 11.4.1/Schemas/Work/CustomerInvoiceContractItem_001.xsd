@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2012 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+  This schema defines MP business function entity CustomerInvoiceContractItem
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CustomerInvoiceContractItem_001"
+        xmlns="http://schemas.datastream.net/MP_entities/CustomerInvoiceContractItem_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="CustomerInvoiceContractItem">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:CUSTOMERINVOICECONTRACTITEMID"/>
+                    <xs:element ref="dsf:CUSTOMERCONTRACTINVOICEID"/>
+                    <xs:element ref="dsf:CONTRACTITEMID" minOccurs="0"/>
+                    <xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+                    <xs:element ref="dsf:PROJECTID" minOccurs="0"/>
+                    <xs:element ref="dsf:BUDGETID" minOccurs="0"/>
+                    <xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+                    <xs:element ref="dsf:CUSTOMERID" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICINGORGID" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICINGDESCRIPTION" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXID" minOccurs="0"/>
+                    <xs:element ref="dsf:CURRENCYCODE" minOccurs="0"/>                    
+                    <xs:element ref="dsf:EXCHRATE" minOccurs="0"/>
+                    <xs:element ref="dsf:ISERRORFOUND" minOccurs="0"/>
+                    <xs:element ref="dsf:NETAMOUNT" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTEDNET" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTMENTS" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXPERCENTAGE" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXAMOUNT" minOccurs="0"/>
+                    <xs:element ref="dsf:GROSSAMOUNT" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="recordid" type="xs:long"/>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+    Copyright (c) 2013 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business function entity PermitToWorkConflict
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PermitToWorkConflict_001"
+        xmlns="http://schemas.datastream.net/MP_entities/PermitToWorkConflict_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="PermitToWorkConflict">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:PERMITTOWORKCONFLICTID"/>
+                    <xs:element ref="dsf:STATUS" minOccurs="0"/>
+                    <xs:element ref="dsf:PERMITTOWORKTYPE" minOccurs="0"/>
+                    <xs:element ref="dsf:PERMITRISK" minOccurs="0"/>
+                    <xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+                    <xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+                    <xs:element ref="dsf:RESPONSIBLE" minOccurs="0"/>
+                    <xs:element ref="dsf:HOLDER" minOccurs="0"/>
+                    <xs:element ref="dsf:UNASSESSEDCONFLICTS" minOccurs="0"/>
+                    <xs:element ref="dsf:DATEREQUIRED" minOccurs="0"/> 
+                    <xs:element ref="dsf:VALIDUNTILDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:RESOLUTIONID" minOccurs="0"/>
+                    <xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+                    <xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+                    <xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+                    <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="recordid" type="xs:long"/>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

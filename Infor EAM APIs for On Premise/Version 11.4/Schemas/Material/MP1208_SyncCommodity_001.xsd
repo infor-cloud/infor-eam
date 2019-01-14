@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- ================================================================================
+    This schema defines MP business function request MP1208_SyncCommodity_001
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP1208_001" 
+           xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+           xmlns:dse-commodity="http://schemas.datastream.net/MP_entities/Commodity_001" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://schemas.datastream.net/MP_functions/MP1208_001" elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_entities/Commodity_001" schemaLocation="Commodity_001.xsd"/>
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--=======================================================================-->
+        <!--================  Begining of MP1208_SyncCommodity_001 ================-->
+        <xs:element name="MP1208_SyncCommodity_001">
+                <xs:complexType>
+                        <xs:sequence>
+                                <xs:element ref="dse-commodity:Commodity"/>
+                        </xs:sequence>
+                        <xs:attribute name="verb" type="dsf:VERB_Type" fixed="Sync"/>
+                        <xs:attribute name="noun" type="dsf:NOUN_Type" fixed="Commodity"/>
+                        <xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+                </xs:complexType>
+        </xs:element>
+</xs:schema>

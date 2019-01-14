@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2015 Infor. All rights reserved.
+	The word and design marks set forth herein are trademarks and/or registered
+	trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. www.infor.com.
+	
+	This schema defines MP business function result MP6461_GetMenuTranslation_001_Result
+==================================================================================--> 
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP6461_001"
+	xmlns="http://schemas.datastream.net/MP_results/MP6461_001" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	xmlns:dse-menutranslation="http://schemas.datastream.net/MP_entities/MenuTranslation_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/MenuTranslation_001" schemaLocation="MenuTranslation_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Beginning of MP6461_GetMenuTranslation_001_Result ======================================-->
+	<xs:element name="MP6461_GetMenuTranslation_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-menutranslation:MenuTranslation"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

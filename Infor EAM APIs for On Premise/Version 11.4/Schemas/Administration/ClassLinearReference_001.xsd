@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2014 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+  This schema defines MP entity ClassLinearReference_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ClassLinearReference_001"
+    xmlns="http://schemas.datastream.net/MP_entities/ClassLinearReference_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="ClassLinearReference">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:CLASSLINEARREFERENCEID"/>
+                <xs:element ref="ReferenceDetails"/>
+                <xs:element ref="OverviewDetails" minOccurs="0"/>
+                <xs:element ref="OffsetAndSizeDetails" minOccurs="0"/>
+                <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ReferenceDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:CLASSID"/>
+                <xs:element ref="dsf:TYPE"/>
+                <xs:element ref="dsf:LINEARREFERENCECLASSID" minOccurs="0"/>
+                <xs:element ref="dsf:PARTID" minOccurs="0"/>
+                <xs:element ref="dsf:PARTCONDITIONTEMPLATECONDITIONCODE" minOccurs="0"/>
+                <xs:element ref="dsf:GEOGRAPHICALREFERENCE" minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONDIRECTIONCODE" minOccurs="0"/>
+                <xs:element ref="dsf:FLOWCODE" minOccurs="0"/>
+                <xs:element ref="dsf:APPLYTOCHILDREN" minOccurs="0"/>
+                <xs:element ref="dsf:REPEATEVERYLENGTH" minOccurs="0"/>
+                <xs:element ref="dsf:REPEATEVERYUOMCODE" minOccurs="0"/>
+                <xs:element ref="dsf:STARTINGSEQUENCE" minOccurs="0"/>
+                <xs:element ref="SystemGeneratedFields" minOccurs="0"/>
+                <xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="OverviewDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:DISPLAYONOVERVIEW" minOccurs="0"/>
+                <xs:element ref="dsf:COLOR" minOccurs="0"/>
+                <xs:element ref="dsf:ICONCODE" minOccurs="0"/>
+                <xs:element ref="dsf:ICONPATH" minOccurs="0"/>
+            </xs:sequence>                
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="OffsetAndSizeDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:RELATIONSHIPTYPEID" minOccurs="0"/>
+                <xs:element ref="dsf:HORIZONTALOFFSET" minOccurs="0"/>
+                <xs:element ref="dsf:HORIZONTALOFFSETUOMCODE" minOccurs="0"/>
+                <xs:element ref="dsf:HORIZONTALOFFSETTYPEID" minOccurs="0"/>
+                <xs:element ref="dsf:VERTICALOFFSET" minOccurs="0"/>
+                <xs:element ref="dsf:VERTICALOFFSETUOMCODE" minOccurs="0"/>
+                <xs:element ref="dsf:VERTICALOFFSETTYPEID" minOccurs="0"/>
+                <xs:element ref="dsf:QTYPERUOM" minOccurs="0"/>
+                <xs:element ref="dsf:QTYUOMCODE" minOccurs="0"/>
+                <xs:element ref="dsf:WIDTH" minOccurs="0"/>
+                <xs:element ref="dsf:WIDTHUOMCODE" minOccurs="0"/>
+                <xs:element ref="dsf:HEIGHT" minOccurs="0"/>
+                <xs:element ref="dsf:HEIGHTUOMCODE" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SystemGeneratedFields">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+                <xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+                <xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+                <xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

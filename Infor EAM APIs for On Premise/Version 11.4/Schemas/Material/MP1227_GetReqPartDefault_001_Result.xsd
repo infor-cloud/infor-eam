@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function result MP1227_GetReqPartDefault_001_Result    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP1227_001"
+  xmlns="http://schemas.datastream.net/MP_results/MP1227_001"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:dse-ReqPartDefault="http://schemas.datastream.net/MP_entities/ReqPartDefault_001" 
+  xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<xs:import namespace="http://schemas.datastream.net/MP_entities/ReqPartDefault_001" schemaLocation="ReqPartDefault_001.xsd"/>
+<!--===============================================================================-->
+<!--====  Begining of MP1227_GetReqPartDefault_001_Result ======================================-->
+  <xs:element name="MP1227_GetReqPartDefault_001_Result">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ResultData"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResultData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dse-ReqPartDefault:ReqPartDefault"/>
+      </xs:sequence>
+      <xs:attribute name="multiorg" type="dsf:FLAG_Type" default="false"/>
+      <xs:attribute name="headercurrency" type="xs:string"/>
+      <xs:attribute name="headersupplier" type="xs:string"/>
+      <xs:attribute name="headersupplierorg" type="xs:string"/>
+      <xs:attribute name="headerstore" type="xs:string"/>
+      <xs:attribute name="ispartplannedinwo" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

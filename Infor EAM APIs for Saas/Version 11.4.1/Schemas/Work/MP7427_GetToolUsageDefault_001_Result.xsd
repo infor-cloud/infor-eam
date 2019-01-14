@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function result MP7427_GetToolUsageDefault_001_Result
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7427_001" xmlns="http://schemas.datastream.net/MP_results/MP7427_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP7427_GetToolUsageDefault_001_Result ======================================-->
+	<xs:element name="MP7427_GetToolUsageDefault_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WORKORDERID"/>
+				<xs:element ref="dsf:WORKORDEREXT"/>
+				<xs:element ref="dsf:TOOLID" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVITYCODE" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID"/>
+				<xs:element ref="dsf:DATEUSED"/>
+				<xs:element ref="dsf:TOOLHOURS"/>
+				<xs:element ref="dsf:DATEBOOKED"/>
+				<xs:element ref="dsf:TOOLQUANTITY"/>
+				<xs:element ref="dsf:TARIFF"/>
+				<xs:element ref="dsf:TOOLCOST"/>
+				<xs:element ref="dsf:SCHEDULEDHOURS" minOccurs="0"/>
+				<xs:element ref="dsf:SCHEDULEDQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID"/>
+				<xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

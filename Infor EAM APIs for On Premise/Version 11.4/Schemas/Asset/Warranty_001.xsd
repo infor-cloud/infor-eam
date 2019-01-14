@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity Warranty 
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Warranty_001" 
+xmlns="http://schemas.datastream.net/MP_entities/Warranty_001" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+elementFormDefault="qualified">
+		<xs:import namespace="http://schemas.datastream.net/MP_fields" 
+		schemaLocation="../MP_fields.xsd"/>
+		<!-- ======= Beginning of Warranty_001 ======= -->
+		<xs:element name="Warranty">
+				<xs:complexType>
+						<xs:sequence>
+								<xs:element ref="dsf:WARRANTYID"/>
+								<xs:element ref="dsf:WARRANTYTYPE"/>
+								<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+								<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+								<xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>
+								<xs:element ref="dsf:STARTDATE" minOccurs="0"/>
+								<xs:element ref="dsf:EXPIRATIONDATE" minOccurs="0"/>
+								<xs:element ref="dsf:WARRDURATION" minOccurs="0"/>
+								<xs:element ref="dsf:RENEWAL" minOccurs="0"/>
+								<xs:element ref="dsf:FILE" minOccurs="0"/>
+								<xs:element ref="dsf:FILESIZE" minOccurs="0"/>
+								<xs:element ref="dsf:FILETYPE" minOccurs="0"/>
+								<xs:element ref="dsf:REVISIONNUMBER" minOccurs="0"/>
+								<xs:element ref="dsf:REVISIONDATE" minOccurs="0"/>
+								<xs:element ref="dsf:PARENTDOCUMENT" minOccurs="0"/>
+								<xs:element ref="dsf:ORIGINALCODE" minOccurs="0"/>
+								<xs:element ref="dsf:DOCUMENTORIGIN" minOccurs="0"/>
+								<xs:element ref="dsf:DOCUMENTSIZE" minOccurs="0"/>
+								<xs:element ref="dsf:FILELOCATION" minOccurs="0"/>
+								<xs:element ref="dsf:PAGES" minOccurs="0"/>
+								<xs:element ref="CostCoverages" minOccurs="0" />
+								<xs:element ref="dsf:TYPE" minOccurs="0"/>
+								<xs:element ref="dsf:CONTROLNUM" minOccurs="0"/>
+								<xs:element ref="dsf:AGREEMENTTYPE" minOccurs="0"/>
+								<xs:element ref="dsf:ONSITEREPAIR" minOccurs="0"/>
+								<xs:element ref="dsf:LOANERPROVIDED" minOccurs="0"/>
+								<xs:element ref="dsf:RENEWALALERTEMAIL" minOccurs="0"/>
+								<xs:element ref="dsf:STARTDATEBASIS" minOccurs="0"/>
+								<xs:element ref="dsf:EXCLUDEPMWORKORDER" minOccurs="0"/>
+								<xs:element ref="dsf:PARTLISTREQUIREDFORWARRANTYCLAIM" minOccurs="0"/>
+								<xs:element ref="dsf:RMAREQUIRED" minOccurs="0"/>
+								<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+								<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attribute name="recordid" type="xs:long"/>
+						<xs:attribute name="user_entity" type="xs:string"/>
+						<xs:attribute name="system_entity" type="xs:string"/>
+				</xs:complexType>
+		</xs:element>
+		<xs:element name="CostCoverages">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dsf:LABORCOEFFICIENT" minOccurs="0" />
+							<xs:element ref="dsf:HIREDLABORCOEFFICIENT" minOccurs="0" />
+							<xs:element ref="dsf:SERVICECOEFFICIENT" minOccurs="0" />
+							<xs:element ref="dsf:STOCKITEMSCOEFFICIENT" minOccurs="0" />
+							<xs:element ref="dsf:DIRECTPURCHASESCOEFFICIENT" minOccurs="0" />
+							<xs:element ref="dsf:TOOLSCOEFFICIENT" minOccurs="0" />
+							<xs:element ref="dsf:FIXEDLABORRATE" minOccurs="0"/>
+							<xs:element ref="dsf:FIXEDLABORAMOUNT" minOccurs="0"/>
+							<xs:element ref="dsf:FIXEDSTOCKAMOUNT" minOccurs="0"/>
+							<xs:element ref="dsf:MAXLABORAMOUNT" minOccurs="0"/>
+							<xs:element ref="dsf:MAXSTOCKAMOUNT" minOccurs="0"/>
+							<xs:element ref="dsf:CURRENCYCODE" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+		</xs:element>
+</xs:schema>

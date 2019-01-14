@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+    This schema defines MP entity PartFailuresForWorkOrders
+ ============================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PartFailuresForWorkOrders_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/PartFailuresForWorkOrders_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of PartFailuresForWorkOrders_001 =================-->
+	<xs:element name="PartFailuresForWorkOrders">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PARTFAILURECODE"/>
+				<xs:element ref="dsf:WORKORDERID"/>
+				<xs:element ref="dsf:PARTID"/>
+				<xs:element ref="dsf:PARTFAILUREQUANTITY"/>
+				<xs:element ref="dsf:PARTFAILUREDATE"/>
+				<xs:element ref="dsf:ASSETID" minOccurs="0"/>
+				<xs:element ref="dsf:PARTLOCATIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PROBLEMCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:FAILURECODEID" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIONCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:CAUSECODEID" minOccurs="0"/>
+				<xs:element ref="dsf:FAILURENOTES" minOccurs="0"/>
+				<xs:element ref="dsf:PARTCONDITIONTEMPLATECONDITIONCODE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function result MP0042_AddLaborBooking_002_Result    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0042_002"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           xmlns:dse-laborbook="http://schemas.datastream.net/MP_entities/LaborBooking_002"
+           xmlns="http://schemas.datastream.net/MP_results/MP0042_002">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/LaborBooking_002" schemaLocation="LaborBooking_002.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0042_AddLaborBooking_002_Result ======================================-->
+	<xs:element name="MP0042_AddLaborBooking_002_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultData">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dse-laborbook:LaborBooking"/>
+							<xs:element ref="LaborBookings" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attribute name="wo_modified" type="dsf:FLAG_Type"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LaborBookings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LaborBookingHoursInfo" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="LaborBookingHoursInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BOOKEDHOURSID"/>
+				<xs:element ref="ChildLaborBookings" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="ChildLaborBookings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ChildLaborBooking" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ChildLaborBooking">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BOOKEDHOURSID"/>
+				<xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>

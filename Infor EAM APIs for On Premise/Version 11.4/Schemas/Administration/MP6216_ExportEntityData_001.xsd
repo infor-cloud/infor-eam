@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================ 
+  Copyright (c) 2008 Infor. All rights reserved. The word and design marks set forth herein are trademarks and/or 
+  registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved. All other trademarks 
+  listed herein are the property of their respective owners. www.infor.com.
+
+	This schema defines MP business function request MP6216_ExportEntityData_001 
+================================================================================== -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP6216_001" 
+	xmlns="http://schemas.datastream.net/MP_functions/MP6216_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<!-- =========== Imported namespaces =========== -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ========Begining of MP6216_ExportEntityData_001 ============ -->
+	<xs:element name="MP6216_ExportEntityData_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ExportEntityData" type="ExportEntityDataType"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Export"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="EntityData"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ExportEntityDataType">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element ref="dsf:HOMEENTRYID" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dsf:ASSOCIATECUSTOMFIELDID" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dsf:FLEXSQLID" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dsf:FUNCTIONID" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dsf:GRIDSETUPID" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dsf:ALERTID" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dsf:WSPROMPTID" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dsf:TASKLISTID" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="CopiedScreens"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CopiedScreens">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:USERGROUPCODE"/>
+				<xs:element ref="dsf:SCREENNAME" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

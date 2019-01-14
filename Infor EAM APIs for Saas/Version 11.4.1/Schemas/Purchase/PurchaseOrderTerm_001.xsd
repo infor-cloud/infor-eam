@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- ======== This schema defines the Order Term entity -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PurchaseOrderTerm_001" 
+           xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://schemas.datastream.net/MP_entities/PurchaseOrderTerm_001" elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--====================  Begining of Order Term ====================-->
+        <xs:element name="PurchaseOrderTerm">
+                <xs:complexType>
+                        <xs:sequence>
+                                <xs:element ref="dsf:ORDERTERMID"/>
+                                <xs:element ref="dsf:TERMTYPE"/>
+                                <xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+                                <xs:element ref="dsf:INFORSTANDARDCODE" minOccurs="0"/>
+                        </xs:sequence>
+                        <xs:attribute name="recordid" type="xs:long"/>
+                        <xs:attribute name="user_entity" type="xs:string"/>
+                        <xs:attribute name="system_entity" type="xs:string"/>
+                </xs:complexType>
+        </xs:element>
+</xs:schema>

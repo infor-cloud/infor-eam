@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+   Copyright (c) 2015 Infor. All rights reserved.
+   The word and design marks set forth herein are trademarks and/or registered
+   trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+   All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+   This schema defines MP entity CaseManagement
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CaseManagement_001" 
+    xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="http://schemas.datastream.net/MP_entities/CaseManagement_001" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="CaseManagement">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:CASEID"/>
+                <xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+                <xs:element ref="dsf:CASETYPE"/>
+                <xs:element ref="dsf:DEPARTMENTID"/>
+                <xs:element ref="dsf:STATUS"/>
+                <xs:element ref="dsf:RSTATUS"/>
+                <xs:element ref="dsf:REVIEWEDBYESIGN" minOccurs="0"/>
+                <xs:element ref="dsf:DATEREVIEWED" minOccurs="0"/>
+                <xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+                <xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+                <xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+				<xs:element ref="CaseDetails" minOccurs="0"/>
+				<xs:element ref="LinearReferenceDetails" minOccurs="0"/>
+				<xs:element ref="TrackingDetails" minOccurs="0"/>
+				<xs:element ref="FollowupWODetails" minOccurs="0"/>
+                <xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+                <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+            <xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+            <xs:attribute name="is_enhancedplanning_task" type="dsf:FLAG_Type"/>
+            <xs:attribute name="is_casehavetasks" type="dsf:FLAG_Type"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CaseDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:CASECLASSID" minOccurs="0"/>
+                <xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+                <xs:element ref="dsf:SERVICEPROBLEMID" minOccurs="0"/>
+                <xs:element ref="dsf:AREA" minOccurs="0"/>
+                <xs:element ref="dsf:WORKADDRESS" minOccurs="0"/>
+                <xs:element ref="dsf:CASEPRIORITY" minOccurs="0"/>
+                <xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+                <xs:element ref="dsf:EVENTSTARTDATE" minOccurs="0"/>
+            	<xs:element ref="dsf:EVENTENDDATE" minOccurs="0"/>
+                <xs:element ref="dsf:REGULATORY" minOccurs="0"/>
+				<xs:element ref="dsf:CASEFOLLOWUPREQUIRED" minOccurs="0"/>
+				<xs:element ref="dsf:ISHAZARDOUSMATERIAL" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDTOTALCOST" minOccurs="0"/>
+				<xs:element ref="dsf:TOTALCOST" minOccurs="0"/>
+                <xs:element ref="dsf:CURRENCYCODE" minOccurs="0"/>
+                <xs:element ref="dsf:COSTREFRESHREQUIRED" minOccurs="0"/>
+                <xs:element ref="dsf:CASEPARENT" minOccurs="0"/>
+                <xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+                <xs:element ref="dsf:PERMITTOWORKID" minOccurs="0"/>
+                <xs:element ref="dsf:SHIFTID" minOccurs="0"/>
+                <xs:element ref="dsf:PROJECTID" minOccurs="0"/>
+                <xs:element ref="dsf:CAMPAIGNID" minOccurs="0"/>
+            </xs:sequence>
+            
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="LinearReferenceDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:LINEARREFUOM" minOccurs="0"/>
+                <xs:element ref="dsf:LINEARREFERENCEEVENT" minOccurs="0"/>
+				<xs:element ref="dsf:INSPECTIONDIRECTIONCODE" minOccurs="0"/>
+                <xs:element ref="dsf:FLOWCODE" minOccurs="0"/>
+				<xs:element ref="dsf:STARTINGAT" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTLENGTH" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="TrackingDetails">
+        <xs:complexType>
+            <xs:sequence>
+            <xs:element ref="dsf:REQUESTEDBY" minOccurs="0"/>
+            <xs:element ref="dsf:DATEREQUESTED" minOccurs="0"/>
+            <xs:element ref="dsf:PERSONRESPONSIBLE" minOccurs="0"/>
+            <xs:element ref="dsf:EMAIL" minOccurs="0"/>
+            <xs:element ref="dsf:PREPAREDBY" minOccurs="0"/>
+            <xs:element ref="dsf:PREPAREDBYEMAIL" minOccurs="0"/>
+            <xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+            <xs:element ref="dsf:ASSIGNEDTOEMAIL" minOccurs="0"/>
+            <xs:element ref="dsf:SCHEDULEDSTARTDATE" minOccurs="0"/>
+            <xs:element ref="dsf:SCHEDULEDENDDATE" minOccurs="0"/>
+            <xs:element ref="dsf:REQUESTEDSTART" minOccurs="0"/>
+            <xs:element ref="dsf:REQUESTEDEND" minOccurs="0"/>
+	        <xs:element ref="dsf:STARTDATE" minOccurs="0"/>
+	        <xs:element ref="dsf:COMPLETEDDATE" minOccurs="0"/>
+	        <xs:element ref="dsf:CONTACTRECORDID" minOccurs="0"/>
+	        <xs:element ref="dsf:CONTACTRECORDSTATUS" minOccurs="0"/>
+	        <xs:element ref="dsf:SOURCETYPE" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="FollowupWODetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element	ref="dsf:WODESCRIPTION" minOccurs="0"/>
+                <xs:element	ref="dsf:STANDARDWO" minOccurs="0"/>
+                <xs:element	ref="dsf:WORKORDERTYPE"	minOccurs="0"/>
+				<xs:element	ref="dsf:WORKORDERCLASSID" minOccurs="0"/>
+				<xs:element	ref="dsf:WORKORDERSTATUS" minOccurs="0"/>
+				<xs:element	ref="dsf:WOPRIORITY" minOccurs="0"/>
+				<xs:element	ref="dsf:TASKSID" minOccurs="0"/>
+				<xs:element	ref="dsf:CASETASKJOBPLANID"	minOccurs="0"/>
+				<xs:element	ref="dsf:TRADEID" minOccurs="0"/>
+				<xs:element	ref="dsf:ESTIMATEDHOURS" minOccurs="0"/>
+				<xs:element	ref="dsf:PERSONS" minOccurs="0"/>
+				<xs:element	ref="dsf:FOLLOWUPWORKORDER" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2015 Infor. All rights reserved.
+	The word and design marks set forth herein are trademarks and/or registered
+	trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. www.infor.com.
+	
+	This schema defines MP business function request MP3367_CopySetConsist_001
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP3367_001"
+	xmlns="http://schemas.datastream.net/MP_functions/MP3367_001"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Beginning of MP3367_CopySetConsist_001 ==================================-->
+	<xs:element name="MP3367_CopySetConsist_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CopySetConsist"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Copy"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="SetConsist"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CopySetConsist">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SETCONSISTID"/>
+				<xs:element ref="dsf:NEWSETCONSISTID"/>
+				<xs:element ref="dsf:NEWCONSISTCODE"/>
+				<xs:element ref="dsf:NEWDESCRIPTION"/>
+				<xs:element ref="dsf:OLDSTARTDATE" minOccurs="0"/>
+				<xs:element ref="dsf:OLDENDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:NEWSTARTDATE"/>
+				<xs:element ref="dsf:NEWENDDATE"/>
+				<xs:element ref="dsf:COPYCUSTOMFIELDS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYEQUIPMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYADDRESSES" minOccurs="0"/>
+				<xs:element ref="dsf:COPYCOMMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYDOCUMENTS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

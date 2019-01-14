@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function result for function request MP7105_GetAssignedPersonnelDefault_002_Result
+==================================================================================-->
+
+<!-- ================================================================================
+    This schema defines MP business function result MP7105_GetAssignedPersonnelDefault_002_Result
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7105_002"
+	xmlns="http://schemas.datastream.net/MP_results/MP7105_002"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:os="http://www.openapplications.org/oagis_segments"
+	xmlns:of="http://www.openapplications.org/oagis_fields"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields"
+		schemaLocation="../MP_fields.xsd"/>
+
+	<!--===============================================================================-->
+	<!--====  Begining of MP7105_GetAssignedPersonnelDefault_002_Result ======================================-->
+	<xs:element name="MP7105_GetAssignedPersonnelDefault_002_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+			<xs:attribute name="persmultiorg" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ACTIVITYID"/>
+				<xs:element ref="dsf:TRADEID"/>
+				<xs:element ref="dsf:ASSIGNBY"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

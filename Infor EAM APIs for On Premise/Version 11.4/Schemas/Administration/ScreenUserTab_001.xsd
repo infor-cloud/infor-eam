@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity - FunctionTabs
+======================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ScreenUserTab_001" xmlns="http://schemas.datastream.net/MP_entities/ScreenUserTab_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--======================  Begining of ScreenUserTab_001======= ===================-->
+	<xs:element name="ScreenUserTab">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:FUNCTIONTABID"/>
+				<xs:element ref="dsf:URL" minOccurs="0"/>
+				<xs:element ref="dsf:USERTABTYPE"/>
+				<xs:element ref="dsf:ISSECURE"/>
+				<xs:element ref="dsf:USERTABREPORTCODE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

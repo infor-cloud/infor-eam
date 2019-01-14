@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2004, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity transaction DataWarehouseRunParameters
+============================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/DataWarehouseRunParameters_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/DataWarehouseRunParameters_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of DataWarehouseRunParameters_001 ======================================-->
+	<xs:element name="DataWarehouseRunParameters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DWEXECUTELOAD"/>
+				<xs:element ref="dsf:DWLOADTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:DWLOADFROMDATE" minOccurs="0"/>
+				<xs:element ref="dsf:DWEXECUTEPURGE"/>
+				<xs:element ref="dsf:DWPURGETODATE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

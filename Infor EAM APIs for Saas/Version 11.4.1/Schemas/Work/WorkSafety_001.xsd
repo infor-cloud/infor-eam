@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+	Copyright (c) 2013 Infor. All rights reserved.
+	The word and design marks set forth herein are trademarks and/or registered
+	trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+	This schema defines MP entity WorkSafety
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WorkSafety_001"
+		xmlns="http://schemas.datastream.net/MP_entities/WorkSafety_001"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:dsf="http://schemas.datastream.net/MP_fields"
+		elementFormDefault="qualified">
+		<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+		<!--===============================================================================-->
+		<xs:element name="WorkSafety">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="dsf:SAFETYCODE"/>
+					<xs:element ref="dsf:ENTITY"/>
+					<xs:element ref="dsf:ENTITYSAFETYCODE"/>
+					<xs:element ref="dsf:HAZARDID"/>
+					<xs:element ref="dsf:PRECAUTIONID"/>
+					<xs:element ref="dsf:TYPE" minOccurs="0"/>
+					<xs:element ref="dsf:TIMINGID" minOccurs="0"/>
+					<xs:element ref="dsf:SEQUENCENUM" minOccurs="0"/>
+					<xs:element ref="dsf:DELETEPENDING" minOccurs="0"/>
+					<xs:element ref="dsf:FLAMMABILITYID" minOccurs="0"/>
+					<xs:element ref="dsf:INSTABILITYID" minOccurs="0"/>
+					<xs:element ref="dsf:HEALTHHAZARDID" minOccurs="0"/>
+					<xs:element ref="dsf:SPECIALHAZARDID" minOccurs="0"/>
+					<xs:element ref="dsf:RELATEDWORKORDERID" minOccurs="0"/>
+					<xs:element ref="dsf:SOURCEDATE" minOccurs="0"/>
+					<xs:element ref="dsf:SOURCEBY" minOccurs="0"/>
+					<xs:element ref="dsf:SOURCEID" minOccurs="0"/>
+					<xs:element ref="dsf:DATEVALIDUNTIL" minOccurs="0"/>
+					<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+					<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+					<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+					<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+					<xs:element ref="dsf:REVIEWEDBYESIGN" minOccurs="0"/>
+					<xs:element ref="dsf:DATEREVIEWED" minOccurs="0"/>
+					<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+					<xs:element ref="dsf:PRECAUTIONAPPLIED" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="recordid" type="xs:long"/>
+			</xs:complexType>
+		</xs:element>
+</xs:schema>

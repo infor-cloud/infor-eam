@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2010 Infor.All rights reserved.The word and design marks set
+    forth herein are trademarks and/or registered trademarks of Infor and/or
+    related affiliates and subsidiaries.All rights reserved.All other trademarks
+    listed herein are the property of their respective owners.www.infor.com.
+
+    This schema defines MP business function request MP6423_SyncGISEquipment_001
+ ================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP6423_001"
+    xmlns="http://schemas.datastream.net/MP_functions/MP6423_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===========================================================================-->
+    <!--====  Beginning of MP6423_SyncGISEquipment_001 ====================================-->
+    <xs:element name="MP6423_SyncGISEquipment_001">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="GISEquipments"/>
+            </xs:sequence>
+            <xs:attribute name="verb" type="dsf:VERB_Type" fixed="Sync"/>
+            <xs:attribute name="noun" type="dsf:NOUN_Type" fixed="GISEquipment"/>
+            <xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GISEquipments">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="GISEquipment" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GISEquipment">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:EQUIPMENTID"/>
+                <xs:element ref="dsf:ESIGNATURE" minOccurs="0"/>
+                <xs:element ref="GISAttributes" minOccurs="0"/>
+                <xs:element ref="CustomFields" minOccurs="0"/>
+                <xs:element ref="Comments" minOccurs="0"/>
+                <xs:element ref="AssetParentDetails" minOccurs="0"/>
+                <xs:element ref="VMRSCode" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GISAttributes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="GISAttribute" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GISAttribute">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:PARAMETERSET"/>
+                <xs:element ref="dsf:GRIDFIELDDATATYPE"/>
+                <xs:element ref="dsf:DATEFILED" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CustomFields">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="CustomField" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>    
+    <xs:element name="CustomField">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:PARAMETERSET"/>
+                <xs:element ref="dsf:DATEFILED" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Comments">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:PARAMETERSET"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AssetParentDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ASSETID" minOccurs="0"/>
+                <xs:element ref="dsf:POSITIONID" minOccurs="0"/>
+                <xs:element ref="dsf:SYSTEMID" minOccurs="0"/>
+                <xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="isAssetDependent" type="dsf:FLAG_Type"/>
+            <xs:attribute name="isPositionDependent" type="dsf:FLAG_Type"/>
+            <xs:attribute name="isPrimarySystemDependent" type="dsf:FLAG_Type"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="VMRSCode">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ASSEMBLYLEVELCODE" minOccurs="0"/>
+                <xs:element ref="dsf:COMPONENTLEVELCODE" minOccurs="0"/>
+                <xs:element ref="dsf:SYSTEMLEVELCODE" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

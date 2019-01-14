@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+  This schema defines MP business function request MP0620_DeleteDepartment_001
+ ============================================================================= -->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0620_001" xmlns:dse-ccd="http://schemas.datastream.net/MP_entities/Department_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Department_001" schemaLocation="Department_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0620_DeleteDepartment_001 ======================================-->
+	<xs:element name="MP0620_DeleteDepartment_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPARTMENTID"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Delete"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="Department"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+			<xs:attribute name="callname" type="xs:string" default="DeleteDepartment"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

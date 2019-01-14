@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================ 
+	Copyright 2003,	Datastream Systems, Inc. 
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity InvoiceVoucherCostDefault	
+==================================================================================--> 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/InvoiceVoucherCostDefault_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://schemas.datastream.net/MP_entities/InvoiceVoucherCostDefault_001"	elementFormDefault="qualified">
+	<!-- ============================= Imported schemas ======================================= -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of InvoiceVoucherCostDefault_001	=======	-->
+	<xs:element name="InvoiceVoucherCostDefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:GLCODECOMBINATIONID" minOccurs="0"/>
+				<xs:element ref="InvoiceInformation"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InvoiceInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:STATUSCODE"/>
+				<xs:element ref="dsf:INVOICETOTAL"/>
+				<xs:element ref="dsf:ADJUSTEDCOST"/>
+				<xs:element ref="dsf:TOTALEXTRA" />
+				<xs:element ref="dsf:TOTALTAXAMOUNT"/>
+				<xs:element ref="dsf:UTILITYBILLCHARGES"/>
+				<xs:element ref="dsf:INVOICETYPE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===================================================================================
+    Copyright (c) 2013 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. 
+    www.infor.com.
+
+    This schema defines MP business function entity EquipmentConfigurationStructure
+=========================================================================================--> 
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EquipmentConfigurationStructure_001"
+        xmlns="http://schemas.datastream.net/MP_entities/EquipmentConfigurationStructure_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="EquipmentConfigurationStructure">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="EquipmentConfigurationNode"/>
+                    <xs:element ref="EquipmentConfigurationChildNode" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element ref="dsf:SHOWICONS" minOccurs="0" />
+                </xs:sequence>
+                <xs:attribute name="has_structure_preference" type="dsf:FLAG_Type"/>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="EquipmentConfigurationChildNode">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="EquipmentConfigurationNode"/>
+                    <xs:element ref="EquipmentConfigurationChildNode" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="EquipmentConfigurationNode">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="NodeCode"/>
+                    <xs:element ref="NodeDescription"/>
+                    <xs:element ref="dsf:ORGANIZATIONCODE" minOccurs="0"/>
+                    <xs:element ref="dsf:DESCRIPTION"/>
+                    <xs:element ref="NodeType"/>
+                    <xs:element ref="dsf:OBJRTYPE" minOccurs="0"/>
+                    <xs:element ref="dsf:COSTROLLUP"/>
+                    <xs:element ref="dsf:KIT"/>
+                    <xs:element ref="dsf:EQUIPMENTCONFIGURATIONID" minOccurs="0"/>
+                    <xs:element ref="dsf:ICONCODE" minOccurs="0"/>
+                    <xs:element ref="dsf:ICONPATH" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    <xs:element name="NodeType" type="dsf:CODE1_Type"/>
+    <xs:element name="NodeCode">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="200"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="NodeDescription">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="300"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+</xs:schema>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+         This schema defines the result MP business function request MP0349_GetPositionStructure_002
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0349_002" 
+           xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://schemas.datastream.net/MP_results/MP0349_002" 
+           xmlns:dse-position2="http://schemas.datastream.net/MP_entities/PositionHierarchy_002" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/PositionHierarchy_002" schemaLocation="PositionHierarchy_002.xsd"/>		
+	<!--===============================================================================-->
+	<!--====  Begining of MP0349_GetPositionStructure_002_Result ======================================-->
+	<xs:element name="MP0349_GetPositionStructure_002_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:POSITIONID"/>
+				<xs:element ref="dse-position2:PositionParentHierarchy" minOccurs="0"/>
+				<xs:element ref="dse-position2:PositionChildHierarchy" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>				
+</xs:schema>

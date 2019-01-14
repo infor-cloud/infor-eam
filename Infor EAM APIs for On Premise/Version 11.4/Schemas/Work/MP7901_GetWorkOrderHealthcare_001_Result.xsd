@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2012 Infor. All rights reserved.
+	The word and design marks set forth herein are trademarks and/or registered
+	trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. 
+	www.infor.com.
+	
+	This schema defines MP business function result MP7901_GetWorkOrderResult_001    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7901_001" xmlns:dse-Addresses="http://schemas.datastream.net/MP_entities/Addresses_001"  xmlns="http://schemas.datastream.net/MP_results/MP7901_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:dse-wo="http://schemas.datastream.net/MP_entities/WorkOrder_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/WorkOrder_001" schemaLocation="WorkOrder_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Addresses_001" schemaLocation="../Administration/Addresses_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP7901_GetWorkOrderHealthcare_001_Result ======================================-->
+	<xs:element name="MP7901_GetWorkOrderHealthcare_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+			<xs:attribute name="multiorg" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="act_has_trans" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="jtauth_can_update" type="dsf:FLAG_Type" default="true"/>
+			<xs:attribute name="standwo_has_activity" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="equip_in_mec_wo" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-wo:WorkOrderCore"/>
+				<xs:element ref="dse-wo:WorkOrderHealthcare" minOccurs="0"/>
+				<xs:element ref="EQUIPMENTINFO" minOccurs="0"/>
+				<xs:element ref="dsf:PERTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:WORKDAY" minOccurs="0"/>
+				<xs:element name="PMRVCTRL" type="dsf:FLAG_Type"/>
+				<xs:element ref="dsf:CURRENCYCODE" minOccurs="0"/>
+				<xs:element name="REOPENPM" type="dsf:FLAG_Type"/>
+				<xs:element ref="dsf:COMPLETEDDATE" minOccurs="0"/>
+				<xs:element name="EVENTTYPE" type="xs:string"/>
+				<xs:element name="SYSTEMCOMPLETESTATUS" type="dsf:STATUS_Type" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENTDATETIME"/>
+				<xs:element name="GROUP" type="dsf:CODE12_Type" minOccurs="0"/>
+				<xs:element ref="dsf:PROJECTSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:DUEDATE" minOccurs="0"/>
+				<xs:element ref="dse-Addresses:Addresses" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EQUIPMENTINFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EQUIPMENTID"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:CATEGORYID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

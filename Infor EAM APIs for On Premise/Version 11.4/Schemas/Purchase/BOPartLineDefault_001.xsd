@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Sureshr (Datastream Systems, Inc) -->
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function entity BOPartLine
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/BOPartLineDefault_001" xmlns="http://schemas.datastream.net/MP_entities/BOPartLineDefault_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====================  Begining of BOPartLineDefault ====================-->
+	<xs:element name="BOPartLineDefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BLANKETORDERLINETYPE"/>
+				<xs:element ref="dsf:BLANKETORDERLINENUM"/>
+				<xs:element ref="dsf:EXCHRATE"/>
+				<xs:element ref="dsf:PARTINSPECTIONREQUIRED"/>
+				<xs:element ref="dsf:PARTCONVERSIONFACTOR"/>
+				<xs:element ref="BlanketOrderInfo"/>
+				<xs:element ref="BlanketOrderOrgInfo"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BlanketOrderInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:CURRENCYID"/>
+				<xs:element ref="dsf:SUPPLIERID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BlanketOrderOrgInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CURRENCYID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>

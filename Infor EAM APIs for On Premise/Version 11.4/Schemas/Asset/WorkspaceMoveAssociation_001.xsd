@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--==============================================================================================
+    Copyright (c) 2015 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business function entity WorkspaceMoveAssociation
+==================================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WorkspaceMoveAssociation_001"
+        xmlns="http://schemas.datastream.net/MP_entities/WorkspaceMoveAssociation_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="WorkspaceMoveAssociation">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:WORKSPACEMOVEASSOCIATIONID"/>
+                    <xs:element ref="dsf:WORKSPACEMOVEID"/>
+                    <xs:element ref="dsf:ENTITY"/>
+                    <xs:element ref="dsf:ENTITYCODE30"/>
+                    <xs:element ref="dsf:PARTASSOCIATEDID" minOccurs="0"/>
+                    <xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+                    <xs:element ref="dsf:QUANTITYASSOCIATED" minOccurs="0"/>
+                    <xs:element ref="dsf:INCLUDEINMOVE" minOccurs="0"/>
+                    <xs:element ref="dsf:INITIALMILEAGE" minOccurs="0"/>
+                    <xs:element ref="dsf:FINALMILEAGE" minOccurs="0"/>
+                    <xs:element ref="dsf:STARTDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:ENDDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:INITIALFUELLEVEL" minOccurs="0"/>
+                    <xs:element ref="dsf:FINALFUELLEVEL" minOccurs="0"/>
+                    <xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+                    <xs:element ref="dsf:SINGLEMOVESTATUS" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="recordid" type="xs:long"/>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

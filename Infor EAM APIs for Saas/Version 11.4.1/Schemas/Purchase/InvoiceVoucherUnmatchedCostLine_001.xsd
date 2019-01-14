@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================ 
+    Copyright (c) 2018 Infor. All rights reserved. The word and design marks set forth herein are trademarks 
+    and/or registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved. All other 
+    trademarks listed herein are the property of their respective owners. www.infor.com. 
+    
+    This schema defines MP business Entity request InvoiceVoucherUnmatchedCostLine_001 
+    ================================================================================== -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/InvoiceVoucherUnmatchedCostLine_001"
+    xmlns="http://schemas.datastream.net/MP_entities/InvoiceVoucherUnmatchedCostLine_001" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd" />
+    <xs:element name="InvoiceVoucherUnmatchedCostLine">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:UNMATCHEDINVOICEID" />
+                <xs:element ref="dsf:TYPE" />
+                <xs:element ref="dsf:PURCHASEORDERLINEID" />
+                <xs:element ref="dsf:TOOLID" minOccurs="0" />
+                <xs:element ref="dsf:HOURS" />
+                <xs:element ref="dsf:RATE" />
+                <xs:element ref="dsf:LINESUBTOTAL" minOccurs="0" />
+                <xs:element ref="dsf:TAXAMOUNT" minOccurs="0" />
+                <xs:element ref="dsf:INVOICELINETOTAL" minOccurs="0" />
+                <xs:element ref="dsf:WORKORDERACTIVITYID" />
+                <xs:element ref="dsf:TRADEID" minOccurs="0" />
+                <xs:element ref="dsf:CURRENCYCODE" minOccurs="0" />
+                <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0" />
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

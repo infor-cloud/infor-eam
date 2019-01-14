@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Mi Zhou (Datastream Systems, Inc) -->
+<!-- ================================================================================
+	Copyright 2006, Infor
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity PartnerOrganizationReference
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PartnerOrganizationReference_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/PartnerOrganizationReference_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of PartnerOrganizationReference_001 ======================================-->
+	<xs:element name="PartnerOrganizationReference">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PARTNERORGANIZATIONREFERENCEID"/>
+				<xs:choice>
+					<xs:element name="HierarchyCode" minOccurs="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="255"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:sequence minOccurs="0">
+						<xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+						<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+						<xs:element ref="dsf:STOREID" minOccurs="0"/>
+						<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+						<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+						<xs:element ref="dsf:EMPLOYEEID" minOccurs="0"/>
+					</xs:sequence>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

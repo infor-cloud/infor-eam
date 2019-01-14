@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity catalogue   
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Catalogue_001" xmlns="http://schemas.datastream.net/MP_entities/Catalogue_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of Catalogue_001 ======================================-->
+	<xs:element name="Catalogue">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PARTID" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERPARTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:DESCRIPTION" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERPARTDESCRIPTION" minOccurs="0"/>
+				<xs:element ref="dsf:GROSSPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:NETPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:LOCALPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:PREFERRED" minOccurs="0"/>
+				<xs:element ref="dsf:EXCHANGE" minOccurs="0"/>
+				<xs:element ref="dsf:MINIMUMQTY" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+				<xs:element ref="dsf:LOCALCURRENCY" minOccurs="0"/>
+				<xs:element ref="dsf:UOMID" minOccurs="0"/>
+				<xs:element ref="dsf:CONVERSIONFACTOR" minOccurs="0"/>
+				<xs:element ref="dsf:TAXID" minOccurs="0"/>
+				<xs:element ref="dsf:LEADTIMES" minOccurs="0"/>
+				<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+				<xs:element ref="dsf:LASTUPDATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:EXPIRATIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRPARTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:IPERRORID" minOccurs="0"/>
+				<xs:element ref="dsf:IPERRORFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:INSERTOLDREFERENCE" minOccurs="0"/>
+				<xs:element ref="dsf:OLDREF" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:PARTCONDITIONTEMPLATECONDITIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:DOCUMOTOBOOKID" minOccurs="0"/>
+				<xs:element ref="dsf:DOCUMOTOPARTID" minOccurs="0"/>
+				<xs:element ref="dsf:CATALOGUEID" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+    This schema defines MP business function result MP7183_GetWOCalibrationDefault_001_Result
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7183_001" xmlns:dse-WOCalibration="http://schemas.datastream.net/MP_entities/WOCalibration_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_results/MP7183_001" xmlns:osf="http://www.openapplications.org/oagis_fields"
+xmlns:os="http://www.openapplications.org/oagis_segments" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/WOCalibration_001" schemaLocation="WOCalibration_001.xsd"/>
+<xs:import namespace="http://www.openapplications.org/oagis_segments" schemaLocation="../oagis_segments.xsd"/>
+<xs:import namespace="http://www.openapplications.org/oagis_fields" schemaLocation="../oagis_fields.xsd"/>
+<!--===============================================================================-->
+	<!--====  Begining of MP7183_GetWOCalibrationDefault_001_Result ======================================-->
+	<xs:element name="MP7183_GetWOCalibrationDefault_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+			        <xs:attribute name="isWORKORDEREQUIPMENTLOOP" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WORKORDERID"/>
+				<xs:element ref="dsf:EQUIPMENTID"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:CALIBRATIONSTATUS"/>
+				<xs:element ref="dsf:CALIBRATIONSOP" minOccurs="0"/>
+				<xs:element ref="dsf:PIDNUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:PIDDRAWING" minOccurs="0"/>
+				<xs:element ref="dsf:LASTCALIBRATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:SOPEFFECTIVEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:PMINTERVALNUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:PMINTERVALUOM" minOccurs="0"/>
+				<xs:element ref="dsf:PRECISION" minOccurs="0"/>
+				<xs:element ref="dsf:INCREMENTVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:ALERTTOLERANCEPERCENT" minOccurs="0"/>
+				<xs:element ref="dsf:RELATEDWORKORDERID" minOccurs="0"/>
+				<xs:element ref="dse-WOCalibration:WOCalibration" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDEREXT" minOccurs="0"/>
+				<xs:element ref="dsf:PERFORMEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:REVIEWEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:PBSIGNATURETYPE" minOccurs="0"/>
+				<xs:element ref="dsf:RBSIGNATURETYPE" minOccurs="0"/>
+				<xs:element ref="dsf:OUTPUTCALCULATIONTYPE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

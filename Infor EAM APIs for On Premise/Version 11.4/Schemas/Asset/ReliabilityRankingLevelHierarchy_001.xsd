@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+	Copyright (c) 2011 Infor.All rights reserved.The word and design marks set
+	forth herein are trademarks and/or registered trademarks of Infor and/or
+	related affiliates and subsidiaries.All rights reserved.All other trademarks
+	listed herein are the property of their respective owners.www.infor.com.
+
+  This schema defines the hierarchial level of Decision tree for a given Reliability Ranking.
+  =================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ReliabilityRankingLevelHierarchy_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:dse-RRL="http://schemas.datastream.net/MP_entities/ReliabilityRankingLevel_001"
+	xmlns:dse-Answer="http://schemas.datastream.net/MP_entities/ReliabilityRankingAnswer_001"
+	xmlns:dse-Norma="http://schemas.datastream.net/MP_entities/ReliabilityRankingNormalization_001"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://schemas.datastream.net/MP_entities/ReliabilityRankingLevelHierarchy_001" 
+	elementFormDefault="qualified">
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<xs:import namespace="http://schemas.datastream.net/MP_entities/ReliabilityRankingLevel_001" schemaLocation="ReliabilityRankingLevel_001.xsd"/>
+<xs:import namespace="http://schemas.datastream.net/MP_entities/ReliabilityRankingAnswer_001" schemaLocation="ReliabilityRankingAnswer_001.xsd"/>
+<xs:import namespace="http://schemas.datastream.net/MP_entities/ReliabilityRankingNormalization_001" schemaLocation="ReliabilityRankingNormalization_001.xsd"/>
+	<!--===============================================================================-->
+	<!--=========================  Begining of ReliabilityRankingLevelHierarchy_001 =====================-->
+	<xs:element name="ReliabilityRankingLevelHierarchy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:RELIABILITYRANKINGID"/>
+				<xs:element ref="dse-RRL:ReliabilityRankingLevel"/>
+				<xs:element ref="dse-Answer:ReliabilityRankingAnswer" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-Norma:ReliabilityRankingNormalization" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="RELIABILITYRANKINGLEVELS" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RELIABILITYRANKINGLEVELS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-RRL:ReliabilityRankingLevel" minOccurs="0" />
+				<xs:element ref="dse-Answer:ReliabilityRankingAnswer" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-Norma:ReliabilityRankingNormalization" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="RELIABILITYRANKINGLEVELS" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

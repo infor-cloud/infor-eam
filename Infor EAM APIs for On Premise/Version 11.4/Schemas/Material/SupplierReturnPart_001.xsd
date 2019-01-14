@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+ Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth herein are trademarks and/or
+ registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved. All other
+ trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP entity SupplierReturnPart    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/SupplierReturnPart_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/SupplierReturnPart_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of SupplierReturnPart_001 ======================================-->
+	<xs:element name="SupplierReturnPart">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TRANSACTIONLINEID"/>
+				<xs:element ref="dsf:PARTID"/>
+				<xs:element ref="dsf:RETURNQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:BINID" minOccurs="0"/>
+				<xs:element ref="dsf:LOTID" minOccurs="0"/>
+				<xs:element ref="dsf:REJECTIONREASON" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTLOT" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTLOTEXPIRATIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:PURCHASEQTY" minOccurs="0"/>
+				<xs:element ref="dsf:AVAILABLEQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:PRICE" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+				<xs:element ref="dsf:ASSETID" minOccurs="0"/>
+				<xs:element ref="dsf:ASSETTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:SERIALNUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:BYASSET" minOccurs="0"/>
+				<xs:element ref="dsf:DIRECTRECEIPT" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVITYID" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:PROJECTBUDGETID" minOccurs="0"/>
+				<xs:element ref="dsf:PURCHASEORDERLINEID" minOccurs="0"/>
+				<xs:element ref="dsf:REQUISITIONLINEID" minOccurs="0"/>
+				<xs:element ref="dsf:STOREID" minOccurs="0"/>
+				<xs:element ref="dsf:STOCKPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:CONVERSIONFACTOR" minOccurs="0"/>
+				<xs:element ref="dsf:ACCOUNTDETAIL" minOccurs="0"/>
+				<xs:element ref="dsf:GLTRANSFERFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:GLTRANSFERDATE" minOccurs="0"/>
+				<xs:element ref="dsf:INTERFACE" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCESYSTEM" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCECODE" minOccurs="0"/>
+				<xs:element ref="dsf:CONSIGNFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:CONSIGNSUPPLIER" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSORGID" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSCODE" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSGROUP" minOccurs="0"/>
+				<xs:element ref="dsf:WARRANTY" minOccurs="0"/>
+				<xs:element ref="dsf:PICKLISTID" minOccurs="0"/>
+				<xs:element ref="dsf:PORECEIPTLINEID" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOCATEFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:SCRAPQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERALIAS" minOccurs="0"/>
+				<xs:element ref="dsf:PRINTQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:PRICEUPDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ORIGINALQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSACTIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ROUTERREC" minOccurs="0"/>
+				<xs:element ref="dsf:NEWDEPARTMENT" minOccurs="0"/>
+				<xs:element ref="dsf:NEWMANUFACTURER" minOccurs="0"/>
+				<xs:element ref="dsf:NEWCOSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:POLINESYSTEMTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSACTIONRSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSACTIONRENTITY" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERPARTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PARTUOM" minOccurs="0"/>
+				<xs:element ref="ReadOnlyFields" minOccurs="0"/>
+                <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReadOnlyFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:RELATEDWORKORDERID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

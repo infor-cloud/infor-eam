@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by Mi Zhou (Development) -->
+<!-- ================================================================================
+    This schema defines MP entity AccountDetail
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/AccountDetail_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/AccountDetail_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of AccountDetail_001 ======================================-->
+	<xs:element name="AccountDetail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ACDCODE"/>
+				<xs:element ref="dsf:ACDACCOUNTED"/>
+				<xs:element ref="dsf:ACDSEGMENT1" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT2" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT3" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT4" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT5" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT6" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT7" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT8" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT9" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT10" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT11" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT12" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT13" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT14" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT15" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT16" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT17" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT18" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT19" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT20" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT21" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT22" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT23" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT24" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT25" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT26" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT27" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT28" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT29" minOccurs="0"/>
+				<xs:element ref="dsf:ACDSEGMENT30" minOccurs="0"/>
+				<xs:element ref="dsf:ACDUSRATTR1" minOccurs="0"/>
+				<xs:element ref="dsf:ACDUSRATTR2" minOccurs="0"/>
+				<xs:element ref="dsf:ACDUSRATTR3" minOccurs="0"/>
+				<xs:element ref="dsf:ACDUSRATTR4" minOccurs="0"/>
+				<xs:element ref="dsf:ACDUSRATTR5" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="user_entity" type="xs:string"/>
+			<xs:attribute name="system_entity" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

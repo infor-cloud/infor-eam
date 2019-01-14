@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+   Copyright (c) 2014 Infor. All rights reserved. The word and design marks set 
+   forth herein are trademarks and/or registered trademarks of Infor and/or 
+   related affiliates and subsidiaries. All rights reserved. All other 
+   trademarks listed herein are the property of their respective owners. 
+   www.infor.com.
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EquipmentLinearRefOverview_001" xmlns="http://schemas.datastream.net/MP_entities/EquipmentLinearRefOverview_001"  xmlns:dse-LOPref="http://schemas.datastream.net/MP_entities/LinearOverviewPreference_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/LinearOverviewPreference_001" schemaLocation="LinearOverviewPreference_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of EquipmentLinearRefOverview_001 ======================================-->
+	<xs:element name="EquipmentLinearRefOverview">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LinearRefOverviewPreferences" minOccurs="0"/>
+				<xs:element ref="dse-LOPref:LinearOverviewPreference" minOccurs="0"/>
+				<xs:element ref="LinearOverviewPreferencelist" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:ISLINEAREQUIPMENT"/>
+				<xs:element ref="dsf:DATEEFFECTIVE" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTLENGTH" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTLENGTHUOM" minOccurs="0"/>
+				<xs:element ref="dsf:LRFFROMPOINT" minOccurs="0"/>
+				<xs:element ref="dsf:LRFTOPOINT" minOccurs="0"/>
+				<xs:element ref="dsf:FROMPOINT" minOccurs="0"/>
+				<xs:element ref="dsf:TOPOINT" minOccurs="0"/>
+				<xs:element ref="dsf:LINEAREQUIPMENTTYPE" minOccurs="0"/>
+				<xs:element ref="LinearRefs" minOccurs="0"/>
+				<xs:element ref="PointsOfInterest" minOccurs="0"/>
+				<xs:element ref="RelatedEquipment" minOccurs="0"/>
+				<xs:element ref="RelatedParts" minOccurs="0"/>
+				<xs:element ref="RoutesAndSegments" minOccurs="0"/>
+				<xs:element ref="dsf:GISMAPID" minOccurs="0"/>
+				<xs:element ref="dsf:GISLAYER" minOccurs="0"/>
+				<xs:element ref="dsf:GISOBJID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LinearRefs">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LinearRefClass" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PointsOfInterest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LinearRefClass" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RelatedEquipment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LinearRefClass" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RelatedParts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LinearRefClass" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RoutesAndSegments">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LinearRoute" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LinearRoute">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LinearRefOverviewDetail" minOccurs="0"/>
+				<xs:element ref="LinearSegement" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LinearSegement">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="LinearRefOverviewDetail"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LinearRefClass">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+				<xs:element ref="LinearRefOverviewDetail" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LinearRefOverviewDetail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LRFID"/>
+				<xs:element ref="dsf:LRFDESC" minOccurs="0"/>
+				<xs:element ref="dsf:LRFFROMPOINT"/>
+				<xs:element ref="dsf:LRFTOPOINT"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:ASSETID" minOccurs="0"/>
+				<xs:element ref="dsf:INSPECTIONDIRECTIONID" minOccurs="0"/>
+				<xs:element ref="dsf:FLOWID" minOccurs="0"/>
+				<xs:element ref="dsf:PARTID" minOccurs="0"/>
+				<xs:element ref="dsf:PARTCONDITIONTEMPLATECONDITIONID" minOccurs="0"/>
+				<xs:element ref="dsf:RELATIONSHIPTYPEID" minOccurs="0"/>
+				<xs:element ref="dsf:COLOR" minOccurs="0"/>
+				<xs:element ref="dsf:ICONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:ICONPATH" minOccurs="0"/>
+				<xs:element ref="dsf:DATEEFFECTIVE"/>
+				<xs:element ref="dsf:DATEEXPIRED"/>
+				<xs:element ref="dsf:LINEAREQUIPMENTTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:FROMREFERENCEID" minOccurs="0"/>
+				<xs:element ref="dsf:FROMOFFSET" minOccurs="0"/>
+				<xs:element ref="dsf:FROMOFFSETDIRECTION" minOccurs="0"/>
+				<xs:element ref="dsf:TOREFERENCEID" minOccurs="0"/>
+				<xs:element ref="dsf:TOOFFSET" minOccurs="0"/>
+				<xs:element ref="dsf:TOOFFSETDIRECTION" minOccurs="0"/>
+				<xs:element ref="dsf:BRANCHIDENTIFIER" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTLENGTH" minOccurs="0"/>
+				<xs:element ref="dsf:LINEARDIRECTIONID" minOccurs="0"/>
+				<xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:OBJTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:OBJRTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTCLASSID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LinearRefOverviewPreferences">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SelectedFeatures" minOccurs="0"/>
+				<xs:element ref="dsf:COLOR" minOccurs="0"/>
+				<xs:element ref="dsf:INCLUDERELATEDEQUIPMENTINAPPLIEDFILTER"/>
+				<xs:element ref="dsf:LINEARREFOVERVIEWDEFAULTFILTER" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+    <xs:element name="SelectedFeatures">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="LinearRefFeature" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+         </xs:complexType>
+    </xs:element>
+    <xs:element name="LinearRefFeature">
+        <xs:complexType>
+           <xs:sequence>
+               <xs:element ref="dsf:REFERENCE"/>
+               <xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+           </xs:sequence>
+       </xs:complexType>
+    </xs:element>
+    <xs:element name="LinearOverviewPreferencelist">
+        <xs:complexType>
+           <xs:sequence>
+                <xs:element ref="dsf:LINEAROVERVIEWPREFERENCEID" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

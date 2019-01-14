@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity GlInterface    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/GlInterface_001" xmlns="http://schemas.datastream.net/MP_entities/GlInterface_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of GlInterface_001 ======================================-->
+	<xs:element name="GlInterface">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:GLITRANSID"/>
+				<xs:element ref="dsf:GLIRUNID"/>
+				<xs:element ref="dsf:GLIPROCESS"/>
+				<xs:element ref="dsf:GLIGROUP"/>
+				<xs:element ref="dsf:GLISTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:GLISETOFBOOKSID" minOccurs="0"/>
+				<xs:element ref="dsf:GLIACCOUNTINGDATE"/>
+				<xs:element ref="dsf:GLICURRENCYCODE" minOccurs="0"/>
+				<xs:element ref="dsf:GLIDATECREATED" minOccurs="0"/>
+				<xs:element ref="dsf:GLICREATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:GLIACTUALFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:GLIUSERJECATEGORYNAME" minOccurs="0"/>
+				<xs:element ref="dsf:GLIUSERJESOURCENAME" minOccurs="0"/>
+				<xs:element ref="dsf:GLICURRENCYCONVERSIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:GLIENCUMBRANCETYPEID" minOccurs="0"/>
+				<xs:element ref="dsf:GLIBUDGETVERSIONID" minOccurs="0"/>
+				<xs:element ref="dsf:GLIUSERCURRENCYCONVERSIONTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:GLICURRENCYCONVERSIONRATE" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT1" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT2" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT3" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT4" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT5" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT6" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT7" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT8" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT9" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT10" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT11" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT12" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT13" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT14" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT15" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT16" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT17" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT18" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT19" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT20" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT21" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT22" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT23" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT24" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT25" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT26" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT27" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT28" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT29" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEGMENT30" minOccurs="0"/>
+				<xs:element ref="dsf:GLIENTEREDDR" minOccurs="0"/>
+				<xs:element ref="dsf:GLIENTEREDCR" minOccurs="0"/>
+				<xs:element ref="dsf:GLIACCOUNTEDDR" minOccurs="0"/>
+				<xs:element ref="dsf:GLIACCOUNTEDCR" minOccurs="0"/>
+				<xs:element ref="dsf:GLITRANSACTIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE1" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE2" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE3" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE4" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE5" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE6" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE7" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE8" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE9" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE10" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE11" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE12" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE13" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE14" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE15" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE16" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE17" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE18" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE19" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE20" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE21" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE22" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE23" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE24" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE25" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE26" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE27" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE28" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE29" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREFERENCE30" minOccurs="0"/>
+				<xs:element ref="dsf:GLIJEBATCHID" minOccurs="0"/>
+				<xs:element ref="dsf:GLIPERIODNAME" minOccurs="0"/>
+				<xs:element ref="dsf:GLIJEHEADERID" minOccurs="0"/>
+				<xs:element ref="dsf:GLIJELINENUM" minOccurs="0"/>
+				<xs:element ref="dsf:GLICHARTOFACCOUNTSID" minOccurs="0"/>
+				<xs:element ref="dsf:GLIFUNCTIONALCURRENCYCODE" minOccurs="0"/>
+				<xs:element ref="dsf:GLICODECOMBINATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:GLIDATECREATEDINGL" minOccurs="0"/>
+				<xs:element ref="dsf:GLIWARNINGCODE" minOccurs="0"/>
+				<xs:element ref="dsf:GLISTATUSDESCRIPTION" minOccurs="0"/>
+				<xs:element ref="dsf:GLISTATAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:GLIGROUPID" minOccurs="0"/>
+				<xs:element ref="dsf:GLIREQUESTID" minOccurs="0"/>
+				<xs:element ref="dsf:GLISUBLEDGERDOCSEQUENCEID" minOccurs="0"/>
+				<xs:element ref="dsf:GLISUBLEDGERSEQUENCEVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE1" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE2" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE3" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE4" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE5" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE6" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE7" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE8" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE9" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE10" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE11" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE12" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE13" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE14" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE15" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE16" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE17" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE18" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE19" minOccurs="0"/>
+				<xs:element ref="dsf:GLIATTRIBUTE20" minOccurs="0"/>
+				<xs:element ref="dsf:GLICONTEXT" minOccurs="0"/>
+				<xs:element ref="dsf:GLICONTEXT2" minOccurs="0"/>
+				<xs:element ref="dsf:GLIINVOICEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:GLITAXCODE" minOccurs="0"/>
+				<xs:element ref="dsf:GLIINVOICEIDENTIFIER" minOccurs="0"/>
+				<xs:element ref="dsf:GLIINVOICEAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:GLICONTEXT3" minOccurs="0"/>
+				<xs:element ref="dsf:GLIUSSGLTRANSACTIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:GLIDESCRFLEXERRORMESSAGE" minOccurs="0"/>
+				<xs:element ref="dsf:GLIENTITYS" minOccurs="0"/>
+				<xs:element ref="dsf:GLIGLNOMACCT" minOccurs="0"/>
+				<xs:element ref="dsf:GLIENTRYID" minOccurs="0"/>
+				<xs:element ref="dsf:GLISEQNUM" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="is_completed" type="xs:boolean"/>
+			<xs:attribute name="is_cancelled" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2010 Infor.All rights reserved.The word and design marks set
+    forth herein are trademarks and/or registered trademarks of Infor and/or
+    related affiliates and subsidiaries.All rights reserved.All other trademarks
+    listed herein are the property of their respective owners.www.infor.com.
+
+    This schema defines MP business function request MP6422_GetGISEquipment_001
+ ================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP6422_001"
+    xmlns="http://schemas.datastream.net/MP_functions/MP6422_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===========================================================================-->
+    <!--====  Begining of MP6422_GetGISEquipment_001 ====================================-->
+    <xs:element name="MP6422_GetGISEquipment_001">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="EAMOWNEROBJIDs" minOccurs="0"/>
+                <xs:element ref="GISOWNEROBJIDs" minOccurs="0"/>
+                <xs:element ref="dsf:GISLAYER" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="verb" type="dsf:VERB_Type" fixed="Get"/>
+            <xs:attribute name="noun" type="dsf:NOUN_Type" fixed="GISEquipment"/>
+            <xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+            <xs:attribute name="is_view_discrepancy" type="dsf:FLAG_Type" default = "true"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GISOWNEROBJIDs">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:GISOBJID" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EAMOWNEROBJIDs">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:GISOBJID" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2007 Infor Global Solutions Technology GmbH and/or its affiliates
+	and subsidiaries. All rights reserved. The word and design marks set forth
+	herein are trademarks and/or registered trademarks of
+	Infor Global Solutions Technology GmbH and/or its affiliates and subsidiaries.
+	All rights reserved. All other trademarks listed herein are the property of
+	their respective owners.
+	This document may not be reproduced in whole or in part or used for tendering
+	or manufacturing purposes except under an agreement or with the written
+	consent of the copyright holder and then only under the condition that this
+	notice is included in any such reproduction. No information regarding the
+	contents or subject matter of this document or any part thereof arising
+	directly or indirectly thereof shall be given orally or in writing or
+	communicated in any manner whatsoever to any third party without the prior
+	written consent of the copyright holder.
+	
+        This schema defines MP business function result MP4104_CopyQuotationRequestDefault_001_Result
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP4104_001" xmlns="http://schemas.datastream.net/MP_results/MP4104_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP4104_CopyQuotationRequestDefault_001_Result ======================================-->
+	<xs:element name="MP4104_CopyQuotationRequestDefault_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DUEDATE"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

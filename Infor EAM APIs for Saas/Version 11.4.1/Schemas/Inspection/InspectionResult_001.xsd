@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- ================================================================================ 
+	Copyright 2003, Datastream Systems, Inc. 
+	50 Datastream Plaza, Greenville, SC 29605, USA. 
+	All rights reserved. 
+
+	This schema defines MP entity InspectionResult
+================================================================================== --> 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/InspectionResult_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/InspectionResult_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of InspectionResult_001 ======= -->
+	<xs:element name="InspectionResult">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:INSPECTIONRESULTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:ASPECTID"/>
+				<xs:element ref="dsf:INSPECTIONPOINTID"/>
+				<xs:element ref="dsf:INSPECTIONRESULT"/>
+				<xs:element ref="dsf:INSPECTIONRESULTDATE"/>
+				<xs:element ref="dsf:INSPECTIONCONFIDENCERATING"/>
+				<xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:INSPECTIONCOMPLETED" minOccurs="0"/>
+				<xs:element ref="dsf:INSPECTIONPROCESSED" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

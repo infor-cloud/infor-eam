@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity PartStores    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Bin2BinTransfer_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/Bin2BinTransfer_001" 
+xmlns:dse="http://schemas.datastream.net/MP_entities/BinStock_001"
+elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/BinStock_001" schemaLocation="BinStock_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of BinStock_001 ======================================-->
+	<xs:element name="Bin2BinTransfer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse:BinStock"/>
+				<xs:element ref="dsf:BIN"/>
+				<xs:element ref="dsf:STOCKQTY"/>
+				<xs:element ref="dsf:ASSETID" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="user_entity" type="xs:string"/>
+			<xs:attribute name="system_entity" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

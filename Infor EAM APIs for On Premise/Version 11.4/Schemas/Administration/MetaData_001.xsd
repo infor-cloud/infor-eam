@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+   This schema defines MP entity MetaData 
+============================================================================= -->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/MetaData_001" 
+	   xmlns="http://schemas.datastream.net/MP_entities/MetaData_001" 
+	   xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   elementFormDefault="qualified">
+	<!-- ======= Beginning of MetaData_001 ======= -->
+	<xs:element name="MetaData">
+		<xs:complexType>
+			<xs:sequence>				
+				<xs:element name="ColumnList">				
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>											
+						</xs:sequence>
+					</xs:complexType>			
+				</xs:element>			
+			</xs:sequence>				
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

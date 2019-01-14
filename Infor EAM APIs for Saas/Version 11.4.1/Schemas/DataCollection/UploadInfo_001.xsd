@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2005, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request UploadInfo_001
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/UploadInfo_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/UploadInfo_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of UploadInfo_001 ======================================-->
+	<xs:element name="UploadInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UPLOADID"/>
+				<xs:element ref="dsf:UPLOADPRODUCTID"/>
+				<xs:element ref="UploadDetails" minOccurs="0"/>
+				<xs:element ref="ConversionDetails" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UploadDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UPLOADEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:UPLOADSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:UPLOADSTARTED" minOccurs="0"/>
+				<xs:element ref="dsf:UPLOADCOMPLETED" minOccurs="0"/>
+				<xs:element ref="dsf:UPLOADSTOPPED" minOccurs="0"/>
+				<xs:element ref="dsf:DATEPURGED" minOccurs="0"/>
+				<xs:element ref="dsf:OPTIONSREVIEWED" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConversionDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CONVERTEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:CONVERSIONSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:CONVERSIONSTARTED" minOccurs="0"/>
+				<xs:element ref="dsf:CONVERSIONCOMPLETED" minOccurs="0"/>
+				<xs:element ref="dsf:CONVERSIONSTOPPED" minOccurs="0"/>
+				<xs:element ref="dsf:CONVERSIONSCHEDULED" minOccurs="0"/>
+				<xs:element ref="dsf:CONVERSIONSCHEDULEDTIME" minOccurs="0"/>
+				<xs:element ref="dsf:UDF2UDF" minOccurs="0"/>
+				<xs:element ref="dsf:PMACTBYINSTRUCTION" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

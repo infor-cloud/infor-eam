@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity JobScheduleParameter
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/JobScheduleParameter_001"
+        xmlns="http://schemas.datastream.net/MP_entities/JobScheduleParameter_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="JobScheduleParameter">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:JOBSCHEDULEPARAMETERID"/>
+                    <xs:element ref="dsf:PARAMNAME"/>
+                    <xs:element ref="dsf:PARAMVALUE"/>
+                </xs:sequence>
+                <xs:attribute name="recordid" type="xs:long"/>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

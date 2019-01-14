@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+	Copyright (c) 2007 Infor.All rights reserved.The word and design marks set
+	forth herein are trademarks and/or registered trademarks of Infor and/or
+	related affiliates and subsidiaries.All rights reserved.All other trademarks
+	listed herein are the property of their respective owners.www.infor.com.
+ ============================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/InvoiceVoucherUtilityBills_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/InvoiceVoucherUtilityBills_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of InvoiceVoucherUtilityBills_001 =================-->
+	<xs:element name="InvoiceVoucherUtilityBills">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:INVOICEVOUCHERLINEID"/>
+				<xs:element ref="dsf:UTILITYBILLSOURCEID"/>
+				<xs:element ref="dsf:METERID" minOccurs="0"/>
+				<xs:element ref="dsf:UOMID"/>
+				<xs:element ref="dsf:COMMODITYCODE"/>
+				<xs:element ref="dsf:COMMODITYUOM"/>
+				<xs:element ref="dsf:CYCLE" minOccurs="0"/>
+				<xs:element ref="dsf:RATECODE" minOccurs="0"/>
+				<xs:element ref="dsf:CORRECTIONFACTOR"/>
+				<xs:element ref="dsf:FROMDATE"/>
+				<xs:element ref="dsf:TODATE"/>
+				<xs:element ref="dsf:STARTREADING" minOccurs="0"/>
+				<xs:element ref="dsf:ENDREADING" minOccurs="0"/>
+				<xs:element ref="dsf:USAGE"/>
+				<xs:element ref="dsf:UTILITYBILLAMOUNT"/>
+				<xs:element ref="dsf:MULTIPLIER"/>
+				<xs:element ref="dsf:METERTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:PEAKDEMAND" minOccurs="0"/>
+				<xs:element ref="dsf:BILLEDDEMAND" minOccurs="0"/>
+				<xs:element ref="dsf:POWERFACTORPCT" minOccurs="0"/>
+				<xs:element ref="dsf:SERVICECHARGEAMT" minOccurs="0"/>
+				<xs:element ref="dsf:UNITCHARGEAMT" minOccurs="0"/>
+				<xs:element ref="dsf:LOADFACTORPCT" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

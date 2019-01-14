@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entityActivity
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/TelephoneInterfaceMapping"
+           xmlns="http://schemas.datastream.net/MP_entities/TelephoneInterfaceMapping"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:of="http://www.openapplications.org/oagis_fields"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="TelephoneInterfaceMapping">
+        <xs:complexType>
+            <xs:sequence>
+            	<xs:element ref="dsf:ORGANIZATIONCODE" minOccurs="0"/>
+                <xs:element ref="WorkOrderActivityInfo" minOccurs="0"/>
+                <xs:element ref="WorkOrderInfo" minOccurs="0"/>
+                <xs:element ref="PriorityInfo" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="WorkOrderActivityInfo">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element ref="dsf:WORKORDERID"/>
+                <xs:element ref="WorkOrderActivityMap" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="WorkOrderActivityMap">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Selection"/>
+				<xs:element ref="dsf:ACTIVITYCODE"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="WorkOrderInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="WorkOrderMap" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="WorkOrderMap">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Selection"/>
+				<xs:element ref="dsf:STANDARDWO"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PriorityInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="PriorityrMap" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>   
+	<xs:element name="PriorityrMap">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Selection"/>
+				<xs:element ref="dsf:PRIORITYCODE"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>     
+	<xs:element name="Selection" type="xs:string"/>
+</xs:schema>

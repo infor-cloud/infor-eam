@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Thad Roland (Datastream Systems, Inc) -->
+<!--===================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+   Master schema for all function.
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/IP_fields" xmlns="http://schemas.datastream.net/IP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="MP_fields.xsd"/>
+	<xs:annotation>
+		<xs:documentation>
+                        This schema defines the simple and complex fields in MP business entities and processes
+                </xs:documentation>
+	</xs:annotation>
+	<xs:element name="XMLVERSION" type="xs:string"/>
+	<xs:element name="MP2USERID" type="xs:string"/>
+	<xs:element name="EMAIL" type="xs:string"/>
+	<xs:element name="LANGUAGEID" type="xs:string"/>
+	<xs:element name="MP2PRODUCTID" type="xs:string"/>
+	<xs:element name="PRODUCT" type="xs:string"/>
+	<xs:element name="TIMESTAMP" type="xs:date"/>
+	<xs:element name="MP2ITEMID" type="xs:string"/>
+	<xs:element name="MAXVENDORS" type="xs:integer"/>
+	<xs:element name="MAXRETURNITEMS" type="xs:integer"/>
+	<xs:element name="ACCOUNTNUM" type="xs:string"/>
+	<xs:element name="VENDORNUM" type="xs:integer"/>
+	<xs:element name="RESPONDTOBROKER" type="dsf:CODE1_Type"/>
+	<xs:element name="BUTTON" type="xs:string"/>
+	<xs:element name="BUTTONID" type="xs:integer"/>
+	<xs:element name="CANCELBUTTON" type="dsf:CODE1_Type"/>
+	<xs:element name="URL" type="xs:string"/>
+	<xs:element name="TITLE" type="xs:string"/>
+	<xs:element name="ACTIONTYPE" type="xs:string"/>
+	<xs:element name="BUTTONPRESSED" type="xs:integer"/>
+	<xs:element name="NOTES" type="xs:string"/>
+	<xs:element name="UOP" type="xs:string"/>
+	<xs:element name="VENDORITEMNUM" type="xs:string"/>
+	<xs:element name="LEADTIME" type="xs:integer"/>
+	<xs:element name="MINORDERQTY" type="xs:integer"/>
+	<xs:element name="UNITCOST" type="xs:float"/>
+	<xs:element name="VENDORNAME" type="xs:string"/>
+	<xs:element name="VENDORURL" type="xs:string"/>
+	<xs:element name="ORDERQTY" type="xs:integer"/>
+	<xs:element name="ECOMCONTROLNUM" type="xs:string"/>
+	<xs:element name="MESSAGE" type="xs:string"/>
+	<xs:element name="PORESULT" type="xs:integer"/>
+	<xs:element name="SITENAME" type="xs:string"/>
+	<xs:element name="CUSTOMERNAME" type="xs:string"/>
+	<xs:element name="ATTENTIONOF" type="xs:string"/>
+	<xs:element name="ADDRESS1" type="xs:string"/>
+	<xs:element name="ADDRESS2" type="xs:string"/>
+	<xs:element name="ADDRESS3" type="xs:string"/>
+	<xs:element name="COUNTRY" type="xs:string"/>
+	<xs:element name="EXT" type="xs:string"/>
+	<xs:element name="CREDITCARDNUM" type="xs:string"/>
+	<xs:element name="EXPIRATION" type="xs:string"/>
+	<xs:element name="NAME" type="xs:string"/>
+	<xs:element name="VALIDATEBEFORESUBMIT" type="xs:string"/>
+	<xs:element name="PURCHASINGCENTER" type="xs:string"/>
+	<xs:element name="PONUM" type="xs:string"/>
+	<xs:element name="PODESC" type="xs:string"/>
+	<xs:element name="RELEASENUM" type="xs:string"/>
+	<xs:element name="PROCESS" type="xs:string"/>
+	<xs:element name="POSTATUS" type="xs:string"/>
+	<xs:element name="POTYPE" type="xs:string"/>
+	<xs:element name="BUYER" type="xs:string"/>
+	<xs:element name="MP2CURRENCY" type="xs:string"/>
+	<xs:element name="EXCHANGERATE" type="xs:double"/>
+	<xs:element name="SHIPVIACODENUM" type="xs:string"/>
+	<xs:element name="ORDERDATE" type="xs:string"/>
+	<xs:element name="ACKREQUIRED" type="xs:string"/>
+	<xs:element name="MP2VENDORNAME" type="xs:string"/>
+	<xs:element name="CLAUSE" type="xs:string"/>
+	<xs:element name="USERITEMNUM" type="xs:string"/>
+	<xs:element name="ITEMCOMMENTS" type="xs:string"/>
+	<xs:element name="DUEDATE" type="xs:string"/>
+	<xs:element name="QUANTITYREQUESTED" type="xs:integer"/>
+	<xs:element name="COSTCENTER" type="xs:string"/>
+	<xs:element name="ORIGINATOR" type="xs:string"/>
+	<xs:element name="TOTAL" type="xs:double"/>
+	<xs:element name="DEFAULTDESCRIPTION" type="xs:string"/>
+	<xs:element name="DEFAULTVENDOR" type="xs:integer"/>
+	<xs:element name="UOW" type="xs:string"/>
+	<xs:element name="DESCRIPTION" type="xs:string"/>
+</xs:schema>

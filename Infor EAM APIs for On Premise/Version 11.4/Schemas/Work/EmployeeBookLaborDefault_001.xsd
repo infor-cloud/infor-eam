@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+	This schema defines MP entity transaction
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EmployeeBookLaborDefault_001" 	
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://schemas.datastream.net/MP_entities/EmployeeBookLaborDefault_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="EmployeeBookLaborDefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EMPLOYEEID" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:TRADEID" minOccurs="0"/>
+				<xs:element ref="dsf:DATEENTERED" minOccurs="0"/>
+				<xs:element ref="dsf:DATEWORKED" minOccurs="0"/>
+				<xs:element ref="dsf:OCCUPATIONTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:TRADERATEDATA" minOccurs="0"/>
+				<xs:element name="ActivityDetails" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dsf:ACTIVITYID"/>
+							<xs:element ref="dsf:ESTIMATEDHOURS" minOccurs="0"/>
+							<xs:element ref="dsf:HOURSREMAINING" minOccurs="0"/>
+							<xs:element ref="dsf:NORMALHOURSWORKED" minOccurs="0"/>
+							<xs:element ref="dsf:OVERTIMEHOURSWORKED" minOccurs="0"/>
+							<xs:element ref="dsf:ACTIVITYSTARTDATE" minOccurs="0"/>
+							<xs:element ref="dsf:ACTIVITYENDDATE" minOccurs="0"/>
+							<xs:element ref="dsf:WORKORDEREXT"/>
+							<xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/>							
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

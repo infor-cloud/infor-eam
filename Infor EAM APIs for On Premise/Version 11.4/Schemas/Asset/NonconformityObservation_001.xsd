@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+	Copyright (c) 2016 Infor. All rights reserved.
+	The word and design marks set forth herein are trademarks and/or registered
+	trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+	This schema defines MP entity Nonconformity
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/NonconformityObservation_001"
+		xmlns="http://schemas.datastream.net/MP_entities/NonconformityObservation_001"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:dsf="http://schemas.datastream.net/MP_fields"
+		xmlns:dse-nonconformity="http://schemas.datastream.net/MP_entities/Nonconformity_001"
+		elementFormDefault="qualified">
+		<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+		<xs:import namespace="http://schemas.datastream.net/MP_entities/Nonconformity_001" schemaLocation="Nonconformity_001.xsd"/>
+		<!--===============================================================================-->
+		<xs:element name="NonconformityObservation">
+			<xs:complexType>
+				<xs:sequence>		
+					<xs:element ref="dsf:NONCONFORMITYOBSERVATIONID"/>
+					<xs:element ref="dsf:OBSERVATIONSTATUS"/>
+					<xs:element ref="dsf:TASKLISTID" minOccurs="0"/>
+					<xs:element ref="dsf:OBSERVATIONSEVERITY" minOccurs="0"/>
+					<xs:element ref="dsf:OBSERVATIONINTENSITY" minOccurs="0"/>
+					<xs:element ref="dsf:OBSERVATIONIMPORTANCE" minOccurs="0"/>
+					<xs:element ref="dsf:OBSERVATIONSIZE" minOccurs="0"/>
+					<xs:element ref="dsf:NOTE" minOccurs="0"/>
+					<xs:element ref="dsf:RECORDEDDATE" minOccurs="0"/>
+					<xs:element ref="dsf:RECORDEDBY" minOccurs="0"/>
+					<xs:element ref="OBTrackingDetails" minOccurs="0"/>
+					<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+					<xs:element ref="OBWorkOrderDetails" minOccurs="0"/>
+					<xs:element ref="dse-nonconformity:Nonconformity" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="recordid" type="xs:long"></xs:attribute>		
+				<xs:attribute name="confirm_delete_checklist" type="dsf:CONFIRMATION_Type" default="prompt"/>
+				<xs:attribute name="confirm_exist_open_checklist" type="dsf:CONFIRMATION_Type" default="prompt"/>				
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="OBTrackingDetails">
+			<xs:complexType>
+				<xs:sequence>	
+					<xs:element ref="dsf:CONDITIONSCORE" minOccurs="0"/>
+					<xs:element ref="dsf:CONDITIONINDEX" minOccurs="0"/>
+					<xs:element ref="dsf:NEXTINSPECTIONDATE" minOccurs="0"/>
+					<xs:element ref="dsf:NEXTINSPECTIONDATEOVERRIDE" minOccurs="0"/>
+					<xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+					<xs:element ref="dsf:NONCONFORMITYCODEBEFOREMERGE" minOccurs="0"/>
+					<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+					<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+					<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+					<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>	
+				</xs:sequence>
+			</xs:complexType>
+	</xs:element>
+		<xs:element name="OBWorkOrderDetails">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="dsf:WORKORDERSTATUS" minOccurs="0"/>
+					<xs:element ref="dsf:TYPE" minOccurs="0" />
+					<xs:element ref="dsf:PRIORITY" minOccurs="0"/>
+					<xs:element ref="dsf:DEPARTMENTID"  minOccurs="0"/>
+					<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+					<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+					<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+					<xs:element ref="dsf:SCHEDGROUP" minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+</xs:schema>

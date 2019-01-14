@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity transaction
+============================================================================= -->
+ 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/MailTemplate_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/MailTemplate_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MailTemplate_001 ======================================-->
+	<xs:element name="MailTemplate">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:MAILTEMPLATEID"/>
+				<xs:element ref="dsf:MAILTEMPLATERECIPIENTS" minOccurs="0"/>
+				<xs:element ref="dsf:MAILTEMPLATESUBJECT" minOccurs="0"/>
+				<xs:element ref="dsf:MAILTEMPLATEBODY" minOccurs="0"/>
+				<xs:element ref="dsf:MAILTEMPLATEREPORT" minOccurs="0"/>
+				<xs:element ref="dsf:FROMEMAIL" minOccurs="0"/>
+				<xs:element ref="dsf:ISPUSHNOTIFICATION" minOccurs="0"/>
+				<xs:element ref="dsf:EMAILNOTFICATIONACTIVE" minOccurs="0"/>
+				<xs:element ref="dsf:NOTEBOOKEMAILS" minOccurs="0"/>
+				</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

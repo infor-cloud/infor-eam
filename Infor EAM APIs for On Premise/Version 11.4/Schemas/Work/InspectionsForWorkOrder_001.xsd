@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity InspectionsForWorkOrder    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/InspectionsForWorkOrder_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/InspectionsForWorkOrder_001" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+
+    <!--=====================================================================-->
+    <!--====  Begining of InspectionsForWorkOrder_001 ======================================-->
+    <xs:element name="InspectionsForWorkOrder">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:EVENTPOINTID"/>
+                <xs:element ref="dsf:ASPECTPOINTID"/>
+                <xs:element ref="dsf:INSPECTIONSEQUENCENUMBER"/>
+                <xs:element ref="dsf:ASSETTYPE"                  minOccurs="0"/>
+                <xs:element ref="dsf:WORKORDERID"                minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONMETHODID"         minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONVALUE"            minOccurs="0"/>
+                <xs:element ref="dsf:UOMID"                      minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONRESULT"           minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONRESULTDATE"       minOccurs="0"/>
+                <xs:element ref="dsf:FINDINGID"                  minOccurs="0"/>
+                <xs:element ref="dsf:CLASSID"                    minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTOR"                  minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONLOCATION"         minOccurs="0"/>
+                <xs:element ref="dsf:STANDARDWO"                 minOccurs="0"/>
+                <xs:element ref="dsf:NEWWORKORDERREQUIRED"       minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONWORKORDERID"      minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONNOTE"             minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONCONFIDENCERATING" minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONCOMPLETED"        minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONCHARLIST"         minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONNUMLIST"          minOccurs="0"/>
+                <xs:element ref="dsf:INSPECTIONDATELIST"         minOccurs="0"/>
+                <xs:element ref="dsf:EQUIPMENTCLASSID"           minOccurs="0"/>
+                <xs:element ref="dsf:CATEGORYID"                 minOccurs="0"/>
+                <xs:element ref="dsf:LINEARREFUOM"               minOccurs="0"/>
+                <xs:element ref="dsf:FROMPOINT"                  minOccurs="0"/>
+				<xs:element ref="dsf:FROMPOINTDESC"              minOccurs="0"/>
+				<xs:element ref="dsf:FROMPOINTGEOREF"            minOccurs="0"/>
+				<xs:element ref="dsf:TOPOINT"                    minOccurs="0"/>
+				<xs:element ref="dsf:TOPOINTDESC"                minOccurs="0"/>
+				<xs:element ref="dsf:TOPOINTGEOREF"              minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

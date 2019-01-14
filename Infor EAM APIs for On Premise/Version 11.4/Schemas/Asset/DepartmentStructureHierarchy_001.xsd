@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity  DepartmentStructureHierarchy_001.
+====================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/DepartmentStructureHierarchy_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns="http://schemas.datastream.net/MP_entities/DepartmentStructureHierarchy_001" elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Begining of DepartmentStructureHierarchy_001 ======================================-->
+	<xs:element name="DepartmentStructureHierarchy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Department"/>
+				<xs:element ref="dsf:CCTRSPCVALIDATION" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Department">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPARTMENTID"/>
+				<xs:element ref="dsf:ENTITY" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTSTRUCTUREID" minOccurs="0"/>
+				<xs:element ref="Provider" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="ServiceCategory" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="ServiceProblem" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Provider">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PROVIDERID" minOccurs="0"/>
+				<xs:element ref="dsf:ENTITY" minOccurs="0"/>
+				<xs:element ref="dsf:PARENTENTITY" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTSTRUCTUREID" minOccurs="0"/>
+				<xs:element ref="ServiceCategory" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="ServiceProblem" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ServiceCategory">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SERVICECATEGORYID" minOccurs="0"/>
+				<xs:element ref="dsf:ENTITY" minOccurs="0"/>
+				<xs:element ref="dsf:PARENTENTITY" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTSTRUCTUREID" minOccurs="0"/>
+				<xs:element ref="ServiceProblem" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ServiceProblem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SERVICEPROBLEMID" minOccurs="0"/>
+				<xs:element ref="dsf:ENTITY" minOccurs="0"/>
+				<xs:element ref="dsf:PARENTENTITY" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTSTRUCTUREID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

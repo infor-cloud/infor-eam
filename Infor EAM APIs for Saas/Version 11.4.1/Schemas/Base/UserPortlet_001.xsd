@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity UserPortlet
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/UserPortlet_001"
+           xmlns="http://schemas.datastream.net/MP_entities/UserPortlet_001"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           elementFormDefault="qualified">
+
+  <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd" />
+
+  <!-- need an abstract portlet type to extend -->
+
+  <xs:complexType name="BasePortlet">
+    <xs:sequence>
+      <xs:element ref="dsf:USERFUNCTION" />
+      <xs:element ref="dsf:PortletId" />
+      <xs:element ref="dsf:PortletType" />
+      <xs:element ref="dsf:PortletOrder" minOccurs="0" />
+      <xs:element ref="dsf:PortletWidth" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ListPortlet">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BasePortlet">
+          <!-- PortletId contains DataSpy id -->
+          <xs:sequence>
+            <xs:element ref="dsf:PortletGridId" />
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GraphPortlet">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BasePortlet">
+          <xs:sequence>
+            <xs:element ref="dsf:PortletTitle" minOccurs="0" />
+            <xs:element ref="dsf:PortletURL" minOccurs="0" />
+            <xs:element ref="dsf:GraphType" />
+            <xs:element ref="dsf:GraphId" />
+            <xs:element ref="dsf:GraphHeight" minOccurs="0" />
+            <xs:element ref="dsf:GraphWidth" minOccurs="0" />
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="HtmlPortlet">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="BasePortlet">
+          <xs:sequence>
+            <xs:element ref="dsf:PortletTitle" minOccurs="0" />
+            <xs:element ref="dsf:PortletURL" minOccurs="0" />
+            <xs:element ref="dsf:PortletHeight" minOccurs="0" />
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="AnyPortlet">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="ListPortlet" />
+        <xs:element ref="GraphPortlet" />
+        <xs:element ref="HtmlPortlet" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="PortletList">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element ref="AnyPortlet" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PortletListType">
+    <xs:sequence>
+      <xs:element name="DoubleWide" type="PortletList" />
+      <xs:element name="SingleWide" type="PortletList" />
+      <xs:element name="TripleWide" type="PortletList" />
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+

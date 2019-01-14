@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================ 
+    Copyright (c) 2015 Infor. All rights reserved
+    The word and design marks set forth herein are trademarks and/or registered trademarks of Infor 
+    and/or related affiliates and subsidiaries. All rights reserved. All other trademarks listed herein 
+    are the property of their respective owners. www.infor.com
+
+    This schema defines MP entity PushNotificationRegistry 
+==================================================================================--> 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PushNotificationRegistry_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/PushNotificationRegistry_001" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!-- ======= Beginning of UserCode_001 ======= -->
+    <xs:element name="PushNotificationRegistry">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:PUSHNOTIFICATIONREGISTRYID"/>
+                <xs:element ref="dsf:PUSHNOTIFICATIONTOKEN"/>
+                <xs:element ref="dsf:MOBILEPLATFORM"/>
+                <xs:element ref="dsf:USERID"/>
+                <xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+                <xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+                <xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+                <xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

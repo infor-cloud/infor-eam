@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2007 Infor.All rights reserved.The word and design marks set
+	forth herein are trademarks and/or registered trademarks of Infor and/or
+	related affiliates and subsidiaries.All rights reserved.All other trademarks
+	listed herein are the property of their respective owners.www.infor.com.
+	
+	This schema defines MP business function result MP2208_DeletePartEvaluation_001_Result
+ ================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP2208_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns="http://schemas.datastream.net/MP_results/MP2208_001" elementFormDefault="qualified">
+
+	<!--============================= Imported Schemas ============================================-->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===========================================================================================-->
+
+	<!--===============  Begining of MP2208_DeletePartEvaluation_001_Result ========================-->
+	<xs:element name="MP2208_DeletePartEvaluation_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EVALUATIONID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

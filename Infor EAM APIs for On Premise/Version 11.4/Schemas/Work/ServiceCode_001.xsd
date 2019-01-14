@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity transaction    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ServiceCode_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/ServiceCode_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of ServiceCode_001 ======================================-->
+	<xs:element name="ServiceCode">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SERVICECODEID"/>
+				<xs:element ref="dsf:SYSTEMID"/>
+				<xs:element ref="dsf:STANDARDWO"/>
+				<xs:element ref="dsf:RESPONSETIME" minOccurs="0"/>
+				<xs:element ref="dsf:COSTESTIMATE" minOccurs="0"/>
+				<xs:element ref="dsf:PRIORITY" minOccurs="0"/>
+				<xs:element ref="dsf:CUSTOMERSELECTABLE" minOccurs="0"/>
+				<xs:element ref="dsf:BILLABLE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="servicecode_pk" type="xs:string"/>			
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

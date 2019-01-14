@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2017 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners.
+
+    This schema defines MP business function request MP6515_ImportBaseConfiguration_001_Result
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP6515_001"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://schemas.datastream.net/MP_results/MP6515_001" 
+	elementFormDefault="qualified">
+<!-- =========================== Imported namespaces ============================= -->
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<!-- ============================================================================= -->
+
+<!--========  Begining of MP6515_ImportBaseConfiguration_001_Result ===============-->
+<xs:element name="MP6515_GetImportBaseConfigurationStatusDetail_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>	
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ImportBaseConfigurationStatusDetail" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ImportBaseConfigurationStatusDetail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PERCENTCOMPLETED" minOccurs="0"/>
+				<xs:element name="CURRENTREIMPORT" type="xs:long" minOccurs="0"/>
+				<xs:element name="CURRENTTABLEIMPORTING" type="dsf:CODE32_Type" minOccurs="0"/>
+				<xs:element ref="ReImportSession" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReImportSession">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RECORDSPROCESSED" type="xs:long" minOccurs="0"/>
+				<xs:element name="REIMPORTNUMBER" type="xs:long" minOccurs="0"/>
+				<xs:element ref="dsf:DATESTARTED" minOccurs="0"/>
+				<xs:element ref="dsf:DATECOMPLETED" minOccurs="0"/>
+				<xs:element ref="dsf:STATUS" minOccurs="0"/>
+				<xs:element ref="dsf:DURATION" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

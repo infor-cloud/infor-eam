@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+Copyright 2003, Datastream Systems, Inc.
+50 Datastream Plaza, Greenville, SC 29605, USA.
+All rights reserved.
+
+This schema defines MP business function result MP2100_GetStoreToStoreReceipt_001_Result    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP2100_001" xmlns="http://schemas.datastream.net/MP_results/MP2100_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:dse-StoreToStoreReceipt="http://schemas.datastream.net/MP_entities/StoreToStoreReceipt_001" elementFormDefault="qualified">
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<xs:import namespace="http://schemas.datastream.net/MP_entities/StoreToStoreReceipt_001" schemaLocation="StoreToStoreReceipt_001.xsd"/>
+<!--===============================================================================-->
+<!--=============  Begining of MP2100_GetStoreToStoreReceipt_001_Result ==================-->
+	<xs:element name="MP2100_GetStoreToStoreReceipt_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-StoreToStoreReceipt:StoreToStoreReceipt"/>
+				<xs:element ref="dsf:PARTLINECOUNT" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="hasstoresecurity" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

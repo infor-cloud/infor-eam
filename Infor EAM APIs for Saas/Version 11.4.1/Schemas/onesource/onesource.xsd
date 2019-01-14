@@ -1,0 +1,754 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:tns="http://www.sabrix.com/services/taxcalculationservice/2011-09-01" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.sabrix.com/services/taxcalculationservice/2011-09-01" version="1.0">
+  <xs:element name="taxCalculationRequest" type="tns:TaxCalculationRequest"/>
+  <xs:complexType name="AddressType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="COUNTRY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PROVINCE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="STATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COUNTY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CITY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DISTRICT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="POSTCODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="GEOCODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ALL" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AmountType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="COUNTRY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PROVINCE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="STATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COUNTY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CITY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DISTRICT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="POSTCODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="GEOCODE" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CertificateLocationType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="COUNTRY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PROVINCE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DISTRICT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="STATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COUNTY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CITY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="POSTCODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="GEOCODE" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EstablishmentsLocationType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="BILL_TO" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="BUYER_PRIMARY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MIDDLEMAN" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORDER_ACCEPTANCE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORDER_ORIGIN" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SELLER_PRIMARY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SHIP_FROM" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SHIP_TO" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SUPPLY" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EstablishmentsType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="BUYER_ROLE" type="tns:EstablishmentsLocationType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MIDDLEMAN_ROLE" type="tns:EstablishmentsLocationType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SELLER_ROLE" type="tns:EstablishmentsLocationType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FlagAddressType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="ALL" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COUNTRY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PROVINCE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="STATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COUNTY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CITY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DISTRICT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="POSTCODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="GEOCODE" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="HostRequestInfoType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="HOST_REQUEST_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="HOST_REQUEST_LOG_ENTRY_ID" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InclusiveTaxIndicatorsType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="FULLY_INCLUSIVE" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="AUTHORITY_TYPE" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Indata">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_ID" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_ROLE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXTERNAL_COMPANY_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SCENARIO_ID" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SCENARIO_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="XML_GROUP_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="XML_GROUP_OWNER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="USERNAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PASSWORD" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="HOST_SYSTEM" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="HOST_REQUEST_INFO" type="tns:HostRequestInfoType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CALLING_SYSTEM_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="INVOICE" type="tns:IndataInvoiceType"/>
+    </xs:sequence>
+    <xs:attribute name="version" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="IndataInvoiceType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="ALLOCATION_GROUP_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ALLOCATION_GROUP_OWNER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ALLOCATION_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="AUTO_CREATE_CERTIFICATES" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="AUTO_CREATE_CUSTOMERS" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="BASIS_PERCENT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="BILL_TO" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="BUYER_PRIMARY" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CALLING_SYSTEM_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CALCULATION_DIRECTION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_ID" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_ROLE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COUNTRY_OF_ORIGIN" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="CURRENCY_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_GROUP_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_GROUP_OWNER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DELIVERY_TERMS" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DEPT_OF_CONSIGN" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DOCUMENT_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="END_USE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="END_USER_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ESTABLISHMENTS" type="tns:EstablishmentsType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXEMPT_AMOUNT" type="tns:AmountType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXEMPT_CERTIFICATE" type="tns:CertificateLocationType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXEMPT_REASON" type="tns:CertificateLocationType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXTERNAL_COMPANY_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="FILTER_GROUP_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="FILTER_GROUP_OWNER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="FISCAL_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="FUNCTIONAL_CURRENCY_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="HOST_SYSTEM" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INCLUSIVE_TAX_INDICATORS" type="tns:InclusiveTaxIndicatorsType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INPUT_RECOVERY_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="INVOICE_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INVOICE_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_AUDITED" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_AUDIT_UPDATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_BUSINESS_SUPPLY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_CREDIT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_EXEMPT" type="tns:FlagAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_NO_TAX" type="tns:FlagAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_REPORTED" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_REVERSED" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_ROUNDING" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_SIMPLIFICATION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="LICENSES" type="tns:IndataLicensesType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="LOCATION" type="tns:LocationNameType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="LOCATION_SET" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MIDDLEMAN" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MODE_OF_TRANSPORT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MOVEMENT_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MOVEMENT_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="NATURE_OF_TRANSACTION_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORDER_ACCEPTANCE" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORDER_ORIGIN" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_DOCUMENT_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_DOCUMENT_ITEM" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_DOCUMENT_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_INVOICE_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_INVOICE_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_MOVEMENT_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="OVERRIDE_AMOUNT" type="tns:AmountType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="OVERRIDE_RATE" type="tns:AmountType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="POINT_OF_TITLE_TRANSFER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PORT_OF_ENTRY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PORT_OF_LOADING" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PRODUCT_MAPPING_GROUP_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PRODUCT_MAPPING_GROUP_OWNER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGIME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATIONS" type="tns:RegistrationsType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SELLER_PRIMARY" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SHIP_FROM" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SHIP_TO" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="STATISTICAL_PROCEDURE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SUPPLY" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SUPPLY_EXEMPT_PERCENT" type="tns:AmountType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_DETERMINATION_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_EXCHANGE_RATE_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_POINT_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_TREATMENT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_TYPE" type="tns:AddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TITLE_TRANSFER_LOCATION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TRANSACTION_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VAT_GROUP_REGISTRATION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VENDOR_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VENDOR_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VENDOR_TAX" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="UNIQUE_INVOICE_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="50" minOccurs="0" name="USER_ELEMENT" type="tns:UserElementType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="LINE" type="tns:IndataLineType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndataLicensesDetailType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TYPE" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndataLicensesType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="CUSTOMER_LICENSE" type="tns:IndataLicensesDetailType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndataLineType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="ACCOUNTING_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ALLOCATION_GROUP_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ALLOCATION_GROUP_OWNER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ALLOCATION_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="BASIS_PERCENT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="BILL_TO" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="BUYER_PRIMARY" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMMODITY_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COUNTRY_OF_ORIGIN" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_GROUP_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_GROUP_OWNER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DELIVERY_TERMS" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DEPT_OF_CONSIGN" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DESCRIPTION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DISCOUNT_AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="END_USE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="END_USER_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ESTABLISHMENTS" type="tns:EstablishmentsType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXEMPT_AMOUNT" type="tns:AmountType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXEMPT_CERTIFICATE" type="tns:CertificateLocationType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXEMPT_REASON" type="tns:CertificateLocationType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="FREIGHT_ON_BOARD" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="GROSS_AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="GROSS_PLUS_TAX" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INCLUSIVE_TAX_INDICATORS" type="tns:InclusiveTaxIndicatorsType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INPUT_RECOVERY_AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INPUT_RECOVERY_PERCENT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INPUT_RECOVERY_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INVOICE_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_ALLOCATABLE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_BUSINESS_SUPPLY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_CREDIT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_EXEMPT" type="tns:FlagAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_MANUFACTURING" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_NO_TAX" type="tns:FlagAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_SIMPLIFICATION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ITEM_VALUE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="LICENSES" type="tns:IndataLicensesType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="LINE_NUMBER" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="LOCATION" type="tns:LocationNameType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="LOCATION_SET" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MASS" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MIDDLEMAN" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MODE_OF_TRANSPORT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MOVEMENT_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MOVEMENT_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORDER_ACCEPTANCE" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORDER_ORIGIN" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_DOCUMENT_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_DOCUMENT_ITEM" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_DOCUMENT_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_INVOICE_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_MOVEMENT_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="OVERRIDE_AMOUNT" type="tns:AmountType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="OVERRIDE_RATE" type="tns:AmountType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PART_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="POINT_OF_TITLE_TRANSFER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PORT_OF_ENTRY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PORT_OF_LOADING" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PRODUCT_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="QUANTITIES" type="tns:QuantitiesType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="QUANTITY" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGIME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATIONS" type="tns:RegistrationsType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="RELATED_LINE_NUMBER" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SELLER_PRIMARY" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SHIP_FROM" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SHIP_TO" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SUPPLEMENTARY_UNIT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SUPPLY" type="tns:ZoneAddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SUPPLY_EXEMPT_PERCENT" type="tns:AmountType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_DETERMINATION_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_EXCHANGE_RATE_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_POINT_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_TREATMENT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_TYPE" type="tns:AddressType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TITLE_TRANSFER_LOCATION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TRANSACTION_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="UNIQUE_LINE_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="UNIT_OF_MEASURE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="UOM" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VAT_GROUP_REGISTRATION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VENDOR_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VENDOR_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VENDOR_TAX" type="xs:string"/>
+      <xs:element maxOccurs="50" minOccurs="0" name="USER_ELEMENT" type="tns:UserElementType"/>
+    </xs:sequence>
+    <xs:attribute name="ID" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="LocationNameType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="BILL_TO" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORDER_ACCEPTANCE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MIDDLEMAN" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORDER_ORIGIN" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SHIP_FROM" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SHIP_TO" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SUPPLY" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QuantitiesType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="QUANTITY" type="tns:QuantityType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QuantityType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="DEFAULT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="UOM" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RegistrationsType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="BUYER_ROLE" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="MIDDLEMAN_ROLE" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="SELLER_ROLE" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TaxCalculationRequest">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="INDATA" type="tns:Indata"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UserElementType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="VALUE" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZoneAddressType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="COUNTRY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PROVINCE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="STATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COUNTY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CITY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DISTRICT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="POSTCODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="GEOCODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_BRANCH_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_BONDED" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="LOCATION_TAX_CATEGORY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ADDRESS_1" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ADDRESS_2" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ADDRESS_3" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ADDRESS_VALIDATION_MODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DEFAULT_ADDRESS_VALIDATION_MODE" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="taxCalculationResponse" type="tns:TaxCalculationResponse"/>
+  <xs:complexType name="AuthorityAttributeType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="VALUE" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConvertedCurrencyAmountType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="DOCUMENT_AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="UNROUNDED_DOCUMENT_AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="AUTHORITY_AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="UNROUNDED_AUTHORITY_AMOUNT" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CurrencyConversionStepType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="CONVERSION_STEP" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="FROM_CURRENCY_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="TO_CURRENCY_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="EXCHANGE_RATE" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CurrencyConversionType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="TAX_EXCHANGE_RATE_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXCHANGE_RATE_SOURCE" type="xs:string"/>
+      <xs:element maxOccurs="2" minOccurs="0" name="CONVERSION_STEPS" type="tns:CurrencyConversionStepType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FeeType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="AMOUNT" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="CURRENCY_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="UNIT_OF_MEASURE" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IndataType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_ID" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_ROLE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXTERNAL_COMPANY_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SCENARIO_ID" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SCENARIO_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="XML_GROUP_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="XML_GROUP_OWNER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="USERNAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PASSWORD" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="HOST_SYSTEM" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="HOST_REQUEST_INFO" type="tns:HostRequestInfoType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CALLING_SYSTEM_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="INVOICE" type="tns:IndataInvoiceType"/>
+    </xs:sequence>
+    <xs:attribute name="version" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="MessageType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="LOCATION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="CATEGORY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="MESSAGE_TEXT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="SEVERITY" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OutdataAdvisoriesType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="ADVISORY" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OutdataErrorType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="DESCRIPTION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="ERROR_LOCATION_PATH" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OutdataInvoiceType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="REQUEST_STATUS" type="tns:OutdataRequestStatusType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="BASIS_PERCENT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CALCULATION_DIRECTION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CALLING_SYSTEM_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_ID" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="COMPANY_ROLE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="CURRENCY_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="CURRENCY_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="MIN_ACCOUNTABLE_UNIT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="ROUNDING_PRECISION" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="ROUNDING_RULE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="END_USER_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXTERNAL_COMPANY_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="FISCAL_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="FUNCTIONAL_CURRENCY_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="HOST_SYSTEM" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INDATA" type="tns:IndataType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="INVOICE_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INVOICE_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_AUDIT_UPDATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_BUSINESS_SUPPLY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_CREDIT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_REPORTED" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_REVERSED" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="MESSAGE" type="tns:MessageType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="NATURE_OF_TRANSACTION_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_INVOICE_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="STATISTICAL_PROCEDURE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="TOTAL_TAX_AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TRANSACTION_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="UNIQUE_INVOICE_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VENDOR_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VENDOR_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VENDOR_TAX" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="USER_ELEMENT" type="tns:UserElementType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="LINE" type="tns:OutdataLineType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_DOCUMENT_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_DOCUMENT_ITEM" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_DOCUMENT_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_INVOICE_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_MOVEMENT_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_GROUP_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_GROUP_OWNER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_SUMMARY" type="tns:OutdataTaxSummaryType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OutdataLicensesType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="LICENSE" type="tns:OutdataLicenseType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OutdataLicenseType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="LICENSE_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="LICENSE_TYPE_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="LICENSE_END_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="LICENSE_CATEGORY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="LICENSE_EXTERNAL_IDENTIFIER" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OutdataLineType">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ALLOCATION_LINE" type="tns:OutdataLineType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ACCOUNTING_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ALLOCATION_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="BASIS_PERCENT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="BILL_TO_BRANCH_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMMODITY_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COUNTRY_OF_ORIGIN" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DEPT_OF_CONSIGN" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DESCRIPTION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DISCOUNT_AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="END_USER_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="DELIVERY_TERMS" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="FREIGHT_ON_BOARD" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="GROSS_AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INPUT_RECOVERY_AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INPUT_RECOVERY_PERCENT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MIDDLEMAN_MARKUP_AMOUNT" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MIDDLEMAN_MARKUP_RATE" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_BUSINESS_SUPPLY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ITEM_VALUE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="LINE_NUMBER" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="RELATED_LINE_NUMBER" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MASS" type="xs:decimal"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="MESSAGE" type="tns:MessageType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MIDDLEMAN_BRANCH_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MODE_OF_TRANSPORT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PART_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="POINT_OF_TITLE_TRANSFER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PORT_OF_ENTRY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="PORT_OF_LOADING" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGIME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SHIP_FROM_BRANCH_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SHIP_FROM_COUNTRY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SHIP_TO_BRANCH_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SHIP_TO_COUNTRY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SUPPLEMENTARY_UNIT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SUPPLY_BRANCH_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="UNIQUE_LINE_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VENDOR_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VENDOR_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VENDOR_TAX" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="TOTAL_TAX_AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_CODE" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="TAX" type="tns:OutdataTaxType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TRANSACTION_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="UNIT_OF_MEASURE" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="USER_ELEMENT" type="tns:UserElementType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="QUANTITIES" type="tns:QuantitiesType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_CREDIT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INVOICE_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MOVEMENT_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_DOCUMENT_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_DOCUMENT_ITEM" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_DOCUMENT_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_INVOICE_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_INVOICE_NUMBER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ORIGINAL_MOVEMENT_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_GROUP_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CUSTOMER_GROUP_OWNER" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TITLE_TRANSFER_LOCATION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_SUMMARY" type="tns:OutdataTaxSummaryType"/>
+    </xs:sequence>
+    <xs:attribute name="ID" type="xs:string" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="OutdataRequestStatusType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="IS_SUCCESS" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="IS_PARTIAL_SUCCESS" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ERROR" type="tns:OutdataErrorType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OutdataTaxSummaryType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAXABLE_BASIS" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="NON_TAXABLE_BASIS" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="EXEMPT_AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="TAX_RATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EFFECTIVE_TAX_RATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ADVISORIES" type="tns:OutdataAdvisoriesType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OutdataTaxType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="ADDRESS_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="ADMIN_ZONE_LEVEL" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="AUTHORITY_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="AUTHORITY_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="BASIS_PERCENT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="CALCULATION_METHOD" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMMENT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ERP_TAX_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="AUTHORITY_FIPS" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="EFFECTIVE_ZONE_LEVEL" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXEMPT_CERTIFICATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXEMPT_CERTIFICATE_EXPIRE_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXEMPT_REASON" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INPUT_RECOVERY_AMOUNT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INPUT_RECOVERY_PERCENT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INVOICE_DESCRIPTION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="JURISDICTION_TEXT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_EXEMPT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_INTRASTAT_REPORTED" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_NOTAX" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_TRIANGULATION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_VAT_REPORTED" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="IS_VIES_REPORTED" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="LOCATION_CODE" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="MESSAGE" type="tns:MessageType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="BUYER_REGISTRATION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SELLER_REGISTRATION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="MIDDLEMAN_REGISTRATION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="OVERRIDE_AMOUNT" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="OVERRIDE_RATE" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REVISED_GROSS_AMOUNT" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="RULE_ORDER" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SUPPLY_EXEMPT_PERCENT" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAXABLE_COUNTRY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAXABLE_COUNTRY_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAXABLE_PROVINCE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAXABLE_STATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAXABLE_COUNTY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAXABLE_CITY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAXABLE_DISTRICT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAXABLE_GEOCODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAXABLE_POSTCODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_DIRECTION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_RATE_CODE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="TAX_TYPE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="VAT_GROUP_REGISTRATION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ZONE_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="ZONE_LEVEL" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="FISCAL_REP_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="FISCAL_REP_ADDRESS1" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="FISCAL_REP_ADDRESS2" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="FISCAL_REP_CONTACT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_1" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_2" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_3" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_4" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_5" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_6" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_7" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_8" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_9" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_10" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_11" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_12" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_13" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_14" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_15" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_16" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_17" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_18" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_19" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_20" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_21" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_22" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_23" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_24" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_25" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_26" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_27" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_28" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_29" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_30" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_31" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_32" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_33" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_34" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_35" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_36" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_37" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_38" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_39" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_40" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_41" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_42" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_43" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_44" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_45" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_46" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_47" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_48" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_49" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="REGISTRATION_ATTRIBUTE_50" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="AUTHORITY_ATTRIBUTE" type="tns:AuthorityAttributeType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_RATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="UOM_CONVERSION" type="tns:UomConversionType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="NATURE_OF_TAX" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EU_TRANSACTION" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="AUTHORITY_CATEGORY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="AUTHORITY_OFFICIAL_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="AUTHORITY_TYPE_ALIAS" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="AUTHORITY_UUID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="RELATED_LINE_NUMBER" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="RELATED_ALLOCATION_LINE_NUMBER" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="RULE_REPORTING_CATEGORY" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_TREATMENT" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="AUTHORITY_CURRENCY_CODE" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="CURRENCY_CONVERSION" type="tns:CurrencyConversionType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXEMPT_AMOUNT" type="tns:ConvertedCurrencyAmountType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="GROSS_AMOUNT" type="tns:ConvertedCurrencyAmountType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="NON_TAXABLE_BASIS" type="tns:ConvertedCurrencyAmountType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAXABLE_BASIS" type="tns:ConvertedCurrencyAmountType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="TAX_AMOUNT" type="tns:ConvertedCurrencyAmountType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="FEE" type="tns:FeeType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="TAX_DETERMINATION_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="TAX_POINT_DATE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="INCLUSIVE_TAX" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="LICENSES" type="tns:OutdataLicensesType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OutdataType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="0" name="REQUEST_STATUS" type="tns:OutdataRequestStatusType"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_ID" type="xs:decimal"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_NAME" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="COMPANY_ROLE" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="EXTERNAL_COMPANY_ID" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="SCENARIO_NAME" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="1" name="INVOICE" type="tns:OutdataInvoiceType"/>
+    </xs:sequence>
+    <xs:attribute name="version" type="xs:string"/>
+  </xs:complexType>
+  <xs:complexType name="TaxCalculationResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="OUTDATA" type="tns:OutdataType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UomConversionType">
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" name="FACTOR" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="OPERATOR" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="FROM" type="tns:QuantityType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="TO_ROUNDED" type="tns:QuantityType"/>
+      <xs:element maxOccurs="1" minOccurs="1" name="TO_UNROUNDED" type="tns:QuantityType"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

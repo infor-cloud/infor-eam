@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2013 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP5710_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.datastream.net/MP_functions/MP5710_001" 
+	elementFormDefault="qualified">
+	<!-- ============================= Imported schemas ======================================= -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--======= Beginning of MP5710_ReplacePermitToWork_001 =======-->
+	<xs:element name="MP5710_ReplacePermitToWork_001">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="dsf:BaseSchemaRequestElement">
+					<xs:sequence>
+						<xs:element ref="ReplacePermitToWorkData"/>
+					</xs:sequence>
+					<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Replace"/>
+					<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="PermitToWork"/>
+					<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReplacePermitToWorkData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PERMITTOWORKID"/>
+				<xs:element ref="dsf:NEWPERMITTOWORKID"/>
+				<xs:element ref="dsf:COPYCUSTOMFIELDS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYLOTO" minOccurs="0"/>
+				<xs:element ref="dsf:COPYSAFETY" minOccurs="0"/>
+				<xs:element ref="dsf:COPYEQUIPMENTSAFETY" minOccurs="0"/>
+				<xs:element ref="dsf:COPYLOCATIONSAFETY" minOccurs="0"/>
+				<xs:element ref="dsf:COPYCOMMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYDOCUMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

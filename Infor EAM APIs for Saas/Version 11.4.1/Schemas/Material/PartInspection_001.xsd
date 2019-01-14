@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+    
+    This schema defines MP entity PartInspection    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PartInspection_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/PartInspection_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===========================================================================================-->
+	<!--====  Begining of PartInspection_001 ===========================================-->
+	<xs:element name="PartInspection">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PartInspectionBasic"/>
+				<xs:element ref="PartDetails"/>
+				<xs:element ref="InspectionDetails"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PartInspectionBasic">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PORECEIPTLINEID"/>
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:PORECEIPTLINESTATUS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PartDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PARTID" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:METHODID" minOccurs="0"/>
+				<xs:element ref="dsf:RECEIVEDQUANTITY" minOccurs="0"/> <!-- packing slip quantity -->
+				<xs:element ref="dsf:RECEIVEDUOM" minOccurs="0"/>
+				<xs:element ref="dsf:RECEIPTQUANTITY" minOccurs="0"/> <!-- counted qty -->
+				<xs:element ref="dsf:RECEIPTUOM" minOccurs="0"/> 	
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InspectionDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:INSPECTIONSTATUS"/>
+				<xs:element ref="dsf:DOCKLOCATION" minOccurs="0"/> 
+				<xs:element ref="dsf:INSPECTEDQUANTITY" minOccurs="0"/>  
+				<xs:element ref="dsf:INSPECTEDQUANTITYUOM" minOccurs="0"/>   
+				<xs:element ref="dsf:APPROVEDQUANTITY" minOccurs="0"/>       
+				<xs:element ref="dsf:APPROVEDQUANTITYUOM" minOccurs="0"/>   
+				<xs:element ref="dsf:REJECTQUANTITY" minOccurs="0"/>         
+				<xs:element ref="dsf:REJECTQUANTITYUOM" minOccurs="0"/>     
+				<xs:element ref="dsf:REJECTREASONID" minOccurs="0"/>
+				<xs:element ref="dsf:INSPECTOR" minOccurs="0"/>
+				<xs:element ref="dsf:DATEINSPECTED" minOccurs="0"/>          
+				<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>             
+				<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

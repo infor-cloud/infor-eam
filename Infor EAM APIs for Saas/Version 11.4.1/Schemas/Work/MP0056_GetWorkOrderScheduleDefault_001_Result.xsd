@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function request MP0056_GetWorkOrderScheduleDefault_001_Result    
+==================================================================================--> 
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0056_001"
+           xmlns="http://schemas.datastream.net/MP_results/MP0056_001"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:of="http://www.openapplications.org/oagis_fields"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="MP0056_GetWorkOrderScheduleDefault_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultData">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="WorkOrder"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WorkOrder">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WORKORDERID"/>
+				<xs:element ref="dsf:SHIFTID" minOccurs="0"/>
+				<xs:element ref="dsf:ENTEREDBY"/>
+				<xs:element ref="dsf:ESTIMATEDHOURS"/>
+				<xs:element ref="dsf:SCHEDULEDHOURS"/>
+				<xs:element ref="dsf:ACTUALHOURS"/>
+				<xs:element ref="dsf:WORKORDEREXT"/>
+				<xs:element name="Activity" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dsf:ACTIVITYID"/>
+							<xs:element ref="dsf:TRADEID" minOccurs="0"/>
+							<xs:element ref="dsf:COMPLETED" minOccurs="0"/>
+							<xs:element ref="dsf:ACTIVITYSTARTDATE" minOccurs="0"/>
+							<xs:element ref="dsf:ACTIVITYENDDATE" minOccurs="0"/>
+							<xs:element ref="dsf:ESTIMATEDHOURS" minOccurs="0"/>
+							<xs:element ref="dsf:SCHEDULEDHOURS"/>
+							<xs:element ref="dsf:ACTUALHOURS"/>
+							<xs:element ref="dsf:SCHEDULEDDATE"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="is_employee_qualification_on" type="xs:boolean" default="false"/>
+			<xs:attribute name="is_project_frozen" type="xs:boolean" default="false"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

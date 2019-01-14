@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+	Copyright (c) 2013 Infor. All rights reserved. 
+	The word and design marks set forth herein are trademarks
+	and/or registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+	This schema defines MP entity PTW PermitToWork
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PermitToWork_001"
+		xmlns="http://schemas.datastream.net/MP_entities/PermitToWork_001"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:dsf="http://schemas.datastream.net/MP_fields"
+		elementFormDefault="qualified">
+		<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+		<!--===============================================================================-->
+		<xs:element name="PermitToWork">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="dsf:PERMITTOWORKID"/>
+					<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+					<xs:element ref="dsf:PERMITTOWORKTYPE" minOccurs="0"/>
+					<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+					<xs:element ref="dsf:STATUS" minOccurs="0"/>
+					<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+					<xs:element ref="dsf:LOCATIONNOTE" minOccurs="0"/>
+					<xs:element ref="dsf:UNASSESSEDCONFLICTS" minOccurs="0"/>
+					<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+					<xs:element ref="dsf:TYPEOFWORK" minOccurs="0"/>
+					<xs:element ref="dsf:PRIORITY" minOccurs="0"/>
+					<xs:element ref="dsf:PERMITRISK" minOccurs="0"/>
+					<xs:element ref="dsf:LOCKOUTBOXID" minOccurs="0"/>
+					<xs:element ref="dsf:INUSE" minOccurs="0"/>
+					<xs:element ref="dsf:ACTIVITYID" minOccurs="0"/>
+					<xs:element ref="dsf:PERMITID" minOccurs="0"/>
+					<xs:element ref="dsf:REPLACESPERMITTOWORK" minOccurs="0"/>
+					<xs:element ref="dsf:REPLACEDBYPERMITTOWORK" minOccurs="0"/>
+					<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+					<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+					<xs:element ref="dsf:DATEREQUESTED" minOccurs="0"/>
+					<xs:element ref="dsf:REQUESTEDBY" minOccurs="0"/>
+					<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+					<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+					<xs:element ref="dsf:PREPAREDDATE" minOccurs="0"/>
+					<xs:element ref="dsf:PREPAREDBY" minOccurs="0"/>
+					<xs:element ref="dsf:RESPONSIBLE" minOccurs="0"/>
+					<xs:element ref="dsf:HOLDER" minOccurs="0"/>
+					<xs:element ref="dsf:ISOLATED" minOccurs="0"/>
+					<xs:element ref="dsf:PERMITTOWORKDURATION" minOccurs="0"/> 
+					<xs:element ref="dsf:EXTENSIONHOURS" minOccurs="0"/>  
+					<xs:element ref="dsf:DURATIONTOTAL" minOccurs="0"/> 
+					<xs:element ref="dsf:EXTENSIONCOUNT" minOccurs="0"/>  
+					<xs:element ref="dsf:MAXIMUMTOTALDURATION" minOccurs="0"/>  
+					<xs:element ref="dsf:MAXIMUMEXTENSIONS" minOccurs="0"/>  
+					<xs:element ref="dsf:SUSPENSIONREASON" minOccurs="0"/>   
+					<xs:element ref="dsf:DATEREQUIRED" minOccurs="0"/> 
+					<xs:element ref="dsf:VALIDUNTILDATE" minOccurs="0"/>
+					<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+					<xs:element ref="dsf:REVIEWEDBYESIGN" minOccurs="0"/>
+					<xs:element ref="dsf:DATEREVIEWED" minOccurs="0"/>
+					<xs:element ref="dsf:NOTE" minOccurs="0"/>
+					<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+					<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+				<xs:attribute name="recordid" type="xs:long"></xs:attribute>
+			</xs:complexType>
+		</xs:element>	
+	</xs:schema>

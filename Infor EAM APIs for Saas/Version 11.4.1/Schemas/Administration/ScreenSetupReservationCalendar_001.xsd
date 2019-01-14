@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--==============================================================================================
+    Copyright (c) 2015 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business function entity ScreenSetupReservationCalendar
+==================================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ScreenSetupReservationCalendar_001"
+        xmlns="http://schemas.datastream.net/MP_entities/ScreenSetupReservationCalendar_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="ScreenSetupReservationCalendar">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:FUNCTIONID"/>
+                    <xs:element ref="dsf:RESERVATIONCALENDAR" minOccurs="0"/>
+                    <xs:element ref="dsf:SCHEDULERVIEW"/>
+                    <xs:element ref="dsf:BLOCKDURATION" minOccurs="0"/>
+                    <xs:element ref="dsf:STARTTIMEHOURS" minOccurs="0"/>
+                    <xs:element ref="dsf:STARTTIMEMINUTES" minOccurs="0"/>
+                    <xs:element ref="dsf:ENDTIMEHOURS" minOccurs="0"/>
+                    <xs:element ref="dsf:ENDTIMEMINUTES" minOccurs="0"/>
+                    <xs:element ref="dsf:DEFAULTRESERVATIONTYPE"/>
+                    <xs:element ref="dsf:DEFAULTRESERVATIONSTATUS"/>
+                    <xs:element ref="dsf:POPUPFUNCTIONID"/>
+                    <xs:element ref="dsf:SUNDAY" minOccurs="0"/>
+                    <xs:element ref="dsf:MONDAY" minOccurs="0"/>
+                    <xs:element ref="dsf:TUESDAY" minOccurs="0"/>
+                    <xs:element ref="dsf:WEDNESDAY" minOccurs="0"/>
+                    <xs:element ref="dsf:THURSDAY" minOccurs="0"/>
+                    <xs:element ref="dsf:FRIDAY" minOccurs="0"/>
+                    <xs:element ref="dsf:SATURDAY" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="recordid" type="xs:long"/>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

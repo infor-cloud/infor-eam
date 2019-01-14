@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth herein are trademarks and/or
+    registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved. All other
+    trademarks listed herein are the property of their respective owners. www.infor.com.
+	
+    This schema defines MP entity Supplier    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Supplier_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/Supplier_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of Supplier_001 ======================================-->
+	<xs:element name="Supplier">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SUPPLIERID"/>
+				<xs:element ref="dsf:LANGUAGEID"/>
+				<xs:element ref="dsf:CURRENCYID"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:PARENTSUPPLIER" minOccurs="0"/>
+				<xs:element ref="dsf:IPVENDORID" minOccurs="0"/>
+				<xs:element ref="dsf:IPACCOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:LEADTIMES" minOccurs="0"/>
+				<xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+				<xs:element ref="dsf:REALTIMEINFOFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:PURCHASESITEFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:SERVICESFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:MINORDERVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:MAXORDERVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:CONTACTINFO" minOccurs="0"/>
+				<xs:element ref="dsf:OURCONTACT" minOccurs="0"/>
+				<xs:element ref="dsf:EDINO" minOccurs="0"/>
+				<xs:element ref="dsf:ORDERTERMS" minOccurs="0"/>
+				<xs:element ref="dsf:BUYER" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCECODE" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCESYSTEM" minOccurs="0"/>
+				<xs:element ref="dsf:MINORITYGROUPID" minOccurs="0"/>
+				<xs:element ref="dsf:TYPE1099" minOccurs="0"/>
+				<xs:element ref="dsf:CAPACITY" minOccurs="0"/>
+				<xs:element ref="dsf:INTERFACE" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="UserDefinedFields" minOccurs="0"/>
+				<xs:element ref="dsf:CUSTOMER" minOccurs="0"/>
+				<xs:element ref="dsf:CUSTOMERACCOUNTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:CUSTOMERCOSTCENTER" minOccurs="0"/>
+				<xs:element ref="dsf:TAXID" minOccurs="0"/>
+				<xs:element ref="dsf:GROUPPURCHASINGORG1" minOccurs="0"/>
+				<xs:element ref="dsf:GROUPPURCHASINGORG2" minOccurs="0"/>
+				</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserDefinedFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UDFCHAR01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR11" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR12" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR13" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR14" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR15" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR16" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR17" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR18" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR19" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR20" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR21" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR22" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR23" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR24" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR25" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR26" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR27" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR28" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR29" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR30" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX05" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

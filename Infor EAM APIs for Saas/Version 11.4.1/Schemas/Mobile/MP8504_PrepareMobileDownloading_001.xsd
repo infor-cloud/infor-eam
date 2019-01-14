@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2014 Infor.All rights reserved.The word and design marks set
+    forth herein are trademarks and/or registered trademarks of Infor and/or
+    related affiliates and subsidiaries.All rights reserved.All other trademarks
+    listed herein are the property of their respective owners.www.infor.com.
+
+    This schema defines MP business function request MP8504_PrepareMobileDownloading_001
+ ================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP8504_001" 
+			xmlns="http://schemas.datastream.net/MP_functions/MP8504_001" 
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:dsf="http://schemas.datastream.net/MP_fields"
+            xmlns:dsg="http://schemas.datastream.net/MP_entities/GridRequest"
+			elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <xs:import namespace="http://schemas.datastream.net/MP_entities/GridRequest" schemaLocation="../Grid/GridRequest.xsd"/>
+	<xs:element name="MP8504_PrepareMobileDownloading_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="MobileGridInfo" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Prepare"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="MobileDownloading"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MobileGridInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="GridInfo" minOccurs="0"/>
+				<xs:element ref="TempTableInfo" minOccurs="0"/>
+				<xs:element ref="dsf:SESSION" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="is_downalod_complete" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GridInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:GRIDID"/>
+				<xs:element ref="dsg:DATASPY" minOccurs="0"/>
+                <xs:element ref="dsg:MULTIADDON_FILTERS" minOccurs="0"/>
+                <xs:element ref="dsg:LOV" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TempTableInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TABLENAME" minOccurs="0"/>
+				<xs:element ref="InsertColumns" minOccurs="0"/>
+				<xs:element ref="SelectColumns" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="sessioncolumn" type="xs:string"/>
+			<xs:attribute name="DateCreatedColumn" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InsertColumns">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:COLUMNNAME" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SelectColumns">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:COLUMNNAME" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

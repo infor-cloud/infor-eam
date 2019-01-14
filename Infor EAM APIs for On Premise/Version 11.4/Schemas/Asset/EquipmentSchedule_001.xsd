@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2015 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners.
+
+    This schema defines MP entity EquipmentSchedule
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EquipmentSchedule_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/EquipmentSchedule_001" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <!--====  Beginning of EquipmentSchedule_001 ======================================-->
+    <xs:element name="EquipmentSchedule">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:CUSTOMERRENTALID"/>
+                <xs:element ref="dsf:EQUIPMENTID"/>
+                <xs:element ref="dsf:TYPE"/>
+                <xs:element ref="dsf:STATUS"/>
+                <xs:element ref="dsf:RSTATUS"/>
+                <xs:element ref="dsf:OLDCUSTOMERRENTALID" minOccurs="0"/>
+                <xs:element ref="dsf:PRIVATE" minOccurs="0"/>
+                <xs:element ref="dsf:ALLDAY" minOccurs="0"/>
+                <xs:element ref="dsf:TRAVELFROM" minOccurs="0"/>
+                <xs:element ref="dsf:TRAVELTO" minOccurs="0"/>
+                <xs:element ref="dsf:SETUPTIME" minOccurs="0"/>
+                <xs:element ref="dsf:TEARDOWNTIME" minOccurs="0"/>
+                <xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+                <xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+                <xs:element ref="dsf:RESERVATIONCALENDAROWNER" minOccurs="0"/>
+                <xs:element ref="dsf:RESERVATIONCALENDAROWNERSLIST" minOccurs="0"/>
+                <xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+                <xs:element ref="dsf:WORKADDRESS" minOccurs="0"/>
+                <xs:element ref="dsf:PROJECTID" minOccurs="0"/>
+                <xs:element ref="dsf:SUPPLIER1ID" minOccurs="0"/>
+                <xs:element ref="dsf:INSTRUCTION1" minOccurs="0"/>
+                <xs:element ref="dsf:SUPPLIER2ID" minOccurs="0"/>
+                <xs:element ref="dsf:INSTRUCTION2" minOccurs="0"/>
+                <xs:element ref="dsf:SUPPLIER3ID" minOccurs="0"/>
+                <xs:element ref="dsf:INSTRUCTION3" minOccurs="0"/>
+                <xs:element ref="dsf:BUILDINGSERVICES" minOccurs="0"/>
+                <xs:element ref="dsf:BUILDINGSERVICESEMAIL" minOccurs="0"/>
+                <xs:element ref="dsf:BUILDINGSERVICESINSTRUCTION" minOccurs="0"/>
+                <xs:element ref="dsf:MAILTEMPLATERECIPIENTS" minOccurs="0"/>
+                <xs:element ref="dsf:VEHICLETYPE" minOccurs="0"/>
+                <xs:element ref="dsf:RECEIVEDEQUIPMENTID" minOccurs="0"/>
+                <xs:element ref="dsf:ISSUETO" minOccurs="0"/>
+                <xs:element ref="dsf:CUSTOMERID" minOccurs="0"/>
+                <xs:element ref="dsf:CONTACTINFO" minOccurs="0"/>
+                <xs:element ref="dsf:REFERENCE" minOccurs="0"/>
+                <xs:element ref="dsf:SECONDARYPHONE" minOccurs="0"/>
+                <xs:element ref="dsf:LICENSENO" minOccurs="0"/>
+                <xs:element ref="dsf:COSTCODE" minOccurs="0"/>
+                <xs:element ref="dsf:SCREENNAME" minOccurs="0"/>
+                <xs:element ref="dsf:COLOR" minOccurs="0"/>
+                <xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+                <xs:element ref="IssueDetails"/>
+                <xs:element ref="ReturnDetails"/>
+                <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+            <xs:attribute name="isScreenEditable" type="dsf:FLAG_Type" default="false"/>
+            <xs:attribute name="isDragOperation" type="dsf:FLAG_Type" default="false"/>
+        </xs:complexType>
+    </xs:element>
+        <xs:element name="IssueDetails">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:ISSUEDDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:ESTIMATEDISSUEDATE" minOccurs="0"/>
+                    </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="ReturnDetails">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:RETURNDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:ESTIMATEDRETURNDATE" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

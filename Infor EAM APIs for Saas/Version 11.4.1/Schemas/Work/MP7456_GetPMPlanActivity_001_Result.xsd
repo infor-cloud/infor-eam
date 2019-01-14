@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7456_001"
+           xmlns="http://schemas.datastream.net/MP_results/MP7456_001"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:of="http://www.openapplications.org/oagis_fields"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           xmlns:dse-PMPlanActivity="http://schemas.datastream.net/MP_entities/PMScheduleActivity_001"
+           elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/PMScheduleActivity_001" schemaLocation="PMScheduleActivity_001.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="MP7456_GetPMPlanActivity_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultData">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dse-PMPlanActivity:PMScheduleActivity"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

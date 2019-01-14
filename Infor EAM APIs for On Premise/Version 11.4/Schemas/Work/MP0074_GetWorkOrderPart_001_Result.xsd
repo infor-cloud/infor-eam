@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2015, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function request MP0074_GetWorkOrderPart_001_Result   
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0074_001" xmlns="http://schemas.datastream.net/MP_results/MP0074_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:dse-mtl="http://schemas.datastream.net/MP_entities/MaterialList_001" xmlns:dse-part="http://schemas.datastream.net/MP_entities/Part_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/MaterialList_001" schemaLocation="../Work/MaterialList_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Part_001" schemaLocation="../Material/Part_001.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="MP0074_GetWorkOrderPart_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultData">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dse-mtl:MaterialList" minOccurs="0"/>
+							<xs:element ref="dse-part:Part"/>
+							<xs:element ref="dsf:STOREID" minOccurs="0"/>
+							<xs:element ref="dsf:PLANNEDPARTQUANTITY" minOccurs="0"/>
+							<xs:element ref="dsf:RESERVEDPARTQUANTITY" minOccurs="0"/>
+							<xs:element ref="dsf:ALLOCATEDPARTQUANTITY" minOccurs="0"/>
+							<xs:element ref="dsf:AVAILABLEQUANTITY" minOccurs="0"/>
+							<xs:element ref="dsf:TOTALAVAILABLEQUANTITY" minOccurs="0"/>
+							<xs:element ref="dsf:USEDQUANTITY" minOccurs="0"/>
+							<xs:element ref="dsf:DEFAULTBIN" minOccurs="0"/>
+							<xs:element ref="dsf:DEFAULTREPAIRBIN" minOccurs="0"/>
+							<xs:element name="DEFAULTLOT" type="dsf:CODE50_Type" minOccurs="0"/>
+							<xs:element ref="dsf:PICKLISTID" minOccurs="0"/>
+							<xs:element ref="dsf:PRIMARYMANUFACTURERPARTCODE" minOccurs="0"/>
+							<xs:element ref="dsf:PRIMARYMANUFACTURERID" minOccurs="0"/>
+							<xs:element ref="dsf:RETURNCONDITIONCODE" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attribute name="part_isplanned" type="dsf:FLAG_Type"/>
+						<xs:attribute name="part_isdirect" type="dsf:FLAG_Type"/>
+						<xs:attribute name="is_ppm_act" type="dsf:FLAG_Type"/>
+						<xs:attribute name="mlp_recordid" type="xs:long"/>
+						<xs:attribute name="res_recordid" type="xs:long"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

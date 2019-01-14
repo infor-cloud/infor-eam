@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity  PartRepairDetails_001.
+====================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PartRepairDetails_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/PartRepairDetails_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of PartRepairDetails_001 ======================================-->
+	<xs:element name="PartRepairDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PartRepairDetailsData"/>
+				<xs:element ref="dsf:REPAIRQTY" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERQTY" minOccurs="0"/>
+				<xs:element ref="dsf:SHOPQTY" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PartRepairDetailsData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:STOREPARTID"/>
+				<xs:element ref="dsf:PARTREPAIRTYPE"/>
+				<xs:element ref="dsf:DEFAULTBIN" minOccurs="0"/>
+				<xs:element ref="dsf:COREVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:STOCKMETHOD" minOccurs="0"/>
+				<xs:element ref="dsf:AUTOASSIGN" minOccurs="0"/>
+				<xs:choice minOccurs="0">
+					<xs:element ref="InternalPartRepairDetails"/>
+					<xs:element ref="ExternalPartRepairDetails"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InternalPartRepairDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:STANDARDWO" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTCLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:CATEGORYCODE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExternalPartRepairDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PREFERREDSUPPLIER" minOccurs="0"/>
+				<xs:element ref="dsf:LEADTIME" minOccurs="0"/>
+				<xs:element ref="dsf:MINIMUMREPAIRQTY" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--==============================================================================================
+    Copyright (c) 2014 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business function entity LinearOverviewPreference
+==================================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/LinearOverviewPreference_001"
+        xmlns="http://schemas.datastream.net/MP_entities/LinearOverviewPreference_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="LinearOverviewPreference">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:LINEAROVERVIEWPREFERENCEID"/>
+                    <xs:element ref="dsf:USERID"/>
+                    <xs:element ref="dsf:COLOR" minOccurs="0"/>
+                    <xs:element ref="dsf:LINEARREFOVERVIEWDEFAULTFILTER"/>
+                    <xs:element ref="dsf:INCLUDERELATEDEQUIPMENTINAPPLIEDFILTER" minOccurs="0"/>
+                    <xs:element ref="AvailableFeatures" minOccurs="0"/>
+                    <xs:element ref="SelectedFeatures" minOccurs="0"/>
+                    <xs:element ref="AvailableClasses" minOccurs="0"/>
+                    <xs:element ref="SelectedClasses" minOccurs="0"/>
+                    <xs:element name="AvailableRouteTypes" type="LinearEqupmentTypes" minOccurs="0"/>
+                    <xs:element name="SelectedRouteTypes" type="LinearEqupmentTypes" minOccurs="0"/>
+                    <xs:element name="AvailableSegmentTypes" type="LinearEqupmentTypes" minOccurs="0"/>
+                    <xs:element name="SelectedSegmentTypes" type="LinearEqupmentTypes" minOccurs="0"/>
+                    <xs:element ref="dsf:HIDEROUTES" minOccurs="0"/>
+                    <xs:element ref="dsf:HIDESEGMENTS" minOccurs="0"/>
+                    <xs:element ref="dsf:GROUPSEGMENTSUNDERDEFAULTTYPE" minOccurs="0"/>
+                    <xs:element ref="dsf:DEFAULTLINEAROVERVIEWPREFERENCE" minOccurs="0"/>
+                    <xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+                    <xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+                    <xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="recordid" type="xs:long"/>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="AvailableClasses">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="LinearRefClass" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="SelectedClasses">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="LinearRefClass" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="AvailableFeatures">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="LinearRefFeature" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="SelectedFeatures">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="LinearRefFeature" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="LinearRefFeature">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:REFERENCE"/>
+                    <xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="LinearRefClass">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:CLASSID"/>
+                    <xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+		<xs:complexType name="LinearEqupmentTypes">
+			<xs:sequence>
+				<xs:element ref="LinearEqupmentType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+        <xs:element name="LinearEqupmentType">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:TYPE"/>
+                    <xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

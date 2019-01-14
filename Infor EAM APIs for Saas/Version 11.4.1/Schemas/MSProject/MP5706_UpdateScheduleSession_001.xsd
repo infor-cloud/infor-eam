@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2005, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request MP5706_UpdateScheduleSession_001
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP5706_001" xmlns="http://schemas.datastream.net/MP_functions/MP5706_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:dse-ScheduleSession="http://schemas.datastream.net/MP_entities/ScheduleSession_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP5706_UpdateScheduleSession_001 ======================================-->
+	<xs:element name="MP5706_UpdateScheduleSession_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SCHEDULESESSIONID"/>
+				<xs:element ref="SchdResources"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Update"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="ScheduleSession"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SchdResources">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ACTIVITYID" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

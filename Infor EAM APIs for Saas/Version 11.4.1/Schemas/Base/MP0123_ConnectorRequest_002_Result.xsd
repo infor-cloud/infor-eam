@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0123_002" xmlns:mp0123r="http://schemas.datastream.net/MP_results/MP0123_002" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cr="http://schemas.datastream.net/MP_results/MP0123_002" xmlns:mpf="http://schemas.datastream.net/MP_fields" xmlns:mpl="http://schemas.datastream.net/BaseLib" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/BaseLib" schemaLocation="BaseLib_001.xsd"/>
+	<!--
+	++++ Definition of the result returned after data request 
+	-->
+	<xs:complexType name="data-result-type">
+		<xs:choice>
+			<xs:element name="result">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="actionResult" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="success" type="xs:boolean"/>
+									<xs:element name="errorMessage" type="xs:string" minOccurs="0"/>
+									<xs:element name="dataResult" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="datafield" type="mpl:fieldType" maxOccurs="unbounded"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								<xs:attribute name="type" type="mpl:actionType" use="required"/>
+								<xs:attribute name="aid" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="success" type="xs:boolean" default="true"/>
+					<!-- optional transaction flag -->
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="result-in-file" type="mpl:fileResult"/>
+			<!-- result delivered directly -->
+			<!-- result delivered as set of file -->
+		</xs:choice>
+	</xs:complexType>
+	<!-- 
+	++++ Error definition for non-data request 
+	-->
+	<xs:complexType name="status-result-type">
+		<xs:sequence>
+			<xs:element name="code" type="xs:string"/>
+			<xs:element name="description" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- 
+	++++ Definition of the result from locking request
+	-->
+	<xs:complexType name="lock-for-operation-result-type">
+		<xs:sequence>
+			<xs:element name="status-result" type="mp0123r:status-result-type"/>
+			<xs:element name="session-id" type="xs:string" minOccurs="0"/>
+			<xs:element name="session-timestamp" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- 
+	++++ Definition of the result from unlocking request
+	-->
+	<xs:complexType name="unlock-for-operation-result-type">
+		<xs:sequence>
+			<xs:element name="status-result" type="mp0123r:status-result-type"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!--
+	++++++ Definition of the result type ++++++
+	-->
+	<xs:element name="MP0123_ConnectorRequest_002_Result">
+		<xs:annotation>
+			<xs:documentation>Description of the returned results</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="data-operation-result" type="mp0123r:data-result-type"/>
+				<xs:element name="lock-for-operation-result" type="mp0123r:lock-for-operation-result-type"/>
+				<xs:element name="unlock-for-operation-result" type="mp0123r:unlock-for-operation-result-type"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

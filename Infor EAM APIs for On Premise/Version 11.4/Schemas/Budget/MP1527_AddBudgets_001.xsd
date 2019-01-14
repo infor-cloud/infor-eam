@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP business function request MP1527_AddBudgets_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP1527_001" 
+	xmlns="http://schemas.datastream.net/MP_functions/MP1527_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:dse-Budgets="http://schemas.datastream.net/MP_entities/Budgets_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Budgets_001" schemaLocation="Budgets_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--================================================================================================-->
+	<!--====  Begining of MP1527_AddBudgets_001 ======================================-->
+	<xs:element name="MP1527_AddBudgets_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-Budgets:BudgetsData"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Add"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="Budgets"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

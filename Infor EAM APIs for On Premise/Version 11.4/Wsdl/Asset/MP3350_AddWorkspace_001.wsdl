@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<definitions targetNamespace="http://wsdls.datastream.net/MP3350_AddWorkspace_001" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wssi="http://schemas.xmlsoap.org/ws/2002/04/secext" xmlns:resp0="http://schemas.datastream.net/MP_results/MP3350_001" xmlns:hdr="http://schemas.datastream.net/MP_functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdls.datastream.net/MP3350_AddWorkspace_001" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rqst0="http://schemas.datastream.net/MP_functions/MP3350_001">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:import namespace="http://schemas.datastream.net/MP_functions" schemaLocation="../../schemas/headers.xsd"/><xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/secext" schemaLocation="../../schemas/secext.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_functions/MP3350_001" schemaLocation="../../schemas/Asset/MP3350_AddWorkspace_001.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_results/MP3350_001" schemaLocation="../../schemas/Asset/MP3350_AddWorkspace_001_Result.xsd"/></xsd:schema>
+  </types>
+  <message name="sessionScenarioHeader">
+    <part name="sessionScenarioHeader" element="hdr:SessionScenario"/>
+  </message>
+  <message name="securityHeader">
+    <part name="securityHeader" element="wssi:Security"/>
+  </message>
+  <message name="AddWorkspaceResponseMsg">
+    <part name="AddWorkspaceResponseMsg" element="resp0:MP3350_AddWorkspace_001_Result"/>
+  </message>
+  <message name="sessionHeader">
+    <part name="sessionHeader" element="hdr:Session"/>
+  </message>
+  <message name="messageConfigHeader">
+    <part name="messageConfigHeader" element="hdr:MessageConfig"/>
+  </message>
+  <message name="organizationHeader">
+    <part name="organizationHeader" element="hdr:Organization"/>
+  </message>
+  <message name="tenantHeader">
+    <part name="tenantHeader" element="hdr:Tenant"/>
+  </message>
+  <message name="AddWorkspaceRequestMsg">
+    <part name="AddWorkspaceRequestMsg" element="rqst0:MP3350_AddWorkspace_001"/>
+  </message>
+  <portType name="AddWorkspacePT">
+    <operation name="AddWorkspaceOp">
+      <input name="AddWorkspaceRequestMsg" message="tns:AddWorkspaceRequestMsg"/>
+      <output name="AddWorkspaceResponseMsg" message="tns:AddWorkspaceResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="AddWorkspaceSoapBinding" type="tns:AddWorkspacePT">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="AddWorkspaceOp">
+      <wsdlsoap:operation soapAction="processMessage"/>
+      <input name="AddWorkspaceRequestMsg">
+        <wsdlsoap:header message="tns:organizationHeader" part="organizationHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:securityHeader" part="securityHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionScenarioHeader" part="sessionScenarioHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:messageConfigHeader" part="messageConfigHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:tenantHeader" part="tenantHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="AddWorkspaceRequestMsg" use="literal"/>
+      </input>
+      <output name="AddWorkspaceResponseMsg">
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="AddWorkspaceResponseMsg" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="AddWorkspaceService">
+    <port name="AddWorkspaceSoapBinding" binding="tns:AddWorkspaceSoapBinding">
+      <wsdlsoap:address location="http://localhost/axis/services/EWSConnector"/>
+    </port>
+  </service>
+</definitions>

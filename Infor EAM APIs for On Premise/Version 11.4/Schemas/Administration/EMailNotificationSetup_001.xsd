@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity EMailNotificationSetup
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EMailNotificationSetup_001" xmlns="http://schemas.datastream.net/MP_entities/EMailNotificationSetup_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of EMailNotificationSetup ======================================-->
+	<xs:element name="EMailNotificationSetup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TABLE"/>
+				<xs:element ref="dsf:MAILTEMPLATEID"/>
+				<xs:element ref="EventsTracked"/>
+				<xs:element ref="dsf:COMMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:EMAILNOTIFICATIONSETUPID" minOccurs="0"/>
+				<xs:element ref="dsf:EMAILNOTFICATIONACTIVE" minOccurs="0"/>
+				<xs:element ref="dsf:INCLUDEURL" minOccurs="0"/>
+				<xs:element ref="dsf:INCLUDEATTACHMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:ENTEREDBY" minOccurs="0"/>				
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EventsTracked">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:INSERT" minOccurs="0"/>
+				<xs:element ref="dsf:DELETE" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATE" minOccurs="0"/>
+				<xs:element ref="StatusChange" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="StatusChange">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FromStatus" type="dsf:STATUS_Type" minOccurs="0"/>
+				<xs:element name="ToStatus" type="dsf:STATUS_Type" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!--====  Begining of EMailNotificationTriggers ======================================-->
+	<xs:element name="EMailNotificationTriggers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="InsertTrigger" type="TriggerStatus" minOccurs="0"/>
+				<xs:element name="UpdateTrigger" type="TriggerStatus" minOccurs="0"/>
+				<xs:element name="DeleteTrigger" type="TriggerStatus" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="TriggerStatus">
+		<xs:sequence>
+			<xs:element name="TriggerName" type="xs:string"/>
+			<xs:element name="IsActive" type="dsf:FLAG_Type" minOccurs="0"/>
+			<xs:element name="IsValid" type="dsf:FLAG_Type" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

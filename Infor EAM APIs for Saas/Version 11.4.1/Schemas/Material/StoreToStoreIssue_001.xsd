@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	This schema defines MP entity StoreToStoreIssue
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/StoreToStoreIssue_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/StoreToStoreIssue_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="StoreToStoreIssue">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TRANSACTIONID"/>
+				<xs:element ref="dsf:FROMSTOREID"/>
+				<xs:element ref="dsf:TOSTOREID"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:REQUISITIONID" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSACTIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ADVICENUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:APPROVER" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="partlinecount" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

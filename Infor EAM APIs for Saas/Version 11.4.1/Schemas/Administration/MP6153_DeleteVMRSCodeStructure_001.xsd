@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request MP6153_DeleteVMRSCodeStructure_001
+ ============================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP6153_001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datastream.net/MP_functions/MP6153_001" xmlns:ds-vmrs="http://schemas.datastream.net/MP_entities/VMRSCodeStructure_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <xs:import namespace="http://schemas.datastream.net/MP_entities/VMRSCodeStructure_001" schemaLocation="VMRSCodeStructure_001.xsd"/>
+    <!--===============================================================================-->
+    <!--====  Begining of MP6153_DeleteVMRSCodeStructure_001 ======================================-->
+    <xs:element name="MP6153_DeleteVMRSCodeStructure_001">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice>
+                    <xs:element ref="dsf:VMRSSTRUCTURECODEID"/>
+                    <xs:element ref="dsf:SYSTEMLEVELID"/>
+                    <xs:element ref="dsf:VMRSASSEMBLYID"/>
+                    <xs:element ref="dsf:VMRSCOMPNENTID"/>
+                </xs:choice>
+            </xs:sequence>
+            <xs:attribute name="verb" type="dsf:VERB_Type" fixed="Delete"/>
+            <xs:attribute name="noun" type="dsf:NOUN_Type" fixed="VMRSCodeStructure"/>
+            <xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

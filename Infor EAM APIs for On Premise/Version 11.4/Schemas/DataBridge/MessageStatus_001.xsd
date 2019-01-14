@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth 
+	herein are trademarks and/or registered trademarks of Infor and/or related affiliates
+	and subsidiaries. All rights reserved. All other trademarks listed herein are the
+	property of their respective owners. www.infor.com.
+	
+    This schema defines MP entity MessageStatus 
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/MessageStatus_001" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:os="http://www.openapplications.org/oagis_segments" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/MessageStatus_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_fields" schemaLocation="../oagis_fields.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_segments" schemaLocation="../oagis_segments.xsd"/>
+	<!-- ======= Beginning of MessageStatus_001 ======= -->
+	<xs:element name="MessageStatus">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:MESSAGEID"/>
+				<xs:element ref="dsf:PROCESSINGTYPE"/>
+				<xs:element ref="dsf:MESSAGECONTEXTID" minOccurs="0"/>
+				<xs:element ref="dsf:PARTNERID" minOccurs="0"/>
+				<xs:element ref="ProcessingStatus" minOccurs="0"/>
+				<xs:element ref="DeliveryStatus" minOccurs="0"/>
+				<xs:element ref="Document" minOccurs="0"/>
+				<xs:element ref="ResponseDocument" minOccurs="0"/>
+				<xs:element ref="RequestMessage" minOccurs="0"/>
+				<xs:element ref="ResponseMessage" minOccurs="0"/>
+				<xs:element ref="MessageTime" minOccurs="0"/>
+				<xs:element ref="LastProcessingTime" minOccurs="0"/>
+				<xs:element ref="LastDeliveryTime" minOccurs="0"/>
+				<xs:element ref="Retry" minOccurs="0"/>
+				<xs:element ref="ReDelivery" minOccurs="0"/>
+				<xs:element ref="ConfirmBODStatusCode" minOccurs="0"/>
+				<xs:element ref="ConfirmBODMessage" minOccurs="0"/>
+				<xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:CORRELATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:RETRYSCHEDULESUSPEND" minOccurs="0"/>
+				<!-- RequestMessage and ResponseMessage are by themselves xml texts.  They should be
+				     enclosed in a CDATA section -->
+				<!-- The presence of Retry element indicates the message is subject to retry, regardless
+				     if the NextRetry is present or not -->
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProcessingStatus" type="dsf:STATUSINFO_Type"/>
+	<xs:element name="DeliveryStatus" type="dsf:STATUSINFO_Type"/>
+	<xs:element name="Document" type="dsf:WSDOCUMENT_Type"/>
+	<xs:element name="ResponseDocument" type="dsf:WSDOCUMENT_Type"/>
+	<xs:element name="RequestMessage" type="xs:string"/>
+	<xs:element name="ResponseMessage" type="xs:string"/>
+	<xs:element name="MessageTime" type="os:DATETIME"/>
+	<xs:element name="LastProcessingTime" type="os:DATETIME"/>
+	<xs:element name="LastDeliveryTime" type="os:DATETIME"/>
+	<xs:element name="Retry" type="dsf:RETRY_Type"/>
+	<xs:element name="ReDelivery" type="dsf:RETRY_Type"/>
+	<xs:element name="ConfirmBODStatusCode" type="xs:string"/>
+	<xs:element name="ConfirmBODMessage" type="xs:string"/>
+</xs:schema>

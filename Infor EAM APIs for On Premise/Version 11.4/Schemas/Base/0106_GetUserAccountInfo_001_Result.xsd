@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function result 0106_GetUserAccountInfo_001
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/0106_GetUserAccountInfo_001_Result" xmlns="http://schemas.datastream.net/MP_results/0106_GetUserAccountInfo_001_Result" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<!--===============================================================================-->
+<!--====  Begining of 0106_GetUserAccountInfo_001_Result ======================================-->
+	<xs:element name="MP0106_GetUserAccountInfo_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="UserAccountInfo"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserAccountInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:USERID"/>
+				<xs:element ref="dsf:USERNAME"/>
+				<xs:element ref="dsf:EMAIL"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:positiveInteger"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

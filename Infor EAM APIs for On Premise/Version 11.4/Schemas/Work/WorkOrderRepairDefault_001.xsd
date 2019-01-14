@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+    Copyright (c) 2014 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business Function entity WorkOrderRepairDefault
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WorkOrderRepairDefault_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/WorkOrderRepairDefault_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="WorkOrderRepairDefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ACTIVITYCODE" minOccurs="0"/>
+				<xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/>
+				<xs:element ref="dsf:REASONFORREPAIR" minOccurs="0"/>
+				<xs:element ref="dsf:WORKACCOMPLISHED" minOccurs="0"/>
+				<xs:element ref="dsf:TECHNICIANPARTFAILURE" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>
+				<xs:element ref="dsf:SYSTEMLEVEL" minOccurs="0"/>
+				<xs:element ref="dsf:ASSEMBLYLEVEL" minOccurs="0"/>
+				<xs:element ref="dsf:COMPONENTLEVEL" minOccurs="0"/>
+				<xs:element ref="dsf:PARTLOCATIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:WARRANTY" minOccurs="0"/>
+				<xs:element ref="dsf:COMPLETED" minOccurs="0"/>								
+			</xs:sequence>
+			<xs:attribute name="has_readonly_department_security" type="dsf:FLAG_Type" default="false"/>
+            <xs:attribute name="work_status_can_update" type="dsf:FLAG_Type" default="true"/>
+            <xs:attribute name="jtauth_can_update" type="dsf:FLAG_Type" default="true"/>
+            <xs:attribute name="is_multi_equip_child" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="is_multi_equip_parent" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="activity_has_jobs" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="wo_has_single_activity" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

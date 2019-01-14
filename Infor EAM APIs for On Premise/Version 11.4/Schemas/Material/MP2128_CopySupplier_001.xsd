@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP business function request MP2128_CopySupplier_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP2128_001" 
+	xmlns="http://schemas.datastream.net/MP_functions/MP2128_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP2128_CopySupplier_001 ======================================-->
+	<xs:element name="MP2128_CopySupplier_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CopySupplierDetails"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Copy"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="Supplier"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CopySupplierDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:NEWSUPPLIERID"/>
+				<xs:element ref="dsf:OLDSUPPLIERID"/>
+				<xs:element ref="dsf:COPYPARTS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYSERVICES" minOccurs="0"/>
+				<xs:element ref="dsf:COPYCONTACTS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYRATES" minOccurs="0"/>
+				<xs:element ref="dsf:COPYCOMMODITIES" minOccurs="0"/>
+				<xs:element ref="dsf:COPYADDRESSES" minOccurs="0"/>
+				<xs:element ref="dsf:COPYCUSTOMFIELDS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYCOMMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYDOCUMENTS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

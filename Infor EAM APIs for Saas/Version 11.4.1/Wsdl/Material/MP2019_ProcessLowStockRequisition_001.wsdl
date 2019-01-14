@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<definitions targetNamespace="http://wsdls.datastream.net/MP2019_ProcessLowStockRequisition_001" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wssi="http://schemas.xmlsoap.org/ws/2002/04/secext" xmlns:resp0="http://schemas.datastream.net/MP_results/MP2019_001" xmlns:hdr="http://schemas.datastream.net/MP_functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdls.datastream.net/MP2019_ProcessLowStockRequisition_001" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rqst0="http://schemas.datastream.net/MP_functions/MP2019_001">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:import namespace="http://schemas.datastream.net/MP_functions" schemaLocation="../../schemas/headers.xsd"/><xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/secext" schemaLocation="../../schemas/secext.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_functions/MP2019_001" schemaLocation="../../schemas/Material/MP2019_ProcessLowStockRequisition_001.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_results/MP2019_001" schemaLocation="../../schemas/Material/MP2019_ProcessLowStockRequisition_001_Result.xsd"/></xsd:schema>
+  </types>
+  <message name="sessionHeader">
+    <part name="sessionHeader" element="hdr:Session"/>
+  </message>
+  <message name="messageConfigHeader">
+    <part name="messageConfigHeader" element="hdr:MessageConfig"/>
+  </message>
+  <message name="organizationHeader">
+    <part name="organizationHeader" element="hdr:Organization"/>
+  </message>
+  <message name="tenantHeader">
+    <part name="tenantHeader" element="hdr:Tenant"/>
+  </message>
+  <message name="ProcessLowStockRequisitionResponseMsg">
+    <part name="ProcessLowStockRequisitionResponseMsg" element="resp0:MP2019_ProcessLowStockRequisition_001_Result"/>
+  </message>
+  <message name="sessionScenarioHeader">
+    <part name="sessionScenarioHeader" element="hdr:SessionScenario"/>
+  </message>
+  <message name="ProcessLowStockRequisitionRequestMsg">
+    <part name="ProcessLowStockRequisitionRequestMsg" element="rqst0:MP2019_ProcessLowStockRequisition_001"/>
+  </message>
+  <message name="securityHeader">
+    <part name="securityHeader" element="wssi:Security"/>
+  </message>
+  <portType name="ProcessLowStockRequisitionPT">
+    <operation name="ProcessLowStockRequisitionOp">
+      <input name="ProcessLowStockRequisitionRequestMsg" message="tns:ProcessLowStockRequisitionRequestMsg"/>
+      <output name="ProcessLowStockRequisitionResponseMsg" message="tns:ProcessLowStockRequisitionResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="ProcessLowStockRequisitionSoapBinding" type="tns:ProcessLowStockRequisitionPT">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="ProcessLowStockRequisitionOp">
+      <wsdlsoap:operation soapAction="processMessage"/>
+      <input name="ProcessLowStockRequisitionRequestMsg">
+        <wsdlsoap:header message="tns:organizationHeader" part="organizationHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:securityHeader" part="securityHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionScenarioHeader" part="sessionScenarioHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:messageConfigHeader" part="messageConfigHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:tenantHeader" part="tenantHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="ProcessLowStockRequisitionRequestMsg" use="literal"/>
+      </input>
+      <output name="ProcessLowStockRequisitionResponseMsg">
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="ProcessLowStockRequisitionResponseMsg" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ProcessLowStockRequisitionService">
+    <port name="ProcessLowStockRequisitionSoapBinding" binding="tns:ProcessLowStockRequisitionSoapBinding">
+      <wsdlsoap:address location="http://localhost/axis/services/EWSConnector"/>
+    </port>
+  </service>
+</definitions>

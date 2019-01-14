@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity GLReference    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/GLReference_001" xmlns="http://schemas.datastream.net/MP_entities/GLReference_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of GLReference_001 ======================================-->
+	<xs:element name="GLReference">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:GLREFERENCEID"/>
+				<xs:element ref="dsf:GLFSTATUS"/>
+				<xs:element ref="dsf:FNDUSERID"/>
+				<xs:element ref="dsf:GLFCURRENCY"/>
+				<xs:element ref="dsf:GLFACTUALFLAG"/>
+				<xs:element ref="dsf:GLFCHARTOFACCOUNTSID" minOccurs="0"/>
+				<xs:element ref="dsf:GLFREFERENCES" minOccurs="0"/>
+				<xs:element ref="dsf:GLFATTRIBUTES" minOccurs="0"/>
+				<xs:element ref="dsf:GLFCONTEXT" minOccurs="0"/>
+				<xs:element ref="dsf:GLFCONTEXT2" minOccurs="0"/>
+				<xs:element ref="dsf:GLFCONTEXT3" minOccurs="0"/>
+				<xs:element ref="dsf:GLFUSSGLTRANSACTIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:GLFSEGMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:GLFENCUMBRANCETYPEID" minOccurs="0"/>
+				<xs:element ref="dsf:GLFBUDGETVERSIONID" minOccurs="0"/>
+				<xs:element ref="dsf:GLFUSERCURRENCYCONVERSIONTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:GLFCURRENCYCONVERSIONRATE" minOccurs="0"/>
+				<xs:element ref="dsf:GLFBATCHID" minOccurs="0"/>
+				<xs:element ref="dsf:GLFPERIODNAME" minOccurs="0"/>
+				<xs:element ref="dsf:GLFJEHEADERID" minOccurs="0"/>
+				<xs:element ref="dsf:GLFJELINENUM" minOccurs="0"/>
+				<xs:element ref="dsf:GLFFUNCTIONALCURRENCYCODE" minOccurs="0"/>
+				<xs:element ref="dsf:GLFCODECOMBINATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:GLFGROUPID" minOccurs="0"/>
+				<xs:element ref="dsf:GLFREQUESTID" minOccurs="0"/>
+				<xs:element ref="dsf:GLFSUBLEDGERDOCSEQUENCEID" minOccurs="0"/>
+				<xs:element ref="dsf:GLFSUBLEDGERSEQUENCEVALUE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

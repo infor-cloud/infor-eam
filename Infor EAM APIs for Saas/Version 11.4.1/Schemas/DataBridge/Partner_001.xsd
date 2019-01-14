@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Mi Zhou (Datastream Systems, Inc) -->
+<!-- ================================================================================
+	Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth 
+	herein are trademarks and/or registered trademarks of Infor and/or related affiliates
+	and subsidiaries. All rights reserved. All other trademarks listed herein are the
+ 	property of their respective owners. www.infor.com.
+	
+    This schema defines MP entity Partner 
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Partner_001" xmlns="http://schemas.datastream.net/MP_entities/Partner_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of Partner_001 ======= -->
+	<xs:element name="Partner">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PARTNERID" type="dsf:PARTNERID_Type"/>
+				<xs:element name="UNIVERSALID" type="dsf:PARTNERCODE_Type"/>
+				<xs:element name="PartnerCredential" type="dsf:CREDENTIAL_Type" minOccurs="0"/>
+				<xs:element name="LoginProcessor" type="dsf:WSPROCESSOR_Type" minOccurs="0"/>
+				<xs:element name="IsActive" type="dsf:FLAG_Type"/>
+				<xs:element ref="dsf:DEFAULTORG" minOccurs="0"/>
+				<xs:element name="ApplicationCredential" type="dsf:CREDENTIAL_Type" minOccurs="0"/>
+				<xs:element name="Response" type="Response_Type" minOccurs="0"/>
+				<xs:element ref="dsf:RETRYTIME1" minOccurs="0"/>
+				<xs:element ref="dsf:RETRYTIME2" minOccurs="0"/>
+				<xs:element ref="dsf:RETRYTIME3" minOccurs="0"/>
+				<xs:element ref="dsf:RETRYTIME4" minOccurs="0"/>
+				<xs:element ref="dsf:RETRYTIME5" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="Response_Type">
+		<xs:sequence>
+			<xs:element ref="dsf:URL" minOccurs="0"/>
+			<xs:element name="ResponseCredential" type="dsf:CREDENTIAL_Type" minOccurs="0"/>
+			<xs:element name="SpecialProcessor" type="dsf:WSPROCESSOR_Type" minOccurs="0"/>
+			<xs:element name="DeliveryCount" type="xs:long" minOccurs="0"/>
+			<xs:element name="DeliveryInterval" type="xs:duration" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

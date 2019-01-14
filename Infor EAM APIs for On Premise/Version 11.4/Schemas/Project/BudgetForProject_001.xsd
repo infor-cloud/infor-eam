@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity BudgetForProject
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/BudgetForProject_001" 
+           xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://schemas.datastream.net/MP_entities/BudgetForProject_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of BudgetForProject ======================================-->
+	<xs:element name="BudgetForProject">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ProjectBudget"/>
+				<xs:element ref="BudgetInfo"/>
+				<xs:element ref="dsf:PARENTPROJECTID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="BudgetInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BUDGETID"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:COSTAREA" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCENTER" minOccurs="0"/>
+				<xs:element ref="dsf:ACCOUNT" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+	<xs:element name="ProjectBudget">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PROJECTBUDGETID"/>				
+				<xs:element ref="dsf:BUDGETAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDCOMPLETIONAMOUNT" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================ 
+    Copyright 2003, Datastream Systems, Inc. 
+    50 Datastream Plaza, Greenville, SC 29605, USA. 
+    All rights reserved. 
+
+    This schema defines MP business function request MP8760_LoadPayableOutbound_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP8720_001" xmlns:dse-extracharge="http://schemas.datastream.net/MP_entities/ExtraCharge_001" xmlns="http://schemas.datastream.net/MP_results/MP8720_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:os="http://www.openapplications.org/oagis_segments" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:dse-Supplier="http://schemas.datastream.net/MP_entities/Supplier_001" xmlns:dsf-pa="http://schemas.datastream.net/MP_entities/Addresses_001" xmlns:dse-SupplierContact="http://schemas.datastream.net/MP_entities/SupplierContact_001" xmlns:dse-invoice="http://schemas.datastream.net/MP_entities/Invoice_001" xmlns:dse-invline="http://schemas.datastream.net/MP_entities/InvoiceLine_001" xmlns:dse-invdistribution="http://schemas.datastream.net/MP_entities/InvoiceDistribution_001" xmlns:dse-acctdetail="http://schemas.datastream.net/MP_entities/AccountDetail_001" xmlns:dse-glcodecombination="http://schemas.datastream.net/MP_entities/GLCodeCombination_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_fields" schemaLocation="../oagis_fields.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_segments" schemaLocation="../oagis_segments.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Invoice_001" schemaLocation="Invoice_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Supplier_001" schemaLocation="../Material/Supplier_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Addresses_001" schemaLocation="../Administration/Addresses_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/SupplierContact_001" schemaLocation="../Material/SupplierContact_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/AccountDetail_001" schemaLocation="AccountDetail_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/InvoiceDistribution_001" schemaLocation="InvoiceDistribution_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/InvoiceLine_001" schemaLocation="InvoiceLine_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/ExtraCharge_001" schemaLocation="ExtraCharge_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/GLCodeCombination_001" schemaLocation="GLCodeCombination_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP8720_LoadPayableOutbound_001
+ ======================================-->
+	<xs:element name="MP8720_LoadPayableOutbound_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-invoice:Invoice"/>
+				<xs:element ref="InvoiceSupplierInfo"/>
+				<xs:element ref="InvoiceExtra" minOccurs="0"/>
+				<xs:element ref="InvoiceLineExtras" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InvoiceSupplierInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-Supplier:Supplier"/>
+				<xs:element ref="dsf-pa:Addresses" minOccurs="0"/>
+				<xs:element ref="dse-SupplierContact:SupplierContact" minOccurs="0" maxOccurs="500"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InvoiceSupplierContacts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-SupplierContact:SupplierContact" minOccurs="0" maxOccurs="500"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InvoiceExtra">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DISCOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:TAXAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:INVOICETOTAL" minOccurs="0"/>
+				<xs:element ref="dsf:TYPE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InvoiceLineExtra">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:INVOICELINEID"/>
+				<xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:STOREID" minOccurs="0"/>
+				<xs:element ref="dsf:TAXAMOUNT" minOccurs="0"/>
+				<xs:element ref="dse-acctdetail:AccountDetail" minOccurs="0" maxOccurs="500"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InvoiceLineExtras">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="InvoiceLineExtra" minOccurs="0" maxOccurs="500"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

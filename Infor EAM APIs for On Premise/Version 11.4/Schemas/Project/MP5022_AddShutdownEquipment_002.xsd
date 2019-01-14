@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request MP5022_AddShutdownEquipment_002
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP5022_002" xmlns="http://schemas.datastream.net/MP_functions/MP5022_002" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:dse-ShutdownEquipment_002="http://schemas.datastream.net/MP_entities/ShutdownEquipment_002" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_entities/ShutdownEquipment_002" schemaLocation="ShutdownEquipment_002.xsd"/>
+    <xs:import namespace="http://www.openapplications.org/oagis_fields" schemaLocation="../oagis_fields.xsd"/>
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <!--====  Begining of MP5022_AddShutdownEquipment_002 ======================================-->
+    <xs:element name="MP5022_AddShutdownEquipment_002">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dse-ShutdownEquipment_002:ShutdownEquipment"/>
+            </xs:sequence>
+            <xs:attribute name="verb" type="dsf:VERB_Type" fixed="Add"/>
+            <xs:attribute name="noun" type="dsf:NOUN_Type" fixed="ShutdownEquipment"/>
+            <xs:attribute name="version" type="dsf:VERSION" fixed="002"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

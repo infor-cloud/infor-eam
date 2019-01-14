@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+   Copyright (c) 2013 Infor. All rights reserved.
+   The word and design marks set forth herein are trademarks and/or registered
+   trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+   All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+   This schema defines MP entity EquipmentGenerationDetail
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EquipmentGenerationDetail_001" 
+    xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="http://schemas.datastream.net/MP_entities/EquipmentGenerationDetail_001" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="EquipmentGenerationDetail">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element ref="dsf:EQUIPMENTGENERATIONDETAILPK"/>
+				<xs:element ref="dsf:EQUIPMENTGENERATIONCODE"/>
+                <xs:element ref="dsf:EQUIPMENTCONFIGURATIONID"/>
+				<xs:element ref="dsf:DETAILLEVEL"/>
+				<xs:element ref="dsf:DEPENDENT" minOccurs="0"/>
+				<xs:element ref="dsf:COSTROLLUP" minOccurs="0"/>
+				<xs:element ref="dsf:VMRSCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PARTLOCATIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PARENTEQUIPMENTCONFIGURATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>				
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERORGANIZATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERLOCATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERDEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERCOSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERASSIGNEDTO" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERASSIGNEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:ISPMATTACHED" minOccurs="0"/>
+				<xs:element ref="dsf:ISMPATTACHED" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+    Copyright (c) 2014 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business Function entity CustomerSurvey
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Survey_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/Survey_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="Survey">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CUSTOMERSURVEYID"/>
+				<xs:element ref="dsf:SURVEYTITLE" minOccurs="0"/>
+				<xs:element ref="dsf:OPENINGMESSAGE"/>
+				<xs:element ref="dsf:CLOSINGMESSAGE"/>
+				<xs:element ref="dsf:REDIRECTURL" minOccurs="0"/>
+				<xs:element ref="dsf:REDIRECTTIMER" minOccurs="0"/>
+				<xs:element ref="dsf:URL" minOccurs="0"/>
+				<xs:element ref="dsf:EMAIL" minOccurs="0"/>
+				<xs:element ref="SurveyQuestion" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+    <xs:element name="SurveyQuestion">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:CUSTOMERSURVEYQUESTIONID"/>
+                <xs:element ref="dsf:SEQUENCENUMBER"/>
+                <xs:element ref="dsf:TYPE"/>
+                <xs:element ref="dsf:CUSTOMERSURVEYQUESTIONTEXT"/>
+				<xs:element ref="SurveyAnswer" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SurveyAnswer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:CUSTOMERSURVEYANSWERID"/>
+                <xs:element ref="dsf:SEQUENCENUMBER"/>
+                <xs:element ref="dsf:CUSTOMERSURVEYANSWERTEXT"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

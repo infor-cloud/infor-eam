@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+	This schema defines position hierarchy structures
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PositionHierarchy_002" 
+	xmlns="http://schemas.datastream.net/MP_entities/PositionHierarchy_002" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dse-asset2="http://schemas.datastream.net/MP_entities/AssetHierarchy_002"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified"> 
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/AssetHierarchy_002" schemaLocation="AssetHierarchy_002.xsd"/>        
+	<!--===============================================================================-->
+	<!-- Position Hierarchy Structure definitions -->
+	<xs:element name="PositionChildHierarchy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:POSITIONID"/>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:LOANEDTODEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="ChildPosition" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-asset2:ChildAsset" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="structure_sort_option" type="dsf:CODE1_Type" default="S"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ChildPosition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:POSITIONID"/>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="dsf:COSTROLLUP"/>
+				<xs:element ref="dsf:DEPENDENTON"/>
+				<xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:LOANEDTODEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="ChildPosition" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="dse-asset2:ChildAsset" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="structure_sort_option" type="dsf:CODE1_Type" default="S"/>
+		</xs:complexType>
+	</xs:element>
+					
+	<xs:element name="PositionParentHierarchy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:POSITIONID" minOccurs="0"/>
+				<xs:element ref="dsf:TYPE" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:choice minOccurs="0">
+					<xs:element ref="AssetDependency" minOccurs="0"/>
+					<xs:element ref="PositionDependency" minOccurs="0"/>
+					<xs:element ref="PrimarySystemDependency" minOccurs="0"/>
+					<xs:element ref="SystemDependency" minOccurs="0"/>
+					<xs:element ref="LocationDependency" minOccurs="0"/>
+					<xs:element ref="NonDependentParents" minOccurs="0"/>
+				</xs:choice>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AssetDependency">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPENDENTASSET"/>
+				<xs:element ref="dsf:NONDEPENDENTPOSITION" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTPRIMARYSYSTEM" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTSYSTEM" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="PositionDependency">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPENDENTPOSITION"/>
+				<xs:element ref="dsf:NONDEPENDENTASSET" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTPRIMARYSYSTEM" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTSYSTEM" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SystemDependency">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPENDENTSYSTEM"/>
+				<xs:element ref="dsf:NONDEPENDENTASSET" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTPOSITION" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTPRIMARYSYSTEM" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTSYSTEM" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PrimarySystemDependency">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPENDENTPRIMARYSYSTEM"/>
+				<xs:element ref="dsf:NONDEPENDENTASSET" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTPOSITION" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTSYSTEM" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LocationDependency">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPENDENTLOCATION"/>
+				<xs:element ref="dsf:NONDEPENDENTASSET" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTPOSITION" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTPRIMARYSYSTEM" minOccurs="0"/>
+				<xs:element ref="dsf:NONDEPENDENTSYSTEM" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="NonDependentParents" type="NonDependentParents_Type"/>	
+	<xs:complexType name="NonDependentParents_Type">
+		<xs:sequence>
+			<xs:element ref="dsf:NONDEPENDENTASSET" minOccurs="0"/>
+			<xs:element ref="dsf:NONDEPENDENTPOSITION" minOccurs="0"/>
+			<xs:element ref="dsf:NONDEPENDENTPRIMARYSYSTEM" minOccurs="0"/>
+			<xs:element ref="dsf:NONDEPENDENTSYSTEM" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="defaultdependency" type="dsf:FLAG_Type" default="false"/>			
+	</xs:complexType>
+	<xs:element name="NoParents" type="dsf:FLAG_Type"/>	
+</xs:schema>

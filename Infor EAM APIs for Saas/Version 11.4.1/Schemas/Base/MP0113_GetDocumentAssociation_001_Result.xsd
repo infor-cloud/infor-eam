@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function result MP0113_GetDocumentAssociation_001
+==================================================================================-->  
+ 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0113_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:da="http://schemas.datastream.net/MP_entities/DocumentAssociation_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datastream.net/MP_results/MP0113_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/DocumentAssociation_001" schemaLocation="DocumentAssociation_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0113_GetDocumentAssociation_001_Result ======================================-->
+	<xs:element name="MP0113_GetDocumentAssociation_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData" maxOccurs="unbounded"/>
+				<xs:element ref="InstallParameters" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="da:DocumentAssociation" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="entityCode" type="dsf:CODE30_Type"/>
+			<xs:attribute name="entityDescription" type="dsf:CODE80_Type"/>
+			<xs:attribute name="entityType" type="dsf:CODE4_Type"/>
+			<xs:attribute name="entity" type="xs:string"/>
+			<xs:attribute name="entityCategory" type="dsf:CODE120_Type"/>
+			<xs:attribute name="entityJobType" type="dsf:CODE8_Type"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InstallParameters">
+		<xs:complexType>
+			<xs:attribute name="installCode" type="xs:string"/>
+			<xs:attribute name="installDescription" type="dsf:CODE800_Type"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

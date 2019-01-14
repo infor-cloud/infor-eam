@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2012 Infor Global Solutions Technology GmbH and/or its affiliates
+  and subsidiaries. All rights reserved. The word and design marks set forth
+  herein are trademarks and/or registered trademarks of
+  Infor Global Solutions Technology GmbH and/or its affiliates and subsidiaries.
+  All rights reserved. All other trademarks listed herein are the property of
+  their respective owners.
+ 
+  This document may not be reproduced in whole or in part or used for tendering
+  or manufacturing purposes except under an agreement or with the written
+  consent of the copyright holder and then only under the condition that this
+  notice is included in any such reproduction. No information regarding the
+  contents or subject matter of this document or any part thereof arising
+  directly or indirectly thereof shall be given orally or in writing or
+  communicated in any manner whatsoever to any third party without the prior
+  written consent of the copyright holder.
+
+	This schema defines MP entity UserSetup
+ =============================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/UserSetup_001" xmlns="http://schemas.datastream.net/MP_entities/UserSetup_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of UserSetup_001 ======================================-->
+	<xs:element name="UserSetup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:USERID"/>
+				<xs:element ref="dsf:LANGUAGE"/>
+				<xs:element ref="dsf:USERGROUP"/>
+				<xs:element ref="dsf:USEREXPIREDATE"/>
+				<xs:element ref="dsf:PASSWORD"/>
+				<xs:element ref="dsf:PASSEXPIREDATE"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:LOCALE" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:MSGTIMEOUT"/>
+				<xs:element ref="dsf:FIRSTFORM" minOccurs="0"/>
+				<xs:element name="FIRSTFORMDESCRIPTION" minOccurs="0" type="dsf:DESCRIPTION_Type"/>
+				<xs:element ref="dsf:EMAIL" minOccurs="0"/>
+				<xs:element ref="dsf:REQLIMIT" minOccurs="0"/>
+				<xs:element ref="dsf:REQAPPLIMIT" minOccurs="0"/>
+				<xs:element ref="dsf:INVAPPLIMIT" minOccurs="0"/>
+				<xs:element ref="dsf:NONPOINVAPPLIMIT" minOccurs="0"/>
+				<xs:element ref="dsf:POLIMIT" minOccurs="0"/>
+				<xs:element ref="dsf:POAPPLIMIT" minOccurs="0"/>
+				<xs:element ref="dsf:PICKLISTAPPLIMIT" minOccurs="0"/>
+				<xs:element ref="dsf:ISBUYER"/>
+				<xs:element ref="dsf:ISSCREENER" minOccurs="0"/>
+				<xs:element ref="dsf:ISAPPROVER" minOccurs="0"/>
+				<xs:element ref="dsf:ISACTIVE"/>
+				<xs:element ref="dsf:ISMOBILE" minOccurs="0"/>
+				<xs:element ref="dsf:ISMOBILEADMIN" minOccurs="0"/>
+				<xs:element ref="dsf:ISCONNECTOR" minOccurs="0"/>
+				<xs:element ref="dsf:ISBARCODE" minOccurs="0"/>	
+				<xs:element ref="dsf:ISANALYTICS" minOccurs="0"/>
+				<xs:element ref="dsf:ISREQUESTOR" minOccurs="0"/>
+				<xs:element ref="dsf:ISSYSMAN"/>
+				<xs:element ref="dsf:DATELOCKED" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:INBOXTAB" minOccurs="0"/>
+				<xs:element ref="dsf:SESSIONTIMEOUT" minOccurs="0"/>
+				<xs:element name="ISCONSUMER" type="dsf:FLAG_Type" minOccurs="0"/>	
+				<xs:element name="ISPROFESSIONAL" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="ISSCREENDESIGNER" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="ALLOWDATASPYEDIT" type="dsf:FLAG_Type" default="false" minOccurs="0"/>
+				<xs:element name="ALLOWGLOBALDATASPYCONFIGURATION" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="ALLOWDATASPYADVANCEDFILTERS" type="dsf:FLAG_Type" default="false" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWEDITOTHERSCOMMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWEDITOWNCOMMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+				<xs:element ref="dsf:ACCESSIBILITYMODE" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWCANCELDAILYSCHEDULESESSION" minOccurs="0"/>
+				<xs:element ref="dsf:EXTERNALUSERID" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWSCREENCACHESETUP" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWCREATINGIMPORTUTILITYTEMPLATE" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWVIEWINGAUDITTRAIL" minOccurs="0"/>
+				<xs:element ref="dsf:ENABLESCREENCACHEDECK" minOccurs="0"/>
+				<xs:element ref="dsf:ENABLETRANSITIONANIMATIONS" minOccurs="0"/>
+				<xs:element ref="dsf:DEFAULTSTORE" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWCHANGESTOMOBILESETTINGS" minOccurs="0"/>
+				<xs:element ref="dsf:ARCGISUSERID" minOccurs="0"/>
+				<xs:element ref="dsf:ARCGISPASSWORD" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWVIEWINGPRIVATECASES" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWCONTAINSSEARCH" minOccurs="0"/>
+				<xs:element ref="dsf:MOBILEFIRSTSCREEN" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWUPDATEFIELDOPTION" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="user_entity" type="xs:string"/>
+			<xs:attribute name="system_entity" type="xs:string"/>
+			<xs:attribute name="isrecordrevoked" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

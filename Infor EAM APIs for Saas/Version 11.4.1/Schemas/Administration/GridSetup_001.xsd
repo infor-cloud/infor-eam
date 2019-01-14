@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+        This schema defines MP entity GridSetup
+==================================================================================-->  
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/GridSetup_001" 
+		xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+		xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		xmlns="http://schemas.datastream.net/MP_entities/GridSetup_001" elementFormDefault="qualified">
+            <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+            <!--===============================================================================-->
+            <!--====  Begining of GridSetup_001 ======================================-->
+            <xs:element name="GridSetup">
+                        <xs:complexType>
+                                    <xs:sequence>
+                                          <xs:element ref="dsf:GRIDSETUPID"/>
+                                          <xs:element ref="dsf:GRIDNAME"/>
+                                          <xs:element ref="dsf:COPYFROMGRID" minOccurs="0"/>
+                                          <xs:element ref="dsf:GRIDTYPE"/>
+                                          <xs:element ref="dsf:PARENTSCREEN" minOccurs="0"/>
+                                          <xs:element ref="dsf:FROMCLAUSE" minOccurs="0"/>
+                                          <xs:element ref="dsf:WHERECLAUSE" minOccurs="0"/>
+                                          <xs:element ref="dsf:SELECTSTATEMENT" minOccurs="0"/>
+                                          <xs:element ref="dsf:ENABLECUSTOMFIELDINDATASPY" minOccurs="0" />
+                                          <xs:element ref="dsf:CUSTOMFIELDTABLEDETAILS" minOccurs="0"/>
+                                          <xs:element ref="dsf:DDFIELDIDSLIST" minOccurs="0" maxOccurs="unbounded" />
+                                          <xs:element ref="dsf:ISACTIVE" />
+                                          <xs:element ref="dsf:ISMOBILE" minOccurs="0"/>
+                                          <xs:element ref="dsf:ISGISDATAFILTER" minOccurs="0"/>
+                                          <xs:element ref="dsf:ISGISWOFIELDMAP" minOccurs="0"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="recordid" type="xs:long"/>
+                        </xs:complexType>
+            </xs:element>
+</xs:schema>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entityLaborBooking    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/LaborBooking_002"
+           xmlns="http://schemas.datastream.net/MP_entities/LaborBooking_002"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="LaborBooking">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BOOKEDHOURSID" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVITYID" minOccurs="0"/>
+				<xs:element ref="dsf:TRADEID" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:DATEWORKED"/>
+				<xs:element ref="dsf:OCCUPATIONTYPE"/>
+				<xs:element ref="dsf:EMPLOYEE" minOccurs="0"/>
+				<xs:element ref="dsf:CREWID" minOccurs="0"/>
+				<xs:element ref="dsf:TRADERATE" minOccurs="0"/>
+				<xs:element ref="dsf:HOURSBOOKED"/>
+				<xs:element ref="dsf:ACTUALSTARTTIME" minOccurs="0"/>
+				<xs:element ref="dsf:ACTUALENDTIME" minOccurs="0"/>
+				<xs:element ref="dsf:CORRECTION" minOccurs="0"/>
+				<xs:element ref="dsf:MULTIEQUIPSPLITINFOBATCH" minOccurs="0"/>	
+				<xs:element ref="dsf:ALLOWZERORATE" minOccurs="0"/>	
+				<xs:element ref="dsf:DESCRIPTION" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+				<xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/> 
+				<xs:element ref="dsf:CORRECTIONDATE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

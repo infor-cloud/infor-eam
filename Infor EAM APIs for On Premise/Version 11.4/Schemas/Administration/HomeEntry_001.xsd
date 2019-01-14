@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!--
+===================================================================
+	Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth herein are trademarks and/or 
+	registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved. All other 
+	trademarks listed herein are the property of their respective owners. www.infor.com.
+
+	This schema defines MP entity HomeEntry_001
+===================================================================
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/HomeEntry_001" xmlns="http://schemas.datastream.net/MP_entities/HomeEntry_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of HomeEntry_001 ======================================-->
+	<xs:element name="HomeEntry">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:HOMEENTRYID"/>
+				<xs:element ref="dsf:DESCRIPTION"/>
+				<xs:element ref="dsf:QUERYCODE" minOccurs="0"/>
+				<xs:element ref="dsf:FUNCTIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:GENERAL" minOccurs="0"/>
+				<xs:element ref="dsf:PARENT" minOccurs="0"/>
+				<xs:element ref="dsf:UPDFREQUENCY" minOccurs="0"/>
+				<xs:element ref="dsf:UPDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:NEXTUPDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:UOMCODE" minOccurs="0"/>
+				<xs:element ref="dsf:HISTORY" minOccurs="0"/>
+				<xs:element ref="dsf:WHERECLAUSE" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENTVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:NORMALSCORE" minOccurs="0"/>
+				<xs:element ref="dsf:ERROR" minOccurs="0"/>
+				<xs:element ref="dsf:EWSFUNCTION" minOccurs="0"/>
+				<xs:element ref="dsf:EWSDATASPYID" minOccurs="0"/>
+				<xs:element ref="HIDECRITERION" minOccurs="0"/>
+				<xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+				<xs:element ref="dsf:HOMEROLLUPTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:KPITYPE" minOccurs="0"/>
+				<xs:element ref="dsf:DONUTRADIUSPERCENTAGE" minOccurs="0"/>
+				<xs:element ref="dsf:GAUGEMIN" minOccurs="0"/>
+				<xs:element ref="dsf:GAUGEMAX" minOccurs="0"/>
+				<xs:element ref="UserDefinedFields" minOccurs="0"/>
+				<xs:element ref="dsf:GROUPBYTEXT" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HIDECRITERION">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:HIDEOPERATOR"/>
+				<xs:element ref="dsf:HIDEVALUE"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserDefinedFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UDFCHAR01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX05" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

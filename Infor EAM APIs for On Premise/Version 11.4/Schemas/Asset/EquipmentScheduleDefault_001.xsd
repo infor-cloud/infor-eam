@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2015 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners.
+
+    This schema defines MP entity EquipmentScheduleDefault
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EquipmentScheduleDefault_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/EquipmentScheduleDefault_001" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <!--====  Beginning of EquipmentScheduleDefault_001 ======================================-->
+    <xs:element name="EquipmentScheduleDefault">
+        <xs:complexType>
+            <xs:sequence>
+            	<xs:element ref="dsf:CUSTOMERRENTALID" minOccurs="0"/>
+                <xs:element ref="dsf:CALENDARTYPE"/>
+                <xs:element ref="dsf:DURATION"/>
+                <xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+                <xs:element ref="dsf:TYPE"/>
+                <xs:element ref="dsf:STATUS"/>
+                <xs:element ref="dsf:ESTIMATEDISSUEDATE" minOccurs="0"/>
+                <xs:element ref="dsf:ESTIMATEDRETURNDATE" minOccurs="0"/>
+                <xs:element ref="dsf:PRIVATE" minOccurs="0"/>
+                <xs:element ref="dsf:ALLDAY" minOccurs="0"/>
+                <xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+                <xs:element ref="dsf:TRAVELFROM" minOccurs="0"/>
+                <xs:element ref="dsf:TRAVELTO" minOccurs="0"/>
+                <xs:element ref="dsf:SETUPTIME" minOccurs="0"/>
+                <xs:element ref="dsf:TEARDOWNTIME" minOccurs="0"/>
+                <xs:element ref="dsf:ISSUETO" minOccurs="0"/>
+                <xs:element ref="dsf:CUSTOMERID" minOccurs="0"/>
+                <xs:element ref="dsf:PHONE" minOccurs="0"/>
+                <xs:element ref="dsf:LICENSENO" minOccurs="0"/>
+                <xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:VEHICLETYPE" minOccurs="0"/>
+				<xs:element ref="dsf:RESERVATIONCALENDAROWNER" minOccurs="0"/>
+				<xs:element ref="dsf:RESERVATIONCALENDAROWNERSLIST" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+                <xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+                <xs:element ref="dsf:INSTRUCTION1" minOccurs="0"/>
+                <xs:element ref="dsf:INSTRUCTION2" minOccurs="0"/>
+                <xs:element ref="dsf:INSTRUCTION3" minOccurs="0"/>
+                <xs:element ref="dsf:BUILDINGSERVICES" minOccurs="0"/>
+                <xs:element ref="dsf:BUILDINGSERVICESEMAIL" minOccurs="0"/>
+                <xs:element ref="dsf:BUILDINGSERVICESINSTRUCTION" minOccurs="0"/>
+                <xs:element ref="dsf:MAILTEMPLATERECIPIENTS" minOccurs="0"/>
+                <xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+                <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+                <xs:element ref="WorkingHours" minOccurs="0"/>
+                <xs:element ref="WorkingDays" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="WorkingHours">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:SCHEDULEDSTARTTIME"/>
+                <xs:element ref="dsf:SCHEDULEDENDTIME"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="WorkingDays">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="MONDAY" type="dsf:FLAG_Type" default="true"/>
+                <xs:element name="TUESDAY" type="dsf:FLAG_Type" default="true"/>
+                <xs:element name="WEDNESDAY" type="dsf:FLAG_Type" default="true"/>
+                <xs:element name="THURSDAY" type="dsf:FLAG_Type" default="true"/>
+                <xs:element name="FRIDAY" type="dsf:FLAG_Type" default="true"/>
+                <xs:element name="SATURDAY" type="dsf:FLAG_Type" default="false"/>
+                <xs:element name="SUNDAY" type="dsf:FLAG_Type" default="false"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

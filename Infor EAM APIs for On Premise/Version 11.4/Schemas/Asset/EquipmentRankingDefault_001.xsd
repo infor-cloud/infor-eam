@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2016 Infor. All rights reserved.
+	The word and design marks set forth herein are trademarks and/or registered
+	trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. www.infor.com.
+	
+	This schema defines MP business function entity EquipmentRankingDefault.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EquipmentRankingDefault_001"
+	xmlns="http://schemas.datastream.net/MP_entities/EquipmentRankingDefault_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="EquipmentRankingDefault">
+		<xs:complexType>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+			<xs:attribute name="has_calculated_questions" type="dsf:FLAG_Type" default ="true"/>
+			<xs:attribute name="confirm_overwrite_defaultranking" type="dsf:CONFIRMATION_Type" default="prompt"/>
+			<xs:attribute name="confirm_delete_surveryanswers" type="dsf:CONFIRMATION_Type" default="prompt"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

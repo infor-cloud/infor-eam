@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity RunReport_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/RunReport_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/RunReport_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="CLIENTTYPE">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="EXTENDED"/>
+				<xs:enumeration value="WEBSERVICE"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="OUTPUTTYPE">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="PREVIEW"/>
+				<xs:enumeration value="PRINT"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="OUTPUTFORMAT">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="PDF"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="PARAMETER">
+		<xs:complexType>
+			<xs:attribute name="NAME" type="xs:string"/>
+			<xs:attribute name="VALUE" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PRINTTO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PRINTERID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="RunReport">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="REFRESH" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element ref="CLIENTTYPE"/>
+				<xs:element ref="dsf:FUNCTIONCODE"/>
+				<xs:element ref="OUTPUTFORMAT"/>
+				<xs:element ref="OUTPUTTYPE"/>
+				<xs:element name="PRINTERNAME" type="xs:string" minOccurs="0"/>
+				<xs:element name="WAITFORREPORT" type="xs:boolean" default="true"/>
+				<xs:element name="PARAMETERLIST">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="PARAMETER" minOccurs="0" maxOccurs="99"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="PRINTTO" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2014 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+    This schema defines MP business function entity TaskPlanJobDefault
+==================================================================================-->
+    <xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/TaskPlanJobDefault_001"
+        xmlns="http://schemas.datastream.net/MP_entities/TaskPlanJobDefault_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="TaskPlanJobDefault">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+                    <xs:element ref="dsf:ACTIVECHECKLIST" minOccurs="0"/>
+                    <xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+                    <xs:element ref="dsf:CHECKLISTPERFORMEDBYREQUIRED" minOccurs="0"/>
+                    <xs:element ref="dsf:CHECKLISTREVIEWEDBYREQUIRED" minOccurs="0"/>
+                    <xs:element ref="dsf:MULTIPLETRADES" minOccurs="0"/>
+                    <xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+                    <xs:element ref="dsf:REUSABLE" minOccurs="0"/>
+                    <xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+                    <xs:element ref="dsf:IMPORTJOBPLAN" minOccurs="0"/>
+                    <xs:element ref="dsf:RSTATUS" minOccurs="0"/>
+					<xs:element ref="dsf:PMRVCTRL" minOccurs="0"/>
+ 					<xs:element ref="dsf:PLANNINGLEVEL" minOccurs="0"/>
+                    <xs:element ref="dsf:ENABLEENHANCEDPLANNING" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>

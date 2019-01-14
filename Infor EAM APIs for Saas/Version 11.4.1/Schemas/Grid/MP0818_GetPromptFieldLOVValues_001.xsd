@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+    This schema defines MP business function request MP0818_GetPromptFieldLOVValues_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0818_GetPromptFieldLOVValues_001" xmlns="http://schemas.datastream.net/MP_functions/MP0818_GetPromptFieldLOVValues_001" xmlns:dsg="http://schemas.datastream.net/MP_functions/GridRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_functions/GridRequest" schemaLocation="GridRequest2.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0818_GetPromptFieldLOVValues_001 ======================================-->
+	<xs:element name="MP0818_GetPromptFieldLOVValues_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FUNCTION_REQUEST_INFO"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FUNCTION_REQUEST_INFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsg:PROMPTFIELD"/>
+				<xs:element ref="dsg:ADDON_SORT" minOccurs="0"/>
+				<xs:element ref="dsg:ADDON_FILTER" minOccurs="0"/>
+				<xs:element ref="dsg:MULTIADDON_FILTERS" minOccurs="0"/>
+				<xs:element ref="dsg:LOV" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="REQUEST_TYPE" type="FUNCTION_REQUEST_TYPE"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="FUNCTION_REQUEST_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LOVSQL.DATA_ONLY.STORED"/>
+			<xs:enumeration value="LOVSQL.HEAD_DATA.STORED"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

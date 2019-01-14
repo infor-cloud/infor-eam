@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function request MP0024_GetWorkOrder_001    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP8800_001" xmlns="http://schemas.datastream.net/MP_results/MP8800_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:dse-Project="http://schemas.datastream.net/MP_entities/Project_001" xmlns:dse-pcl="http://schemas.datastream.net/MP_entities/ProjectBudgetClass_001" xmlns:dse-BudgetForProject="http://schemas.datastream.net/MP_entities/BudgetForProject_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Project_001" schemaLocation="Project_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/ProjectBudgetClass_001" schemaLocation="ProjectBudgetClass_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/BudgetForProject_001" schemaLocation="BudgetForProject_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP8800_SyncProjinfoOutbound_001 ======================================-->
+	<xs:element name="MP8800_SyncProjinfoOutbound_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-Project:Project"/>
+				<xs:element ref="ProjectExtra" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProjectExtra">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PROJECTID"/>
+				<xs:element ref="dsf:RSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:APPROVEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ORIGINALBUDGETAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:ISSDJOBSCREATED" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCESYSTEM" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCECODE" minOccurs="0"/>
+				<xs:element ref="dsf:INTERFACE" minOccurs="0"/>
+				<xs:element ref="dsf:COMMENT" minOccurs="0" maxOccurs="500"/>
+				<xs:element ref="ProjectBudgetClasses" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="user_entity" type="xs:string"/>
+			<xs:attribute name="system_entity" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProjectBudgetClasses">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-BudgetForProject:BudgetForProject" minOccurs="0" maxOccurs="500"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--==============================================================================================
+    Copyright (c) 2015 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business function entity EquipmentServiceCode
+==================================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EquipmentServiceCode_001"
+        xmlns="http://schemas.datastream.net/MP_entities/EquipmentServiceCode_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="EquipmentServiceCodes">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="EquipmentServiceCode" minOccurs="1" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="add_suppliertoequipment" type="dsf:CONFIRMATION_Type" default="confirmed"/>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="EquipmentServiceCode">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:EQUIPMENTSERVICECODEID"/>
+                    <xs:element ref="dsf:EQUIPMENTID"/>
+                    <xs:element ref="dsf:SERVICEPROBLEMID"/>
+                    <xs:element ref="dsf:APPLYSERVICECODETOCHILDREN" minOccurs="0"/>
+                    <xs:element ref="dsf:SUPPLIEREXCLUSIONS" minOccurs="0"/>
+                    <xs:element ref="dsf:SKIPTHISLEVEL" minOccurs="0"/>
+                    <xs:element ref="dsf:GENERAL" minOccurs="0"/>
+                    <xs:element ref="dsf:PARENTEQUIPMENTSERVICECODEID" minOccurs="0"/>
+                    <xs:element ref="dsf:EQUIPMENTSTATUS" minOccurs="0"/>
+                    <xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+                    <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="recordid" type="xs:long"/>
+                <xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+                <xs:attribute name="add_suppliertoequipment" type="dsf:CONFIRMATION_Type" default="confirmed"/>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

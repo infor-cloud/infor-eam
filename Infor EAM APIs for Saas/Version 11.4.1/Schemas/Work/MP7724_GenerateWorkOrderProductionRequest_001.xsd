@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+        Copyright 2003, Datastream Systems, Inc.
+        50 Datastream Plaza, Greenville, SC 29605, USA.
+        All rights reserved.
+        
+    This schema defines MP business function request MP7724_GenerateWorkOrderProductionRequest_001   
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP7724_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_functions/MP7724_001" elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="MP7724_GenerateWorkOrderProductionRequest_001">
+                <xs:complexType>
+                        <xs:sequence>
+                                <xs:element ref="dsf:WORKORDERID"/>
+                        </xs:sequence>
+                        <xs:attribute name="verb" type="dsf:VERB_Type" fixed="Generate"/>
+                        <xs:attribute name="noun" type="dsf:NOUN_Type" fixed="WorkOrderProductionRequest"/>
+                        <xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+                        <xs:attribute name="callname" type="xs:string" default="GenerateProductionRequest"/>
+                        <xs:attribute name="generateproductionconfirmation" type="dsf:CONFIRMATION_Type" default="prompt"/>
+                </xs:complexType>
+        </xs:element>
+</xs:schema>

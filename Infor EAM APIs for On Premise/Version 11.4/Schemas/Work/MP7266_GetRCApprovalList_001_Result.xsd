@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================ 
+    Copyright 2003, Datastream Systems, Inc. 
+    50 Datastream Plaza, Greenville, SC 29605, USA. 
+    All rights reserved. 
+
+    This schema defines MP business function result for function request MP7266_GetRCApprovalList_001_Result
+================================================================================== -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7266_001" xmlns:dse-RCApprovalList="http://schemas.datastream.net/MP_entities/RCApprovalList_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_results/MP7266_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/RCApprovalList_001" schemaLocation="RCApprovalList_001.xsd"/>
+	<xs:element name="MP7266_GetRCApprovalList_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-RCApprovalList:RCApprovalList"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

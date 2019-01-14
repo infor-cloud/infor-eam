@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+        This schema defines MP business function result for
+    function request MP0301_AddAssetEquipment_001
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0301_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_results/MP0301_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--======================================================================================-->
+	<!--====  Begining of MP0301_AddAssetEquipment_001_Result ======================================-->
+	<xs:element name="MP0301_AddAssetEquipment_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ASSETID"/>
+			</xs:sequence>
+			<xs:attribute name="multiorg" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="addgisasset" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="gisobjid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

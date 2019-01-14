@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+    This schema defines MP business function request 0107_SyncUserAccountInfo_001
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/0107_SyncUserAccountInfo_001" xmlns="http://schemas.datastream.net/0107_SyncUserAccountInfo_001"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<!--===============================================================================-->
+<!--====  Begining of 0107_SyncUserAccountInfo_001 ======================================-->
+	<xs:element name="MP0107_SyncUserAccountInfo_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="UserAccountInfo"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserAccountInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:USERCODE"/>
+				<xs:element ref="dsf:CURRENTPASSWORD"/>
+				<xs:element ref="dsf:PASSWORD"/>
+				<xs:element ref="dsf:EMAIL"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:positiveInteger"/>
+			<xs:attribute name="is_clear_externcode" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

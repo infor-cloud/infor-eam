@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+   Copyright (c) 2014 Infor. All rights reserved. The word and design marks set 
+   forth herein are trademarks and/or registered trademarks of Infor and/or 
+   related affiliates and subsidiaries. All rights reserved. All other 
+   trademarks listed herein are the property of their respective owners. 
+   www.infor.com.
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WorkOrderShiftSchedule_001" xmlns="http://schemas.datastream.net/MP_entities/WorkOrderShiftSchedule_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of WorkOrderShiftSchedule_001 ======================================-->
+	<xs:element name="WorkOrderShiftSchedule">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DBSESSIONID"/> 
+				<xs:element ref="dsf:SHIFTID" minOccurs="0" />
+				<xs:element ref="dsf:SHIFTSTARTDATE" minOccurs="0" />
+				<xs:element ref="dsf:SHIFTSTARTTIME" minOccurs="0" />
+				<xs:element ref="dsf:SHIFTDURATION" minOccurs="0" />
+				<xs:element ref="dsf:SHIFTHOURS" minOccurs="0" />
+				<xs:element ref="dsf:WORKORDERORGANIZATIONID" minOccurs="0" />
+				<xs:element ref="WorkOrderActivityCards" minOccurs="0"/>
+				<xs:element ref="AvailableTrades" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute name="SessionStarted" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WorkOrderActivityShiftSchedules">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DBSESSIONID"/>
+				<xs:element ref="dsf:SHOWWARNING" minOccurs="0"/>
+				<xs:element ref="WorkOrderActivityShiftSchedule" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WorkOrderActivityShiftSchedule">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ACTIVITYID"/>
+				<xs:element ref="dsf:TRADEID" minOccurs="0" />
+				<xs:element ref="dsf:EMPLOYEEID" minOccurs="0" />
+				<xs:element ref="dsf:WOSCHEDULECODE" minOccurs="0" />
+				<xs:element ref="dsf:NEWEMPLOYEEID" minOccurs="0" />
+				<xs:element ref="dsf:SPLITSCHEDULE" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WorkOrderActivityCards">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="WorkOrderActivityCard" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AvailableTrades">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AvailableTrade" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WorkOrderActivityCard">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ACTIVITYID"/>
+				<xs:element ref="dsf:HOURSREMAINING" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:CONTINUENEXTSHIFT" minOccurs="0" />
+				<xs:element name="QualificationPresent" type="dsf:FLAG_Type" default="false"/>
+				<xs:element name="FullyScheduled" type="dsf:FLAG_Type" default="false"/>
+				<xs:element ref="ScheduledEmployees" minOccurs="0"/>
+				<xs:element ref="ScheduleTrades" minOccurs="0"/>
+				<xs:element ref="Qualifications" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ScheduleTrades">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ScheduleTrade" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ScheduleTrade">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TRADEID" minOccurs="0"/>
+				<xs:element ref="dsf:ABBREVIATION" minOccurs="0"/>
+				<xs:element ref="dsf:HOURSREMAINING" minOccurs="0"/>
+				<xs:element ref="Qualifications" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ScheduledEmployees">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ScheduledEmployee" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ScheduledEmployee">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EMPLOYEEID" minOccurs="0"/>
+				<xs:element ref="dsf:INITIALS" minOccurs="0"/>
+				<xs:element ref="dsf:URL" minOccurs="0"/>
+				<xs:element ref="dsf:TRADEID" minOccurs="0"/>
+				<xs:element ref="dsf:MAINRESOURCE" minOccurs="0"/>
+				<xs:element ref="dsf:ABBREVIATION" minOccurs="0"/>
+				<xs:element ref="dsf:HOURSREMAINING" minOccurs="0"/>
+				<xs:element ref="dsf:SCHEDULEDHOURS" minOccurs="0"/>
+				<xs:element ref="Qualifications" minOccurs="0"/>
+				<xs:element ref="dsf:WOSCHEDULECODE"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AvailableTrade">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TRADEID" minOccurs="0"/>
+				<xs:element ref="dsf:ABBREVIATION" minOccurs="0"/>
+				<xs:element ref="AvailableEmployees" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AvailableEmployees">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AvailableEmployee" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AvailableEmployee">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EMPLOYEEID" minOccurs="0"/>
+				<xs:element ref="dsf:INITIALS" minOccurs="0"/>
+				<xs:element ref="dsf:URL" minOccurs="0"/>
+				<xs:element ref="dsf:AVAILABLEHOURS" minOccurs="0"/>
+				<xs:element ref="dsf:HOURSREMAINING" minOccurs="0"/>
+				<xs:element ref="dsf:SCHEDULEDHOURS" minOccurs="0"/>
+				<xs:element name="Scheduled" type="dsf:FLAG_Type" default="false"/>
+				<xs:element ref="Qualifications" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Qualifications">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:QUALIFICATIONID" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

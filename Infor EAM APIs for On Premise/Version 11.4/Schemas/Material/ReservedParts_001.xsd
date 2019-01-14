@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity reseved parts    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ReservedParts_001" xmlns="http://schemas.datastream.net/MP_entities/ReservedParts_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of ReservedParts_001 ======================================-->
+        <xs:element name="ReservedParts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ReservedPart" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReservedPart">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PARTID" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:BYASSET" minOccurs="0"/>
+				<xs:element ref="dsf:UOMID" minOccurs="0"/>
+				<xs:element ref="dsf:BIN" minOccurs="0"/>
+				<xs:element ref="dsf:LOT" minOccurs="0"/>
+				<xs:element ref="dsf:RESERVEDPARTQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOCATEDPARTQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:AVAILABLEQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:EXPIRATIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTLOT" minOccurs="0"/>
+				<xs:element ref="dsf:SERIALNUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:TOOLHOURS" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

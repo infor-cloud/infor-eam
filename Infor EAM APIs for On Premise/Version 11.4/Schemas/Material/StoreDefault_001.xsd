@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity StoreDefault    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/StoreDefault_001" 
+           xmlns="http://schemas.datastream.net/MP_entities/StoreDefault_001" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+           elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<!--===============================================================================-->
+<!--====  Begining of StoreDefault_001 ======================================-->
+  <xs:element name="StoreDefault">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dsf:ORGANIZATIONCODE" minOccurs="0"/>
+        <xs:element ref="dsf:PRICETYPE" minOccurs="1"/>
+        <xs:element ref="dsf:AUTOAPPVSTATUSCODE" minOccurs="0"/>
+
+        <xs:element ref="dsf:SUNDAY" minOccurs="0"/>
+        <xs:element ref="dsf:MONDAY" minOccurs="0"/>
+        <xs:element ref="dsf:TUESDAY" minOccurs="0"/>
+        <xs:element ref="dsf:WEDNESDAY" minOccurs="0"/>
+        <xs:element ref="dsf:THURSDAY" minOccurs="0"/>
+        <xs:element ref="dsf:FRIDAY" minOccurs="0"/>
+        <xs:element ref="dsf:SATURDAY" minOccurs="0"/>
+        <xs:element ref="dsf:RESERVEDPARTBUFFER" minOccurs="0"/>
+        <xs:element ref="dsf:INTERNALLEADTIME" minOccurs="0"/>
+	<xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+	<xs:element ref="dsf:PRINTERID" minOccurs="0"/>
+	<xs:element ref="dsf:ISSUETEMPLATE" minOccurs="0"/>
+	<xs:element ref="dsf:RECEIPTTEMPLATE" minOccurs="0"/>
+	<xs:element ref="dsf:NONPOTEMPLATE" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>	
+</xs:schema>

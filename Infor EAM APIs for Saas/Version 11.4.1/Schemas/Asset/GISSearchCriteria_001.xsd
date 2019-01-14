@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity GISSearchCriteria_001.
+====================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/GISSearchCriteria_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/GISSearchCriteria_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of GISSearchCriteria_001 ======================================-->
+	<xs:element name="GISSearchCriteria">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element ref="dsf:ADDRESSSEARCHTEXT"/>
+					<xs:element ref="EquipmentDetails"/>
+				</xs:choice>
+
+				<xs:element name="DATASPY" type="dsf:SECURITYFILTER_Type" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVELAYER" minOccurs="0"/>
+				<xs:element name="BUFFERLAYERS" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dsf:BUFFERLAYER" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="EquipmentDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EQUIPMENTID"/>
+				<xs:element name="EQUIPMENTSEARCHTYPE" type="dsf:TYPE_Type"/>
+				<xs:element ref="dsf:GISOBJID" minOccurs="0"/>
+				<xs:element ref="dsf:GISLAYER" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTLENGTH" minOccurs="0"/>
+				<xs:element name="EQUIPMENTLENGTHUOM" type="dsf:TYPE_Type" minOccurs="0"/>
+				<xs:element ref="dsf:STARTINGAT" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2007 Infor. All rights reserved
+	The word and design marks set forth herein are trademarks and/or registered trademarks of Infor 
+	and/or related affiliates and subsidiaries. All rights reserved. All other trademarks listed herein 
+	are the property of their respective owners. www.infor.com
+
+	This schema defines MP entity PartEvaluation
+ ================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PartEvaluation_001" xmlns="http://schemas.datastream.net/MP_entities/PartEvaluation_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+
+	<!--============================= Imported Schemas ============================================-->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===========================================================================================-->
+
+	<!--===========================  Begining of PartEvaluation_001 ===============================-->
+	<xs:element name="PartEvaluation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EVALUATIONID"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="PotentialPartDetails" minOccurs="0"/>
+				<xs:element ref="SelectionCriteriaDetails" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREASEARCHCRITERIA" minOccurs="0"/>
+				<!-- This element is used solely on a Get and contains all possible custom
+				fields that can be searched.The SelectionCustomFields section should be
+				used for saving custom field parameters.-->
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PotentialPartDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EVALMANUFACTURERDESC" minOccurs="0"/>
+				<xs:element ref="dsf:MODEL" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SelectionCriteriaDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERPARTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:PRIMARYCOMMODITY" minOccurs="0"/>
+				<xs:element ref="dsf:SECONDARYCOMMODITY" minOccurs="0"/>
+				<xs:element ref="dsf:INCLUDEOUTOFSERVICE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

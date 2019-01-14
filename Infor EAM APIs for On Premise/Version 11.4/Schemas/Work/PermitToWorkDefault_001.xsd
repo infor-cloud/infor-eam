@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2013 Infor. All rights reserved. The word and design marks set forth herein are trademarks
+	and/or registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. www.infor.com.
+	
+    This schema defines MP entity PermitToWorkDefault 
+==================================================================================--> 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PermitToWorkDefault_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://schemas.datastream.net/MP_entities/PermitToWorkDefault_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of PermitToWorkDefault_001 ======= -->
+	<xs:element name="PermitToWorkDefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:STATUS" minOccurs="0"/>
+				<xs:element ref="dsf:UNASSESSEDCONFLICTS" minOccurs="0"/>
+				<xs:element ref="dsf:ISOLATED" minOccurs="0"/>
+				<xs:element ref="dsf:EXTENSIONCOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:DURATIONTOTAL" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

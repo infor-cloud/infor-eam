@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request MP0479_CreatePOAndPartLineFromBO_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0479_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_functions/MP0479_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0479_CreatePOAndPartLineFromBO_001 ======================================-->
+	<xs:element name="MP0479_CreatePOAndPartLineFromBO_001">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="dsf:BaseSchemaRequestElement">
+					<xs:sequence>
+						<xs:element ref="dsf:PURCHASEORDERID" minOccurs="0"/>
+						<xs:element ref="dsf:BLANKETORDERLINEID"/>
+						<xs:element ref="dsf:STOREID" minOccurs="0"/>
+						<xs:element ref="dsf:ORIGINATOR" minOccurs="0"/>
+						<xs:element ref="dsf:ORDERQUANTITY" minOccurs="0"/>
+						<xs:element ref="dsf:ACTIVITYID" minOccurs="0"/>
+						<xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/>
+						<xs:element ref="dsf:RELATEDWORKORDERID" minOccurs="0"/>
+						<xs:element ref="dsf:CURRENTAMOUNTRELEASED" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="validate" type="dsf:FLAG_Type" default="false"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

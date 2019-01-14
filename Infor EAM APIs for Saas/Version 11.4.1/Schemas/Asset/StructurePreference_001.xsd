@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--==============================================================================================
+    Copyright (c) 2017 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business function entity StructurePreference
+==================================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/StructurePreference_001"
+    xmlns="http://schemas.datastream.net/MP_entities/StructurePreference_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="StructurePreference">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:STRUCTUREPREFERENCEID"/>
+                <xs:element ref="dsf:SHOWICONS" minOccurs="0"/>
+                <xs:element ref="dsf:SHOWWORKSPACES" minOccurs="0"/>
+                <xs:element ref="dsf:SHOWVMRSCODES" minOccurs="0"/>
+                <xs:element ref="dsf:SHOWPARTS" minOccurs="0"/>
+                <xs:element ref="dsf:SORTOPTION" minOccurs="0"/>
+                <xs:element ref="AvailableEquipmentFields" minOccurs="0"/>
+                <xs:element ref="SelectedEquipmentFields" minOccurs="0"/>
+                <xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+                <xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+                <xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+                <xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AvailableEquipmentFields">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="StructureEquipmentField" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SelectedEquipmentFields">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="StructureEquipmentField" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="StructureEquipmentField">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:EQUIPMENTFIELD"/>
+                <xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

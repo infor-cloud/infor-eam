@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth 
+	herein are trademarks and/or registered trademarks of Infor and/or related affiliates
+	and subsidiaries. All rights reserved. All other trademarks listed herein are the
+ 	property of their respective owners. www.infor.com.
+	
+    This schema defines MP business function result MP2108_ValidateStoreToStoreIssuePart_001_Result    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP2108_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_results/MP2108_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP2108_ValidateStoreToStoreIssuePart_001_Result ======================================-->
+	<xs:complexType name="ValidateStoreToStorePartResultBase">
+		<xs:sequence>
+			<xs:element ref="ResultData"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PARTID"/>
+				<xs:element ref="dsf:BYASSET"/>
+				<xs:element ref="dsf:UOMID"/>
+				<xs:element ref="dsf:FROMBIN" minOccurs="0"/>
+				<xs:element ref="dsf:LOT" minOccurs="0"/>
+				<xs:element ref="dsf:PRICE"/>
+				<xs:element ref="dsf:COREVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:STOCKPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID"/>
+				<xs:choice minOccurs="0">
+					<xs:element ref="dsf:TRANSACTIONQUANTITY"/>
+					<xs:element ref="dsf:REPAIRQUANTITY"/>
+				</xs:choice>
+				<xs:element ref="dsf:QTYONHAND" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRQTY" minOccurs="0"/>
+				<xs:element ref="dsf:OUTSTANDINGQTY" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTLOT" minOccurs="0"/>
+				<xs:element ref="dsf:EXPIRATIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRABLE" minOccurs="0"/>
+				<xs:element ref="dsf:SERIALNUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERPARTCODE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MP2108_ValidateStoreToStoreIssuePart_001_Result">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ValidateStoreToStorePartResultBase"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

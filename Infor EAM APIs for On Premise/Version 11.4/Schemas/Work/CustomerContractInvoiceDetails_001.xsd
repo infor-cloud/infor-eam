@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===================================================================================
+    Copyright (c) 2012 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. 
+    www.infor.com.
+
+    This schema defines MP business function entity CustomerContractInvoiceDetails
+=========================================================================================--> 
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CustomerContractInvoiceDetails_001"
+        xmlns="http://schemas.datastream.net/MP_entities/CustomerContractInvoiceDetails_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd" />
+        <!--===============================================================================-->
+        <xs:element name="CustomerContractInvoiceDetails">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:CUSTOMERCONTRACTINVOICEDETAILSID" />
+                    <xs:element ref="InvoiceDetails" minOccurs="0"/>
+                    <xs:element ref="InvoiceAmounts" minOccurs="0"/>
+                    <xs:element ref="AdjustmentDetails" minOccurs="0"/>
+                    <xs:element ref="UsageOrEnergy" minOccurs="0"/>
+                    <xs:element ref="WOChargeDetails" minOccurs="0"/>
+                    <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="recordid" type="xs:long"/>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="InvoiceDetails">
+            <xs:complexType>
+                <xs:sequence>                    
+                    <xs:element ref="dsf:CONTRACTITEMID" minOccurs="0"/>
+                    <xs:element ref="dsf:CONTRACTCHARGEDEFINITIONID" minOccurs="0"/>
+                    <xs:element ref="dsf:CUSTOMERINVOICECURRENCY" minOccurs="0"/>
+                    <xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+                    <xs:element ref="dsf:PROJECTID" minOccurs="0"/>
+                    <xs:element ref="dsf:BUDGETID" minOccurs="0"/>
+                    <xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICINGORGID" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICINGDESCRIPTION" minOccurs="0"/>
+                    <xs:element ref="dsf:CHARGECATEGORY" minOccurs="0"/>
+                    <xs:element ref="dsf:CHARGELEVEL" minOccurs="0"/>
+                    <xs:element ref="dsf:CHARGESUBCATEGORY" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTMENTID" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTMENTTYPE" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXABLE" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXID" minOccurs="0"/>
+                    <xs:element ref="dsf:GROUPING" minOccurs="0"/>
+                    <xs:element ref="dsf:ERRORS" minOccurs="0"/>
+                    <xs:element ref="dsf:RENTITYID" minOccurs="0"/>
+                    <xs:element ref="dsf:ENTITYCODEID" minOccurs="0"/>
+                    <xs:element ref="dsf:WORKORDERACTIVITY" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="InvoiceAmounts">
+            <xs:complexType>
+                <xs:sequence>            
+                    <xs:element ref="dsf:INVOICEQUANTITY" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTMENTQUANTITY" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICEUOM" minOccurs="0"/>
+                    <xs:element ref="dsf:PERIODS" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTEDPERIODS" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICEPRICE" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTEDPRICE" minOccurs="0"/>
+                    <xs:element ref="dsf:FROMDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:TODATE" minOccurs="0"/>
+                    <xs:element ref="dsf:ROLLUPTOTAL" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTEDROLLUP" minOccurs="0"/>
+                    <xs:element ref="dsf:TRANSACTIONAMOUNT" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTMENT" minOccurs="0"/>
+                    <xs:element ref="dsf:TRANSACTIONTOTAL" minOccurs="0"/>
+                    <xs:element ref="dsf:CORRECTEDTOTAL" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXBASE" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXPERCENTAGE" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXAMOUNT" minOccurs="0"/>
+                    <xs:element ref="dsf:EXCHRATE" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICEAMOUNT" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICETAXAMOUNT" minOccurs="0"/>
+                 </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="AdjustmentDetails">
+            <xs:complexType>
+                <xs:sequence> 
+                    <xs:element ref="dsf:RATE" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTMENTPERCENTAGEBEFORE" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTMENTUNITPRICE" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTMENTTRANSACTION" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTMENTPERCENTAGEAFTER" minOccurs="0"/>
+                    <xs:element ref="dsf:MINIMUMQUANTITY" minOccurs="0"/>
+                    <xs:element ref="dsf:MINIMUMCHARGE" minOccurs="0"/>
+                    <xs:element ref="dsf:MAXIMUMCHARGE" minOccurs="0"/>
+                    <xs:element ref="dsf:FREEUPTO" minOccurs="0"/>
+                 </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="UsageOrEnergy">
+            <xs:complexType>
+                <xs:sequence>    
+                    <xs:element ref="dsf:UOMCODE" minOccurs="0"/>
+                    <xs:element ref="dsf:ESTIMATEDUSAGE" minOccurs="0"/>
+                    <xs:element ref="dsf:ESTIMATECREDIT" minOccurs="0"/>
+                    <xs:element ref="dsf:ESTIMATEDDAILYUSAGE" minOccurs="0"/>
+                    <xs:element ref="dsf:ROLLOVERBUFFER" minOccurs="0"/>
+                 </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="WOChargeDetails">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:TRADEID" minOccurs="0"/>
+                    <xs:element ref="dsf:OCCUPATIONTYPE" minOccurs="0"/>
+                    <xs:element ref="dsf:PARTCLASSID" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

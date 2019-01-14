@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity Depreciation
+ ============================================================================= -->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Depreciation_001" xmlns="http://schemas.datastream.net/MP_entities/Depreciation_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of Depreciation_001 ======= -->
+	<xs:element name="Depreciation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPRECIATIONPK"/>
+				<xs:choice>
+					<xs:element ref="dsf:EQUIPMENTID"/>
+					<xs:element ref="dsf:EQUIPMENTCONFIGURATIONID"/>
+				</xs:choice>
+				<xs:element ref="dsf:EQUIPMENTDEPTYPE"/>
+				<xs:element ref="dsf:DEPRECIATIONMETHOD" minOccurs="0" />
+				<xs:element ref="dsf:ORIGINALVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:RESIDUALVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDOUTPUT" minOccurs="0"/>
+				<xs:element ref="dsf:DEPRECIATIONCATEGORYID" minOccurs="0"/>
+				<xs:element ref="dsf:TOTALDEPRECIATION" minOccurs="0"/>
+				<xs:element ref="dsf:CHANGEVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:CHANGELIFE" minOccurs="0"/>
+				<xs:element ref="dsf:CHANGEESTLIFETIMEOUTPUT" minOccurs="0"/>
+				<xs:element ref="dsf:FROMDATE" minOccurs="0"/>
+				<xs:element ref="dsf:DEPRECIATIONNOTE" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+				<xs:element ref="RemainingUsefulLife" minOccurs="0"/>
+				<xs:element ref="RelativeStartPeriod" minOccurs="0"/>
+				<xs:element ref="AdditionalDetails" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="RemainingUsefulLife">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ESTIMATEDLIFE"/>
+				<xs:element ref="dsf:UOMID" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RelativeStartPeriod">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:RELATIVESTART"/>
+				<xs:element ref="dsf:UOMID" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AdditionalDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BOOKVALUE" minOccurs="0" />
+				<xs:element ref="dsf:DEPRECIATIONTODATE" minOccurs="0"/>
+				<xs:element ref="dsf:YEARLYPERIODDEPTODATE" minOccurs="0"/>
+				<xs:element ref="dsf:MONTHLYPERIODDEPTODATE" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

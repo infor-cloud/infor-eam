@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2008 Infor. All rights reserved. The word and design marks set forth
+    herein are trademarks and/or registered trademarks of Infor and/or related affiliates
+    and subsidiaries. All rights reserved. All other trademarks listed herein are the
+    property of their respective owners. www.infor.com
+
+    This schema defines MP business function result MP7690_GetPMScheduleResource_001_Result
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7690_001"
+    xmlns="http://schemas.datastream.net/MP_results/MP7690_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    xmlns:dse-PMScheduleResource="http://schemas.datastream.net/MP_entities/PMScheduleResource_001"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <xs:import namespace="http://schemas.datastream.net/MP_entities/PMScheduleResource_001" schemaLocation="PMScheduleResource_001.xsd"/>
+    <!--===============================================================================-->
+    <!--====  Begining of MP7690_GetPMScheduleResource_001_Result ======================================-->
+    <xs:element name="MP7690_GetPMScheduleResource_001_Result">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ResultData"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResultData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dse-PMScheduleResource:PMScheduleResource"/>
+                <xs:element ref="dsf:ACCOUNTINGENTITY" minOccurs="0"/>
+                <xs:element ref="CONTROLORGS" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="has_readonly_department_security" type="dsf:FLAG_Type" default="false"/>
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="CONTROLORGS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ORGANIZATIONCODE" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

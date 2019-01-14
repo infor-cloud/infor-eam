@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_functions" elementFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation>
+			
+		This schemas defines general elements, attributes and types used to define 
+		MP business process subsystem function requests and results.	
+		</xs:documentation>
+	</xs:annotation>
+	<xs:element name="TransactionMode" type="TransactionMode"/>
+	<xs:simpleType name="TransactionMode">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TransServer"/>
+			<xs:enumeration value="TransClient"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ClientType" type="ClientType"/>
+	<xs:complexType name="ClientType">
+		<xs:sequence>
+			<xs:element ref="AccessType"/>
+			<xs:element ref="AppType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AccessType" type="AccessType"/>
+	<xs:element name="AppType" type="AppType"/>
+	<xs:simpleType name="AccessType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Interactive"/>
+			<xs:enumeration value="Messaging"/>
+			<xs:enumeration value="Middleware"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AppType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Web"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Sender" type="xs:anyURI"/>
+	
+	<!-- Function result status elements -->	
+	<xs:element name="ExceptionInfoList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ExceptionInfo" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WarningAlertList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="WarningAlert" type="InfoAlert" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConfirmationAlertList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ConfirmationAlert" type="ConfirmationAlert" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InformationAlert" type="InfoAlert"/>
+	<xs:element name="ExceptionInfo" type="ExceptionInfo"/>
+	<xs:complexType name="ExceptionInfo">
+		<xs:sequence>
+			<xs:element ref="Exception"/>
+		</xs:sequence>
+		<xs:attribute name="functionid" type="xs:string"/>
+		<xs:attribute name="reference" type="xs:string"/>
+		<xs:attribute name="location_reference" type="LocationXPath"/>
+	</xs:complexType>
+	<xs:simpleType name="LocationXPath">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="ConfirmationAlert">
+		<xs:sequence>
+			<xs:element ref="ReasonCode" minOccurs="0"/>
+			<xs:element ref="Message" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="functionid" type="xs:string"/>
+		<xs:attribute name="reference" type="xs:string"/>
+		<xs:attribute name="confirmation_name" type="xs:string"/>
+		<xs:attribute name="exception_name" type="xs:string"/>
+	</xs:complexType>
+	
+	<xs:element name="Exception" type="Exception"/>
+	<xs:complexType name="Exception">
+		<xs:sequence>
+			<xs:element ref="ReasonCode" minOccurs="0"/>
+			<xs:element ref="Message" minOccurs="0"/>
+			<xs:element name="RelatedException" type="Exception" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="InfoAlert">
+		<xs:sequence>
+			<xs:element ref="InfoCode" minOccurs="0"/>
+			<xs:element ref="Message" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="functionid" type="xs:string"/>
+		<xs:attribute name="name" type="xs:string"/>
+	</xs:complexType>
+	<xs:element name="ReasonCode" type="xs:string"/>
+	<xs:element name="InfoCode" type="xs:string"/>
+	<xs:element name="Message" type="xs:string"/>
+</xs:schema>

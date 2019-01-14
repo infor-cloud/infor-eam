@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines the MP entity InvoiceVoucher
+================================================================================== -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/InvoiceVoucher_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/InvoiceVoucher_001" elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of InvoiceVoucher_001 ======= -->
+	<xs:element name="InvoiceVoucher">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="InvoiceVoucherData"/>
+				<xs:element ref="dsf:AUTHORIZER" minOccurs="0"/>
+				<xs:element ref="dsf:EXTRACHARGE" minOccurs="0"/>
+				<xs:element ref="dsf:DISCOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:MATCHDATE" minOccurs="0"/>
+				<xs:element ref="dsf:APPROVEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:TAXAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:EXTRACHARGEDISCOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:LINESUBTOTAL" minOccurs="0"/>
+				<xs:element ref="dsf:INVOICETOTAL" minOccurs="0"/>
+				<xs:element ref="dsf:PREMATCHUSER" minOccurs="0"/>
+				<xs:element ref="dsf:PARENTINVOICEREFERENCE" minOccurs="0"/>
+				<xs:element ref="dsf:ORGCURRENCY" minOccurs="0"/>
+				<xs:element ref="dsf:UTILITYBILLCHARGES" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InvoiceVoucherData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:INVOICEID"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:RECORDDATE"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:ISINVOICERETURN" minOccurs="0"/>
+				<xs:element ref="dsf:INVOICETYPE"/>
+				<xs:element ref="dsf:PARENTINVOICEID" minOccurs="0"/>
+				<xs:element ref="dsf:INVOICEREFERENCE"/>
+				<xs:element ref="dsf:INVOICEDATE"/>
+				<xs:element ref="dsf:PURCHASEORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID"/>
+				<xs:element ref="dsf:PAYDATE" minOccurs="0"/>
+				<xs:element ref="dsf:PAYSUPPLIER" minOccurs="0"/>
+				<xs:element ref="dsf:PAIDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:EXCHANGE"/>
+				<xs:element ref="dsf:CURRENCYID"/>
+				<xs:element ref="dsf:ForSystemInterfaceOnly" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

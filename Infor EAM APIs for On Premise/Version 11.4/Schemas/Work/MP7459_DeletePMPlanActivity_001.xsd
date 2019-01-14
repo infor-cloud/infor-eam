@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP7459_001"
+           xmlns="http://schemas.datastream.net/MP_functions/MP7459_001"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="MP7459_DeletePMPlanActivity_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PMSCHEDULEACTID"/>
+				<xs:element ref="dsf:PMPLANCODE"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Delete"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="PMPlanActivity"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

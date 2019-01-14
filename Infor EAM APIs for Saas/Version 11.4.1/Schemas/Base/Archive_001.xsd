@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2005, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request Archive_001
+-->
+
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Archive_001"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.datastream.net/MP_entities/Archive_001"
+		elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields"
+		schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of Archive_001 ======================================-->
+	<xs:element name="Archive">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ARCHIVENUMBER"/>
+				<xs:element ref="dsf:ARCHIVETHROUGH"/>
+				<xs:element ref="dsf:ARCHIVEOPTIONS"/>
+				<xs:element ref="dsf:ARCHIVESCHEDULED" minOccurs="0"/>
+				<xs:element ref="dsf:ARCHIVESCHEDULEDTIME" minOccurs="0"/>
+				<xs:element ref="dsf:DATESTARTED" minOccurs="0"/>
+				<xs:element ref="dsf:DATECOMPLETED" minOccurs="0"/>
+				<xs:element ref="dsf:DATESTOPPED" minOccurs="0"/>
+				<xs:element ref="dsf:ARCHIVEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:ARCHIVEWOTYPES" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

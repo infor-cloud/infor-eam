@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+==================================================================================-->  
+<!-- Configuration manager setup file: identifies the available groups, the tables within each group, and 
+       the handlers and entity classes for each table.  -->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ImportExportConfig_001" 
+    xmlns="http://schemas.datastream.net/MP_entities/ImportExportConfig_001" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+
+    <!-- For a given database table, identify the corresponding entity and handler classes -->
+    <xs:complexType name="Table_Type">
+        <xs:sequence>
+            <xs:element ref="dsf:EXPORTENTITYCLASS"/>
+            <xs:element ref="dsf:EXPORTENTITYNAME" minOccurs="0"/>
+            <xs:element ref="dsf:EXPORTHANDLERCLASS"/>
+            <xs:element ref="dsf:PKEYS" minOccurs="0"/>
+            <xs:element ref="dsf:EXCLUDECOLUMNS" minOccurs="0"/>
+            <xs:element name="USEACTIVEENTITYLIST" type="dsf:FLAG_Type" default="false"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+	
+    <xs:complexType name="TableList_Type">
+        <xs:sequence>
+             <xs:element name="table" type="Table_Type" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Lists the tables in a given export group -->
+    <xs:complexType name="ExportGroup_Type">
+        <xs:sequence>
+             <xs:element ref="dsf:TABLE" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="ExportGroupList_Type">
+        <xs:sequence>
+             <xs:element name="exportGroup" type="ExportGroup_Type" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <!-- Root element in the setup file for the configuration manager
+         The export function will iterate through the groups, and the tables within each group, in order. The tables and groups 
+         should be ordered so that the import function will not violate FK constraints -->
+    <xs:element name="BaseConfigManagerSetup">
+        <xs:complexType>
+           <xs:sequence>
+               <xs:element name="tableList" type="TableList_Type"/>
+               <xs:element name="exportGroupList" type="ExportGroupList_Type"/>
+           </xs:sequence>
+        </xs:complexType>
+	</xs:element>
+
+   <xs:complexType name="TableCount_Type">
+       <xs:simpleContent>
+        <xs:extension base="xs:integer">
+            <xs:attribute name="tableName" type="xs:string"/>
+        </xs:extension>
+       </xs:simpleContent>
+    </xs:complexType>
+
+
+   <xs:complexType name="GroupCount_Type">
+        <xs:sequence>
+             <xs:element name="tableCount" type="TableCount_Type" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="groupName" type="xs:string"/>
+    </xs:complexType>
+
+   <xs:complexType name="RecordCountList_Type">
+        <xs:sequence>
+             <xs:element name="groupCount" type="GroupCount_Type" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Root element in the header.xml file -->
+    <xs:element name="ExportHeader">
+        <xs:complexType>
+           <xs:sequence>
+               <xs:element name="recordCounts" type="RecordCountList_Type"/>
+               <xs:element name="deflang" type="xs:string"/>
+               <xs:element name="ucodelang" type="xs:string"/>
+               <xs:element name="appedition" type="xs:string"/>
+               <xs:element name="patchlevel" type="xs:string"/>
+           </xs:sequence>
+        </xs:complexType>
+	</xs:element>
+
+
+    </xs:schema>
+

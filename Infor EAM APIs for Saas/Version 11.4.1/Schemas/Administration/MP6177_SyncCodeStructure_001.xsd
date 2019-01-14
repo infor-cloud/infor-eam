@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+==========================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request
+    MP6177_SyncCodeStructure_001
+===============================================================================
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP6177_001"
+	xmlns="http://schemas.datastream.net/MP_functions/MP6177_001"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:dse-csr="http://schemas.datastream.net/MP_entities/CodeStructure_001"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields"
+		schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/CodeStructure_001"
+		schemaLocation="CodeStructure_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP6177_SyncCodeStructure_001 ======================================-->
+	<xs:element name="MP6177_SyncCodeStructure_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CODESTRUCTURECODE" />
+				<xs:element ref="dsf:DESCRIPTION"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Sync"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="CodeStructure"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+			<xs:attribute name="callname" type="xs:string" default="SyncCodeStructure"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

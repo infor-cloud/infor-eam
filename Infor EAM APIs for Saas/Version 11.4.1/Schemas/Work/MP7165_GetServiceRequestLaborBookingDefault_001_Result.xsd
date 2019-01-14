@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- ================================================================================
+    This schema defines MP business function result MP7165_GetServiceRequestLaborBookingDefault_001_Result
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7165_001"
+           xmlns="http://schemas.datastream.net/MP_results/MP7165_001"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           xmlns:dse-act="http://schemas.datastream.net/MP_entities/Activity_001"
+           elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <xs:import namespace="http://schemas.datastream.net/MP_entities/Activity_001" schemaLocation="Activity_001.xsd"/>
+    <!--===============================================================================-->
+    <!--====  Begining of MP7165_GetServiceRequestLaborBookingDefault_001_Result ======================================-->
+    <xs:element name="MP7165_GetServiceRequestLaborBookingDefault_001_Result">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ResultData">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="dse-act:Activity" minOccurs="0"/>
+                            <xs:element ref="dsf:TRADERATEDATA" minOccurs="0"/>
+                            <xs:element ref="dsf:CURRENTDATETIME" minOccurs="0"/>
+                            <xs:element ref="dsf:WORKORDEREXT" minOccurs="0"/>
+                            <xs:element ref="dsf:HOURSWORKED" minOccurs="0"/>
+                            <xs:element ref="dsf:REPORTED" minOccurs="0"/>
+                            <xs:element ref="dsf:COMPLETEDDATE" minOccurs="0"/>
+                            <xs:element ref="dsf:OCCUPATIONTYPE" minOccurs="0"/>
+                            <xs:element ref="dsf:EMPLOYEE" minOccurs="0"/>
+                            <xs:element ref="dsf:TRADEID" minOccurs="0"/>
+                            <xs:element ref="dsf:DEPARTMENTCODE" minOccurs="0"/>
+                        </xs:sequence>
+                        <xs:attribute name="is_completed_and_exceed_comdays" type="dsf:FLAG_Type"/>
+                        <xs:attribute name="is_booplan_on" type="dsf:FLAG_Type"/>
+                        <xs:attribute name="is_servicerequest_closed" type="dsf:FLAG_Type"/>
+                        <xs:attribute name="is_servicerequest_hasno_workorder" type="dsf:FLAG_Type"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

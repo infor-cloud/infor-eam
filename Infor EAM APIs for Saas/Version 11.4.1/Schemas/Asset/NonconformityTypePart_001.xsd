@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2016 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+    
+    This schema defines MP entity NonconformityTypePart.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/NonconformityTypePart_001"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://schemas.datastream.net/MP_entities/NonconformityTypePart_001" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="NonconformityTypePart">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:NONCONFORMITYTYPEPARTID"/>
+                <xs:element ref="dsf:CLASSID" minOccurs="0"/>
+                <xs:element ref="dsf:CATEGORYCODE" minOccurs="0"/>
+                <xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+                <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

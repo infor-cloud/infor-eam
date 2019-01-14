@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =============================================================================================
+  Copyright (c) 2014 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+  This schema defines MP business function request MP3277_CreateAssetInventoryResultAsset_001
+==================================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP3277_001"
+    xmlns="http://schemas.datastream.net/MP_functions/MP3277_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="MP3277_CreateAssetInventoryResultAsset_001">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="dsf:BaseSchemaRequestElement">
+                    <xs:sequence>
+                        <xs:element ref="dsf:ASSETINVENTORYRESULTID"/>
+                        <xs:element ref="AssetInventoryResultAssetDetails"/>
+                    </xs:sequence>
+                    <xs:attribute name="verb" type="dsf:VERB_Type" fixed="Create"/>
+                    <xs:attribute name="noun" type="dsf:NOUN_Type" fixed="AssetInventoryResultAsset"/>
+                    <xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AssetInventoryResultAssetDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:DEPARTMENTID"/>
+                <xs:element ref="dsf:COMMISSIONDATE"/>
+                <xs:element ref="dsf:STATUS"/>
+                <xs:element ref="dsf:TYPE"/>
+                <xs:element ref="dsf:PARTID" minOccurs="0"/>
+                <xs:element ref="dsf:BIN" minOccurs="0"/>
+                <xs:element ref="dsf:LOT" minOccurs="0"/>
+            </xs:sequence>                
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+         This schema defines MP entity Equipment TestPoint Default
+========================================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EquipmentTestPointDefault_001" xmlns="http://schemas.datastream.net/MP_entities/EquipmentTestPointDefault_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====================================================================================================-->
+	<!--====  Begining of EquipmentTestPointDefault_001 ====================================================-->
+	<xs:element name="EquipmentTestPointDefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EQUIPMENTTESTPOINTID"/>
+				<xs:element ref="dsf:TESTPOINTUOM" minOccurs="0"/>
+				<xs:element ref="dsf:OUTPUTUOM" minOccurs="0"/>
+				<xs:element ref="dsf:DEVICETOLERANCE" minOccurs="0"/>
+				<xs:element ref="dsf:DEVICETOLERANCETYPE" minOccurs="0" />
+				<xs:element ref="dsf:PRECISION" minOccurs="0" />
+				<xs:element ref="dsf:OUTPUTCALCULATIONTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTCONFIGURATIONRSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:TYPE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2014 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+	
+    This schema defines MP entity TaskPlanPart_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/TaskPlanPart_001"
+	xmlns="http://schemas.datastream.net/MP_entities/TaskPlanPart_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of TaskPlanPart_001 ======================================-->
+	<xs:element name="TaskPlanPart">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TASKPLANPARTID"/>
+				<xs:element ref="dsf:PARTID"/>
+				<xs:element ref="dsf:PARTCONDITIONTEMPLATECONDITIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PARTQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:UOMID" minOccurs="0"/>
+				<xs:element ref="dsf:RESERVEPART" minOccurs="0"/>
+				<xs:element ref="dsf:CRITICAL" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:PRIMARYMANUFACTURERID" minOccurs="0"/>
+				<xs:element ref="dsf:PRIMARYMANUFACTURERPARTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:LONGDESCRIPTION" minOccurs="0"/>
+				<xs:element ref="dsf:REUSABLE" minOccurs="0"/>
+				<xs:element name="DIRECT" type="dsf:FLAG_Type" default="-"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

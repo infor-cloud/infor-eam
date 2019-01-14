@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    GridToolbar
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/GridToolbar" xmlns="http://schemas.datastream.net/MP_functions/GridToolbar" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:os="http://www.openapplications.org/oagis_segments" elementFormDefault="qualified">
+	<xs:element name="option">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="display" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="value" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TOOLBAR">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FIELD" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="name" type="xs:string"/>
+						<xs:attribute name="type" type="xs:string"/>
+						<xs:attribute name="width" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FIELDVALUES" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ROW" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="dataspylist_options" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="option" maxOccurs="unbounded"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="dataspylist_display" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="dataspylist" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="filterfields_options" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="option" maxOccurs="unbounded"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="filterfields_display" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="filterfields" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

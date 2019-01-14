@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+ *  Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth
+ *  herein are trademarks and/or registered trademarks of Infor and/or related
+ *  affiliates and subsidiaries. All rights reserved. All other trademarks listed
+ *  herein are the property of their respective owners. www.infor.com.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EquipmentDesignConsumption_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:element name="EquipmentDesignConsumption">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EQUIPDESIGNCONSUMPTIONID"/>
+				<xs:element ref="dsf:DESIGNUSAGEUOM"/>
+				<xs:element ref="dsf:COMMODITYUOM" minOccurs="0"/>
+				<xs:element ref="dsf:DATEEXPIRED" minOccurs="0"/>
+				<xs:element ref="dsf:UTILITYBILLSOURCEID" minOccurs="0"/>
+				<xs:element ref="dsf:DEFAULTLOADFACTOR" minOccurs="0"/>
+				<!-- The Low Range is a required field which will be defaulted to 0 if not specified -->
+				<xs:element ref="dsf:LOWRANGE" minOccurs="0"/>
+				<!-- The High Range is a required field which will be defaulted to 100 if not specified -->
+				<xs:element ref="dsf:HIGHRANGE" minOccurs="0"/>
+				<xs:element ref="dsf:DESIGNCONSUMPTIONRATE"/>
+				<xs:element ref="dsf:LOADFACTORRANGE2" minOccurs="0"/>
+				<xs:element ref="dsf:LOADFACTORRANGE3" minOccurs="0"/>
+				<xs:element ref="dsf:LOADFACTORRANGE4" minOccurs="0"/>
+				<xs:element ref="dsf:LOADFACTORRANGE5" minOccurs="0"/>
+				<xs:element ref="dsf:LOADFACTORRANGE6" minOccurs="0"/>
+				<xs:element ref="dsf:LOADFACTORRANGE7" minOccurs="0"/>
+				<xs:element ref="dsf:LOADFACTORRANGE8" minOccurs="0"/>
+				<xs:element ref="dsf:LOADFACTORRANGE9" minOccurs="0"/>
+				<xs:element ref="dsf:LOADFACTORRANGE10" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

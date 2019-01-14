@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines GetReportDefault_001 function
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0150_001"
+           xmlns="http://schemas.datastream.net/MP_results/MP0150_001"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:of="http://www.openapplications.org/oagis_fields"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           xmlns:dse-rpa="http://schemas.datastream.net/MP_entities/ReportParameter_001"
+           xmlns:dse-rpo="http://schemas.datastream.net/MP_entities/ReportOption_001"
+           xmlns:dse-rpf="http://schemas.datastream.net/MP_entities/ReportFilter_001"
+           xmlns:dse-cfd="http://schemas.datastream.net/MP_entities/CustomFieldElement_001"
+           elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/ReportParameter_001" schemaLocation="ReportParameter_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/ReportOption_001" schemaLocation="ReportOption_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/ReportFilter_001" schemaLocation="ReportFilter_001.xsd"/>	
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/CustomFieldElement_001" schemaLocation="../Administration/CustomFieldElement_001.xsd"/>	
+	<!--===============================================================================-->
+	<xs:element name="MP0150_GetReportDefault_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultData">
+					<xs:complexType>
+						<xs:sequence>
+				                	<xs:element ref="ReportParameters"/>
+				                        <xs:element ref="dse-rpf:ReportFilter"  minOccurs="0"/>	
+				                        <xs:element ref="CustomFields"  minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="ReportParameters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ReportParameterInfo"  minOccurs="0" maxOccurs="99"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReportParameterInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-rpa:ReportParameter"/>
+				<xs:element ref="ReportOptions" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReportOptions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-rpo:ReportOption" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>		
+	<xs:element name="CustomFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CustomField"   minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="CustomField">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-cfd:CustomFieldElement"/>
+                                <xs:element name="ISLOV" type="dsf:FLAG_Type"/>				
+                                <xs:element name="LOCALIZEDPROPDESC" type="dsf:CODE80_Type"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>
+
+
+
+							

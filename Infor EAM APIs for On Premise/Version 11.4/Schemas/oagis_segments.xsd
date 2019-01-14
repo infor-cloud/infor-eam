@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.openapplications.org/oagis_segments" xmlns="http://www.openapplications.org/oagis_segments" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:import namespace="http://www.openapplications.org/oagis_fields" schemaLocation="oagis_fields.xsd"/>
+	<xs:annotation>
+		<xs:documentation>
+			
+		License information for this file is provided in LICENSE.TXT, as published
+		on the Open Applications Group web site. www.openapplications.org
+		
+		For support, more information, or to report implementation bugs,
+		please contact the Open Applications Group at xml@openapplications.org
+		
+		$Revision: 7.2.1 $
+		$Date: 31 October 2001 $
+		Open Applications Group XML
+		Copyright 1998-2001, All Rights Reserved
+		
+		$Name: oagis_segments.xsd $
+		
+		ajw	7.2.1	10/31/2001	W3C Schema Release 
+		
+
+		Structure Overview
+		
+			This schema defines the OAGI Segment datatypes used throughout the specification.
+			Below is an outline depicting their placement and usage.
+			
+			BOD Namespace ("http://www.openapplications.org/nnn_verb_noun_rel")
+				|
+				|--- Segments Namespace - oagis_segments.xsd (os: "http://www.openapplications.org/oagis_segments")
+				|	|
+				|---	|--- Fields Namespace - oagis_fields.xsd (of:"http://www.openapplications.org/oagis_fields") 
+					
+					
+			
+		</xs:documentation>
+	</xs:annotation>			
+	<xs:complexType name="TIME">
+		<xs:sequence>
+			<xs:element ref="of:HOUR"/>
+			<xs:element ref="of:MINUTE"/>
+			<xs:element ref="of:SECOND"/>
+			<xs:element ref="of:SUBSECOND"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DATETIME">
+		<xs:sequence>
+			<xs:element ref="of:YEAR"/>
+			<xs:element ref="of:MONTH"/>
+			<xs:element ref="of:DAY"/>
+			<xs:element ref="of:HOUR"/>
+			<xs:element ref="of:MINUTE"/>
+			<xs:element ref="of:SECOND"/>
+			<xs:element ref="of:SUBSECOND"/>
+			<xs:element ref="of:TIMEZONE"/>
+		</xs:sequence>
+		<xs:attribute name="qualifier" type="DATETIMEqual" use="required"/>
+	</xs:complexType>
+	<xs:simpleType name="DATETIMEtype">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACCOUNTING"/>
+			<xs:enumeration value="ACTEND"/>
+			<xs:enumeration value="ACTSTART"/>
+			<xs:enumeration value="APPREQ"/>
+			<xs:enumeration value="APPROVAL"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DATETIMEqual">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACCOUNTING"/>
+			<xs:enumeration value="ACTEND"/>
+			<xs:enumeration value="ACTSTART"/>
+			<xs:enumeration value="APPREQ"/>
+			<xs:enumeration value="APPROVAL"/>
+			<xs:enumeration value="AVAILABLE"/>
+			<xs:enumeration value="BKTEND"/>
+			<xs:enumeration value="BKTSTART"/>
+			<xs:enumeration value="CANCEL"/>
+			<xs:enumeration value="CHANGEDATE"/>
+			<xs:enumeration value="COMPDATE"/>
+			<xs:enumeration value="CONSUME"/>			
+			<xs:enumeration value="CREATION"/>
+			<xs:enumeration value="CUMULATIVE"/>
+			<xs:enumeration value="DELIVACT"/>
+			<xs:enumeration value="DELIVSCHED"/>
+			<xs:enumeration value="DISCNT"/>
+			<xs:enumeration value="DOCUMENT"/>
+			<xs:enumeration value="DUE"/>
+			<xs:enumeration value="EARLSTEFF"/>
+			<xs:enumeration value="EARLSTSHIP"/>
+			<xs:enumeration value="EFFECTIVE"/>
+			<xs:enumeration value="ENGCHG"/>
+			<xs:enumeration value="EXECFINISH"/>
+			<xs:enumeration value="EXECSTART"/>
+			<xs:enumeration value="EXPIRATION"/>
+			<xs:enumeration value="FAILDATE"/>
+			<xs:enumeration value="FORECASTF"/>
+			<xs:enumeration value="FORECASTS"/>
+			<xs:enumeration value="FROM"/>
+			<xs:enumeration value="GENERATION"/>
+			<xs:enumeration value="JOBDUE"/>
+			<xs:enumeration value="IMPL"/>
+			<xs:enumeration value="INVOICE"/>
+			<xs:enumeration value="LABORFINSH"/>
+			<xs:enumeration value="LABORSTART"/>
+			<xs:enumeration value="LASTUSED"/>
+			<xs:enumeration value="LOADING"/>
+			<xs:enumeration value="MATCHING"/>
+			<xs:enumeration value="MSMENTDATE"/>
+			<xs:enumeration value="NEEDDELV"/>
+			<xs:enumeration value="OPFINISH"/>
+			<xs:enumeration value="OPSTART"/>
+			<xs:enumeration value="PAYEND"/>
+			<xs:enumeration value="PLANEND"/>
+			<xs:enumeration value="PLANSTART"/>
+			<xs:enumeration value="PO"/>
+			<xs:enumeration value="PROMDELV"/>
+			<xs:enumeration value="PROMSHIP"/>
+			<xs:enumeration value="PYMTTERM"/>
+			<xs:enumeration value="RECEIVED"/>
+			<xs:enumeration value="REPORTDATE"/>
+			<xs:enumeration value="REPORTNGFN"/>
+			<xs:enumeration value="REPORTNGST"/>
+			<xs:enumeration value="REQUIRED"/>
+			<xs:enumeration value="RESORCDWNF"/>
+			<xs:enumeration value="RESORCDWNS"/>
+			<xs:enumeration value="RSPDDATE"/>
+			<xs:enumeration value="RSPDOCGEN"/>
+			<xs:enumeration value="SCHEND"/>
+			<xs:enumeration value="SCHSTART"/>
+			<xs:enumeration value="SETUPFINSH"/>
+			<xs:enumeration value="SETUPSTART"/>
+			<xs:enumeration value="SHIP"/>
+			<xs:enumeration value="SHIPSCHED"/>
+			<xs:enumeration value="STATUSDATE"/>
+			<xs:enumeration value="TEARDOWNF"/>
+			<xs:enumeration value="TEARDOWNS"/>
+			<xs:enumeration value="TO"/>
+			<xs:enumeration value="OTHER"/>
+		</xs:restriction>
+	</xs:simpleType>			
+	<xs:complexType name="AMOUNT">
+		<xs:sequence>
+			<xs:element ref="of:VALUE"/>
+			<xs:element ref="of:NUMOFDEC"/>
+			<xs:element ref="of:SIGN"/>
+			<xs:element ref="of:CURRENCY"/>
+			<xs:element ref="of:DRCR"/>
+		</xs:sequence>
+		<xs:attribute name="qualifier" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="ACTUAL"/>
+					<xs:enumeration value="APPRVORD"/>
+					<xs:enumeration value="AVAILABLE"/>
+					<xs:enumeration value="BUDGET"/>
+					<xs:enumeration value="COMMISSION"/>
+					<xs:enumeration value="DECLAREVAL"/>
+					<xs:enumeration value="DSCPRCNT"/>
+					<xs:enumeration value="DSCVALUE"/>
+					<xs:enumeration value="DISCNT"/>
+					<xs:enumeration value="DOCUMENT"/>
+					<xs:enumeration value="ESTENGIMP"/>
+					<xs:enumeration value="ESTFREIGHT"/>
+					<xs:enumeration value="ESTHRS"/>
+					<xs:enumeration value="ESTIMATE"/>
+					<xs:enumeration value="ESTMANIMP"/>
+					<xs:enumeration value="ESTUCOST"/>
+					<xs:enumeration value="EXTENDED"/>
+					<xs:enumeration value="FREIGHT"/>
+					<xs:enumeration value="ITEM"/>
+					<xs:enumeration value="OPENITEM"/>
+					<xs:enumeration value="ORDER"/>
+					<xs:enumeration value="ORDLIMIT"/>
+					<xs:enumeration value="PAYRATE"/>
+					<xs:enumeration value="RATE"/>
+					<xs:enumeration value="PRCBRK"/>
+					<xs:enumeration value="TAX"/>
+					<xs:enumeration value="TAXBASE"/>
+					<xs:enumeration value="TOTAL"/>
+					<xs:enumeration value="TOTLIMIT"/>
+					<xs:enumeration value="OTHER"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="type">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="T"/>
+					<xs:enumeration value="F"/>
+					<xs:enumeration value="TAX"/>
+					<xs:enumeration value="OTHER"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="index" type="xs:string"/>
+	</xs:complexType>				
+	<xs:complexType name="OPERAMT">
+		<xs:sequence>
+			<xs:element ref="of:VALUE"/>
+			<xs:element ref="of:NUMOFDEC"/>
+			<xs:element ref="of:SIGN"/>
+			<xs:element ref="of:CURRENCY"/>
+			<xs:element ref="of:UOMVALUE"/>
+			<xs:element ref="of:UOMNUMDEC"/>
+			<xs:element ref="of:UOM"/>
+		</xs:sequence>
+		<xs:attribute name="qualifier" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="COST"/>
+					<xs:enumeration value="EXTENDED"/>
+					<xs:enumeration value="FREIGHT"/>
+					<xs:enumeration value="UNIT"/>
+					<xs:enumeration value="OTHER"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="type" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="T"/>
+					<xs:enumeration value="F"/>
+					<xs:enumeration value="OTHER"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>			
+	<xs:complexType name="QUANTITY">
+		<xs:sequence>
+			<xs:element ref="of:VALUE"/>
+			<xs:element ref="of:NUMOFDEC"/>
+			<xs:element ref="of:SIGN"/>
+			<xs:element ref="of:UOM"/>
+		</xs:sequence>
+		<xs:attribute name="qualifier" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:NMTOKEN">
+					<xs:enumeration value="ACCEPTED"/>
+					<xs:enumeration value="ACTDUR"/>
+					<xs:enumeration value="ACTHRS"/>
+					<xs:enumeration value="ALLOCATED"/>
+					<xs:enumeration value="ALLOWEDWT"/>
+					<xs:enumeration value="AVAILABLE"/>
+					<xs:enumeration value="AVGRUNSIZE"/>
+					<xs:enumeration value="BACKORDERD"/>
+					<xs:enumeration value="BATCHSIZE"/>
+					<xs:enumeration value="BATCHTIME"/>
+					<xs:enumeration value="BLOCKED"/>
+					<xs:enumeration value="BREAKTIME"/>
+					<xs:enumeration value="CAPPERCENT"/>
+					<xs:enumeration value="CATCHWEGHT"/>
+					<xs:enumeration value="COMMISSION"/>
+					<xs:enumeration value="COMPLETED"/>
+					<xs:enumeration value="CUMULATIVE"/>
+					<xs:enumeration value="DELIVERED"/>
+					<xs:enumeration value="DURATION"/>
+					<xs:enumeration value="DUROVER"/>
+					<xs:enumeration value="DURUNDER"/>
+					<xs:enumeration value="EMPLOYEES"/>
+					<xs:enumeration value="EMPREQD"/>
+					<xs:enumeration value="ESTDUR"/>
+					<xs:enumeration value="ESTHRS"/>
+					<xs:enumeration value="ESTWEIGHT"/>
+					<xs:enumeration value="FILENAME"/>
+					<xs:enumeration value="FILESIZE"/>
+					<xs:enumeration value="FIXEDTIME"/>
+					<xs:enumeration value="HEIGHT"/>
+					<xs:enumeration value="INSPECTED"/>
+					<xs:enumeration value="INSPECTION"/>
+					<xs:enumeration value="ITEM"/>
+					<xs:enumeration value="LDTMOFFSET"/>
+					<xs:enumeration value="LENGTH"/>
+					<xs:enumeration value="LABOR"/>
+					<xs:enumeration value="LOADINGWT"/>
+					<xs:enumeration value="LOTSIZEMAX"/>
+					<xs:enumeration value="LOTSIZEMIN"/>
+					<xs:enumeration value="LOTSIZEMLT"/>
+					<xs:enumeration value="LOWERLIMIT"/>
+					<xs:enumeration value="MACHINEHRS"/>
+					<xs:enumeration value="MAXIMUM"/>
+					<xs:enumeration value="MAXPARLTM"/>
+					<xs:enumeration value="MINIMUM"/>
+					<xs:enumeration value="MOVETIME"/>
+					<xs:enumeration value="MSMENT"/>
+					<xs:enumeration value="MULTIPLIER"/>
+					<xs:enumeration value="NETWEIGHT"/>
+					<xs:enumeration value="OPEN"/>
+					<xs:enumeration value="ORDERED"/>
+					<xs:enumeration value="OTHERREJ"/>
+					<xs:enumeration value="OVERSHIP"/>
+					<xs:enumeration value="PACKING"/>
+					<xs:enumeration value="PERCENT"/>
+					<xs:enumeration value="PERCENTREQ"/>
+					<xs:enumeration value="PERSHBNOPR"/>
+					<xs:enumeration value="PERSHWIOPR"/>
+					<xs:enumeration value="PLNDPRCT"/>
+					<xs:enumeration value="PRCBRK"/>
+					<xs:enumeration value="PRIOR"/>
+					<xs:enumeration value="QUEUETIME"/>
+					<xs:enumeration value="RATE"/>
+					<xs:enumeration value="RECEIVED"/>
+					<xs:enumeration value="REJECTED"/>
+					<xs:enumeration value="REJFIXED"/>
+					<xs:enumeration value="REJPERCENT"/>
+					<xs:enumeration value="REMDUR"/>
+					<xs:enumeration value="REMHRS"/>
+					<xs:enumeration value="REQUIRED"/>
+					<xs:enumeration value="RETURNED"/>
+					<xs:enumeration value="REWORK"/>
+					<xs:enumeration value="RUNTIME"/>
+					<xs:enumeration value="SCRAP"/>
+					<xs:enumeration value="SETUPTIME"/>
+					<xs:enumeration value="SHELFLIFE"/>
+					<xs:enumeration value="SHIPPED"/>
+					<xs:enumeration value="SHIPUNIT"/>
+					<xs:enumeration value="START"/>
+					<xs:enumeration value="TEARDOWN"/>
+					<xs:enumeration value="TOOLREQD"/>
+					<xs:enumeration value="TOTWEIGHT"/>
+					<xs:enumeration value="TRANSFRLOT"/>
+					<xs:enumeration value="UNDERSHIP"/>
+					<xs:enumeration value="UNIT"/>
+					<xs:enumeration value="UPPERLIMIT"/>
+					<xs:enumeration value="VOLUME"/>
+					<xs:enumeration value="WAITTIME"/>
+					<xs:enumeration value="WEIGHT"/>
+					<xs:enumeration value="WIDTH"/>
+					<xs:enumeration value="OTHER"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

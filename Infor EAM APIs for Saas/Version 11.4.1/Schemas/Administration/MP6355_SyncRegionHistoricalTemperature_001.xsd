@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2007 Infor.All rights reserved.The word and design marks set
+	forth herein are trademarks and/or registered trademarks of Infor and/or
+	related affiliates and subsidiaries.All rights reserved.All other trademarks
+	listed herein are the property of their respective owners.www.infor.com.
+	
+	This schema defines MP business function request MP6355_SyncRegionHistoricalTemperature_001
+ ============================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP6355_001" xmlns="http://schemas.datastream.net/MP_functions/MP6355_001" xmlns:dse-RegionHistoricalTemperature="http://schemas.datastream.net/MP_entities/RegionHistoricalTemperature_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/RegionHistoricalTemperature_001" schemaLocation="RegionHistoricalTemperature_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP6355_SyncRegionHistoricalTemperature_001 ======================================-->
+	<xs:element name="MP6355_SyncRegionHistoricalTemperature_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-RegionHistoricalTemperature:RegionHistoricalTemperature"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Sync"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="RegionHistoricalTemperature"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

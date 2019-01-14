@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+        This schema defines the Equipment Usage Meter(logical meter) entity.
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/UsageMeter_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/UsageMeter_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of UsageMeter ======================================-->
+	<xs:element name="UsageMeter">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element ref="dsf:ASSETID"/>
+					<xs:element ref="dsf:POSITIONID"/>
+					<xs:element ref="dsf:SYSTEMID"/>
+					<xs:element ref="dsf:LOCATIONID"/>
+					<xs:element ref="dsf:PROFILEID"/>
+				</xs:choice>
+				<xs:element ref="dsf:USAGEUOMID"/>
+				<xs:element ref="UsageDefinition"/>
+				<xs:element ref="BasicReadingData" minOccurs="0"/>
+				<xs:element ref="CalculatedReadingData" minOccurs="0"/>	
+				<xs:element ref="PhysicalMeterInfo" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="user_entity" type="xs:string"/>
+			<xs:attribute name="system_entity" type="xs:string"/>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>			
+		</xs:complexType>
+	</xs:element>
+	
+	<!--====  Begining of UsageMeterForInput ======================================-->
+	<xs:element name="UsageMeterForInput">
+		<xs:complexType>
+			<xs:sequence>				
+				<xs:choice>
+					<xs:element ref="dsf:ASSETID"/>
+					<xs:element ref="dsf:POSITIONID"/>
+					<xs:element ref="dsf:SYSTEMID"/>
+					<xs:element ref="dsf:LOCATIONID"/>
+					<xs:element ref="dsf:PROFILEID"/>
+				</xs:choice>
+				<xs:element ref="dsf:USAGEUOMID"/>
+				<xs:element ref="UsageDefinition"/>
+				<xs:element ref="BasicReadingData" minOccurs="0"/>
+				<xs:element ref="PhysicalMeter" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="user_entity" type="xs:string"/>
+			<xs:attribute name="system_entity" type="xs:string"/>			
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PhysicalMeter" type="dsf:METERID_Type"/>		
+
+	<xs:element name="UsageDefinition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:USAGEHIERARCHYTYPE"/>
+				<xs:element ref="dsf:ESTIMATEDDAILYUSAGE" minOccurs="0"/>
+				<xs:element ref="dsf:NUMBEROFREADINGS" minOccurs="0"/>
+				<xs:element ref="dsf:UPDOWNMETER" minOccurs="0"/>
+				<xs:element ref="dsf:PHYSICALMETERID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BasicReadingData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TOTALUSAGE" minOccurs="0"/>
+				<xs:element ref="dsf:USAGESINCEINSTALL" minOccurs="0"/>
+				<xs:element ref="dsf:LASTREADINGDATE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CalculatedReadingData">
+		<xs:complexType>
+			<xs:sequence>				
+				<xs:element ref="dsf:USAGESINCELASTWORKORDER" minOccurs="0"/>
+				<xs:element ref="dsf:LASTMETERREADING" minOccurs="0"/>
+				<xs:element ref="dsf:AVERAGEDAILYUSAGE" minOccurs="0"/>
+				<xs:element ref="dsf:DAYSSINCELASTENTRY" minOccurs="0"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>		
+	<xs:element name="PhysicalMeterInfo">
+		<xs:complexType>
+			<xs:sequence>				
+				<xs:element ref="dsf:METERID" minOccurs="0"/>
+				<xs:element ref="dsf:ROLLOVERPOINT" minOccurs="0"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>		
+</xs:schema>

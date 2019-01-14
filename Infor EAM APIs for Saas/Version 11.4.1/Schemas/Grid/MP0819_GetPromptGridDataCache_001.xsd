@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function request MP0819_GetPromptGridDataCache_001    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0819_GetPromptGridDataCache_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsg="http://schemas.datastream.net/MP_functions/GridRequest" xmlns="http://schemas.datastream.net/MP_functions/MP0819_GetPromptGridDataCache_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_functions/GridRequest" schemaLocation="GridRequest2.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0819_GetPromptGridDataCache_001 ======================================-->
+	<xs:element name="MP0819_GetPromptGridDataCache_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FUNCTION_REQUEST_INFO"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FUNCTION_REQUEST_INFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsg:PROMPTFIELD"/>
+			</xs:sequence>
+			<xs:attribute name="REQUEST_TYPE" type="FUNCTION_REQUEST_TYPE"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="FUNCTION_REQUEST_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LOVSQL.DATA_ONLY.CACHE"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

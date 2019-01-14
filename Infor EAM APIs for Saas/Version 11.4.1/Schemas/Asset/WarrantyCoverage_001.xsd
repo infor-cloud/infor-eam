@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+        This schema defines the Equipment Usage Meter(logical meter) entity.
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WarrantyCoverage_001" 
+           xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://schemas.datastream.net/MP_entities/WarrantyCoverage_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>	
+	<!--===============================================================================-->
+	<!--====  Begining of WarrantyCoverage======================================-->
+	<xs:element name="WarrantyCoverage">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WARRANTYCOVERAGESEQNUM"/>
+				<xs:element ref="EquipmentWarranty"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="EquipmentWarranty">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WARRANTYID"/>
+				<xs:choice>
+					<xs:element ref="dsf:ASSETID"/>
+					<xs:element ref="dsf:POSITIONID"/>
+					<xs:element ref="dsf:SYSTEMID"/>
+					<xs:element ref="dsf:PROFILEID"/>
+				</xs:choice>			
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>				      
+				<xs:element ref="dsf:ISWARRANTYACTIVE" minOccurs="0"/>	
+				<xs:element ref="dsf:ENTEREDBY" minOccurs="0"/>
+				<xs:element ref="dsf:DATEENTERED" minOccurs="0"/>					
+				<xs:choice>					
+					<xs:element ref="CoverageByDate"/>
+					<xs:element ref="CoverageByUsage"/>
+				</xs:choice>
+				<xs:element ref="dsf:SERIALNUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:ORIGINALRECEIPTDATE" minOccurs="0"/>
+                <xs:element ref="dsf:LATESTRECEIPTDATE" minOccurs="0"/>
+                <xs:element ref="dsf:ORIGINALINSTALLDATE" minOccurs="0"/>
+                <xs:element ref="dsf:LATESTINSTALLDATE" minOccurs="0"/>
+                <xs:element ref="dsf:COMMISSIONDATE" minOccurs="0"/>
+			</xs:sequence>		
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="user_entity" type="xs:string"/>
+			<xs:attribute name="system_entity" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CoverageByDate">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:STARTDATE" minOccurs="0"/>
+				<xs:element ref="dsf:EXPIRATIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:WARRANTYDURATIONDAYS" minOccurs="0"/>
+				<xs:element ref="dsf:THRESHHOLDDAYS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CoverageByUsage">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:STARTUSAGE" minOccurs="0"/>
+				<xs:element ref="dsf:EXPIRATIONUSAGE" minOccurs="0"/>
+				<xs:element ref="dsf:USAGEUOMID" minOccurs="0"/>
+				<xs:element ref="dsf:WARRANTYDURATIONUSAGE" minOccurs="0"/>
+				<xs:element ref="dsf:THRESHHOLDUSAGE" minOccurs="0"/>
+				<xs:element ref="dsf:LASTVALUEUSAGE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	
+</xs:schema>

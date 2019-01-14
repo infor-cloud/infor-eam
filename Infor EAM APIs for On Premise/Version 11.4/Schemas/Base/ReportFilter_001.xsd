@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+   Copyright (c) 2008 Infor. All rights reserved. The word and design marks set forth 
+   herein are trademarks and/or registered trademarks of Infor and/or related affiliates 
+   and subsidiaries. All rights reserved. All other trademarks listed herein are the 
+   property of their respective owners. www.infor.com.
+
+    This schema defines MP ReportFilter
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ReportFilter_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/ReportFilter_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="ReportFilter">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:REPORTFILTERID"/>
+				<xs:element ref="dsf:ORGANIZATIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:REPDEFAULT" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM1" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM2" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM3" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM4" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM5" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM6" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM7" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM8" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM9" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM10" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM11" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM12" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM13" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM14" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM15" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM16" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM17" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM18" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM19" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM20" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM21" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM22" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM23" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM24" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM25" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM26" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM27" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM28" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM29" minOccurs="0"/>
+				<xs:element ref="dsf:REPPARAM30" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX1" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX2" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX3" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX4" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX5" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX6" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX7" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX8" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX9" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX10" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX11" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX12" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX13" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX14" minOccurs="0"/>
+				<xs:element ref="dsf:REPCHKBOX15" minOccurs="0"/>
+				<xs:element ref="dsf:REPRADIO" minOccurs="0"/>
+				<xs:element ref="dsf:REPVISFLDS" minOccurs="0"/>
+				<xs:element ref="dsf:REPORDERBY" minOccurs="0"/>
+				<xs:element ref="dsf:REPORDERTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:REPGROUPBY" minOccurs="0"/>
+				<xs:element ref="dsf:TODATE" minOccurs="0"/>
+				<xs:element ref="dsf:FROMDATE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

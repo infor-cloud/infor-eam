@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP8501_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mri="http://schemas.datastream.net/MP_entities/MobileRequestInfo_001" xmlns="http://schemas.datastream.net/MP_results/MP8501_001" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/MobileRequestInfo_001" schemaLocation="./MobileRequestInfo_001.xsd"/>
+	<xs:element name="MP8501_InitMobileDownloading_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="mri:REQUESTID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

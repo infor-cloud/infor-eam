@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2005, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request TextForReports_001
+-->
+
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/TextForReports_001"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.datastream.net/MP_entities/TextForReports_001"
+		elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields"
+		schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of TextForReports_001 ======================================-->
+	<xs:element name="TextForReports">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BOILERTEXTENTRIESID"/>
+				<xs:element ref="dsf:DESTINATIONID"/>
+				<xs:element ref="dsf:BOILERTEXTLENGTH"/>
+				<xs:element ref="dsf:BOILERTEXTXPOS"/>
+				<xs:element ref="dsf:BOILERTEXTYPOS"/>
+				<xs:element ref="dsf:BOILERTEXT"/>
+				<xs:element ref="dsf:BOILERTEXTPAGE" minOccurs="0"/>
+				<xs:element ref="dsf:BOILERTEXTFLD1" minOccurs="0"/>
+				<xs:element ref="dsf:BOILERTEXTFLD2" minOccurs="0"/>
+				<xs:element ref="dsf:BOILERTEXTPRTP" minOccurs="0"/>
+				<xs:element ref="dsf:BOILERTEXTLVCR" minOccurs="0"/>
+				<xs:element ref="dsf:BOILERTEXTADLEN" minOccurs="0"/>
+				<xs:element ref="dsf:BOILERTEXTPOOL"/>
+				<xs:element ref="dsf:BOILERTEXTCHANGED" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

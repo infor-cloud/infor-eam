@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+This schema defines MP entity StoreToStoreReq
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/StoreToStoreReq_001"
+			xmlns="http://schemas.datastream.net/MP_entities/StoreToStoreReq_001"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns:dsf="http://schemas.datastream.net/MP_fields"
+			elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<!--===============================================================================-->
+<!--====  Begining of StoreToStoreReq_001 ======================================-->
+	<xs:element name="StoreToStoreReq">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:REQUISITIONID" minOccurs="0"/>
+				<xs:element ref="dsf:STATUS" minOccurs="1"/>
+				<xs:element ref="dsf:FROMSTOREID" minOccurs="1"/>
+				<xs:element ref="dsf:TOSTOREID" minOccurs="1"/>
+				<xs:element ref="dsf:REQUESTEDBY" minOccurs="1"/>
+				<xs:element ref="dsf:DELADDRESSCODE" minOccurs="0"/><!--Delivery Address-->
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/><!--Class-->
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="1"/><!--Date StoreToStoreRequested-->
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDBY" minOccurs="1"/><!--Entered By-->
+				<xs:element ref="dsf:PRINTED" minOccurs="0"/><!--Printed-->
+				<xs:element ref="dsf:DEFAULTAPPROVER" minOccurs="0"/><!--Default Approver-->
+				<xs:element ref="dsf:APPROVER" minOccurs="0"/><!--Approved By-->
+				<xs:element ref="dsf:APPROVEDATE" minOccurs="0"/><!--Date Approved-->
+				<xs:element ref="dsf:REQUISITIONLINECOUNT" minOccurs="0"/><!--StoreToStoreReq Lines-->
+				<xs:element ref="dsf:REQUISITIONTOTAL" minOccurs="0"/><!--Total StoreToStoreReq Value/Currency-->
+				<xs:element ref="dsf:REQUISITIONCURRENCY" minOccurs="0"/><!--Total StoreToStoreReq Value/Currency-->
+				<xs:element ref="dsf:REJECTIONREASON" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0" />
+			</xs:sequence>
+				<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

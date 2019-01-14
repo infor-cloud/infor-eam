@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function result for function request MP0422_GetPartForPO_001_Result
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0422_001" xmlns:dse-PartForPO="http://schemas.datastream.net/MP_entities/PartForPO_001" xmlns="http://schemas.datastream.net/MP_results/MP0422_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/PartForPO_001" schemaLocation="PartForPO_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0422_GetPartForPO_001_Result ======================================-->
+	<xs:element name="MP0422_GetPartForPO_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-PartForPO:PartForPO"/>
+				<xs:element ref="dsf:PARTTOTAL"/>
+				<xs:element ref="dsf:PARTSUBTOTAL"/>
+				<xs:element ref="dsf:CONTRACTDISCOUNTAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:MULTIEQUIP" minOccurs="0"/>
+				<xs:element ref="dsf:ISINSPECTIONONREQLINEORPART" minOccurs="0"/>
+				<xs:element ref="dsf:RFQLINEID" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="preventreorders" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

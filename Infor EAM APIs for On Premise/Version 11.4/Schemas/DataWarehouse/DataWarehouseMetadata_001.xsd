@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2004, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity DataWarehouseMetadata
+============================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/DataWarehouseMetadata_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/DataWarehouseMetadata_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Beginning of DataWarehouseMetadata_001 ======================================-->
+	<xs:element name="DataWarehouseMetadata">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Dimensions"/>
+				<xs:element ref="DataMarts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Begin datamart elements -->
+	<xs:element name="DataMarts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DataMart" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DataMart">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AssociatedDimensions"/>
+				<xs:element ref="Facts"/>
+			</xs:sequence>
+			<xs:attribute name="table" type="xs:string"/>
+			<xs:attribute name="label" type="xs:string"/>
+			<xs:attribute name="grain">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Transaction"/>
+						<xs:enumeration value="PeriodicSnapshot"/>
+						<xs:enumeration value="AccumulatingSnapshot"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="tabletype">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Table"/>
+						<xs:enumeration value="View"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Facts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Fact" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Fact">
+		<xs:complexType>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="queryfield" type="xs:string"/>
+			<xs:attribute name="label" type="xs:string"/>
+			<xs:attribute name="additivity">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Additive"/>
+						<xs:enumeration value="Semiadditive"/>
+						<xs:enumeration value="Nonadditive"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="type" type="xs:string"/>
+			<xs:attribute name="lvgrid" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AssociatedDimensions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AssociatedDimension" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AssociatedDimension">
+		<xs:complexType>
+			<xs:attribute name="table" type="xs:string"/>
+			<xs:attribute name="joinfield" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<!-- Begin dimension elements -->
+	<xs:element name="Dimensions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Dimension" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Dimension">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DimensionField" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="table" type="xs:string"/>
+			<xs:attribute name="label" type="xs:string"/>
+			<xs:attribute name="keyfield" type="xs:string"/>
+			<xs:attribute name="tabletype">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Table"/>
+						<xs:enumeration value="View"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="createkeysequence" type="dsf:FLAG_Type"/>
+			<xs:attribute name="surrogatekeylookuptable" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DimensionField">
+		<xs:complexType>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="queryfield" type="xs:string"/>
+			<xs:attribute name="label" type="xs:string"/>
+			<xs:attribute name="type" type="xs:string"/>
+			<xs:attribute name="lvgrid" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright (c) 2007 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered trademarks
+    of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business function entity PartForPO
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PartForPO_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/PartForPO_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====================  Begining of PartForPO ====================-->
+	<xs:element name="PartForPO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PURCHASEORDERLINEID"/>
+				<xs:element ref="dsf:REQUISITIONLINEID" minOccurs="0"/>
+				<xs:element ref="dsf:REQUESTDUEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:REQUESTEDQTY" minOccurs="0"/>
+				<xs:element ref="dsf:PARTID"/>
+				<xs:element ref="dsf:PURCHASEORDERTYPE"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:SUPPLIERREFERENCE" minOccurs="0"/>
+				<xs:element ref="dsf:PURCHASEQTY"/>
+				<xs:element ref="dsf:PURCHASEUOM"/>
+				<xs:element ref="dsf:CONVERSIONFACTOR"/>
+				<xs:element ref="dsf:PARTQUANTITY"/>
+				<xs:element ref="dsf:PARTUOM"/>
+				<xs:element ref="dsf:DUEDATE"/>
+				<xs:element ref="dsf:PRICE"/>
+				<xs:element ref="dsf:CURRENCYID"/>
+				<xs:element ref="dsf:EXCHRATE"/>
+				<xs:element ref="dsf:ACTIVITYID" minOccurs="0"/>
+				<xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/>
+				<xs:element ref="dsf:PROJECTID" minOccurs="0"/>
+				<xs:element ref="dsf:PROJBUD" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:RELATEDWORKORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:DELIVERYADDRESSID" minOccurs="0"/>
+				<xs:element ref="dsf:TAXID" minOccurs="0"/>
+				<xs:element ref="dsf:TAX2ID" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:CONTRACTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:DISCOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:LEADTIMES" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDREPAIRPART" minOccurs="0"/>
+				<xs:element ref="dsf:RECEIVEDQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:PARTINSPECTIONREQUIRED" minOccurs="0"/>
+				<xs:element ref="dsf:TOTALTAXAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:INVCALCTAXAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:BYASSET" minOccurs="0"/>
+				<xs:element ref="dsf:TOTALEXTRA" minOccurs="0"/>
+				<xs:element ref="dsf:ISPOLINEACTIVE" minOccurs="0"/>
+				<xs:element ref="dsf:EXCHFIX" minOccurs="0"/>
+				<xs:element ref="dsf:STOREID" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:RECEIVEDVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:INVOICEDQTY" minOccurs="0"/>
+				<xs:element ref="dsf:INVOICEDVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:POREVISION" minOccurs="0"/>
+				<xs:element ref="dsf:REVISEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:BLANKETORDER" minOccurs="0"/>
+				<xs:element ref="dsf:BLANKETLINE" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCESYSTEM" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCECODE" minOccurs="0"/>
+				<xs:element ref="dsf:ACCOUNTDETAIL" minOccurs="0"/>
+				<xs:element ref="dsf:INTERFACE" minOccurs="0"/>
+				<xs:element ref="dsf:EXCHTODUAL" minOccurs="0"/>
+				<xs:element ref="dsf:EXCHFROMDUAL" minOccurs="0"/>
+				<xs:element ref="dsf:TASKSID" minOccurs="0"/>
+				<xs:element ref="dsf:TRADEID" minOccurs="0"/>
+				<xs:element ref="dsf:FREEZE" minOccurs="0"/>
+				<xs:element ref="dsf:RECVTASKQTY" minOccurs="0"/>
+				<xs:element ref="dsf:DCKRECVQTY" minOccurs="0"/>
+				<xs:element ref="dsf:SCRAPQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:IPTRANSMITTED" minOccurs="0"/>
+				<xs:element ref="dsf:IPCURRPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:IPLASTUPDATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ATTENTIONTO" minOccurs="0"/>
+				<xs:element ref="dsf:IPERRORID" minOccurs="0"/>
+				<xs:element ref="dsf:IPERRORFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:QUOTATIONLINEID" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERPARTCODE" minOccurs="0"/>
+				<xs:element ref="UserDefinedFields" minOccurs="0"/>
+				<xs:element ref="dsf:PACKAGETRACKINGNUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:PARTCONDITIONTEMPLATECONDITIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:LONGDESCRIPTION" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWPREPAYMENT" minOccurs="0"/>
+				<xs:element ref="dsf:PAYMENTNUMBER" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="addplannedwopart" type="xs:boolean" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserDefinedFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UDFCHAR01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR11" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR12" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR13" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR14" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR15" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR16" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR17" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR18" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR19" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR20" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR21" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR22" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR23" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR24" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR25" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR26" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR27" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR28" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR29" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR30" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX05" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

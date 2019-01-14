@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2007 Infor. All rights reserved. 
+    The word and design marks set forth herein are trademarks and/or registered trademarks 
+    of Infor and/or related affiliates and subsidiaries. All rights reserved. All other 
+    trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business function request AlertEquipmentData_001
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/AlertEquipmentData_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/AlertEquipmentData_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	elementFormDefault="qualified">
+
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+
+	<!--===============================================================================-->
+	<!--====  Begining of AlertEquipmentData_001 ======================================-->
+	<xs:element name="AlertEquipmentData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SEQUENCENUMBER"/>
+				<xs:element ref="dsf:EQUIPMENTID"/>
+				<xs:element ref="UserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserDefinedFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UDFCHAR01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR11" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR12" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR13" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR14" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR15" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR16" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR17" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR18" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR19" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR20" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR21" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR22" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR23" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR24" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR25" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR26" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR27" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR28" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR29" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR30" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR31" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR32" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR33" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR34" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR35" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM11" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM12" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM13" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM14" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM15" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM16" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM17" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM18" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM19" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM20" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM21" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM22" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM23" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM24" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM25" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM26" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM27" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM28" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM29" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM30" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM31" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM32" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM33" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM34" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM35" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM36" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM37" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM38" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM39" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM40" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM41" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM42" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM43" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM44" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM45" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM46" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM47" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM48" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM49" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM50" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE11" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE12" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE13" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE14" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE15" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

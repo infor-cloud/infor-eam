@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2016 Infor.All rights reserved.The word and design marks set
+    forth herein are trademarks and/or registered trademarks of Infor and/or
+    related affiliates and subsidiaries.All rights reserved.All other trademarks
+    listed herein are the property of their respective owners.www.infor.com.
+
+    This schema defines MP business function request MP3428_CalculateFromPoint_001
+ ================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP3428_001"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.datastream.net/MP_functions/MP3428_001"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===========================================================================-->
+	<!--====  Begining of MP3428_CalculateToPoint_001 =============================-->
+	<xs:element name="MP3428_CalculateToPoint_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EQUIPMENTID"/>
+				<xs:element ref="dsf:TOREFERENCEID"/>
+				<xs:element ref="dsf:TOOFFSETDIRECTION" minOccurs="0"/>
+				<xs:element ref="dsf:TOOFFSET" minOccurs="0"/>
+				<xs:element ref="dsf:TOOFFSETPERCENTAGE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Calculate"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="ToPoint"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+			<xs:attribute name="lrf_linear_reftype" type="xs:string" default="O"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

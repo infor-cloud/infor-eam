@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2008 Infor. All rights reserved. 
+    The word and design marks set forth herein are trademarks and/or registered trademarks 
+    of Infor and/or related affiliates and subsidiaries. All rights reserved. All other 
+    trademarks listed herein are the property of their respective owners. www.infor.com.
+	
+        This schema defines MP entity WorkOrderResource    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WorkOrderResource_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/WorkOrderResource_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="WorkOrderResource">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WORKORDERRESOURCEID"/>
+				<xs:element ref="dsf:COOLDOWNTIME" minOccurs="0"/>
+				<xs:element ref="dsf:WARMUPTIME" minOccurs="0"/>
+				<xs:element ref="dsf:DOWNTIMEHOURS" minOccurs="0"/>
+				<xs:element ref="dsf:OPERATIONSEQUENCE" minOccurs="0"/>
+				<xs:element ref="dsf:RESOURCEOFFSET" minOccurs="0"/>
+				<xs:element ref="dsf:RESOURCEOFFSETVALUE" minOccurs="0"/>
+				<xs:element ref="ReadOnlyFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReadOnlyFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:RSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:RTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:ACCOUNTINGENTITY" minOccurs="0"/>
+				<xs:element ref="dsf:PRODUCTIONREQUEST" minOccurs="0"/>
+				<xs:element ref="dsf:NEXTOPERATIONSEQUENCE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

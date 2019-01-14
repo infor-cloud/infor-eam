@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+    This schema defines MP business function request MP7186_SyncWOCalibration_001
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP7186_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:dse-WOCalibration="http://schemas.datastream.net/MP_entities/WOCalibration_001" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_functions/MP7186_001" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_entities/WOCalibration_001" schemaLocation="WOCalibration_001.xsd"/>
+    <xs:import namespace="http://www.openapplications.org/oagis_fields" schemaLocation="../oagis_fields.xsd"/>
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <!--====  Begining of MP7186_SyncWOCalibration_001 ======================================-->
+    <xs:element name="MP7186_SyncWOCalibration_001">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dse-WOCalibration:WOCalibration"/>
+                <xs:element ref="dsf:SOPEFFECTIVEDATE" minOccurs="0" />
+                <xs:element ref="dsf:PERFORMEDBYESIGN" minOccurs="0" />
+                <xs:element ref="dsf:REVIEWEDBYESIGN" minOccurs="0" />
+                <xs:element ref="dsf:PMWODATEFLAG" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="verb" type="dsf:VERB_Type" fixed="Sync"/>
+            <xs:attribute name="noun" type="dsf:NOUN_Type" fixed="WOCalibration"/>
+            <xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

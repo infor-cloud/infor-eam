@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+        This schema defines MP entity PMSchedule    
+==================================================================================-->  
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PMScheduleForWork_001"
+           xmlns="http://schemas.datastream.net/MP_entities/PMScheduleForWork_001"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:of="http://www.openapplications.org/oagis_fields"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           xmlns:dse-ppo="http://schemas.datastream.net/MP_entities/PMScheduleEquipment_001"
+           elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/PMScheduleEquipment_001" schemaLocation="PMScheduleEquipment_001.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="PMSchedule">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PPMID"/>
+				<xs:element ref="dsf:PMSCHEDULETYPE"/>
+				<xs:element ref="dsf:WORKORDERTYPE"/>
+				<xs:element ref="dsf:REVISIONSTATUS"/>
+				<xs:element ref="dsf:REVISIONCONTROL" minOccurs="0"/>
+				<xs:element ref="dsf:PMDURATION"/>
+				<xs:element ref="dsf:PMPLAN" minOccurs="0"/>
+				<xs:element ref="dsf:PMCLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERCLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:ISWORKPACKAGE" minOccurs="0"/>
+				<xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+				<xs:element ref="dsf:PRIORITY" minOccurs="0"/>
+				<xs:element ref="dsf:SUPERVISORID" minOccurs="0"/>
+				<xs:element ref="dsf:NESTINGREFERENCE" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDWORKLOAD" minOccurs="0"/>
+				<xs:element ref="dsf:COMPLETESTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:PERIODINTERVAL" minOccurs="0"/>
+				<xs:element ref="dsf:METER1INTERVAL" minOccurs="0"/>
+				<xs:element ref="dsf:METER2INTERVAL" minOccurs="0"/>
+				<xs:element ref="dsf:PERCENTAGEWINDOW" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:PMCALENDARWEEKDAY" minOccurs="0"/>
+				<xs:element ref="dsf:PRODUCTIONPRIORITYID" minOccurs="0"/>
+				<xs:element ref="dsf:REQUESTEDSTARTDATEBUFFER" minOccurs="0"/>
+				<xs:element ref="dsf:REQUESTEDENDDATEBUFFER" minOccurs="0"/>
+				<xs:element ref="Equipments" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+				<xs:element ref="dsf:SAFETYDATEREVIEWREQUIRED" minOccurs="0"/>
+	            <xs:element ref="dsf:SAFETYREVIEWEDBY" minOccurs="0"/>
+	            <xs:element ref="dsf:PERMITDATEREVIEWREQUIRED" minOccurs="0"/>
+	            <xs:element ref="dsf:PERMITREVIEWEDBY" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="people_required" type="xs:long"/>
+			<xs:attribute name="calculated_workload" type="xs:double"/>
+			<xs:attribute name="is_revision_status_unfinished" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Equipments">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-ppo:PMScheduleEquipment" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

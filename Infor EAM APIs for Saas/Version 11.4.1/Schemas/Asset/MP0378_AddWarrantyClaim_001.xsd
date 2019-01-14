@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request MP0378_AddWarrantyClaim_001.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0378_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:dse-WarrantyClaim="http://schemas.datastream.net/MP_entities/WarrantyClaim_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_functions/MP0378_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/WarrantyClaim_001" schemaLocation="WarrantyClaim_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0378_AddWarrantyClaim_001 ======================================-->
+	<xs:element name="MP0378_AddWarrantyClaim_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-WarrantyClaim:WarrantyClaimBasicInformation"/>
+				<xs:element ref="dse-WarrantyClaim:WorkOrderInformation"/>
+				<xs:element ref="dse-WarrantyClaim:MiscellaneousCosts" minOccurs="0"/>
+				<xs:element ref="dse-WarrantyClaim:SettlementDetails" minOccurs="0"/>
+				<!-- Include SettlementDetails information only if the claim is in Response Received status -->
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Add"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="WarrantyClaim"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+			<xs:attribute name="autoid" type="dsf:FLAG_Type" fixed="true"/>
+			<xs:attribute name="confirm_warranty_expired" type="dsf:CONFIRMATION_Type" default="not_needed"/>
+			<xs:attribute name="confirm_workorder_completed" type="dsf:CONFIRMATION_Type" default="not_needed"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

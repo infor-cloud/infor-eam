@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2016 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+  This schema defines MP entity UserGroupMobileSettings_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/UserGroupMobileSettings_001"
+    xmlns="http://schemas.datastream.net/MP_entities/UserGroupMobileSettings_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="UserGroupMobileSettings">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:USERGROUPID"/>
+                <xs:element ref="WorkDetails" minOccurs="0"/>
+                <xs:element ref="EquipmentDetails" minOccurs="0"/>
+                <xs:element ref="MaterialDetails" minOccurs="0"/>
+                <xs:element ref="OtherDetails" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="WorkDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ISDOWNLOADWORKORDERS" minOccurs="0"/>
+                <xs:element ref="dsf:FORDATASPYID" minOccurs="0"/>
+                <xs:element ref="dsf:ISDOWNLOADEMPLOYEES" minOccurs="0"/>
+                <xs:element ref="dsf:FORTRADES" minOccurs="0"/>
+                <xs:element ref="dsf:FORDEPARTMENTS" minOccurs="0"/>
+                <xs:element ref="dsf:FOREMPLOYEES" minOccurs="0"/>
+                <xs:element ref="dsf:ISDOWNLOADSTANDARDWOS" minOccurs="0"/>
+                <xs:element ref="dsf:ISDOWNLOADINSPRESULTS" minOccurs="0"/>
+                <xs:element ref="dsf:ISDOWNLOADTASK" minOccurs="0"/>
+                <xs:element ref="dsf:ISDOWNLOADWORKORDERNONCONFORMITY" minOccurs="0"/>
+                <xs:element ref="dsf:ISDOWNLOADPERMITTOWORK" minOccurs="0"/>
+                <xs:element ref="dsf:PERMITTOWORKDATASPYID" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EquipmentDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ISDOWNLOADEQUIPMENT" minOccurs="0"/>
+                <xs:element ref="dsf:EQUIPFORDATASPYID" minOccurs="0"/>
+                <xs:element ref="dsf:ISDOWNLOADMTRREADING" minOccurs="0"/>
+                <xs:element ref="dsf:MTRREADINGLATESTDAYS" minOccurs="0"/>
+                <xs:element ref="EquipmentCommentDetails" minOccurs="0"/>
+                <xs:element ref="EquipmentHistoryDetails" minOccurs="0"/>
+                <xs:element ref="EquipmentCustomFieldsDetails" minOccurs="0"/>
+                <xs:element ref="EquipmentCostCodeDetails" minOccurs="0"/>
+                <xs:element ref="dsf:ISDOWNLOADEQHISTCOMMENTS" minOccurs="0"/>
+                <xs:element ref="dsf:ISDOWNLOADLINEARASSETINFORMATION" minOccurs="0"/>
+                <xs:element ref="EquipmentNonconformityDetails" minOccurs="0"/>
+                <xs:element ref="EquipmentMobileNotebookDetails" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="MaterialDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ISDOWNLOADSTORES" minOccurs="0"/>
+                <xs:element ref="PartDetails" minOccurs="0"/>
+                <xs:element ref="BinDetails" minOccurs="0"/>
+                <xs:element ref="PhysicalInventoryDetails" minOccurs="0"/>
+                <xs:element ref="dsf:ISDOWNLOADSUPPLIER" minOccurs="0"/>
+                <xs:element ref="dsf:ISDOWNLOADASSETINVENTORY" minOccurs="0"/>
+                <xs:element ref="dsf:ISDOWNLOADSTOCK" minOccurs="0"/>
+                <xs:element ref="dsf:ISDOWNLOADPORECEIPT" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="OtherDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ISDOWNLOADESIGNSETTINGS" minOccurs="0"/>
+                <xs:element ref="dsf:ISDOWNLOADDOCPRINTWO" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EquipmentCommentDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ISDOWNLOADEQUIPCOMMENTS" minOccurs="0"/>
+                <xs:element ref="dsf:ISFORDOWNLOADEDWOONLY" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EquipmentHistoryDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ISDOWNLOADEQUIPHISTORY" minOccurs="0"/>
+                <xs:element ref="dsf:ISFORDOWNLOADEDWOONLY" minOccurs="0"/>
+                <xs:element ref="dsf:FORLATESTDAYS" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EquipmentCustomFieldsDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ISDOWNLOADEQCUSTOMFIELDS" minOccurs="0"/>
+                <xs:element ref="dsf:ISFORDOWNLOADEDWOONLY" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EquipmentCostCodeDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ISDOWNLOADCOSTCODES" minOccurs="0"/>
+                <xs:element ref="dsf:FORCLASSES" minOccurs="0"/>
+                <xs:element ref="dsf:FORCOSTCODES" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PartDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ISDOWNLOADPARTS" minOccurs="0"/>
+                <xs:element ref="dsf:STORECODE" minOccurs="0"/>
+                <xs:element ref="dsf:FORPARTS" minOccurs="0"/>
+                <xs:element ref="dsf:MAXINSTOCKANDQUANTITY" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="BinDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ISDOWNLOADBINS" minOccurs="0"/>
+                <xs:element ref="dsf:STORECODE" minOccurs="0"/>
+                <xs:element ref="dsf:FORBINS" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PhysicalInventoryDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ISDOWNLOADPHYINVENTORY" minOccurs="0"/>
+                <xs:element ref="dsf:STORECODE" minOccurs="0"/>
+                <xs:element ref="dsf:FORLINES" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EquipmentNonconformityDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ISDOWNLOADEQUIPMENTNONCONFORMITY" minOccurs="0"/>
+                <xs:element ref="dsf:FORLATESTDAYS" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EquipmentMobileNotebookDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ISDOWNLOADMOBILENOTEBOOK" minOccurs="0"/>
+                <xs:element ref="dsf:FORLATESTMONTHS" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

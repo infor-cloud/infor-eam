@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines the MP entity Screen
+================================================================================== -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Screen_001" 
+									xmlns="http://schemas.datastream.net/MP_entities/Screen_001" 
+									xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+									xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+									xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+									xmlns:dse-FieldFilterSetup="http://schemas.datastream.net/MP_entities/FieldFilterSetup_001"
+									elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/FieldFilterSetup_001" schemaLocation="FieldFilterSetup_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of Screen_001 ======= -->
+	<xs:element name="Screen">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:FUNCTIONID"/>
+				<xs:element ref="dsf:CLASSID"/>
+				<xs:element ref="dsf:FORMTYPE"/>
+				<xs:element ref="dsf:RENTITYID" minOccurs="0"/>
+				<xs:element ref="dsf:LASTVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:APPLICATION" minOccurs="0"/>			
+				<xs:element ref="dsf:SELECTPERMISSION" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATEPERMISSION" minOccurs="0"/>
+				<xs:element ref="dsf:INSERTPERMISSION" minOccurs="0"/>
+				<xs:element ref="dsf:DELETEPERMISSION" minOccurs="0"/>
+				<xs:element ref="dsf:FUNCTIONICON" minOccurs="0"/>
+				<xs:element ref="dsf:QUERYATSTARTUP" minOccurs="0"/>
+				<xs:element ref="dsf:PERTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:BACKGROUNDREP" minOccurs="0"/>
+				<xs:element ref="dsf:PATH" minOccurs="0"/>
+				<xs:element ref="dsf:LISTATSTARTUP" minOccurs="0"/>
+				<xs:element ref="dsf:OPENURLNEW" minOccurs="0"/>
+				<xs:element ref="dsf:INVOKEDATASPY" minOccurs="0"/>
+				<xs:element ref="dsf:FILTERTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:FILTERCLASS" minOccurs="0"/>
+				<xs:element ref="dsf:FILTERWOEQUIPMENTTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:STARTUPVIEWID" minOccurs="0"/>
+				<xs:element ref="dsf:SPLITVIEWDISPLAY" minOccurs="0"/>
+				<xs:element ref="dsf:AUTOREFRESHTIMER" minOccurs="0"/>
+				<xs:element ref="dse-FieldFilterSetup:FieldFilterSetup" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

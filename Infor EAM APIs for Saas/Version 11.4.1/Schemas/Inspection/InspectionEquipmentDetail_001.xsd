@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- ================================================================================ 
+	Copyright 2003, Datastream Systems, Inc. 
+	50 Datastream Plaza, Greenville, SC 29605, USA. 
+	All rights reserved. 
+
+	This schema defines MP entity InspectionEquipmentDetail
+================================================================================== --> 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/InspectionEquipmentDetail_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/InspectionEquipmentDetail_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of InspectionEquipmentDetail_001 ======= -->
+	<xs:element name="InspectionEquipmentDetail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EQUIPMENTDETAILID"/>
+				<xs:element ref="dsf:PIPINGCLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:MATERIALSTANDARDID" minOccurs="0"/>
+				<xs:element ref="dsf:NOMINALOD" minOccurs="0"/>
+				<xs:element ref="dsf:NOMINALODUOM" minOccurs="0"/>
+				<xs:element ref="dsf:MAOP" minOccurs="0"/>
+				<xs:element ref="dsf:DESIGNPRESSURE" minOccurs="0"/>
+				<xs:element ref="dsf:DESIGNTEMPMIN" minOccurs="0"/>
+				<xs:element ref="dsf:DESIGNTEMPMAX" minOccurs="0"/>
+				<xs:element ref="dsf:DESIGNOPERTEMP" minOccurs="0"/>
+				<xs:element ref="dsf:ACTUALOPERTEMP" minOccurs="0"/>
+				<xs:element ref="dsf:INSIDESPHERICALRADIUS" minOccurs="0"/>
+				<xs:element ref="dsf:HALFAPEXANGLE" minOccurs="0"/>
+				<xs:element ref="CORROSIONDETAILS" minOccurs="0"/>
+				<xs:element ref="CHARACTERDETAILS" minOccurs="0"/>
+				<xs:element ref="NUMERICDETAILS" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CHARACTERDETAILS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:VARCHAR1" minOccurs="0"/>
+				<xs:element ref="dsf:VARCHAR2" minOccurs="0"/>
+				<xs:element ref="dsf:VARCHAR3" minOccurs="0"/>
+				<xs:element ref="dsf:VARCHAR4" minOccurs="0"/>
+				<xs:element ref="dsf:VARCHAR5" minOccurs="0"/>
+				<xs:element ref="dsf:VARCHAR6" minOccurs="0"/>
+				<xs:element ref="dsf:VARCHAR7" minOccurs="0"/>
+				<xs:element ref="dsf:VARCHAR8" minOccurs="0"/>
+				<xs:element ref="dsf:VARCHAR9" minOccurs="0"/>
+				<xs:element ref="dsf:VARCHAR10" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CORROSIONDETAILS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DESIGNFACTOR" minOccurs="0"/>
+				<xs:element ref="dsf:DESIGNCORROSIONRATE" minOccurs="0"/>
+				<xs:element ref="dsf:PIGGINGFREQUENCY" minOccurs="0"/>
+				<xs:element ref="dsf:LININGCOATING" minOccurs="0"/>
+				<xs:element ref="dsf:WELDTYPE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NUMERICDETAILS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:VARNUM1" minOccurs="0"/>
+				<xs:element ref="dsf:VARNUM2" minOccurs="0"/>
+				<xs:element ref="dsf:VARNUM3" minOccurs="0"/>
+				<xs:element ref="dsf:VARNUM4" minOccurs="0"/>
+				<xs:element ref="dsf:VARNUM5" minOccurs="0"/>
+				<xs:element ref="dsf:VARNUM6" minOccurs="0"/>
+				<xs:element ref="dsf:VARNUM7" minOccurs="0"/>
+				<xs:element ref="dsf:VARNUM8" minOccurs="0"/>
+				<xs:element ref="dsf:VARNUM9" minOccurs="0"/>
+				<xs:element ref="dsf:VARNUM10" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity PartStores    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PartStores_001" 
+xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/PartStores_001" elementFormDefault="qualified">
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+
+	<!--===============================================================================-->
+	<!--====  Begining of PartStores_001 ======================================-->
+	<xs:element name="PartStores">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PARTID"/>
+				<xs:element ref="dsf:STOREID"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:MINIMUMQTY" minOccurs="0"/>
+				<xs:element ref="dsf:MAXIMUMQTY" minOccurs="0"/>
+				<xs:element ref="dsf:ORDERQTY" minOccurs="0"/>
+				<xs:element ref="dsf:REORDERLEVEL" minOccurs="0"/>
+				<xs:element ref="dsf:PRICETYPE" minOccurs="0"/>
+				<xs:element ref="dsf:BASEPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:AVERAGEPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:STANDARDPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:LASTPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:PREFERREDSUPPLIER" minOccurs="0"/>
+				<xs:element ref="dsf:PREFERREDSTORE" minOccurs="0"/>
+				<xs:element ref="dsf:LEADTIME" minOccurs="0"/>
+				<xs:element ref="dsf:ABCCODE" minOccurs="0"/>
+				<xs:element ref="dsf:ONDEMAND" minOccurs="0"/>
+				<xs:element ref="dsf:RECORDSSTOCKOUT" minOccurs="0"/>
+				<xs:element ref="dsf:CONSIGNMENTITEM" minOccurs="0"/>
+				<xs:element ref="dsf:DEFAULTBIN" minOccurs="0"/>
+				<xs:element ref="dsf:DEFAULTRETURNBIN" minOccurs="0"/>
+				<xs:element ref="dsf:PREVENTISSUEDEFRTNBIN" minOccurs="0"/>
+				<xs:element ref="dsf:STOCKDATE" minOccurs="0"/>
+				<xs:element ref="dsf:STOCKQTY" minOccurs="0"/>
+				<xs:element ref="dsf:CREDITBALANCE" minOccurs="0"/>
+				<xs:element ref="dsf:PRICE" minOccurs="0"/>
+				<xs:element ref="dsf:STOCKVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:COREVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:DEFAULTBINQUANTITY" minOccurs="0"/>
+    			<xs:element ref="dsf:PRINTERID" minOccurs="0"/>
+    			<xs:element ref="dsf:ISSUETEMPLATE" minOccurs="0"/>
+    			<xs:element ref="dsf:RECEIPTTEMPLATE" minOccurs="0"/>
+    			<xs:element ref="dsf:NONPOTEMPLATE" minOccurs="0"/>
+				<xs:element ref="dsf:CORERETURNTEMPLATE" minOccurs="0"/>
+    			<xs:element ref="dsf:STORETOSTORERECEIPTTEMPLATE" minOccurs="0"/>
+				<xs:element ref="dsf:LABELPRINTINGDEFAULT" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERPARTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PARTCONDITIONTEMPLATECONDITIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:REORDERCONDITIONLIST" minOccurs="0"/>
+				<xs:element ref="dsf:WARRANTYRETURNTEMPLATE" minOccurs="0"/>
+				<xs:element ref="dsf:HELDITEMSONPORECEIPTTEMPLATE" minOccurs="0"/>
+				<xs:element ref="dsf:HELDITEMSONNONPORECEIPTTEMPLATE" minOccurs="0"/>
+				<xs:element ref="dsf:HELDITEMSONSTOCKTRANSFERTEMPLATE" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="user_entity" type="xs:string"/>
+			<xs:attribute name="system_entity" type="xs:string"/>
+			<xs:attribute name="pricelevel" type="xs:string"/>
+			<xs:attribute name="currency" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

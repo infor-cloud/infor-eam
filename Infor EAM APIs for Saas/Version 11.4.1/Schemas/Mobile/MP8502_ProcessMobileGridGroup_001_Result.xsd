@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Weikang Ding (Datastream Systems, Inc) -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP8502_001" xmlns="http://schemas.datastream.net/MP_results/MP8502_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mri="http://schemas.datastream.net/MP_entities/MobileRequestInfo_001" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/MobileRequestInfo_001" schemaLocation="MobileRequestInfo_001.xsd"/>
+	<xs:element name="MP8502_ProcessMobileGridGroup_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="mri:REQUESTID"/>
+				<xs:element ref="mri:GROUPID"/>
+				<xs:element ref="mri:SUCCESS"/>
+				<xs:element ref="mri:MESSAGE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

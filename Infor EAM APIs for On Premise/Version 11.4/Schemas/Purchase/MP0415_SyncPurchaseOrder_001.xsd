@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request MP0415_SyncPurchaseOrder_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0415_001" xmlns:dpo-PurchaseOrder="http://schemas.datastream.net/MP_entities/PurchaseOrder_001" 
+xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:osf="http://www.openapplications.org/oagis_fields"
+xmlns:os="http://www.openapplications.org/oagis_segments" 
+xmlns="http://schemas.datastream.net/MP_functions/MP0415_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/PurchaseOrder_001" schemaLocation="PurchaseOrder_001.xsd"/>
+<xs:import namespace="http://www.openapplications.org/oagis_segments" schemaLocation="../oagis_segments.xsd"/>
+<xs:import namespace="http://www.openapplications.org/oagis_fields" schemaLocation="../oagis_fields.xsd"/> 	
+	<!--===============================================================================-->
+	<!--====  Begining of MP0415_SyncPurchaseOrder_001 ======================================-->
+	<xs:element name="MP0415_SyncPurchaseOrder_001">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="dsf:BaseSchemaRequestElement">		
+					<xs:sequence>
+						<xs:element ref="dpo-PurchaseOrder:PurchaseOrder"/>
+					</xs:sequence>
+					<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Sync"/>
+					<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="PurchaseOrder"/>
+					<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+					<xs:attribute name="confirm_suppref_varies" type="dsf:CONFIRMATION_Type"   
+						default="not_needed"/>
+					<xs:attribute name="confirm_supplierpolimit" type="dsf:CONFIRMATION_Type"   
+						default="not_needed"/>
+					<xs:attribute name="confirm_cancel_reqlines" type="dsf:CONFIRMATION_Type" 
+						default="not_needed"/>
+					<xs:attribute name="confirm_unfinish_polines" type="dsf:CONFIRMATION_Type" 
+						default="not_needed"/>
+					<xs:attribute name="confirm_cancel_polines" type="dsf:CONFIRMATION_Type" 
+						default="not_needed"/>
+					<xs:attribute name="is_batchpo" type="xs:boolean"/>						
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+    
+    This schema defines MP entity RepairPartStockDetail    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/RepairPartStockDetail_001" 
+xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns="http://schemas.datastream.net/MP_entities/RepairPartStockDetail_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of RepairPartStockDetail_001 =======================================-->
+	<xs:element name="RepairPartStockDetail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:REPAIRBINPK" minOccurs="0"/>
+				<xs:element ref="dsf:PARTID"/>
+				<xs:element ref="dsf:RENTITYID"/>
+				<xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:REQUISITIONLINEID" minOccurs="0"/>  
+				<xs:element ref="dsf:STOREID"/>
+				<xs:element ref="dsf:BINID"/>
+				<xs:element ref="dsf:LOTID"/>
+				<xs:element ref="dsf:ASSETID" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDQUANTITY"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

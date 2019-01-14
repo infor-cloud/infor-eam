@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<definitions targetNamespace="http://wsdls.datastream.net/MP1290_GetSupplierReturn_001" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wssi="http://schemas.xmlsoap.org/ws/2002/04/secext" xmlns:resp0="http://schemas.datastream.net/MP_results/MP1290_001" xmlns:hdr="http://schemas.datastream.net/MP_functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdls.datastream.net/MP1290_GetSupplierReturn_001" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rqst0="http://schemas.datastream.net/MP_functions/MP1290_001">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:import namespace="http://schemas.datastream.net/MP_functions" schemaLocation="../../schemas/headers.xsd"/><xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/secext" schemaLocation="../../schemas/secext.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_functions/MP1290_001" schemaLocation="../../schemas/Material/MP1290_GetSupplierReturn_001.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_results/MP1290_001" schemaLocation="../../schemas/Material/MP1290_GetSupplierReturn_001_Result.xsd"/></xsd:schema>
+  </types>
+  <message name="securityHeader">
+    <part name="securityHeader" element="wssi:Security"/>
+  </message>
+  <message name="sessionScenarioHeader">
+    <part name="sessionScenarioHeader" element="hdr:SessionScenario"/>
+  </message>
+  <message name="organizationHeader">
+    <part name="organizationHeader" element="hdr:Organization"/>
+  </message>
+  <message name="messageConfigHeader">
+    <part name="messageConfigHeader" element="hdr:MessageConfig"/>
+  </message>
+  <message name="sessionHeader">
+    <part name="sessionHeader" element="hdr:Session"/>
+  </message>
+  <message name="tenantHeader">
+    <part name="tenantHeader" element="hdr:Tenant"/>
+  </message>
+  <message name="GetSupplierReturnRequestMsg">
+    <part name="GetSupplierReturnRequestMsg" element="rqst0:MP1290_GetSupplierReturn_001"/>
+  </message>
+  <message name="GetSupplierReturnResponseMsg">
+    <part name="GetSupplierReturnResponseMsg" element="resp0:MP1290_GetSupplierReturn_001_Result"/>
+  </message>
+  <portType name="GetSupplierReturnPT">
+    <operation name="GetSupplierReturnOp">
+      <input name="GetSupplierReturnRequestMsg" message="tns:GetSupplierReturnRequestMsg"/>
+      <output name="GetSupplierReturnResponseMsg" message="tns:GetSupplierReturnResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="GetSupplierReturnSoapBinding" type="tns:GetSupplierReturnPT">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="GetSupplierReturnOp">
+      <wsdlsoap:operation soapAction="processMessage"/>
+      <input name="GetSupplierReturnRequestMsg">
+        <wsdlsoap:header message="tns:organizationHeader" part="organizationHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:securityHeader" part="securityHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionScenarioHeader" part="sessionScenarioHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:messageConfigHeader" part="messageConfigHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:tenantHeader" part="tenantHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="GetSupplierReturnRequestMsg" use="literal"/>
+      </input>
+      <output name="GetSupplierReturnResponseMsg">
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="GetSupplierReturnResponseMsg" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="GetSupplierReturnService">
+    <port name="GetSupplierReturnSoapBinding" binding="tns:GetSupplierReturnSoapBinding">
+      <wsdlsoap:address location="http://localhost/axis/services/EWSConnector"/>
+    </port>
+  </service>
+</definitions>

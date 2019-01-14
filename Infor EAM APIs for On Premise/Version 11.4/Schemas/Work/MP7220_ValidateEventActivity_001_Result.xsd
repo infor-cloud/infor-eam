@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+    This schema defines MP business function result MP7220_ValidateEventActivity_001_Result
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7220_001" xmlns="http://schemas.datastream.net/MP_results/MP7220_001" xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:os="http://www.openapplications.org/oagis_segments"
+	xmlns:osf="http://www.openapplications.org/oagis_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_segments" schemaLocation="../oagis_segments.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_fields" schemaLocation="../oagis_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP7220_ValidateEventActivity_001_Result ======================================-->
+	<xs:element name="MP7220_ValidateEventActivity_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ESTIMATEDHOURS" minOccurs="0"/>
+				<xs:element ref="dsf:HOURSREMAINING" minOccurs="0"/>
+				<xs:element ref="dsf:ACTUNITS" minOccurs="0"/>
+				<xs:element ref="dsf:ACTUOM" minOccurs="0"/>
+				<xs:element ref="dsf:TRADEID" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVITYSTARTDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVITYENDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVITYCODE" minOccurs="0"/>
+				<xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="is_multi_equip_parent" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="is_single_trade" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

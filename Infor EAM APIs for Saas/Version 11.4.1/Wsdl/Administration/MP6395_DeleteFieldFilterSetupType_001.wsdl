@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<definitions targetNamespace="http://wsdls.datastream.net/MP6395_DeleteFieldFilterSetupType_001" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wssi="http://schemas.xmlsoap.org/ws/2002/04/secext" xmlns:resp0="http://schemas.datastream.net/MP_results/MP6395_001" xmlns:hdr="http://schemas.datastream.net/MP_functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdls.datastream.net/MP6395_DeleteFieldFilterSetupType_001" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rqst0="http://schemas.datastream.net/MP_functions/MP6395_001">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:import namespace="http://schemas.datastream.net/MP_functions" schemaLocation="../../schemas/headers.xsd"/><xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/secext" schemaLocation="../../schemas/secext.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_functions/MP6395_001" schemaLocation="../../schemas/Administration/MP6395_DeleteFieldFilterSetupType_001.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_results/MP6395_001" schemaLocation="../../schemas/Administration/MP6395_DeleteFieldFilterSetupType_001_Result.xsd"/></xsd:schema>
+  </types>
+  <message name="messageConfigHeader">
+    <part name="messageConfigHeader" element="hdr:MessageConfig"/>
+  </message>
+  <message name="organizationHeader">
+    <part name="organizationHeader" element="hdr:Organization"/>
+  </message>
+  <message name="sessionHeader">
+    <part name="sessionHeader" element="hdr:Session"/>
+  </message>
+  <message name="DeleteFieldFilterSetupTypeRequestMsg">
+    <part name="DeleteFieldFilterSetupTypeRequestMsg" element="rqst0:MP6395_DeleteFieldFilterSetupType_001"/>
+  </message>
+  <message name="tenantHeader">
+    <part name="tenantHeader" element="hdr:Tenant"/>
+  </message>
+  <message name="DeleteFieldFilterSetupTypeResponseMsg">
+    <part name="DeleteFieldFilterSetupTypeResponseMsg" element="resp0:MP6395_DeleteFieldFilterSetupType_001_Result"/>
+  </message>
+  <message name="sessionScenarioHeader">
+    <part name="sessionScenarioHeader" element="hdr:SessionScenario"/>
+  </message>
+  <message name="securityHeader">
+    <part name="securityHeader" element="wssi:Security"/>
+  </message>
+  <portType name="DeleteFieldFilterSetupTypePT">
+    <operation name="DeleteFieldFilterSetupTypeOp">
+      <input name="DeleteFieldFilterSetupTypeRequestMsg" message="tns:DeleteFieldFilterSetupTypeRequestMsg"/>
+      <output name="DeleteFieldFilterSetupTypeResponseMsg" message="tns:DeleteFieldFilterSetupTypeResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="DeleteFieldFilterSetupTypeSoapBinding" type="tns:DeleteFieldFilterSetupTypePT">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="DeleteFieldFilterSetupTypeOp">
+      <wsdlsoap:operation soapAction="processMessage"/>
+      <input name="DeleteFieldFilterSetupTypeRequestMsg">
+        <wsdlsoap:header message="tns:organizationHeader" part="organizationHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:securityHeader" part="securityHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionScenarioHeader" part="sessionScenarioHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:messageConfigHeader" part="messageConfigHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:tenantHeader" part="tenantHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="DeleteFieldFilterSetupTypeRequestMsg" use="literal"/>
+      </input>
+      <output name="DeleteFieldFilterSetupTypeResponseMsg">
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="DeleteFieldFilterSetupTypeResponseMsg" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="DeleteFieldFilterSetupTypeService">
+    <port name="DeleteFieldFilterSetupTypeSoapBinding" binding="tns:DeleteFieldFilterSetupTypeSoapBinding">
+      <wsdlsoap:address location="http://localhost/axis/services/EWSConnector"/>
+    </port>
+  </service>
+</definitions>

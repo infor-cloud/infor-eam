@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function request MP0075_GetWorkOrderPartDefault_001_Result   
+==================================================================================--> 
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0075_001"
+           xmlns="http://schemas.datastream.net/MP_results/MP0075_001"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:of="http://www.openapplications.org/oagis_fields"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="MP0075_GetWorkOrderPartDefault_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultData">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="WorkOrder" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WorkOrder">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WORKORDERID"/>
+				<xs:element ref="dsf:WORKORDEREXT"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:STOREID" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSACTIONDATE"/>
+				<xs:element name="WorkOrderPart" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dsf:ACTIVITYCODE" minOccurs="0"/>
+							<xs:element ref="dsf:MATLIST" minOccurs="0"/>
+							<xs:element name="TO" type="xs:string" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attribute name="number_of_jobs" type="xs:nonNegativeInteger" default="0"/>
+			    	</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="can_issue"  type="dsf:FLAG_Type" default="true"/>
+			<xs:attribute name="can_return" type="dsf:FLAG_Type" default="true"/>
+			<xs:attribute name="SHOWLOT" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="RTNANY" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="partmultiorg" type="dsf:FLAG_Type" default="true"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

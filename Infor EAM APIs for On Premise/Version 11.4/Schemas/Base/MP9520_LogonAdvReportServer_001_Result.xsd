@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function result MP9520_LogonAdvReportServerResult_001    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP9520_001" 
+	xmlns="http://schemas.datastream.net/MP_results/MP9520_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP9520_LogonAdvReportServer_001_Result ======================================-->
+	<xs:element name="MP9520_LogonAdvReportServer_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ADVREPORTSESSION"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

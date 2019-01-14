@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- edited with XML Spy v4.0 U (http://www.xmlspy.com) by Ziad Noueihed (Development) -->
+<!-- ================================================================================
+    This schema defines MP business function result for function request MP1209_DeleteCommodity_001
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP1209_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_results/MP1209_001" elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--================================================================================-->
+        <!--================  Begining of MP1209_DeleteCommodity_001_Result ================-->
+        <xs:element name="MP1209_DeleteCommodity_001_Result">
+                <xs:complexType>
+                        <xs:sequence>
+                                <xs:element ref="ResultData"/>
+                        </xs:sequence>
+                </xs:complexType>
+        </xs:element>
+        <xs:element name="ResultData">
+                <xs:complexType>
+                        <xs:sequence>
+                                <xs:element ref="dsf:COMMODITYID"/>
+                        </xs:sequence>
+                </xs:complexType>
+        </xs:element>
+</xs:schema>

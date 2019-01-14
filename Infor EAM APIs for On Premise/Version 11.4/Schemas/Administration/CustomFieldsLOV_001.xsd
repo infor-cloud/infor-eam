@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity CustomFieldsLOV.
+=======================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CustomFieldsLOV_001"
+	xmlns="http://schemas.datastream.net/MP_entities/CustomFieldsLOV_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of CustomFieldsLOV_001 ======================================-->
+	<xs:element name="CustomFieldsLOV">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LOVCUSTOMFIELDID"/>
+				<xs:element ref="dsf:LOVCODEDESCRIPTION" minOccurs="0"/>
+				<xs:element ref="dsf:LOVVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:LOVNUMBERVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:LOVDATEVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth herein are trademarks
+  and/or registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP entity HTMLContent
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/BatchResult_001" xmlns="http://schemas.datastream.net/MP_entities/BatchResult_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mp9569="http://schemas.datastream.net/MP_results/MP9569_001" xmlns:mp9568="http://schemas.datastream.net/MP_results/MP9568_001" xmlns:mp7760="http://schemas.datastream.net/MP_results/MP7760_001" xmlns:mp7761="http://schemas.datastream.net/MP_results/MP7761_001" xmlns:mp7743="http://schemas.datastream.net/MP_results/MP7743_001" xmlns:mp7741="http://schemas.datastream.net/MP_results/MP7741_001" xmlns:mp7737="http://schemas.datastream.net/MP_results/MP7737_001" xmlns:mp7738="http://schemas.datastream.net/MP_results/MP7738_001" xmlns:mp5043="http://schemas.datastream.net/MP_results/MP5043_001" xmlns:mp7722="http://schemas.datastream.net/MP_results/MP7722_001" xmlns:mp7710="http://schemas.datastream.net/MP_results/MP7710_001" xmlns:mp7701="http://schemas.datastream.net/MP_results/MP7701_001" xmlns:mp3100="http://schemas.datastream.net/MP_results/MP3100_001" xmlns:mp3099="http://schemas.datastream.net/MP_results/MP3099_001" xmlns:mp2210="http://schemas.datastream.net/MP_results/MP2210_001" xmlns:mp3089="http://schemas.datastream.net/MP_results/MP3089_001" xmlns:mp7161="http://schemas.datastream.net/MP_results/MP7161_001" xmlns:mp7422="http://schemas.datastream.net/MP_results/MP7422_001" xmlns:mp4102="http://schemas.datastream.net/MP_results/MP4102_001" xmlns:mp0109="http://schemas.datastream.net/MP_results/MP0109_001" xmlns:mp7301="http://schemas.datastream.net/MP_results/MP7301_001" xmlns:mp7390="http://schemas.datastream.net/MP_results/MP7390_001" xmlns:mp7153="http://schemas.datastream.net/MP_results/MP7153_001" xmlns:mp3003="http://schemas.datastream.net/MP_results/MP3003_001" xmlns:mp7063="http://schemas.datastream.net/MP_results/MP7063_001" xmlns:mp0023="http://schemas.datastream.net/MP_results/MP0023_001" xmlns:mp6168="http://schemas.datastream.net/MP_results/MP6168_001" xmlns:mp0497="http://schemas.datastream.net/MP_results/MP0497_001" xmlns:mp0479="http://schemas.datastream.net/MP_results/MP0479_001" xmlns:mp7207="http://schemas.datastream.net/MP_results/MP7207_001" xmlns:mp1070="http://schemas.datastream.net/MP_results/MP1070_001" xmlns:mp1067="http://schemas.datastream.net/MP_results/MP1067_001" xmlns:mp2022="http://schemas.datastream.net/MP_results/MP2022_001" xmlns:mp7160="http://schemas.datastream.net/MP_results/MP7160_001" xmlns:mp1298="http://schemas.datastream.net/MP_results/MP1298_001" xmlns:mp0204="http://schemas.datastream.net/MP_results/MP0204_001" xmlns:mp0697="http://schemas.datastream.net/MP_results/MP0697_001" xmlns:mp1294="http://schemas.datastream.net/MP_results/MP1294_001" xmlns:mp1229="http://schemas.datastream.net/MP_results/MP1229_001" xmlns:mp7086="http://schemas.datastream.net/MP_results/MP7086_001" xmlns:mp0677="http://schemas.datastream.net/MP_results/MP0677_001" xmlns:mp0621="http://schemas.datastream.net/MP_results/MP0621_001" xmlns:mp1521="http://schemas.datastream.net/MP_results/MP1521_001" xmlns:mp3056="http://schemas.datastream.net/MP_results/MP3056_001" xmlns:mp0624="http://schemas.datastream.net/MP_results/MP0624_001" xmlns:mp0110="http://schemas.datastream.net/MP_results/MP0110_001" xmlns:mp2075="http://schemas.datastream.net/MP_results/MP2075_001" xmlns:mp7433="http://schemas.datastream.net/MP_results/MP7433_001" xmlns:mp0220="http://schemas.datastream.net/MP_results/MP0220_001" xmlns:mp1277="http://schemas.datastream.net/MP_results/MP1277_001" xmlns:mp0042="http://schemas.datastream.net/MP_results/MP0042_002" xmlns:mp0024="http://schemas.datastream.net/MP_results/MP0024_001" xmlns:mp0025="http://schemas.datastream.net/MP_results/MP0025_001" xmlns:mp2124="http://schemas.datastream.net/MP_results/MP2124_001" xmlns:mp2133="http://schemas.datastream.net/MP_results/MP2133_001" xmlns:mp1223="http://schemas.datastream.net/MP_results/MP1223_001" xmlns:mp6230="http://schemas.datastream.net/MP_results/MP6230_001" xmlns:mp0825="http://schemas.datastream.net/MP_results/MP0825_001" xmlns:mp0352="http://schemas.datastream.net/MP_results/MP0352_001" xmlns:mp0301="http://schemas.datastream.net/MP_results/MP0301_001" xmlns:mp4069="http://schemas.datastream.net/MP_results/MP4069_001" xmlns:mp7619="http://schemas.datastream.net/MP_results/MP7619_001" xmlns:mp4086="http://schemas.datastream.net/MP_results/MP4086_001" xmlns:mp4087="http://schemas.datastream.net/MP_results/MP4087_001" xmlns:mp7622="http://schemas.datastream.net/MP_results/MP7622_001" xmlns:mp7631="http://schemas.datastream.net/MP_results/MP7631_001" xmlns:mp7632="http://schemas.datastream.net/MP_results/MP7632_001" xmlns:mp4099="http://schemas.datastream.net/MP_results/MP4099_001" xmlns:mp4074="http://schemas.datastream.net/MP_results/MP4074_001" xmlns:mp2187="http://schemas.datastream.net/MP_results/MP2187_001" xmlns:mp0055="http://schemas.datastream.net/MP_results/MP0055_001" xmlns:mp2202="http://schemas.datastream.net/MP_results/MP2202_001" xmlns:mp0067="http://schemas.datastream.net/MP_results/MP0067_001" xmlns:mp5718="http://schemas.datastream.net/MP_results/MP5718_001" xmlns:mp3269="http://schemas.datastream.net/MP_results/MP3269_001" xmlns:mp7654="http://schemas.datastream.net/MP_results/MP7654_001" xmlns:mp4111="http://schemas.datastream.net/MP_results/MP4111_001" xmlns:mp8898="http://schemas.datastream.net/MP_results/MP8898_001" xmlns:mp8916="http://schemas.datastream.net/MP_results/MP8916_001" xmlns:mp5039="http://schemas.datastream.net/MP_results/MP5039_001" xmlns:mp5040="http://schemas.datastream.net/MP_results/MP5040_001" xmlns:mp5041="http://schemas.datastream.net/MP_results/MP5041_001" xmlns:mp5042="http://schemas.datastream.net/MP_results/MP5042_001" xmlns:mp7767="http://schemas.datastream.net/MP_results/MP7767_001" xmlns:mp0415="http://schemas.datastream.net/MP_results/MP0415_001" xmlns:mp0667="http://schemas.datastream.net/MP_results/MP0667_001" xmlns:mp3120="http://schemas.datastream.net/MP_results/MP3120_001" xmlns:mp3144="http://schemas.datastream.net/MP_results/MP3144_001" xmlns:mp3415="http://schemas.datastream.net/MP_results/MP3415_001" xmlns:mp3416="http://schemas.datastream.net/MP_results/MP3416_001" xmlns:mp7277="http://schemas.datastream.net/MP_results/MP7277_001" xmlns:mp7278="http://schemas.datastream.net/MP_results/MP7278_001" xmlns:mp2241="http://schemas.datastream.net/MP_results/MP2241_001" xmlns:mp2238="http://schemas.datastream.net/MP_results/MP2238_001" xmlns:mp6393="http://schemas.datastream.net/MP_results/MP6393_001" xmlns:mp6403="http://schemas.datastream.net/MP_results/MP6403_001" xmlns:mp6398="http://schemas.datastream.net/MP_results/MP6398_001" xmlns:mp7913="http://schemas.datastream.net/MP_results/MP7913_001" xmlns:mp7869="http://schemas.datastream.net/MP_results/MP7869_001" xmlns:mp7922="http://schemas.datastream.net/MP_results/MP7922_001" xmlns:mp3202="http://schemas.datastream.net/MP_results/MP3202_001" xmlns:mp2258="http://schemas.datastream.net/MP_results/MP2258_001" xmlns:mp7004="http://schemas.datastream.net/MP_results/MP7004_001" xmlns:mp7005="http://schemas.datastream.net/MP_results/MP7005_001" xmlns:mp0058="http://schemas.datastream.net/MP_results/MP0058_002" xmlns:mp2272="http://schemas.datastream.net/MP_results/MP2272_001" xmlns:mp3343="http://schemas.datastream.net/MP_results/MP3343_001" xmlns:mp3368="http://schemas.datastream.net/MP_results/MP3368_001" xmlns:mp3359="http://schemas.datastream.net/MP_results/MP3359_001" xmlns:mp0693="http://schemas.datastream.net/MP_results/MP0693_001" xmlns:mp6481="http://schemas.datastream.net/MP_results/MP6481_001" xmlns:mp2284="http://schemas.datastream.net/MP_results/MP2284_001" xmlns:mp3392="http://schemas.datastream.net/MP_results/MP3392_001" xmlns:mp2279="http://schemas.datastream.net/MP_results/MP2279_001" xmlns:mp3422="http://schemas.datastream.net/MP_results/MP3422_001" xmlns:mp3429="http://schemas.datastream.net/MP_results/MP3429_001" xmlns:mp6516="http://schemas.datastream.net/MP_results/MP6516_001" xmlns:mp1087="http://schemas.datastream.net/MP_results/MP1087_001" xmlns:mp4117="http://schemas.datastream.net/MP_results/MP4117_001" xmlns:mp2292="http://schemas.datastream.net/MP_results/MP2292_001" xmlns:mp2300="http://schemas.datastream.net/MP_results/MP2300_001" xmlns:mp5793="http://schemas.datastream.net/MP_results/MP5793_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0110_001" schemaLocation="MP0110_SyncComments_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0624_001" schemaLocation="../Administration/MP0624_SyncOrganization_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0621_001" schemaLocation="../Administration/MP0621_GetOrganization_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0677_001" schemaLocation="../Administration/MP0677_UpdateMultiOrgSecurity_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7086_001" schemaLocation="../Work/MP7086_GenerateAndReleaseWorkOrder_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP1229_001" schemaLocation="../Material/MP1229_AddReqPart_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP1294_001" schemaLocation="../Material/MP1294_SyncPhysicalInventoryLine_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0697_001" schemaLocation="../Administration/MP0697_SyncTabPermissions_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP6481_001" schemaLocation="../Administration/MP6481_SyncScreenTabAvailable_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP1298_001" schemaLocation="../Material/MP1298_SyncTempRequisitionLine_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0204_001" schemaLocation="../Material/MP0204_ApproveRequisition_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7160_001" schemaLocation="../Work/MP7160_SyncQuickSchedule_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2022_001" schemaLocation="../Material/MP2022_SyncLowStockRequisitionLine_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP1067_001" schemaLocation="../Inspection/MP1067_CopyAspectPointInfo_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP1070_001" schemaLocation="../Inspection/MP1070_ApproveInspectionResult_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7207_001" schemaLocation="../Work/MP7207_SyncWorkLoadBalanceSelection_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0023_001" schemaLocation="../Work/MP0023_AddWorkOrder_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7063_001" schemaLocation="../Work/MP7063_AddWorkRoute_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7153_001" schemaLocation="../Work/MP7153_AddRouteEquipment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3003_001" schemaLocation="../Asset/MP3003_AddRouteMap_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0479_001" schemaLocation="../Purchase/MP0479_CreatePOAndPartLineFromBO_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0497_001" schemaLocation="../Purchase/MP0497_AddInvoiceVoucherLine_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP6168_001" schemaLocation="../Administration/MP6168_SyncAuditEntity_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2075_001" schemaLocation="../Material/MP2075_SyncABCAnalysis_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7301_001" schemaLocation="../Work/MP7301_AddRepairPartDetail_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7390_001" schemaLocation="../Work/MP7390_ReplaceFleetCostCode_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP1521_001" schemaLocation="../Budget/MP1521_SyncBudgetTermPeriod_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3056_001" schemaLocation="../Asset/MP3056_AddImportTestPoint_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0352_001" schemaLocation="../Asset/MP0352_AddAssetToStructure_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0109_001" schemaLocation="../Base/MP0109_AddComments_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0301_001" schemaLocation="../Asset/MP0301_AddAssetEquipment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7422_001" schemaLocation="../Work/MP7422_AddBatchMeterReading_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7433_001" schemaLocation="../Work/MP7433_SyncReleasedPM_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0220_001" schemaLocation="../Material/MP0220_AddIssueReturnTransaction_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP1277_001" schemaLocation="../Material/MP1277_CancelPOReceiptActiveLine_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0042_002" schemaLocation="../Work/MP0042_AddLaborBooking_002_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0024_001" schemaLocation="../Work/MP0024_GetWorkOrder_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0025_001" schemaLocation="../Work/MP0025_SyncWorkOrder_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2124_001" schemaLocation="../Material/MP2124_SyncEOQ_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2133_001" schemaLocation="../Material/MP2133_DeletePackingSlip_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP1223_001" schemaLocation="../Material/MP1223_AddPickListPart_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP6230_001" schemaLocation="../Administration/MP6230_SyncD7iBuySecurity_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0825_001" schemaLocation="../DataCollection/MP0825_SyncUploadSet_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP4069_001" schemaLocation="../Purchase/MP4069_AddRFQPart_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7619_001" schemaLocation="../Work/MP7619_ReallocateDirectMaterial_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP4086_001" schemaLocation="../Purchase/MP4086_AwardRFQSelection_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP4087_001" schemaLocation="../Purchase/MP4087_CancelRFQSelection_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7622_001" schemaLocation="../Work/MP7622_SyncPMForecast_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7631_001" schemaLocation="../Work/MP7631_SyncPMForecastingPreview_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7632_001" schemaLocation="../Work/MP7632_SyncPMForecastingChildEquip_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP4099_001" schemaLocation="../Purchase/MP4099_GenerateQuotedPOLine_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP4074_001" schemaLocation="../Purchase/MP4074_AddServicesForRFQ_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP4102_001" schemaLocation="../Purchase/MP4102_GenerateQuotedRequisitionLine_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2187_001" schemaLocation="../Material/MP2187_GenerateRFQLine_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7161_001" schemaLocation="../Work/MP7161_ChangeWorkOrderStatus_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0055_001" schemaLocation="../Work/MP0055_DeleteWorkOrder_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2202_001" schemaLocation="../Material/MP2202_ValidateAndAddReqPart_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0067_001" schemaLocation="../Work/MP0067_AddMaterialListPart_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP5718_001" schemaLocation="../Work/MP5718_AddTaskPlanPart_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7654_001" schemaLocation="../Work/MP7654_SyncRevisionControlSetup_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP4111_001" schemaLocation="../Purchase/MP4111_ValidateAndAddPartForPO_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP8898_001" schemaLocation="../DataBridge/MP8898_RunMPProcess_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP8916_001" schemaLocation="../DataBridge/MP8916_UpdateMessageStatus_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3089_001" schemaLocation="../Asset/MP3089_ProcessEquipmentEvaluationEquipment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2210_001" schemaLocation="../Material/MP2210_ProcessPartEvaluationParts_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3099_001" schemaLocation="../Asset/MP3099_RefreshEquipmentEvaluationCostAnalysis_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3100_001" schemaLocation="../Asset/MP3100_CreateEquipmentEvaluationCapitalPlanRequest_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7701_001" schemaLocation="../Work/MP7701_RefreshPMScheduleResources_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7710_001" schemaLocation="../Work/MP7710_SyncGenerateProductionRequestWOPreview_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7722_001" schemaLocation="../Work/MP7722_SyncProductionRequestPreview_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP5039_001" schemaLocation="../Project/MP5039_AddCampaignEquipment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP5040_001" schemaLocation="../Project/MP5040_DeleteCampaignEquipment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP5041_001" schemaLocation="../Project/MP5041_ChangeCampaignEquipmentSurveyLineStatus_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP5042_001" schemaLocation="../Project/MP5042_UnlinkCampaignEquipmentSurveyWorkOrders_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP5043_001" schemaLocation="../Project/MP5043_PurgeCampaignEquipmentErrors_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7738_001" schemaLocation="../Work/MP7738_SyncCampaignEquipment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7737_001" schemaLocation="../Work/MP7737_SyncWOLaborSchedulingEquipmentPreview_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7741_001" schemaLocation="../Work/MP7741_SyncWOLaborSchedulingWOActivityPreview_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7743_001" schemaLocation="../Work/MP7743_SyncWOLaborSchedulingEmployeePreview_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7761_001" schemaLocation="../Work/MP7761_AddMaintenancePatternEquipment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7760_001" schemaLocation="../Work/MP7760_DeactivateMPEquipment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7767_001" schemaLocation="../Work/MP7767_ActivateMaintenancePatternEquipment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0415_001" schemaLocation="../Purchase/MP0415_SyncPurchaseOrder_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3120_001" schemaLocation="../Asset/MP3120_SyncReliabilityRankingLevel_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3144_001" schemaLocation="../Asset/MP3144_SyncReliabilityRankingValuesEquipment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3415_001" schemaLocation="../Asset/MP3415_SetDefaultEquipmentRankingValuesEquipment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3416_001" schemaLocation="../Asset/MP3416_DetachEquipmentRankingValuesEquipment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7277_001" schemaLocation="../Work/MP7277_ApproveRevisionControl_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7278_001" schemaLocation="../Work/MP7278_RejectRevisionControl_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2241_001" schemaLocation="../Material/MP2241_SyncBreakupKitPart_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2238_001" schemaLocation="../Material/MP2238_SyncKitSessionPart_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0667_001" schemaLocation="../Administration/MP0667_AddUserOrganization_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP6393_001" schemaLocation="../Administration/MP6393_AddFieldFilterSetupType_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP6403_001" schemaLocation="../Administration/MP6403_AddFieldFilterSetupWOEquipmentType_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP6398_001" schemaLocation="../Administration/MP6398_AddFieldFilterSetupClass_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7913_001" schemaLocation="../Work/MP7913_SyncWorkOrderActivityCheckList_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7869_001" schemaLocation="../Work/MP7869_AddCustomerContractContractItem_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7922_001" schemaLocation="../ContactCenter/MP7922_SyncContactRecordHospitalityIncidentRequest_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3202_001" schemaLocation="../Asset/MP3202_SyncAssetInventoryResult_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2258_001" schemaLocation="../Administration/MP2258_SyncHiddenDataspy_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3269_001" schemaLocation="../Asset/MP3269_SyncEquipmentRCMFunction_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7004_001" schemaLocation="../Work/MP7004_AddPMScheduleEquipment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP7005_001" schemaLocation="../Work/MP7005_SyncPMScheduleEquipment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0058_002" schemaLocation="../Work/MP0058_SyncWorkOrderSchedule_002_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2272_001" schemaLocation="../Material/MP2272_ImportPartWarrantyClaimPart_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3343_001" schemaLocation="../Asset/MP3343_AddEquipmentSupplierServiceCode_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3368_001" schemaLocation="../Asset/MP3368_SyncWorkspaceMoveAssociation_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3359_001" schemaLocation="../Asset/MP3359_SyncWorkspaceMove_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP0693_001" schemaLocation="../Administration/MP0693_SyncFunctionPermissions_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP9568_001" schemaLocation="../Base/MP9568_AddHyperlinkURLParameter_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP9569_001" schemaLocation="../Base/MP9569_SyncHyperlinkURLParameter_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2284_001" schemaLocation="../Material/MP2284_SyncLaborRequisitionSelection_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3392_001" schemaLocation="../Asset/MP3392_AddNonconformityTypePart_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2279_001" schemaLocation="../Material/MP2279_AddPartNonconformityType_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3422_001" schemaLocation="../Asset/MP3422_AddEquipmentSegment_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP3429_001" schemaLocation="../Asset/MP3429_AddEquipmentRoute_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP6516_001" schemaLocation="../Administration/MP6516_CopyScreenDataspy_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP1087_001" schemaLocation="../Inspection/MP1087_AddAspectNonconformityType_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP4117_001" schemaLocation="../Purchase/MP4117_ValidateAndAddSupplierCatalogRefPartForPO_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2292_001" schemaLocation="../Material/MP2292_AddPackagePart_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP2300_001" schemaLocation="../Material/MP2300_SyncIssueReturnPackagePart_001_Result.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_results/MP5793_001" schemaLocation="../Work/MP5793_ValidateLaborRequisitionActivity_001_Result.xsd"/>
+	<xs:element name="BatchResult">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="BatchResultContainer" type="BatchResultElementType"/>
+			</xs:sequence>
+			<xs:attribute name="commitFlag" type="xs:string"/>
+			<xs:attribute name="lastRowIdProcessed" type="xs:integer"/>
+			<xs:attribute name="globalError" type="xs:boolean"/>
+			<xs:attribute name="error" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="BatchResultElementType">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element ref="mp0110:MP0110_SyncComments_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0624:MP0624_SyncOrganization_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0621:MP0621_GetOrganization_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0677:MP0677_UpdateMultiOrgSecurity_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7086:MP7086_GenerateAndReleaseWorkOrder_001_Result" minOccurs="0"/>
+				<xs:element ref="mp1229:MP1229_AddReqPart_001_Result" minOccurs="0"/>
+				<xs:element ref="mp1294:MP1294_SyncPhysicalInventoryLine_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0697:MP0697_SyncTabPermissions_001_Result" minOccurs="0"/>
+				<xs:element ref="mp6481:MP6481_SyncScreenTabAvailable_001_Result" minOccurs="0"/>
+				<xs:element ref="mp1298:MP1298_SyncTempRequisitionLine_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0204:MP0204_ApproveRequisition_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7160:MP7160_SyncQuickSchedule_001_Result" minOccurs="0"/>
+				<xs:element ref="mp2022:MP2022_SyncLowStockRequisitionLine_001_Result" minOccurs="0"/>
+				<xs:element ref="mp1067:MP1067_CopyAspectPointInfo_001_Result" minOccurs="0"/>
+				<xs:element ref="mp1070:MP1070_ApproveInspectionResult_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7207:MP7207_SyncWorkLoadBalanceSelection_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0479:MP0479_CreatePOAndPartLineFromBO_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0497:MP0497_AddInvoiceVoucherLine_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7153:MP7153_AddRouteEquipment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7063:MP7063_AddWorkRoute_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0023:MP0023_AddWorkOrder_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3003:MP3003_AddRouteMap_001_Result" minOccurs="0"/>
+				<xs:element ref="mp6168:MP6168_SyncAuditEntity_001_Result" minOccurs="0"/>
+				<xs:element ref="mp2075:MP2075_SyncABCAnalysis_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7301:MP7301_AddRepairPartDetail_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7390:MP7390_ReplaceFleetCostCode_001_Result" minOccurs="0"/>
+				<xs:element ref="mp1521:MP1521_SyncBudgetTermPeriod_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3056:MP3056_AddImportTestPoint_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0352:MP0352_AddAssetToStructure_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0109:MP0109_AddComments_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0301:MP0301_AddAssetEquipment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7422:MP7422_AddBatchMeterReading_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7433:MP7433_SyncReleasedPM_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0220:MP0220_AddIssueReturnTransaction_001_Result" minOccurs="0"/>
+				<xs:element ref="mp1277:MP1277_CancelPOReceiptActiveLine_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0042:MP0042_AddLaborBooking_002_Result" minOccurs="0"/>
+				<xs:element ref="mp0024:MP0024_GetWorkOrder_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0025:MP0025_SyncWorkOrder_001_Result" minOccurs="0"/>
+				<xs:element ref="mp2124:MP2124_SyncEOQ_001_Result" minOccurs="0"/>
+				<xs:element ref="mp2133:MP2133_DeletePackingSlip_001_Result" minOccurs="0"/>
+				<xs:element ref="mp1223:MP1223_AddPickListPart_001_Result" minOccurs="0"/>
+				<xs:element ref="mp6230:MP6230_SyncD7iBuySecurity_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0825:MP0825_SyncUploadSet_001_Result" minOccurs="0"/>
+				<xs:element ref="mp4069:MP4069_AddRFQPart_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7619:MP7619_ReallocateDirectMaterial_001_Result" minOccurs="0"/>
+				<xs:element ref="mp4086:MP4086_AwardRFQSelection_001_Result" minOccurs="0"/>
+				<xs:element ref="mp4087:MP4087_CancelRFQSelection_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7622:MP7622_SyncPMForecast_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7631:MP7631_SyncPMForecastingPreview_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7632:MP7632_SyncPMForecastingChildEquip_001_Result" minOccurs="0"/>
+				<xs:element ref="mp4099:MP4099_GenerateQuotedPOLine_001_Result" minOccurs="0"/>
+				<xs:element ref="mp4074:MP4074_AddServicesForRFQ_001_Result" minOccurs="0"/>
+				<xs:element ref="mp4102:MP4102_GenerateQuotedRequisitionLine_001_Result" minOccurs="0"/>
+				<xs:element ref="mp2187:MP2187_GenerateRFQLine_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7161:MP7161_ChangeWorkOrderStatus_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0055:MP0055_DeleteWorkOrder_001_Result" minOccurs="0"/>
+				<xs:element ref="mp2202:MP2202_ValidateAndAddReqPart_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0067:MP0067_AddMaterialListPart_001_Result" minOccurs="0"/>
+				<xs:element ref="mp5718:MP5718_AddTaskPlanPart_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7654:MP7654_SyncRevisionControlSetup_001_Result" minOccurs="0"/>
+				<xs:element ref="mp4111:MP4111_ValidateAndAddPartForPO_001_Result" minOccurs="0"/>
+				<xs:element ref="mp8898:MP8898_RunMPProcess_001_Result" minOccurs="0"/>
+				<xs:element ref="mp8916:MP8916_UpdateMessageStatus_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3089:MP3089_ProcessEquipmentEvaluationEquipment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp2210:MP2210_ProcessPartEvaluationParts_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3099:MP3099_RefreshEquipmentEvaluationCostAnalysis_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3100:MP3100_CreateEquipmentEvaluationCapitalPlanRequest_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7701:MP7701_RefreshPMScheduleResources_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7710:MP7710_SyncGenerateProductionRequestWOPreview_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7722:MP7722_SyncProductionRequestPreview_001_Result" minOccurs="0"/>
+				<xs:element ref="mp5039:MP5039_AddCampaignEquipment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp5040:MP5040_DeleteCampaignEquipment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp5041:MP5041_ChangeCampaignEquipmentSurveyLineStatus_001_Result" minOccurs="0"/>
+				<xs:element ref="mp5042:MP5042_UnlinkCampaignEquipmentSurveyWorkOrders_001_Result" minOccurs="0"/>
+				<xs:element ref="mp5043:MP5043_PurgeCampaignEquipmentErrors_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7738:MP7738_SyncCampaignEquipment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7737:MP7737_SyncWOLaborSchedulingEquipmentPreview_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7741:MP7741_SyncWOLaborSchedulingWOActivityPreview_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7743:MP7743_SyncWOLaborSchedulingEmployeePreview_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7761:MP7761_AddMaintenancePatternEquipment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7760:MP7760_DeactivateMPEquipment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7767:MP7767_ActivateMaintenancePatternEquipment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0415:MP0415_SyncPurchaseOrder_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3120:MP3120_SyncReliabilityRankingLevel_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3144:MP3144_SyncReliabilityRankingValuesEquipment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3415:MP3415_SetDefaultEquipmentRankingValuesEquipment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3416:MP3416_DetachEquipmentRankingValuesEquipment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7277:MP7277_ApproveRevisionControl_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7278:MP7278_RejectRevisionControl_001_Result" minOccurs="0"/>
+				<xs:element ref="mp2241:MP2241_SyncBreakupKitPart_001_Result" minOccurs="0"/>
+				<xs:element ref="mp2238:MP2238_SyncKitSessionPart_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0667:MP0667_AddUserOrganization_001_Result" minOccurs="0"/>
+				<xs:element ref="mp6393:MP6393_AddFieldFilterSetupType_001_Result" minOccurs="0"/>
+				<xs:element ref="mp6403:MP6403_AddFieldFilterSetupWOEquipmentType_001_Result" minOccurs="0"/>
+				<xs:element ref="mp6398:MP6398_AddFieldFilterSetupClass_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7913:MP7913_SyncWorkOrderActivityCheckList_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7869:MP7869_AddCustomerContractContractItem_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7922:MP7922_SyncContactRecordHospitalityIncidentRequest_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3202:MP3202_SyncAssetInventoryResult_001_Result" minOccurs="0"/>
+				<xs:element ref="mp2258:MP2258_SyncHiddenDataspy_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3269:MP3269_SyncEquipmentRCMFunction_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7004:MP7004_AddPMScheduleEquipment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp7005:MP7005_SyncPMScheduleEquipment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0058:MP0058_SyncWorkOrderSchedule_002_Result" minOccurs="0"/>
+				<xs:element ref="mp2272:MP2272_ImportPartWarrantyClaimPart_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3343:MP3343_AddEquipmentSupplierServiceCode_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3368:MP3368_SyncWorkspaceMoveAssociation_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3359:MP3359_SyncWorkspaceMove_001_Result" minOccurs="0"/>
+				<xs:element ref="mp0693:MP0693_SyncFunctionPermissions_001_Result" minOccurs="0"/>
+				<xs:element ref="mp9568:MP9568_AddHyperlinkURLParameter_001_Result" minOccurs="0"/>
+				<xs:element ref="mp9569:MP9569_SyncHyperlinkURLParameter_001_Result" minOccurs="0"/>
+				<xs:element ref="mp2284:MP2284_SyncLaborRequisitionSelection_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3392:MP3392_AddNonconformityTypePart_001_Result" minOccurs="0"/>
+				<xs:element ref="mp2279:MP2279_AddPartNonconformityType_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3422:MP3422_AddEquipmentSegment_001_Result" minOccurs="0"/>
+				<xs:element ref="mp3429:MP3429_AddEquipmentRoute_001_Result" minOccurs="0"/>
+				<xs:element ref="mp6516:MP6516_CopyScreenDataspy_001_Result" minOccurs="0"/>
+				<xs:element ref="mp1087:MP1087_AddAspectNonconformityType_001_Result" minOccurs="0"/>
+				<xs:element ref="mp4117:MP4117_ValidateAndAddSupplierCatalogRefPartForPO_001_Result" minOccurs="0"/>
+				<xs:element ref="mp2292:MP2292_AddPackagePart_001_Result" minOccurs="0"/>
+				<xs:element ref="mp2300:MP2300_SyncIssueReturnPackagePart_001_Result" minOccurs="0"/>
+				<xs:element ref="mp5793:MP5793_ValidateLaborRequisitionActivity_001_Result" minOccurs="0"/>
+			</xs:choice>
+			<xs:element ref="BatchMessage" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="elementName" type="xs:string"/>
+		<xs:attribute name="rowid" type="xs:integer"/>
+	</xs:complexType>
+	<xs:element name="BatchMessage">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ReasonCode" type="xs:integer"/>
+				<xs:element name="MessageStr" type="xs:string" minOccurs="0"/>
+				<xs:element name="LocalMessageStr" type="xs:string" minOccurs="0"/>
+				<xs:element ref="BatchMessage" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="functionid" type="xs:string"/>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="type" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

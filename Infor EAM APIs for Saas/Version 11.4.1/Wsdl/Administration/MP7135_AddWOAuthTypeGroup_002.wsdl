@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<definitions targetNamespace="http://wsdls.datastream.net/MP7135_AddWOAuthTypeGroup_002" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wssi="http://schemas.xmlsoap.org/ws/2002/04/secext" xmlns:resp0="http://schemas.datastream.net/MP_results/MP7135_002" xmlns:hdr="http://schemas.datastream.net/MP_functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdls.datastream.net/MP7135_AddWOAuthTypeGroup_002" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rqst0="http://schemas.datastream.net/MP_functions/MP7135_002">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:import namespace="http://schemas.datastream.net/MP_functions" schemaLocation="../../schemas/headers.xsd"/><xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/secext" schemaLocation="../../schemas/secext.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_functions/MP7135_002" schemaLocation="../../schemas/Administration/MP7135_AddWOAuthTypeGroup_002.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_results/MP7135_002" schemaLocation="../../schemas/Administration/MP7135_AddWOAuthTypeGroup_002_Result.xsd"/></xsd:schema>
+  </types>
+  <message name="AddWOAuthTypeGroupRequestMsg">
+    <part name="AddWOAuthTypeGroupRequestMsg" element="rqst0:MP7135_AddWOAuthTypeGroup_002"/>
+  </message>
+  <message name="securityHeader">
+    <part name="securityHeader" element="wssi:Security"/>
+  </message>
+  <message name="sessionScenarioHeader">
+    <part name="sessionScenarioHeader" element="hdr:SessionScenario"/>
+  </message>
+  <message name="sessionHeader">
+    <part name="sessionHeader" element="hdr:Session"/>
+  </message>
+  <message name="organizationHeader">
+    <part name="organizationHeader" element="hdr:Organization"/>
+  </message>
+  <message name="messageConfigHeader">
+    <part name="messageConfigHeader" element="hdr:MessageConfig"/>
+  </message>
+  <message name="AddWOAuthTypeGroupResponseMsg">
+    <part name="AddWOAuthTypeGroupResponseMsg" element="resp0:MP7135_AddWOAuthTypeGroup_002_Result"/>
+  </message>
+  <message name="tenantHeader">
+    <part name="tenantHeader" element="hdr:Tenant"/>
+  </message>
+  <portType name="AddWOAuthTypeGroupPT">
+    <operation name="AddWOAuthTypeGroupOp">
+      <input name="AddWOAuthTypeGroupRequestMsg" message="tns:AddWOAuthTypeGroupRequestMsg"/>
+      <output name="AddWOAuthTypeGroupResponseMsg" message="tns:AddWOAuthTypeGroupResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="AddWOAuthTypeGroupSoapBinding" type="tns:AddWOAuthTypeGroupPT">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="AddWOAuthTypeGroupOp">
+      <wsdlsoap:operation soapAction="processMessage"/>
+      <input name="AddWOAuthTypeGroupRequestMsg">
+        <wsdlsoap:header message="tns:organizationHeader" part="organizationHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:securityHeader" part="securityHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionScenarioHeader" part="sessionScenarioHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:messageConfigHeader" part="messageConfigHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:tenantHeader" part="tenantHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="AddWOAuthTypeGroupRequestMsg" use="literal"/>
+      </input>
+      <output name="AddWOAuthTypeGroupResponseMsg">
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="AddWOAuthTypeGroupResponseMsg" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="AddWOAuthTypeGroupService">
+    <port name="AddWOAuthTypeGroupSoapBinding" binding="tns:AddWOAuthTypeGroupSoapBinding">
+      <wsdlsoap:address location="http://localhost/axis/services/EWSConnector"/>
+    </port>
+  </service>
+</definitions>

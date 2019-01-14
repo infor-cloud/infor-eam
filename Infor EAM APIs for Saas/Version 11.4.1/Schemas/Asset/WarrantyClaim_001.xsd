@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity WarrantyClaim
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WarrantyClaim_001" 
+           xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://schemas.datastream.net/MP_entities/WarrantyClaim_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of WarrantyClaim ======================================-->
+	<xs:element name="WarrantyClaim">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="WarrantyClaimBasicInformation"/>
+				<xs:element ref="WorkOrderInformation"/>
+				<xs:element ref="WorkCosts" minOccurs="0"/>
+				<xs:element ref="AdditionalEquipmentInformation" minOccurs="0"/>
+				<xs:element ref="PurchasingInformation" minOccurs="0"/>
+				<xs:element ref="MiscellaneousCosts" minOccurs="0"/>
+				<xs:element ref="Approval" minOccurs="0"/>
+				<xs:element ref="SettlementDetails" minOccurs="0"/>
+				<xs:element ref="AmountSummary" minOccurs="0"/>
+				<xs:element ref="AdditionalActivityInformation" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>		
+	<xs:element name="WarrantyClaimBasicInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WARRANTYCLAIMID"/>		
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:WARRANTYID" minOccurs="0"/>
+				<xs:element ref="dsf:REFERENCE" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:DATEFILED"/>
+				<xs:element ref="dsf:DATEREPORTED" minOccurs="0"/>
+				<xs:element ref="dsf:REQUISITIONLINEID" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+				<xs:element ref="dsf:RMANUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="isrmarequired" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="WorkOrderInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice minOccurs="0">		
+					<xs:element ref="dsf:WORKORDERID" minOccurs="0"/>	
+					<xs:element ref="dsf:ACTIVITYID" minOccurs="0"/>
+				</xs:choice>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>										
+				<xs:element ref="dsf:COMMISSIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:USAGE" minOccurs="0"/>
+				<xs:element ref="dsf:UOMID" minOccurs="0"/>
+				<xs:element ref="TopParent" minOccurs="0"/>
+				<xs:element ref="dsf:COMMISSIONINGWORKORDERID" minOccurs="0"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="TopParent">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>	
+				<xs:element ref="dsf:USAGE" minOccurs="0"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>			
+	<xs:element name="WorkCosts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:STOCKMATERIALCOST" minOccurs="0"/>
+				<xs:element ref="dsf:DIRECTPURCHASECOST" minOccurs="0"/>
+				<xs:element ref="dsf:INHOUSELABORCOST" minOccurs="0"/>						
+				<xs:element ref="dsf:HIREDLABORCOST" minOccurs="0"/>
+				<xs:element ref="dsf:SERVICECOST" minOccurs="0"/>
+				<xs:element ref="dsf:TOOLCOST" minOccurs="0"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="MiscellaneousCosts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:OTHERCLAIMAMOUNT" minOccurs="0"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>		
+	<xs:element name="Approval">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:APPROVEDATE"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="SettlementDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DATERESOLVED" minOccurs="0"/>
+				<xs:element ref="SettlementAmounts" minOccurs="0"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="SettlementAmounts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:STOCKMATERIALCOST" minOccurs="0"/>
+				<xs:element ref="dsf:DIRECTPURCHASECOST" minOccurs="0"/>
+				<xs:element ref="dsf:INHOUSELABORCOST" minOccurs="0"/>						
+				<xs:element ref="dsf:HIREDLABORCOST" minOccurs="0"/>
+				<xs:element ref="dsf:SERVICECOST" minOccurs="0"/>
+				<xs:element ref="dsf:TOOLCOST" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERCOST" minOccurs="0"/>				
+				<xs:element ref="dsf:OTHERCLAIMAMOUNT" minOccurs="0"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="AmountSummary">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WORKORDERCOST"/>
+				<xs:element ref="dsf:TOTALCLAIMAMOUNT"/>
+				<xs:element ref="dsf:TOTALSETTLEMENTAMOUNT" minOccurs="0"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>		
+	<xs:element name="PurchasingInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PURCHASEORDERLINEID" minOccurs="0"/>
+				<xs:element ref="dsf:PARTID" minOccurs="0"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="AdditionalEquipmentInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SERIALNUMBER" minOccurs="0"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>				
+	<xs:element name="AdditionalActivityInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:VMRSCODE" minOccurs="0"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>				
+	
+</xs:schema>

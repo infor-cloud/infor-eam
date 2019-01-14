@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity for Approve Customer Charges
+================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CustomerCharge_001"
+	xmlns="http://schemas.datastream.net/MP_entities/CustomerCharge_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of CustomerCharge_001 ======= -->
+	<xs:element name="CustomerCharge">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CustomerChargeBaseData"/>
+				<xs:element ref="dsf:RUNDATE"/>
+				<xs:element ref="dsf:CUSTOMERID" minOccurs="0"/>
+				<xs:element ref="dsf:ORIGINATORID" minOccurs="0"/>
+				<xs:element ref="dsf:CUSTOMERCONTRACTID" minOccurs="0"/>
+				<xs:element ref="dsf:CUSTOMERCHARGECOSTS"/>
+				<xs:element ref="dsf:CUSTOMERCHARGECALCULATEDCOSTS"/>
+				<xs:element ref="dsf:CUSTOMERCHARGEPRICE"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CustomerChargeBaseData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CUSTOMERCHARGEID"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:CONTINUECHARGING" minOccurs="0"/>
+				<xs:element ref="dsf:COMMENT" minOccurs="0"/>
+				<xs:element ref="dsf:CUSTOMERCHARGECORRECTIONS" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

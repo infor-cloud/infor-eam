@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity Permit Association 
+==================================================================================-->  
+ 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PermitAssociation_001" 
+xmlns="http://schemas.datastream.net/MP_entities/PermitAssociation_001" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" 
+        schemaLocation="../MP_fields.xsd"/>
+        <!-- ======= Beginning of PermitAssociation_001 ======= -->
+        <xs:element name="PermitAssociation">
+                <xs:complexType>
+                        <xs:sequence>
+                                <xs:element ref="dsf:PERMITASSOCIATIONID"/>
+                                <xs:element ref="dsf:MANDATORY" minOccurs="0"/>
+                                <xs:element ref="dsf:AUTOCREATEPERMITTOWORK" minOccurs="0"/>
+                                <xs:element ref="dsf:PERMITTOWORKTYPE" minOccurs="0"/>
+                                <xs:element ref="dsf:TYPEOFWORK" minOccurs="0"/>
+				                <xs:element ref="dsf:PRIORITY" minOccurs="0"/>
+				                <xs:element ref="dsf:PERMITRISK" minOccurs="0"/>
+				                <xs:element ref="dsf:LOTOREQUIRED" minOccurs="0" />
+				                <xs:element ref="dsf:ISOLATIONTYPE" minOccurs="0"/>
+				                <xs:element ref="dsf:APPLYTOCHILDREN" minOccurs="0"/>
+				                <xs:element ref="dsf:DELETEPENDING" minOccurs="0"/>		                
+				                <xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+				                <xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				                <xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+				                <xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+				                <xs:element ref="dsf:DATEREVIEWED" minOccurs="0"/>
+				                <xs:element ref="dsf:REVIEWEDBYESIGN" minOccurs="0"/>
+				                <xs:element ref="dsf:REVIEWTRIGGER" minOccurs="0"/>
+				                <xs:element ref="dsf:ACTIVITYCODE"  minOccurs="0"/>
+								<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+                        </xs:sequence>
+                        <xs:attribute name="recordid" type="xs:long"/>
+                        <xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+                </xs:complexType>
+        </xs:element>        
+</xs:schema>

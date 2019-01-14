@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity DeliveryAddress
+================================================================================== -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/DeliveryAddress_001"
+	xmlns="http://schemas.datastream.net/MP_entities/DeliveryAddress_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of DeliveryAddress_001 ======= -->
+	<xs:element name="DeliveryAddress">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DELIVERYADDRESSID"/>
+				<xs:element ref="dsf:DELADDRESS"/>
+				<xs:element ref="dsf:OUTOFSERVICE"/>
+				<xs:element ref="BUYFIELDS" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BUYFIELDS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:STREETADDRESS1" minOccurs="0"/>
+				<xs:element ref="dsf:STREETADDRESS2" minOccurs="0"/>
+				<xs:element ref="dsf:STREETADDRESS3" minOccurs="0"/>
+				<xs:element ref="dsf:CITY" minOccurs="0"/>
+				<xs:element ref="dsf:STATE" minOccurs="0"/>
+				<xs:element ref="dsf:ZIP" minOccurs="0"/>
+				<xs:element ref="dsf:COUNTRY" minOccurs="0"/>
+				<xs:element ref="dsf:PHONE" minOccurs="0"/>
+				<xs:element ref="dsf:EXTENSION" minOccurs="0"/>
+				<xs:element ref="dsf:FAX" minOccurs="0"/>
+				<xs:element ref="dsf:EMAIL" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

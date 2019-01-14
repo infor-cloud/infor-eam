@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity UserSetupDefault
+ ============================================================================= -->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/UserSetupDefault_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/UserSetupDefault_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of UserSetupDefault_001 ======================================-->
+	<xs:element name="UserSetupDefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ISACTIVE" minOccurs="0"/>
+				<xs:element ref="dsf:MSGTIMEOUT" minOccurs="0"/>
+				<xs:element ref="dsf:LOCALE" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWDATASPYEDIT" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWDATASPYADVANCEDFILTERS" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWEDITOTHERSCOMMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWEDITOWNCOMMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWCANCELDAILYSCHEDULESESSION" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWSCREENCACHESETUP" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWCREATINGIMPORTUTILITYTEMPLATE" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWVIEWINGAUDITTRAIL" minOccurs="0"/>
+				<xs:element ref="dsf:ENABLESCREENCACHEDECK" minOccurs="0"/>
+				<xs:element ref="dsf:ENABLETRANSITIONANIMATIONS" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWCHANGESTOMOBILESETTINGS" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWUPDATEFIELDOPTION" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

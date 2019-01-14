@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+   Copyright (c) 2014 Infor. All rights reserved. The word and design marks set 
+   forth herein are trademarks and/or registered trademarks of Infor and/or 
+   related affiliates and subsidiaries. All rights reserved. All other 
+   trademarks listed herein are the property of their respective owners. 
+   www.infor.com.
+ ============================================================================= -->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/DepreciationDefault_001" xmlns="http://schemas.datastream.net/MP_entities/DepreciationDefault_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of DepreciationDefault_001 ======= -->
+	<xs:element name="DepreciationDefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPRECIATIONMETHOD"/>
+				<xs:element ref="dsf:RSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:FROMDATE" minOccurs="0"/>
+				<xs:element ref="dsf:RESIDUALVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:DEPRECIATIONCATEGORYID" minOccurs="0"/>
+				<xs:element ref="dsf:ORIGINALVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDOUTPUT" minOccurs="0"/>
+				<xs:element ref="RemainingUsefulLife" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+			<xs:attribute name="has_suspend_depreciation" type="dsf:FLAG_Type"/>
+			<xs:attribute name="has_unitsofoutput_depreciation" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RemainingUsefulLife">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ESTIMATEDLIFE" minOccurs="0"/>
+				<xs:element ref="dsf:UOMID" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

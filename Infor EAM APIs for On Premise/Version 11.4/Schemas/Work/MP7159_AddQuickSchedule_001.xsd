@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<!-- ================================================================================
+    This schema defines MP business function request MP7159_AddQuickSchedule_001
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP7159_001" xmlns:dsf="http://schemas.datastream.net/MP_fields"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dse-qsch="http://schemas.datastream.net/MP_entities/QuickScheduleForAdd_001" 
+xmlns:osf="http://www.openapplications.org/oagis_fields"
+xmlns:os="http://www.openapplications.org/oagis_segments" xmlns="http://schemas.datastream.net/MP_functions/MP7159_001"  elementFormDefault="qualified">
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<xs:import namespace="http://schemas.datastream.net/MP_entities/QuickScheduleForAdd_001" schemaLocation="QuickScheduleForAdd_001.xsd"/> 
+<xs:import namespace="http://www.openapplications.org/oagis_segments" schemaLocation="../oagis_segments.xsd"/>
+<xs:import namespace="http://www.openapplications.org/oagis_fields" schemaLocation="../oagis_fields.xsd"/> 
+        <!--===============================================================================-->
+        <!--====  Begining of MP7159_AddQuickSchedule_001 ======================================-->
+        <xs:element name="MP7159_AddQuickSchedule_001">
+                <xs:complexType>
+                        <xs:complexContent>
+                                <xs:extension base="dsf:BaseSchemaRequestElement">              
+                                        <xs:sequence>
+                                                <xs:element ref="dse-qsch:QuickScheduleForAdd"/>
+                                        </xs:sequence>
+                                        <xs:attribute name="verb" type="dsf:VERB_Type" fixed="Add"/>
+                                        <xs:attribute name="noun" type="dsf:NOUN_Type" fixed="QuickSchedule"/>
+                                        <xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+                                        <xs:attribute name="confirm_workingday" type="dsf:WOSCHEDCONFIRMATION_Type"  default="userequestedday"/>
+                                        <xs:attribute name="productiondaterangeconfirmation" type="dsf:CONFIRMATION_Type" default="prompt"/>
+                                </xs:extension>
+                        </xs:complexContent>                                    
+                </xs:complexType>
+        </xs:element>
+</xs:schema>
+

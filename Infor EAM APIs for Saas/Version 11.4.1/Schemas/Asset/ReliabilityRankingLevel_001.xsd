@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2011 Infor.All rights reserved.The word and design marks set
+	forth herein are trademarks and/or registered trademarks of Infor and/or
+	related affiliates and subsidiaries.All rights reserved.All other trademarks
+	listed herein are the property of their respective owners.www.infor.com.
+	
+	This schema defines MP entity ReliabilityRankingLevel_001
+ ================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ReliabilityRankingLevel_001"
+	xmlns="http://schemas.datastream.net/MP_entities/ReliabilityRankingLevel_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===========================================================================-->
+	<!-- ==================== Beginning of ReliabilityRankingLevel_001 ================ -->
+	<xs:element name="ReliabilityRankingLevel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:RELIABILITYRANKINGID"/>
+				<xs:element ref="dsf:RELIABILITYRANKINGLEVELPK"/>
+				<xs:element ref="dsf:LEVELCODE"/>
+				<xs:element ref="dsf:LEVELDESCRIPTION"/>
+				<xs:element ref="dsf:LEVELPARENT" minOccurs="0"/>
+				<xs:element ref="dsf:QUESTIONLEVEL" minOccurs="0"/>
+				<xs:element ref="dsf:QUESTION" minOccurs="0"/>
+				<xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:FORMULA" minOccurs="0"/>
+				<xs:element ref="dsf:NUMERIC" minOccurs="0"/>
+				<xs:element ref="dsf:INTEGER" minOccurs="0"/>
+				<xs:element ref="dsf:MINIMUM" minOccurs="0"/>
+				<xs:element ref="dsf:MAXIMUM" minOccurs="0"/>
+				<xs:element ref="dsf:CALCULATED" minOccurs="0"/>
+				<xs:element ref="dsf:QUERYCODE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!-- ================================================================================ 
+    Copyright 2003, Datastream Systems, Inc. 
+    50 Datastream Plaza, Greenville, SC 29605, USA. 
+    All rights reserved. 
+
+    This schema defines MP entity GLCodeCombination_001
+    ==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/GLCodeCombination_001" xmlns="http://schemas.datastream.net/MP_entities/GLCodeCombination_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of GLCodeCombination_001 ======================================-->
+	<xs:element name="GLCodeCombination">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CODECOMBINATIONID"/>
+				<xs:element ref="dsf:GLCLASTUPDATEDATE"/>
+				<xs:element ref="dsf:GLCLASTUPDATEDBY"/>
+				<xs:element ref="dsf:CHARTOFACCOUNTSID"/>
+				<xs:element ref="dsf:GLCDETAILPOSTINGALLOWED"/>
+				<xs:element ref="dsf:GLCDETAILBUDGETINGALLOWED"/>
+				<xs:element ref="dsf:ACCOUNTTYPE"/>
+				<xs:element ref="dsf:GLCENABLEDFLAG"/>
+				<xs:element ref="dsf:GLCSUMMARYFLAG"/>
+				<xs:element ref="dsf:GLCSEGMENT1" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT2" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT3" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT4" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT5" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT6" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT7" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT8" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT9" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT10" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT11" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT12" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT13" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT14" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT15" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT16" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT17" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT18" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT19" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT20" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT21" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT22" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT23" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT24" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT25" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT26" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT27" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT28" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT29" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENT30" minOccurs="0"/>
+				<xs:element ref="dsf:GLCDESCRIPTION" minOccurs="0"/>
+				<xs:element ref="dsf:GLCTEMPLATEID" minOccurs="0"/>
+				<xs:element ref="dsf:GLCALLOCATIONCREATE" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSTARTDATEACTIVE" minOccurs="0"/>
+				<xs:element ref="dsf:GLCENDDATEACTIVE" minOccurs="0"/>
+				<xs:element ref="dsf:GLCATTRIBUTE1" minOccurs="0"/>
+				<xs:element ref="dsf:GLCATTRIBUTE2" minOccurs="0"/>
+				<xs:element ref="dsf:GLCATTRIBUTE3" minOccurs="0"/>
+				<xs:element ref="dsf:GLCATTRIBUTE4" minOccurs="0"/>
+				<xs:element ref="dsf:GLCATTRIBUTE5" minOccurs="0"/>
+				<xs:element ref="dsf:GLCATTRIBUTE6" minOccurs="0"/>
+				<xs:element ref="dsf:GLCATTRIBUTE7" minOccurs="0"/>
+				<xs:element ref="dsf:GLCATTRIBUTE8" minOccurs="0"/>
+				<xs:element ref="dsf:GLCATTRIBUTE9" minOccurs="0"/>
+				<xs:element ref="dsf:GLCATTRIBUTE10" minOccurs="0"/>
+				<xs:element ref="dsf:GLCCONTEXT" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE1" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE2" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE3" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE4" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE5" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE6" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE7" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE8" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE9" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE10" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE11" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE12" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE13" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE14" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE15" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE16" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE17" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE18" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE19" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE20" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE21" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE22" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE23" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE24" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE25" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE26" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE27" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE28" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE29" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE30" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE31" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE32" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE33" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE34" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE35" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE36" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE37" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE38" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE39" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE40" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE41" minOccurs="0"/>
+				<xs:element ref="dsf:GLCSEGMENTATTRIBUTE42" minOccurs="0"/>
+				<xs:element ref="dsf:GLCJGZZRECONFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:GLCJGZZRECONCONTEXT" minOccurs="0"/>
+				<xs:element ref="dsf:GLCREFERENCE1" minOccurs="0"/>
+				<xs:element ref="dsf:GLCREFERENCE2" minOccurs="0"/>
+				<xs:element ref="dsf:GLCREFERENCE3" minOccurs="0"/>
+				<xs:element ref="dsf:GLCREFERENCE4" minOccurs="0"/>
+				<xs:element ref="dsf:GLCREFERENCE5" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="user_entity" type="xs:string"/>
+			<xs:attribute name="system_entity" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

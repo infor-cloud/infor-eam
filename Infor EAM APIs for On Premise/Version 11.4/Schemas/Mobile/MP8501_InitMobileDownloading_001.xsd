@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP8501_001" xmlns="http://schemas.datastream.net/MP_functions/MP8501_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:mri="http://schemas.datastream.net/MP_entities/MobileRequestInfo_001" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/MobileRequestInfo_001" schemaLocation="./MobileRequestInfo_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:element name="MP8501_InitMobileDownloading_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="mri:MOBILE_REQUEST_INFO"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Init"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="MobileDownloading"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

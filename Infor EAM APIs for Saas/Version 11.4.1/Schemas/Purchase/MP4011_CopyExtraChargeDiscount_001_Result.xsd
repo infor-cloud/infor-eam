@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================ 
+	Copyright 2003, Datastream Systems, Inc. 
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP business function result for function request MP4011_CopyExtraChargeDiscount_001
+==================================================================================--> 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP4011_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://schemas.datastream.net/MP_results/MP4011_001" 
+	elementFormDefault="qualified">
+	<!-- =========== Imported namespaces =========== -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Begining of MP4011_CopyExtraChargeDiscount_001_Result ======================================-->
+	<xs:element name="MP4011_CopyExtraChargeDiscount_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>	
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:INVOICEVOUCHERLINEID"/>
+				<xs:element ref="dsf:NUMBEROFCOPIES"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

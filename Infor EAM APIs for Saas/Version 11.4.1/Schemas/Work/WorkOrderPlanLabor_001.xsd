@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2014 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+  This schema defines MP entity WorkOrderPlanLabor_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WorkOrderPlanLabor_001"
+    xmlns="http://schemas.datastream.net/MP_entities/WorkOrderPlanLabor_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="WorkOrderPlanLabor">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:WORKORDERPLANLABORID"/>
+                <xs:element ref="dsf:ESTIMATEDHOURS"/>
+                <xs:element ref="dsf:PERSONS"/>
+                <xs:element ref="dsf:HOURSREMAINING" minOccurs="0"/>
+                <xs:element ref="dsf:HIREDLABOR" minOccurs="0"/>
+                <xs:element ref="dsf:LABORTYPE" minOccurs="0"/>
+                <xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+                <xs:element ref="ReadOnlyFields" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ReadOnlyFields">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:REQUISITIONLINEID" minOccurs="0"/>
+                <xs:element ref="dsf:PURCHASEORDERLINEID" minOccurs="0"/>
+                <xs:element ref="dsf:WORKORDEREXT" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="has_related_records" type="dsf:FLAG_Type" default="false"/>
+            <xs:attribute name="is_deferred_activity" type="dsf:FLAG_Type" default="false"/>
+            <xs:attribute name="has_transaction" type="dsf:FLAG_Type" default="false"/>
+            <xs:attribute name="has_active_po" type="dsf:FLAG_Type" default="false"/>
+            <xs:attribute name="has_active_req" type="dsf:FLAG_Type" default="false"/>
+            <xs:attribute name="has_booked_hours" type="dsf:FLAG_Type" default="false"/>
+            <xs:attribute name="is_ppm_act" type="dsf:FLAG_Type" default="false"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

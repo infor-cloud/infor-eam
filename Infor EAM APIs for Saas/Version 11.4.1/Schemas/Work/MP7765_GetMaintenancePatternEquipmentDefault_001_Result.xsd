@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+* Copyright (c) 2009 Infor. All rights reserved. The word and design marks set forth herein are trademarks and/or 
+* registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved. All other trademarks 
+* listed herein are the property of their respective owners. www.infor.com.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7765_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns="http://schemas.datastream.net/MP_results/MP7765_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dse-mp="http://schemas.datastream.net/MP_entities/MaintenancePatternEquipmentDefault_001" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="MP7765_GetMaintenancePatternEquipmentDefault_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+			<xs:attribute name="isPPMSTATValid" type="xs:string" default="true"/>
+			<xs:attribute name="isWORKWOSTValid" type="xs:string" default="true"/>
+			<xs:attribute name="hasActiveSequenceRecords" type="xs:string" default="true"/>
+			<xs:attribute name="hasInactiveEquipments" type="xs:string" default="true"/>
+			<xs:attribute name="hasStatusChangeAuthorization" type="xs:string" default="true"/>
+			<xs:attribute name="hasStatusChangeAuthorizationToDeactivate" type="xs:string" default="true"/>
+			<xs:attribute name="hasActiveEquipments" type="xs:string" default="true"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:JOBNUM" minOccurs="0"/>
+				<xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTLINESTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:MAINTENANCEPATTERNSEQUENCE" minOccurs="0"/>
+				<xs:element ref="dsf:METERUOM1" minOccurs="0"/>
+				<xs:element ref="dsf:METERUOM2" minOccurs="0"/>
+				<xs:element ref="dsf:CCTRSPCVALIDATION" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

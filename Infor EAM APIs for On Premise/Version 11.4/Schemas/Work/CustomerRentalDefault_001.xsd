@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================ 
+Copyright (c) 2012 Infor. All rights reserved.
+The word and design marks set forth herein are trademarks and/or registered
+trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP entity CustomerRentalDefault 
+==================================================================================--> 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CustomerRentalDefault_001" 
+    xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns="http://schemas.datastream.net/MP_entities/CustomerRentalDefault_001" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!-- ======= Beginning of CustomerRentalDefault_001 ======= -->
+    <xs:element name="CustomerRentalDefault">
+        <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+                    <xs:element ref="dsf:STATUS" minOccurs="0"/>
+                    <xs:element ref="dsf:RENTALTYPE" minOccurs="0"/>
+                    <xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+                    <xs:element ref="dsf:NETAMOUNTCURRENCY" minOccurs="0"/>
+                    <xs:element ref="dsf:ADJUSTMENTSCURRENCY" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXAMOUNTCURRENCY" minOccurs="0"/>
+                    <xs:element ref="dsf:GROSSAMOUNTCURRENCY" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICEDAMOUNTCURRENCY" minOccurs="0"/>
+                    <xs:element ref="dsf:ISSUETO" minOccurs="0"/>
+                    <xs:element ref="dsf:CUSTOMERID" minOccurs="0"/>
+                    <xs:element ref="dsf:SECONDARYPHONE" minOccurs="0"/>
+                    <xs:element ref="dsf:LICENSENO" minOccurs="0"/>
+                    <xs:element ref="dsf:COSTCODE" minOccurs="0"/>
+                </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

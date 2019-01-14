@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<definitions targetNamespace="http://wsdls.datastream.net/MP3399_DeleteNonconformity_001" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wssi="http://schemas.xmlsoap.org/ws/2002/04/secext" xmlns:resp0="http://schemas.datastream.net/MP_results/MP3399_001" xmlns:hdr="http://schemas.datastream.net/MP_functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdls.datastream.net/MP3399_DeleteNonconformity_001" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rqst0="http://schemas.datastream.net/MP_functions/MP3399_001">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:import namespace="http://schemas.datastream.net/MP_functions" schemaLocation="../../schemas/headers.xsd"/><xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/secext" schemaLocation="../../schemas/secext.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_functions/MP3399_001" schemaLocation="../../schemas/Asset/MP3399_DeleteNonconformity_001.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_results/MP3399_001" schemaLocation="../../schemas/Asset/MP3399_DeleteNonconformity_001_Result.xsd"/></xsd:schema>
+  </types>
+  <message name="tenantHeader">
+    <part name="tenantHeader" element="hdr:Tenant"/>
+  </message>
+  <message name="messageConfigHeader">
+    <part name="messageConfigHeader" element="hdr:MessageConfig"/>
+  </message>
+  <message name="organizationHeader">
+    <part name="organizationHeader" element="hdr:Organization"/>
+  </message>
+  <message name="sessionHeader">
+    <part name="sessionHeader" element="hdr:Session"/>
+  </message>
+  <message name="DeleteNonconformityRequestMsg">
+    <part name="DeleteNonconformityRequestMsg" element="rqst0:MP3399_DeleteNonconformity_001"/>
+  </message>
+  <message name="sessionScenarioHeader">
+    <part name="sessionScenarioHeader" element="hdr:SessionScenario"/>
+  </message>
+  <message name="securityHeader">
+    <part name="securityHeader" element="wssi:Security"/>
+  </message>
+  <message name="DeleteNonconformityResponseMsg">
+    <part name="DeleteNonconformityResponseMsg" element="resp0:MP3399_DeleteNonconformity_001_Result"/>
+  </message>
+  <portType name="DeleteNonconformityPT">
+    <operation name="DeleteNonconformityOp">
+      <input name="DeleteNonconformityRequestMsg" message="tns:DeleteNonconformityRequestMsg"/>
+      <output name="DeleteNonconformityResponseMsg" message="tns:DeleteNonconformityResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="DeleteNonconformitySoapBinding" type="tns:DeleteNonconformityPT">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="DeleteNonconformityOp">
+      <wsdlsoap:operation soapAction="processMessage"/>
+      <input name="DeleteNonconformityRequestMsg">
+        <wsdlsoap:header message="tns:organizationHeader" part="organizationHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:securityHeader" part="securityHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionScenarioHeader" part="sessionScenarioHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:messageConfigHeader" part="messageConfigHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:tenantHeader" part="tenantHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="DeleteNonconformityRequestMsg" use="literal"/>
+      </input>
+      <output name="DeleteNonconformityResponseMsg">
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="DeleteNonconformityResponseMsg" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="DeleteNonconformityService">
+    <port name="DeleteNonconformitySoapBinding" binding="tns:DeleteNonconformitySoapBinding">
+      <wsdlsoap:address location="http://localhost/axis/services/EWSConnector"/>
+    </port>
+  </service>
+</definitions>

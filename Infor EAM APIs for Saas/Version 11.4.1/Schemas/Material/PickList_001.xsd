@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+    
+    This schema defines MP entity transaction    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PickList_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/PickList_001" xmlns:dse-PickListPart="http://schemas.datastream.net/MP_entities/PickListPart_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/PickListPart_001" schemaLocation="PickListPart_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of PickList_001 ======================================-->
+	<xs:element name="PickList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PICKLISTID" minOccurs="0"/>
+				<xs:element ref="dsf:STOREID" minOccurs="0"/>
+				<xs:element ref="dsf:STATUS" minOccurs="0"/>
+				<xs:element ref="dsf:DATEREQUIRED" minOccurs="0"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERACTIVITY" minOccurs="0"/>
+				<xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/>
+				<xs:element ref="dsf:ASSETID" minOccurs="0"/>
+				<xs:element ref="dsf:DELIVERYADDRESSID" minOccurs="0"/>
+				<xs:element ref="dsf:DELIVERYSUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:DELIVERPERSONNEL" minOccurs="0"/>
+				<xs:element ref="dsf:ORIGINID" minOccurs="0"/>
+				<xs:element ref="dsf:DEFAULTAPPROVER" minOccurs="0"/>
+				<xs:element ref="dsf:APPROVER" minOccurs="0"/>
+				<xs:element ref="dsf:APPROVEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function result MP0670_GetCodeStructureDefault_001_Result
+ ============================================================================= -->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0670_001"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:os="http://www.openapplications.org/oagis_segments"
+	xmlns:of="http://www.openapplications.org/oagis_fields"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.datastream.net/MP_results/MP0670_001"	 elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields"
+		schemaLocation="../MP_fields.xsd"/>
+
+	<!--===============================================================================-->
+	<!--====  Begining of MP0670_GetCodeStructureDefault_001_Result ======================================-->
+	<xs:element name="MP0670_GetCodeStructureDefault_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CODESTRUCTUREENTITY" />
+				<xs:element ref="dsf:CODESTRUCTURELEVEL1" />
+				<xs:element ref="dsf:CODESTRUCTURELEVEL2" minOccurs="0"/>
+				<xs:element ref="dsf:CODESTRUCTURELEVEL3" minOccurs="0"/>
+				<xs:element ref="dsf:CODESTRUCTURELEVEL4" minOccurs="0"/>
+				<xs:element ref="dsf:CODESTRUCTURELEVEL5" minOccurs="0"/>
+				<xs:element ref="dsf:CODESTRUCTURELEVEL6" minOccurs="0"/>
+				<xs:element ref="dsf:CODESTRUCTURELEVEL7" minOccurs="0"/>
+				<xs:element ref="dsf:CODESTRUCTURELEVEL8" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

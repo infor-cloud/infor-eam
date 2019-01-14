@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+	Copyright (c) 2007 Infor Global Solutions Technology GmbH and/or its affiliates
+	and subsidiaries. All rights reserved. The word and design marks set forth
+	herein are trademarks and/or registered trademarks of
+	Infor Global Solutions Technology GmbH and/or its affiliates and subsidiaries.
+	All rights reserved. All other trademarks listed herein are the property of
+	their respective owners.
+	This document may not be reproduced in whole or in part or used for tendering
+	or manufacturing purposes except under an agreement or with the written
+	consent of the copyright holder and then only under the condition that this
+	notice is included in any such reproduction. No information regarding the
+	contents or subject matter of this document or any part thereof arising
+	directly or indirectly thereof shall be given orally or in writing or
+	communicated in any manner whatsoever to any third party without the prior
+	written consent of the copyright holder.
+
+    This schema defines MP business function entity QuotationRequest
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/QuotationRequest_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/QuotationRequest_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Begining of QuotationRequest_001 ======================================-->
+	<xs:element name="QuotationRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:QUOTATIONREQUESTID"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:CURRENCYCODE"/>
+				<xs:element ref="dsf:STOREID" minOccurs="0"/>
+				<xs:element ref="dsf:REQUESTEDBY"/>
+				<xs:element ref="dsf:RESPONSEDUE"/>
+				<xs:element ref="dsf:PROJECTID" minOccurs="0"/>
+				<xs:element ref="dsf:PROJECTBUDGETID" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVITYID" minOccurs="0"/>
+				<xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/>
+				<xs:element ref="dsf:RELATEDWORKORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:BUYER" minOccurs="0"/>
+				<xs:element ref="dsf:DELADDRESSCODE" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:DATEREQUESTED" minOccurs="0"/>
+				<xs:element ref="dsf:AWARDEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:AWARDEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:PRINTED"/>
+				<xs:element ref="dsf:AUTOPRINT"/>
+				<xs:element ref="dsf:RESPONSEOPT"/>
+				<xs:element ref="dsf:AWARDEDTOTALS" minOccurs="0"/>
+				<xs:element ref="dsf:SHIPVIA" minOccurs="0"/>
+				<xs:element ref="dsf:PAYMENTTERM" minOccurs="0"/>
+				<xs:element ref="dsf:FREIGHTTERM" minOccurs="0"/>
+				<xs:element ref="dsf:FOBPOINT" minOccurs="0"/>
+				<xs:element ref="dsf:PAYBYMETHOD" minOccurs="0"/>
+				<xs:element ref="dsf:EMAIL" minOccurs="0"/>
+				<xs:element ref="dsf:EMAILTEXT" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:REQUISITIONID" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

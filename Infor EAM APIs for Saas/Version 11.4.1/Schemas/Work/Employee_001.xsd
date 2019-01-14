@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+    This schema defines MP entity Employee
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Employee_001" xmlns="http://schemas.datastream.net/MP_entities/Employee_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of Employee_001 ======= -->
+	<xs:element name="Employee">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EMPLOYEEID"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:FLEETCUSTOMERID" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:LICENSENO" minOccurs="0"/>
+				<xs:element ref="dsf:PHONE" minOccurs="0"/>
+				<xs:element ref="dsf:TRADECODE"/>
+				<xs:element ref="dsf:DEPARTMENTCODE"/>
+				<xs:element ref="dsf:EMAIL" minOccurs="0"/>
+				<xs:element ref="dsf:NOTIFICATIONPREFERENCEID" minOccurs="0"/>
+				<xs:element ref="dsf:USERCODE" minOccurs="0"/>
+				<xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSFERREDTOEMPLOYEE" minOccurs="0"/>
+				<xs:element ref="dsf:SCHEDULINGSESSION" minOccurs="0"/>
+				<xs:element ref="dsf:SCHEDULINGSESSIONTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:CUSTOMERID" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+				<xs:element ref="dsf:EMPLOYEEALIAS" minOccurs="0"/>
+				<xs:element ref="dsf:ASSETID" minOccurs="0"/>
+				<xs:element ref="dsf:JOBTITLE" minOccurs="0"/>
+				<xs:element ref="dsf:SUPERVISOR" minOccurs="0"/>
+				<xs:element ref="dsf:HIREDATE" minOccurs="0"/>
+				<xs:element ref="dsf:BIRTHDATE" minOccurs="0"/>
+				<xs:element ref="dsf:TERMINATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:PAYROLLNUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:SECURITYBADGENUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:ADDRESS" minOccurs="0"/>
+				<xs:element ref="dsf:CITY" minOccurs="0"/>
+				<xs:element ref="dsf:STATE" minOccurs="0"/>
+				<xs:element ref="dsf:ZIP" minOccurs="0"/>
+				<xs:element ref="dsf:COUNTRY" minOccurs="0"/>
+				<xs:element ref="dsf:EMERGENCYCONTACT" minOccurs="0"/>
+				<xs:element ref="dsf:EMERGENCYCONTACTPHONENUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:MOBILEPHONENUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:HOMEPHONENUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:URL" minOccurs="0"/>
+				<xs:element ref="dsf:FAX" minOccurs="0"/>
+				<xs:element ref="dsf:INITIALS" minOccurs="0"/>
+				<xs:element ref="dsf:TRADESPERSON" minOccurs="0"/>
+				<xs:element ref="dsf:WORKSPACEOCCUPANT" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+			<xs:attribute name="isrecordrevoked" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

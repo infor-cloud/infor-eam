@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity StoreToStoreReqPartDefault    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/StoreToStoreReqPartDefault_001" xmlns="http://schemas.datastream.net/MP_entities/StoreToStoreReqPartDefault_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:of="http://www.openapplications.org/oagis_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of StoreToStoreReqPartDefault_001 ======================================-->
+	<xs:element name="StoreToStoreReqPartDefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:REQUISITIONLINEID"/>
+				<xs:element ref="dsf:CURRENCYID"/>
+				<xs:element ref="dsf:EXCHRATE"/>
+				<xs:element ref="dsf:QUOTATIONINDICATOR"/>
+				<xs:element ref="dsf:DATEREQUIRED"/>
+				<xs:element ref="dsf:RECEIVEDQUANTITY"/>
+				<xs:element ref="dsf:BYASSET" minOccurs="0"/>
+				<xs:element ref="dsf:SCRAPQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:DELADDRESSCODE" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<!-- to set default value not used in this enhancement -->
+			</xs:sequence>
+			<xs:attribute name="headerstatus" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

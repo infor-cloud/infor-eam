@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Sureshr (Datastream Systems, Inc) -->
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function entity BOPartLine
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/FleetVehicleTicket_001" xmlns="http://schemas.datastream.net/MP_entities/FleetVehicleTicket_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====================  Begining of FleetVehicleTicket ====================-->
+	<xs:element name="FleetVehicleTicket">
+		<xs:complexType>
+			<xs:sequence>			
+				<xs:element ref="VehicleTicketBasicInformation"/>
+				<xs:element ref="VehicleInformation"/>
+				<xs:element ref="CustomerDetails"/>
+				<xs:element ref="IssuedToDetails" minOccurs="0"/>
+				<xs:element ref="VehicleIssueDetails" minOccurs="0"/>
+				<xs:element ref="VehicleReturnDetails" minOccurs="0"/>				
+				<xs:element ref="PMEventDetails" minOccurs="0"/>
+				<xs:element ref="BillingDetails" minOccurs="0"/>
+				<xs:element ref="OtherDetails" minOccurs="0"/>	
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>				
+			</xs:sequence>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VehicleTicketBasicInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:FLEETVEHICLETICKETID"/>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="dsf:STATUS"/>				
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>				
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VehicleInformation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:VEHICLEID"/>
+				<xs:element ref="dsf:RECEIVEDVEHICLEID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CustomerDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:FLEETCUSTOMERID"/>
+				<xs:element ref="dsf:COSTCODEID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="IssuedToDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ISSUETO" minOccurs="0"/>
+				<xs:element ref="dsf:OTHER" minOccurs="0"/>
+				<xs:element ref="dsf:PHONE" minOccurs="0"/>
+				<xs:element ref="dsf:LICENSENO" minOccurs="0"/>								
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VehicleIssueDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ISSUEVEHICLETRANSACTIONDETAILS" minOccurs="0"/>	
+				<xs:element ref="dsf:ESTIMATEDRETURNDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ISSUEDBY" minOccurs="0"/>										
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VehicleReturnDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:RETURNVEHICLETRANSACTIONDETAILS" minOccurs="0"/>	
+				<xs:element ref="dsf:HOURSUSED" minOccurs="0"/>	
+				<xs:element ref="dsf:MILEAGEUSED" minOccurs="0"/>
+				<xs:element ref="dsf:RETURNEDTO" minOccurs="0"/>						
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="PMEventDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LASTPMEVENTID" minOccurs="0"/>
+				<xs:element ref="dsf:LASTPMEVENTCOMPLETED" minOccurs="0"/>
+				<xs:element ref="dsf:LASTPMEVENTMETERREADING" minOccurs="0"/>				
+				<xs:element ref="dsf:NEXTPMEVENTID" minOccurs="0"/>
+				<xs:element ref="dsf:NEXTPMEVENTDUE" minOccurs="0"/>
+				<xs:element ref="dsf:NEXTPMEVENTMETERREADING" minOccurs="0"/>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AdditionalPMEventDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LASTPPMCODE" minOccurs="0"/>
+				<xs:element ref="dsf:NEXTPPMCODE" minOccurs="0"/>
+				<xs:element ref="dsf:LASTPMEVENTMETERREADINGUOM" minOccurs="0"/>
+				<xs:element ref="dsf:NEXTPMEVENTMETERREADINGUOM" minOccurs="0"/>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>		
+	<xs:element name="BillingDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:FLEETBILLINGID" minOccurs="0"/>
+				<xs:element ref="dsf:FLEETMARKUPID" minOccurs="0"/>
+				<xs:element ref="dsf:HOURSBILLED" minOccurs="0"/>				
+				<xs:element ref="dsf:MILEAGEBILLED" minOccurs="0"/>	
+				<xs:element ref="dsf:BILLSUBLINE" minOccurs="0"/>
+				<xs:element ref="dsf:PERIODENDDATE" minOccurs="0"/>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OtherDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:COMPLETEDDATE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="VehicleDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:STATUS" minOccurs="0"/>
+				<xs:element ref="dsf:SHOP" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="RecievedVehicleDetails">
+		<xs:complexType>
+			<xs:sequence>			
+				<xs:element ref="dsf:STATUS" minOccurs="0"/>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="CostDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:HOURSCOST" minOccurs="0"/>
+				<xs:element ref="dsf:MILEAGECOST" minOccurs="0"/>
+				<xs:element ref="dsf:EXCEPTIONCOST" minOccurs="0"/>
+				<xs:element ref="dsf:TOTALCOST" minOccurs="0"/>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CustomerValidationDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:FLEETCUSTOMERID"/>
+				<xs:element ref="dsf:VEHICLEID" minOccurs="0"/>
+				<xs:element ref="dsf:RECEIVEDVEHICLEID" minOccurs="0"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:ISSUETO" minOccurs="0"/>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>

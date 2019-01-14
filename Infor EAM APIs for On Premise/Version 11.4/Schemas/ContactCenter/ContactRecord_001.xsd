@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity ContactRecord_001.
+====================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ContactRecord_001" xmlns="http://schemas.datastream.net/MP_entities/ContactRecord_001" xmlns:dse-ContactInfo="http://schemas.datastream.net/MP_entities/ContactInfo_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/ContactInfo_001" schemaLocation="ContactInfo_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of ContactRecord_001 ======================================-->
+	<xs:element name="AllContactRecord">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ContactRecordCore"/>
+				<xs:element ref="ContactRecordBase" minOccurs="0"/>
+				<xs:element ref="ContactRecordHospitalityIncidentRequest" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ContactRecord">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CONTACTRECORDID"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="dsf:CONTACTSOURCE"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:PROVIDERID" minOccurs="0"/>
+				<xs:element ref="dsf:SERVICECATEGORYID" minOccurs="0"/>
+				<xs:element ref="dsf:KBARTICLEID" minOccurs="0"/>
+				<xs:element ref="dsf:NOTES" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+				<xs:element ref="dse-ContactInfo:ContactInfo" minOccurs="0"/>
+				<xs:element ref="ActionRequestDetail" minOccurs="0"/>
+				<xs:element ref="ReadOnlyGUIInfo" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:COPYCOMMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+				<xs:element ref="dsf:CCTRSPCVALIDATION" minOccurs="0"/>
+				<xs:element ref="dsf:SDMFLAG" minOccurs="0"/>
+				<xs:element ref="UserDefinedFields" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:CUSTOMERREFERENCE" minOccurs="0"/>
+				<xs:element ref="dsf:BUILDINGEQUIPID" minOccurs="0"/>
+				<xs:element ref="dsf:FLOORID" minOccurs="0"/>
+				<xs:element ref="dsf:ROOMUNITID" minOccurs="0"/>
+				<xs:element ref="dsf:CAMPUSID" minOccurs="0"/>
+				<xs:element ref="dsf:DUPLICATEINCIDENTREQUEST" minOccurs="0"/>
+				<xs:element ref="dsf:RECURRINGINCIDENTREQUEST" minOccurs="0"/>
+				<xs:element ref="dsf:CASEID" minOccurs="0"/>
+				<xs:element ref="dsf:DUPLICATECASEID" minOccurs="0"/>
+				<xs:element ref="dsf:VIPSTATUSID" minOccurs="0"/>
+				<xs:element ref="dsf:SERVICEREQUESTPRIORITYID" minOccurs="0"/>
+				<xs:element ref="dsf:WORKSPACEID" minOccurs="0"/>
+				<xs:element ref="dsf:ATTACHEDDOCUMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDTOTALCOST" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ContactRecordCore">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CONTACTRECORDID"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="dsf:CONTACTSOURCE"/>		
+				<xs:element ref="UserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ContactRecordBase">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:PROVIDERID" minOccurs="0"/>
+				<xs:element ref="dsf:SERVICECATEGORYID" minOccurs="0"/>
+				<xs:element ref="dsf:KBARTICLEID" minOccurs="0"/>
+				<xs:element ref="dsf:NOTES" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+				<xs:element ref="dse-ContactInfo:ContactInfo" minOccurs="0"/>
+				<xs:element ref="ActionRequestDetail" minOccurs="0"/>
+				<xs:element ref="ReadOnlyGUIInfo" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:COPYCOMMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+				<xs:element ref="dsf:CCTRSPCVALIDATION" minOccurs="0"/>
+				<xs:element ref="dsf:SDMFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:CUSTOMERREFERENCE" minOccurs="0"/>
+				<xs:element ref="dsf:CAMPUSID" minOccurs="0"/>
+				<xs:element ref="dsf:BUILDINGEQUIPID" minOccurs="0"/>
+				<xs:element ref="dsf:FLOORID" minOccurs="0"/>
+				<xs:element ref="dsf:ROOMUNITID" minOccurs="0"/>
+				<xs:element ref="dsf:DUPLICATEINCIDENTREQUEST" minOccurs="0"/>
+				<xs:element ref="dsf:RECURRINGINCIDENTREQUEST" minOccurs="0"/>
+				<xs:element ref="dsf:CASEID" minOccurs="0"/>
+				<xs:element ref="dsf:DUPLICATECASEID" minOccurs="0"/>
+				<xs:element ref="dsf:VIPSTATUSID" minOccurs="0"/>
+				<xs:element ref="dsf:SERVICEREQUESTPRIORITYID" minOccurs="0"/>
+				<xs:element ref="dsf:WORKSPACEID" minOccurs="0"/>
+				<xs:element ref="dsf:ATTACHEDDOCUMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDTOTALCOST" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ContactRecordHospitalityIncidentRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>	
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:VIPSTATUSID" minOccurs="0"/>
+                <xs:element ref="dsf:SALUTATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:EMPLOYEE" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:FIRSTNAME" minOccurs="0"/>
+				<xs:element ref="dsf:MIDDLENAME" minOccurs="0"/>
+				<xs:element ref="dsf:LASTNAME" minOccurs="0"/>
+				<xs:element ref="dsf:PRIMARYEMAIL" minOccurs="0"/>
+				<xs:element ref="dsf:PHONENUMBER" minOccurs="0"/> 
+				<xs:element ref="dsf:NOTES" minOccurs="0"/>
+				<xs:element ref="dsf:COPYCOMMENTS" minOccurs="0"/>
+				<xs:element ref="ActionRequestDetail" minOccurs="0"/>
+				<xs:element ref="ReadOnlyGUIInfo" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ActionRequestDetail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SERVICEPROBLEMID" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTUSABILITYID" minOccurs="0"/>
+				<xs:element ref="dsf:STANDARDWO" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERCLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:PERMANENTFIXPROMISEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:TEMPFIXPROMISEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:PRIORITY" minOccurs="0"/>
+				<xs:element ref="dsf:DUPLICATEREQUEST" minOccurs="0"/>
+				<xs:element ref="dsf:WORKADDRESS" minOccurs="0"/>
+				<xs:element ref="dsf:LINEARREFERENCEEVENT" minOccurs="0"/>
+				<xs:element ref="dsf:MULTIEQUIP" minOccurs="0"/>
+				<xs:element ref="AddressAlias" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:AUTOCREATEWO" minOccurs="0"/>
+				<xs:element ref="dsf:INSPECTIONDIRECTIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:FLOWCODE" minOccurs="0"/>
+				<xs:element ref="dsf:DEADLINE" minOccurs="0"/>
+				<xs:element ref="dsf:FOLLOWUPWORKORDER" minOccurs="0"/>
+				<xs:element ref="dsf:REQUESTSTARTDATE" minOccurs="0"/>
+				<xs:element ref="dsf:REQUESTENDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:AREA" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:FOLLOWUPWORKORDERSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:WOTYPECATEGORYID" minOccurs="0"/>
+				<xs:element ref="dsf:MINOR" minOccurs="0"/>
+				
+			</xs:sequence>
+			<xs:attribute name="isRoomOccupied" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddressAlias">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CONTACTINFOID" minOccurs="0"/>
+				<xs:element ref="dsf:ALIAS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReadOnlyGUIInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WOCLOSEDAYS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYCUSTOMERINFO" minOccurs="0"/>
+				<xs:element ref="dsf:SEARCHBYMETHOD" minOccurs="0"/>
+				<xs:element ref="dsf:LINEARREFUOM" minOccurs="0"/>
+				<xs:element ref="dsf:STARTINGAT" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTLENGTH" minOccurs="0"/>
+				<xs:element ref="dsf:ISNEWCUSTOMERALLOWED" minOccurs="0"/>
+				<xs:element ref="dsf:DUPLICATEWOCHECK" minOccurs="0"/>
+				<xs:element ref="dsf:DAYSTOSHOWOPENWO" minOccurs="0"/>
+				<xs:element ref="dsf:WOTYPELIST" minOccurs="0"/>
+				<xs:element ref="dsf:WOSTATUSLIST" minOccurs="0"/>
+				<xs:element ref="dsf:MATCHWOHEADERONLY" minOccurs="0"/>
+				<xs:element ref="dsf:MATCHSERVICECATEGORY" minOccurs="0"/>
+				<xs:element ref="dsf:MATCHSERVICEPROBLEMCODE" minOccurs="0"/>
+				<xs:element ref="dsf:CASETYPE" minOccurs="0"/>
+				<xs:element ref="dsf:RECURRINGREQUESTLOOKBACKDAYS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserDefinedFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UDFCHAR01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR11" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR12" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR13" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR14" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR15" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR16" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR17" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR18" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR19" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR20" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR21" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR22" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR23" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR24" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR25" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR26" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR27" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR28" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR29" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR30" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX05" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth 
+    herein are trademarks and/or registered trademarks of Infor and/or related affiliates 
+    and subsidiaries. All rights reserved. All other trademarks listed herein are the 
+    property of their respective owners. www.infor.com.
+	
+       This schema defines MP entity Project 
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Project_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/Project_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of Project_001 ======================================-->
+	<xs:element name="Project">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PROJECTID"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:COORDINATOR"/>
+				<xs:element ref="dsf:PARENTPROJECTID" minOccurs="0"/>
+				<xs:element ref="ProjectSchedule" minOccurs="0"/>
+				<xs:element ref="ProjectBudget" minOccurs="0"/>
+				<xs:element ref="dsf:SHUTDOWNID" minOccurs="0"/>
+				<xs:element ref="ProjectCosts" minOccurs="0"/>
+				<xs:element ref="ReadOnlyGUIInfo" minOccurs="0"/>
+				<xs:element ref="dsf:CAPITALPLANREQUESTID" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:PLANFORIMPROVEMENTNO" minOccurs="0"/>
+				<xs:element ref="dsf:PRECONSTRUCTIONRISKASSESSMENT" minOccurs="0"/>
+				<xs:element ref="dsf:DESIGNCRITERIAID" minOccurs="0"/>
+                <xs:element ref="dsf:EXTERNALPONO" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="user_entity" type="xs:string"/>
+			<xs:attribute name="system_entity" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProjectSchedule">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ESTIMATEDSTARTDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDENDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ACTUALSTARTEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ACTUALENDDATE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProjectBudget">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BUDGETAMOUNT"/>
+				<xs:element ref="dsf:BUDGETDATE"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProjectCosts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ESTIMATEDLABORCOST" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDHIREDCOST" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDMATERIALCOST" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDSERVICECOST" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDDIRECTPURCHASECOST" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDTOOLCOST" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReadOnlyGUIInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ISAPPROVER" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

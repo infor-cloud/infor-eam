@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2005, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request MP0824_AddUploadSet_001
+ ============================================================================= -->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0824_001"
+	xmlns="http://schemas.datastream.net/MP_functions/MP0824_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:dse-UploadSet="http://schemas.datastream.net/MP_entities/UploadSet_001"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/UploadSet_001" schemaLocation="UploadSet_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+
+	<!--===============================================================================-->
+	<!--====  Begining of MP0824_AddUploadSet_001 =====================================-->
+	<xs:element name="MP0824_AddUploadSet_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-UploadSet:UploadSet"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Add"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="UploadSet"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+      <xs:attribute name="checkdd" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

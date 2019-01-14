@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2012 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+  This schema defines MP business function entity UserContract
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/UserContract_001"
+        xmlns="http://schemas.datastream.net/MP_entities/UserContract_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="UserContract">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:USERCONTRACTID"/>
+                    <xs:element ref="CustomerContractDetails"/>
+                    <xs:element ref="InvoicingDetails"/>
+                    <xs:element ref="RoundingDetails"/>
+                    <xs:element ref="RevisionDetails" minOccurs="0"/>                    
+                    <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+                    <xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0" />
+                </xs:sequence>
+                <xs:attribute name="recordid" type="xs:long"/>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="CustomerContractDetails">
+        	<xs:complexType>
+        		<xs:sequence>
+        			<xs:element ref="dsf:CUSTOMERID"/>
+        			<xs:element ref="dsf:STATUS"/>
+        			<xs:element ref="dsf:CONTRACTTEMPLATEID" minOccurs="0"/>
+        			<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+        			<xs:element ref="dsf:TAXID" minOccurs="0"/>
+        			<xs:element ref="dsf:STARTDATE"/>
+                    <xs:element ref="dsf:ENDDATE"/>
+                    <xs:element ref="dsf:REVISITDATE" minOccurs="0"/>
+                    <xs:element ref="dsf:CONTACTINFO" minOccurs="0"/>
+                    <xs:element ref="dsf:EMAILINVOICE" minOccurs="0"/>
+        		</xs:sequence>        		
+        	</xs:complexType>
+        </xs:element>
+        <xs:element name="InvoicingDetails">
+        	<xs:complexType>
+        		<xs:sequence>
+        			<xs:element ref="dsf:INVOICEEVERYPERIODS"/>
+        			<xs:element ref="dsf:PERIODUOM"/>
+        			<xs:element ref="dsf:NEXTINVOICEDATE"/>
+        			<xs:element ref="dsf:OFFSETINVOICEGENERATION"/>
+        			<xs:element ref="dsf:DEFAULTINVOICESTATUS"/>
+        			<xs:element ref="dsf:DEFAULTORG"/>
+        			<xs:element ref="dsf:INVOICECURRENCY"/>
+        			<xs:element ref="dsf:LASTINVOICEDATE" minOccurs="0"/>
+        			<xs:element ref="dsf:LASTINVOICE" minOccurs="0"/>
+        			<xs:element ref="dsf:INVOICEAMOUNT" minOccurs="0"/>
+        			<xs:element ref="dsf:USEFIXEDEXCHANGERATES" minOccurs="0"/>
+        			<xs:element ref="dsf:SYNCFIXEDEXCHANGERATES" minOccurs="0"/>
+        			<xs:element ref="dsf:CLOSEDWOONLY" minOccurs="0"/>
+        		</xs:sequence>
+        	</xs:complexType>
+        </xs:element>
+        <xs:element name="RoundingDetails">
+        	<xs:complexType>
+        		<xs:sequence>
+        			<xs:element ref="dsf:ROUNDINGHOURS"/>
+        			<xs:element ref="dsf:ROUNDINGDAYS"/>
+        			<xs:element ref="dsf:STARTTIMEHOURS" minOccurs="0"/>
+        			<xs:element ref="dsf:STARTTIMEMINUTES" minOccurs="0"/>
+        			<xs:element ref="dsf:ENDTIMEHOURS" minOccurs="0"/>
+        			<xs:element ref="dsf:ENDTIMEMINUTES" minOccurs="0"/>
+        		</xs:sequence>
+        	</xs:complexType>
+        </xs:element>
+        <xs:element name="RevisionDetails">
+        	<xs:complexType>
+        		<xs:sequence>
+        			<xs:element ref="dsf:REQUESTBY" minOccurs="0"/>
+                    <xs:element ref="dsf:DATEREQUESTED" minOccurs="0"/>
+                    <xs:element ref="dsf:APPROVEDBY" minOccurs="0"/>
+                    <xs:element ref="dsf:APPROVEDATE" minOccurs="0"/>
+        			<xs:element ref="dsf:NEWREVISIONREASON" minOccurs="0"/>
+        		</xs:sequence>
+        	</xs:complexType>
+        </xs:element>
+</xs:schema>

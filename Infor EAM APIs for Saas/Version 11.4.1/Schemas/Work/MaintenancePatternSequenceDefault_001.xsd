@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+* Copyright (c) 2009 Infor. All rights reserved. The word and design marks set forth herein are trademarks and/or 
+* registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved. All other trademarks 
+* listed herein are the property of their respective owners. www.infor.com.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/MaintenancePatternSequenceDefault_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns="http://schemas.datastream.net/MP_entities/MaintenancePatternSequenceDefault_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Begining of MaintenancePattern_001 ======================================-->
+	<xs:element name="MaintenancePatternSequenceDefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:MAINTENANCEPATTERNSEQUENCE" minOccurs="0"/>
+				<xs:element ref="dsf:METERUOM1" minOccurs="0"/>
+				<xs:element ref="dsf:METERUOM2" minOccurs="0"/>
+				<xs:element ref="dsf:PERCENTAGEWINDOW" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWDUPLICATEOPENWOS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

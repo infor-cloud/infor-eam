@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+        This schema defines MP entity Store2StoreTransfer    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Store2StoreTransfer_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/Store2StoreTransfer_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="Store2StoreTransfer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DESCRIPTION"/>
+				<xs:element ref="dsf:FROMSTOREID"/>
+				<xs:element ref="dsf:TOSTOREID"/>
+				<xs:element ref="dsf:ADVICENUMBER" minOccurs="0"/>
+				<xs:element name="PartLines">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="PartLine" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PartLine">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PARTID"/>
+				<xs:element ref="dsf:REPAIRABLE" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSACTIONQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:FROMBIN"/>
+				<xs:element ref="dsf:TOBIN"/>
+				<xs:element ref="dsf:LOTID"/>
+				<xs:element ref="dsf:PRICE"/>
+				<xs:element ref="dsf:ASSETID" minOccurs="0"/>
+				<xs:element ref="dsf:SERIALNUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+				<xs:element ref="dsf:PARTCONDITIONTEMPLATECONDITIONCODE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
