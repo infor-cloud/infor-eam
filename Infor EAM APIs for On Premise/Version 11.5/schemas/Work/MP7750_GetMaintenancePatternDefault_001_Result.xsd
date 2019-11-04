@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+* Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth herein are trademarks and/or 
+* registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved. All other trademarks 
+* listed herein are the property of their respective owners. www.infor.com.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7750_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns="http://schemas.datastream.net/MP_results/MP7750_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="MP7750_GetMaintenancePatternDefault_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:MPTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ALLOWDUPLICATEOPENWOS" minOccurs="0"/>
+				<xs:element ref="dsf:REQUESTEDSTARTDATEBUFFER" minOccurs="0"/>
+				<xs:element ref="dsf:REQUESTEDENDDATEBUFFER" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

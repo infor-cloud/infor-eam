@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+   Copyright (c) 2007 Infor Global Solutions Technology GmbH and/or its affiliates
+   and subsidiaries. All rights reserved. The word and design marks set forth
+   herein are trademarks and/or registered trademarks of
+   Infor Global Solutions Technology GmbH and/or its affiliates and subsidiaries.
+   All rights reserved. All other trademarks listed herein are the property of
+   their respective owners.
+
+   This document may not be reproduced in whole or in part or used for tendering
+   or manufacturing purposes except under an agreement or with the written
+   consent of the copyright holder and then only under the condition that this
+   notice is included in any such reproduction. No information regarding the
+   contents or subject matter of this document or any part thereof arising
+   directly or indirectly thereof shall be given orally or in writing or
+   communicated in any manner whatsoever to any third party without the prior
+   written consent of the copyright holder.
+
+   Entity schema for PMForecasting Parameters
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ParametersForPMForecasting_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/ParametersForPMForecasting_001" elementFormDefault="qualified">
+	<!-- ============================= Import ======================================= -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Begining of ParametersForPMForecasting_001 ======================================-->
+	<xs:element name="ParametersForPMForecasting">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PARAMETERLISTCODE"/>
+				<xs:element ref="dsf:PARAMETERLISTNAME" minOccurs="0"/>
+				<xs:element ref="dsf:DBSESSIONID" minOccurs="0"/>
+				<xs:element ref="dsf:DEFAULT" minOccurs="0"/>
+				<xs:element ref="dsf:STARTDATE"/>
+				<xs:element ref="dsf:ENDDATE"/>
+				<xs:element ref="dsf:EQUIPMENTCODES" minOccurs="0"/>
+				<xs:element ref="dsf:PARENTEQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTTYPES" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTCLASSCODES" minOccurs="0"/>
+				<xs:element ref="dsf:CATEGORIES" minOccurs="0"/>
+				<xs:element ref="dsf:CRITICALITYCODES" minOccurs="0"/>
+				<xs:element ref="dsf:PMSCHEDULECODES" minOccurs="0"/>
+				<xs:element ref="dsf:PMSCHEDULECLASSCODES" minOccurs="0"/>
+				<xs:element ref="dsf:NESTINGREFERENCES" minOccurs="0"/>
+				<xs:element ref="dsf:PMPRIORITIES" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERTYPES" minOccurs="0"/>
+				<xs:element ref="dsf:ORGANIZATIONID"/>
+				<xs:element ref="dsf:WORKORDERCLASSCODES" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTCODES" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONCODES" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDTOCODES" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODES" minOccurs="0"/>
+				<xs:element ref="dsf:SUPERVISORS" minOccurs="0"/>
+				<xs:element ref="dsf:PARENTEQUIPMENTTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:WORKHOURSPERDAY" minOccurs="0"/>
+				<xs:element ref="dsf:FREQUENCY" minOccurs="0"/>
+				<xs:element ref="dsf:INCLUDECHILDEQUIP" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERBGCOLOR"/>
+				<xs:element ref="dsf:DUEDATEBGCOLOR"/>
+				<xs:element ref="dsf:PMFORECASTBGCOLOR"/>
+				<xs:element ref="dsf:WEEKBGCOLOR"/>
+				<xs:element ref="dsf:LOCKEDPMTEXTCOLOR"/>
+				<xs:element ref="dsf:CALENDARDAYTEXT"/>
+				<xs:element ref="dsf:YEARDESIGNATOR"/>
+				<xs:element ref="dsf:QUARTERDESIGNATOR"/>
+				<xs:element ref="dsf:MONTHDESIGNATOR"/>
+				<xs:element ref="dsf:WEEKDESIGNATOR"/>
+				<xs:element ref="dsf:DAYDESIGNATOR"/>
+				<xs:element ref="dsf:BACKFILL" minOccurs="0"/>
+				<xs:element ref="dsf:FORWARDFILL" minOccurs="0"/>
+				<xs:element ref="dsf:APPROVESESSION" minOccurs="0"/>
+				<xs:element ref="dsf:FORECASTING" minOccurs="0"/>
+				<xs:element ref="dsf:ENABLECHILDEQUIPTAB" minOccurs="0"/>
+				<xs:element ref="dsf:SCREENHSPLITPERCENT" minOccurs="0"/>
+				<xs:element ref="dsf:HASSELECTEDEQUIPMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:HASPMEQUIPMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:ROWSPERPAGE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

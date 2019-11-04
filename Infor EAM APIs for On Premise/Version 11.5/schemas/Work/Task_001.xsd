@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity Task
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Task_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/Task_001" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <!--====  Begining of Task_001  ======================================-->
+    <xs:element name="Task">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:TASKLISTID"/>
+                <xs:element ref="dsf:CLASSID" minOccurs="0"/>
+                <xs:element ref="dsf:TRADEID" minOccurs="0"/>
+                <xs:element ref="dsf:TASKUOM" minOccurs="0"/>
+                <xs:element ref="dsf:HOURSREQUESTED" minOccurs="0"/>
+                <xs:element ref="dsf:PERSONS" minOccurs="0"/>
+                <xs:element ref="dsf:PREFERREDSUPPLIER" minOccurs="0"/>
+                <xs:element ref="dsf:STATUS" minOccurs="0"/>
+                <xs:element ref="dsf:BUYER" minOccurs="0"/>
+                <xs:element ref="dsf:COMMODITYCODE" minOccurs="0"/>
+                <xs:element ref="dsf:PRICE" minOccurs="0"/>
+                <xs:element ref="dsf:REASONFORREPAIR" minOccurs="0"/>
+                <xs:element ref="dsf:WORKACCOMPLISHED" minOccurs="0"/>
+                <xs:element ref="dsf:TECHNICIANPARTFAILURE" minOccurs="0"/>
+                <xs:element ref="dsf:VMRSCODE" minOccurs="0"/>
+                <xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>
+                <xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+                <xs:element ref="dsf:REVISIONCONTROL" minOccurs="0"/>
+                <xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+                <xs:element ref="dsf:ACTIVECHECKLIST" minOccurs="0"/>
+                <xs:element ref="dsf:ISOLATIONMETHOD" minOccurs="0"/>
+                <xs:element ref="dsf:CHECKLISTPERFORMEDBYREQUIRED" minOccurs="0"/>
+                <xs:element ref="dsf:CHECKLISTREVIEWEDBYREQUIRED" minOccurs="0"/>
+                <xs:element ref="dsf:WODESCRIPTION" minOccurs="0"/>
+                <xs:element ref="dsf:WOTYPE" minOccurs="0"/>
+                <xs:element ref="dsf:WOCLASS" minOccurs="0"/>
+                <xs:element ref="dsf:WOSTATUS" minOccurs="0"/>
+                <xs:element ref="dsf:WOPRIORITY" minOccurs="0"/>
+                <xs:element ref="dsf:EQUIPMENTTYPE" minOccurs="0"/>
+                <xs:element ref="dsf:EQUIPMENTCLASSID" minOccurs="0"/>
+                <xs:element ref="dsf:MATERIALLISTID" minOccurs="0"/>
+                <xs:element ref="dsf:JOBPLAN" minOccurs="0"/>
+                <xs:element ref="dsf:JOBPLANTYPE" minOccurs="0"/>
+                <xs:element ref="dsf:MULTIPLETRADES" minOccurs="0"/>
+                <xs:element ref="dsf:PLANNINGRECORDSEXIST" minOccurs="0"/>
+                <xs:element ref="dsf:PARTLOCATIONCODE" minOccurs="0"/>
+                <xs:element ref="dsf:REUSABLE" minOccurs="0"/>
+                <xs:element ref="dsf:PLANNINGLEVEL" minOccurs="0"/>
+                <xs:element ref="dsf:TASKPLANTYPE" minOccurs="0"/>
+                <xs:element ref="dsf:ENABLEENHANCEDPLANNING" minOccurs="0"/>
+                <xs:element ref="dsf:CASEMANAGEMENTCHECKLIST" minOccurs="0"/>
+                <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+                <xs:element ref="dsf:TAGHEADER" minOccurs="0"/>
+                <xs:element ref="dsf:TAGLINE1" minOccurs="0"/>
+                <xs:element ref="dsf:TAGLINE2" minOccurs="0"/>
+                <xs:element ref="dsf:TAGLINE3" minOccurs="0"/>
+                <xs:element ref="dsf:TAGLINE4" minOccurs="0"/>
+                <xs:element ref="dsf:DEFAULTTAG" minOccurs="0"/>
+                <xs:element ref="dsf:NONCONFORMITYCHECKLIST" minOccurs="0"/>
+                <xs:element ref="dsf:VIEWONLYRESPONSIBILITY" minOccurs="0"/>
+                <xs:element ref="dsf:REVIEWRESPONSIBILITY" minOccurs="0"/>
+                <xs:element ref="dsf:PERFORMBYRESPONSIBILITY" minOccurs="0"/>
+                <xs:element ref="dsf:PERFORMBY2RESPONSIBILITY" minOccurs="0"/>
+                <xs:element ref="dsf:DISCONNECTEDCHKLIST" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+            <xs:attribute name="has_job_planning_records" type="dsf:FLAG_Type" default="false"/>
+            <xs:attribute name="confirm_remove_res_from_checklist" type="dsf:CONFIRMATION_Type" default="confirmed"/>
+            <xs:attribute name="confirm_change_res_of_checklist" type="dsf:CONFIRMATION_Type" default="confirmed"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+
+
+

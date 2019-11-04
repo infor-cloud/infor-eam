@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request MP7367_CalculateFleetTicketCosts_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP7367_001" xmlns:osf="http://www.openapplications.org/oagis_fields" xmlns:os="http://www.openapplications.org/oagis_segments" xmlns="http://schemas.datastream.net/MP_functions/MP7367_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_segments" schemaLocation="../oagis_segments.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_fields" schemaLocation="../oagis_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP7367_CalculateFleetTicketCosts_001 ==============================-->
+	<xs:element name="MP7367_CalculateFleetTicketCosts_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="InfoForCalculatingFleetTicketCosts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InfoForCalculatingFleetTicketCosts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:FLEETVEHICLETICKETID" minOccurs="0"/>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:FLEETBILLINGID" minOccurs="0"/>
+				<xs:element ref="dsf:FLEETMARKUPID" minOccurs="0"/>
+				<xs:element ref="dsf:HOURSBILLED" minOccurs="0"/>
+				<xs:element ref="dsf:MILEAGEBILLED" minOccurs="0"/>
+				<xs:element ref="dsf:ISSUEDDATE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

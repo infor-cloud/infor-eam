@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--==============================================================================================
+    Copyright (c) 2015 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business function entity WorkspaceMove
+==================================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WorkspaceMove_001"
+        xmlns="http://schemas.datastream.net/MP_entities/WorkspaceMove_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="WorkspaceMove">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:WORKSPACEMOVEID"/>
+                    <xs:element ref="dsf:STATUS" minOccurs="0"/>
+                    <xs:element ref="dsf:WORKORDERACTIVITY" minOccurs="0"/>
+                    <xs:element ref="dsf:FROMBUILDINGID" minOccurs="0"/>
+                    <xs:element ref="dsf:FROMFLOORID" minOccurs="0"/>
+                    <xs:element ref="dsf:FROMROOMUNITID" minOccurs="0"/>
+                    <xs:element ref="dsf:FROMCAMPUSID" minOccurs="0"/>
+                    <xs:element ref="dsf:FROMWORKSPACEID" minOccurs="0"/>
+                    <xs:element ref="dsf:TOBUILDINGID" minOccurs="0"/>
+                    <xs:element ref="dsf:TOFLOORID" minOccurs="0"/>
+                    <xs:element ref="dsf:TOROOMUNITID" minOccurs="0"/>
+                    <xs:element ref="dsf:TOCAMPUSID" minOccurs="0"/>
+                    <xs:element ref="dsf:TOWORKSPACEID" minOccurs="0"/>
+                    <xs:element ref="dsf:NOTE" minOccurs="0"/>
+                    <xs:element ref="dsf:EQUIPMENTMOVE" minOccurs="0"/>
+                    <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="recordid" type="xs:long"/>
+                <xs:attribute name="isRequestFromWorkOrder" type="dsf:FLAG_Type" default="false"/>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

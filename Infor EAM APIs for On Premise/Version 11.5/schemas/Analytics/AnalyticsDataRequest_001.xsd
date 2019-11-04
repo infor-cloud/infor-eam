@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2005, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity AnalyticsDataRequest.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/AnalyticsDataRequest_001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/AnalyticsDataRequest_001" elementFormDefault="qualified">
+	<xs:element name="AnalyticsDataRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="DisplayFields"/>
+				<xs:element ref="Filters" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+			<xs:attribute name="numrecordstoreturn" type="NumRecsType" use="required"/>
+			<xs:attribute name="recordoffset" type="RecordOffsetType" default="0"/>
+			<xs:attribute name="forupdate" type="xs:boolean" default="false"/>
+			<xs:attribute name="rowsetcacheid" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="DisplayFields">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="DisplayField" minOccurs="1" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:attribute name="id" type="xs:long" use="required"/>
+							<xs:attribute name="type" type="DisplayFieldType" use="required"/>
+							<xs:attribute name="sort" type="SortType"/>
+							<xs:attribute name="function" type="AggregateFunctionType"/>
+							<xs:attribute name="dategroup" type="DateGroupType"/>
+							<xs:attribute name="summaryfunctions" type="xs:string"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Filters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Common" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="FilterItems"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="FilterItems"  minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="FilterItems">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="FilterItem" minOccurs="1" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="FilterItem">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="LeftParen" type="xs:boolean" minOccurs="0" default="false"/>
+					<xs:element name="Field" type="xs:long"/>
+					<xs:element name="Operator" type="OperatorType"/>
+					<xs:element name="Value" type="xs:string" minOccurs="0"/>
+					<xs:element name="Value2" type="xs:string" minOccurs="0"/>
+					<xs:element name="RightParen" type="xs:boolean" minOccurs="0" default="false"/>
+					<xs:element name="JoinCondition" type="AndOr" minOccurs="0" default="and"/>
+				</xs:sequence>
+			</xs:complexType>
+	</xs:element>
+	
+	<xs:simpleType name="NumRecsType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="RecordOffsetType">
+		<xs:restriction base="xs:long">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="SortType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="asc"/>
+			<xs:enumeration value="desc"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="DisplayFieldType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="variable"/>
+			<xs:enumeration value="attribute"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="AggregateFunctionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="count"/>
+			<xs:enumeration value="sum"/>
+			<xs:enumeration value="avg"/>
+			<xs:enumeration value="min"/>
+			<xs:enumeration value="max"/>
+			<xs:enumeration value="var"/>
+			<xs:enumeration value="varp"/>
+			<xs:enumeration value="stddev"/>
+			<xs:enumeration value="stddevp"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="DateGroupType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="minute"/>
+			<xs:enumeration value="hour"/>
+			<xs:enumeration value="day"/>
+			<xs:enumeration value="week"/>
+			<xs:enumeration value="month"/>
+			<xs:enumeration value="quarter"/>
+			<xs:enumeration value="year"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="OperatorType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="empty"/>
+			<xs:enumeration value="notempty"/>
+			<xs:enumeration value="contains"/>
+			<xs:enumeration value="notcontains"/>
+			<xs:enumeration value="startswith"/>
+			<xs:enumeration value="endswith"/>
+			<xs:enumeration value="between"/>
+			<xs:enumeration value="="/>
+			<xs:enumeration value="&lt;>"/>
+			<xs:enumeration value="&lt;"/>
+			<xs:enumeration value="&lt;="/>
+			<xs:enumeration value=">"/>
+			<xs:enumeration value=">="/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="AndOr">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="and"/>
+			<xs:enumeration value="or"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

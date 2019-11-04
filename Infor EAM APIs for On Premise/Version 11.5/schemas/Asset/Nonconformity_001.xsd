@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+	Copyright (c) 2016 Infor. All rights reserved.
+	The word and design marks set forth herein are trademarks and/or registered
+	trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+	This schema defines MP entity Nonconformity
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Nonconformity_001"
+		xmlns="http://schemas.datastream.net/MP_entities/Nonconformity_001"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:dsf="http://schemas.datastream.net/MP_fields"
+		elementFormDefault="qualified">
+		<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+		<!--===============================================================================-->
+		<xs:element name="Nonconformity">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="dsf:NONCONFORMITYID"/>
+					<xs:element ref="dsf:EQUIPMENTID"/>
+					<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+					<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+					<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+					<xs:element ref="dsf:VMRSCODE" minOccurs="0"/>
+					<xs:element ref="dsf:PARTID" minOccurs="0"/>
+					<xs:element ref="dsf:MATERIALTYPE" minOccurs="0"/>
+					<xs:element ref="dsf:STATUS"/>
+					<xs:element ref="dsf:NONCONFORMITYTYPEID" minOccurs="0"/>
+					<xs:element ref="dsf:NONCONFORMITYSEVERITY" minOccurs="0"/>
+					<xs:element ref="dsf:NONCONFORMITYINTENSITY" minOccurs="0"/>
+					<xs:element ref="dsf:NONCONFORMITYIMPORTANCE" minOccurs="0"/>
+					<xs:element ref="dsf:NONCONFORMITYSIZE" minOccurs="0"/>
+					<xs:element ref="dsf:PRIORITY" minOccurs="0"/>
+					<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+					<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+					<xs:element ref="TrackingDetails" minOccurs="0"/>
+					<xs:element ref="LinearReferenceDetails" minOccurs="0"/>
+					<xs:element ref="EquipmentDetails" minOccurs="0"/>
+					<xs:element ref="dsf:HIGHESTOBSERVATION" minOccurs="0"/>
+					<xs:element ref="dsf:HIGHESTOBSERVATIONNUM" minOccurs="0"/>
+					<xs:element ref="dsf:ASPECTID" minOccurs="0"/>
+					<xs:element ref="dsf:NONCONFORMITYNOTE" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="recordid" type="xs:long"></xs:attribute>
+				<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+				<xs:attribute name="protect_observation_data_onheader" type="dsf:FLAG_Type" default="false"/>
+				<xs:attribute name="protect_header_data" type="dsf:FLAG_Type" default="false"/>
+				<xs:attribute name="use_observation_status" type="dsf:FLAG_Type"/>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="TrackingDetails">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="dsf:CONDITIONSCORE" minOccurs="0"/>
+					<xs:element ref="dsf:CONDITIONINDEX" minOccurs="0"/>
+					<xs:element ref="dsf:NEXTINSPECTIONDATE" minOccurs="0"/>
+					<xs:element ref="dsf:NEXTINSPECTIONDATEOVERRIDE" minOccurs="0"/>
+					<xs:element ref="dsf:SOURCEOBSERVATIONNUM" minOccurs="0"/>
+					<xs:element ref="dsf:OVERRIDEOBSERVATION" minOccurs="0"/>
+					<xs:element ref="dsf:RECOMMENDEDREPAIRDATE" minOccurs="0"/>
+					<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+					<xs:element ref="dsf:ESTIMATEDLABORCOST" minOccurs="0"/>
+					<xs:element ref="dsf:ESTIMATEDMATERIALCOST" minOccurs="0"/>
+					<xs:element ref="dsf:ESTIMATEDMISCELLANEOUSCOST" minOccurs="0"/> 
+					<xs:element ref="dsf:ESTIMATEDTOTALCOST" minOccurs="0"/>
+					<xs:element ref="dsf:CAPITALPLANREQUESTID" minOccurs="0"/>
+					<xs:element ref="dsf:NONCONFORMITYMERGEINTO" minOccurs="0"/>
+					<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+					<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+					<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+					<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+	</xs:element>
+	<xs:element name="LinearReferenceDetails">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="dsf:LINEARREFUOM" minOccurs="0"/>
+					<xs:element ref="dsf:LINEARREFERENCEEVENT" minOccurs="0"/>
+					<xs:element ref="dsf:INSPECTIONDIRECTIONCODE" minOccurs="0"/>
+					<xs:element ref="dsf:FLOWCODE" minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+	</xs:element>
+	<xs:element name="EquipmentDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TYPE" minOccurs="0" />
+				<xs:element ref="dsf:DEPARTMENTID"  minOccurs="0"/>
+				<xs:element ref="dsf:OPERATIONALSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTCLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:CATEGORYID" minOccurs="0"/>
+				<xs:element ref="dsf:SAFETY" minOccurs="0"/>
+				<xs:element ref="dsf:CRITICALITYID" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>
+				<xs:element ref="dsf:MODEL" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:LINEARDIRECTIONID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

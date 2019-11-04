@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2004, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity AnalyticsData.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/AnalyticsData_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/AnalyticsData_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:element name="AnalyticsData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ODT_ID" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_VARID"/>
+				<xs:element ref="dsf:ODT_DATESTAMP" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_NUMVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_TEXTVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_FORCED" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_AUDITUSER" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_AUDITTIMESTAMP" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_ATTR1NUM" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_ATTR1TEXT" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_ATTR2NUM" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_ATTR2TEXT" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_ATTR3NUM" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_ATTR3TEXT" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_ATTR4NUM" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_ATTR4TEXT" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_ATTR5NUM" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_ATTR5TEXT" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_ATTR6NUM" minOccurs="0"/>
+				<xs:element ref="dsf:ODT_ATTR6TEXT" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

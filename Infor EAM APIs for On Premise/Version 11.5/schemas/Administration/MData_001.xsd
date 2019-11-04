@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+============================================================================= -->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Data_001"
+		xmlns="http://schemas.datastream.net/MP_entities/Data_001"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		elementFormDefault="qualified">
+	<!-- ======= Beginning of Data_001 ======= -->
+	<xs:element name="R5ORGANIZATION" type="Table_Type"/>
+	<xs:element name="R5ORGYEARS" type="Table_Type"/>
+	<xs:element name="R5ORGANIZATIONAPPPARMS" type="Table_Type"/>
+	<xs:element name="R5GROUPS" type="Table_Type"/>
+	<xs:element name="R5IPGROUPPERMISSIONS" type="Table_Type"/>
+	<xs:element name="R5JOBTYPEAUTH" type="Table_Type"/>
+	<xs:element name="R5EXTMENUS" type="Table_Type"/>
+	<xs:element name="R5EXTMENULANG" type="Table_Type"/>
+	<xs:element name="R5UNAVAILABLEGRIDFIELDS" type="Table_Type"/>
+	<xs:element name="R5PAGELAYOUT" type="Table_Type"/>
+	<xs:element name="R5MAILATTRIBS" type="Table_Type"/>
+	<xs:element name="R5CONFIGSETTINGS" type="Table_Type"/>
+	<xs:element name="R5BOILERTEXTS" type="Table_Type"/>	
+	<xs:element name="R5CUSTOMTEXTS" type="Table_Type"/>	
+	<xs:element name="R5REMEMBER" type="Table_Type"/>	
+	<xs:element name="R5REPPARMS" type="Table_Type"/>	
+	<xs:element name="R5FUNCTIONS" type="Table_Type"/>	
+	<xs:element name="R5FUNCTIONTABS" type="Table_Type"/>	
+	<xs:element name="R5USEGRIDGISDEFAULT" type="Table_Type"/>	
+	<xs:element name="R5USEGRIDSYSDEFAULT" type="Table_Type"/>	
+	<xs:element name="R5USERPORTLET" type="Table_Type"/>	
+	<xs:element name="R5USERPREFS" type="Table_Type"/>	
+	<xs:element name="R5USERPREFERENCES" type="Table_Type"/>	
+	<xs:element name="R5DDDATASPY" type="Table_Type"/>	
+	<xs:element name="R5GISVISIBLELAYER" type="Table_Type"/>	
+	<xs:element name="R5QUERYFIELD" type="Table_Type"/>
+	<xs:element name="R5TRACKINGPROMPTS" type="Table_Type"/>
+	<xs:element name="R5TRACKRETURNPROMPTS" type="Table_Type"/>
+	<xs:element name="R5COMMANDS" type="Table_Type"/>
+	<xs:element name="R5DEVICES" type="Table_Type"/>
+	<xs:element name="R5ENTITYTABLES" type="Table_Type"/>
+	<xs:element name="R5GRID" type="Table_Type"/>	
+	<xs:element name="R5GRIDFIELD" type="Table_Type"/>	
+	<xs:element name="R5DDFIELD" type="Table_Type"/>	
+	<xs:element name="R5HOMEGROUPS" type="Table_Type"/>	
+	<xs:element name="R5PVDESCRIPTIONS" type="Table_Type"/>
+	<xs:element name="R5FLEXTABLES" type="Table_Type"/>
+	<xs:element name="R5ENTITIES" type="Table_Type"/>
+	<xs:element name="R5CONTACTCENTEROPTIONS" type="Table_Type"/>
+	<xs:element name="R5FUNCTIONUSERTABS" type="Table_Type"/>
+	<xs:element name="R5MENUS" type="Table_Type"/>
+	<xs:element name="R5PREFILTERLOOKUP" type="Table_Type"/>
+	<xs:element name="R5USERDEFINEDFIELDSETUP" type="Table_Type"/>
+	<xs:element name="R5USERFUNCTIONDEFS" type="Table_Type"/>
+	<xs:element name="R5RELIABILITYRANKINGLEVELS" type="Table_Type"/>
+	<xs:element name="R5REPORTFUNCTIONS" type="Table_Type"/>
+	<xs:element name="R5REPORTFIELDS" type="Table_Type"/>
+	<xs:element name="R5REPORTGROUPBY" type="Table_Type"/>
+	<xs:element name="R5REPORTSUBTOTAL" type="Table_Type"/>
+	<xs:element name="R5FIELDFILTERCLASS" type="Table_Type"/>
+	<xs:element name="R5FIELDFILTERTYPE" type="Table_Type"/>
+	<xs:element name="R5FIELDFILTERWOOBJTYPE" type="Table_Type"/>
+	<xs:element name="R5HIDDENDATASPIES" type="Table_Type"/>
+	<xs:complexType name="Table_Type">
+		<xs:sequence>
+			<xs:element ref="Data" maxOccurs="1" minOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="d" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

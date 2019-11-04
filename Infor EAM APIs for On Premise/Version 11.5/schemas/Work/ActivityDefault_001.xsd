@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2014 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP entityActivity
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ActivityDefault_001"
+           xmlns="http://schemas.datastream.net/MP_entities/ActivityDefault_001"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:of="http://www.openapplications.org/oagis_fields"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="ActivityDefault">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:ACTIVITYCODE"/>
+                <xs:element ref="dsf:PERSONS" minOccurs="0"/>
+                <xs:element ref="dsf:TASKQUANTITY"/>
+                <xs:element ref="dsf:COMPLETED"/>
+                <xs:element ref="dsf:HIREDLABOR"/>
+                <xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+                <xs:element ref="dsf:ACTIVITYSTARTDATE" minOccurs="0"/>
+                <xs:element ref="dsf:ACTIVITYENDDATE" minOccurs="0"/>
+                <xs:element ref="dsf:SUGGESTEDENDDATE" minOccurs="0"/>
+                <xs:element ref="dsf:SCHEDEND" minOccurs="0"/>
+                <xs:element ref="dsf:WARRANTY" minOccurs="0"/>
+                <xs:element ref="dsf:PLANNINGLEVEL" minOccurs="0"/>
+                <xs:element ref="dsf:MULTIPLETRADES" minOccurs="0"/>
+                <xs:element ref="dsf:LINEARREFUOM" minOccurs="0"/>
+                <xs:element ref="dsf:HEADEREQUIPMENTID" minOccurs="0"/>
+                <xs:element ref="dsf:ISWORKORDERJOB" minOccurs="0"/>
+                <xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/>
+                <xs:element ref="dsf:LABORTYPE" minOccurs="0"/>
+                <xs:element ref="dsf:DURATION" minOccurs="0"/>
+				<xs:element ref="dsf:FROMPOINT" minOccurs="0"/>
+				<xs:element ref="dsf:TOPOINT" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNMENTSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

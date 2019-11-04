@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2012 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+  This schema defines MP entity TaskChecklist_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/TaskChecklist_001"
+    xmlns="http://schemas.datastream.net/MP_entities/TaskChecklist_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="TaskChecklist">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:TASKLISTID"/>
+                <xs:element ref="dsf:CHECKLISTID"/>
+                <xs:element ref="dsf:SEQUENCE"/>
+                <xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+                <xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+                <xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+                <xs:element ref="dsf:TYPE" minOccurs="0"/>
+                <xs:element ref="dsf:REQUIREDTOCLOSEDOC" minOccurs="0"/>
+                <xs:element ref="dsf:EQUIPMENTLEVEL" minOccurs="0"/>
+                <xs:element ref="dsf:CLASSID" minOccurs="0"/>
+                <xs:element ref="dsf:CATEGORYID" minOccurs="0"/>
+                <xs:element ref="dsf:UOMID" minOccurs="0"/>
+                <xs:element ref="dsf:ASPECTID" minOccurs="0"/>
+                <xs:element ref="dsf:POINTTYPEID" minOccurs="0"/>
+                <xs:element ref="dsf:REPEATINGOCCURRENCES" minOccurs="0"/>
+                <xs:element ref="dsf:MATERIALLISTID" minOccurs="0"/>
+                <xs:element ref="dsf:VMRSCODE" minOccurs="0"/>
+                <xs:element ref="dsf:PARTLOCATIONCODE" minOccurs="0"/>
+                <xs:element ref="dsf:CONDITIONID" minOccurs="0"/>
+                <xs:element ref="dsf:FOLLOWUPTASKID" minOccurs="0"/>
+                <xs:element ref="dsf:FOLLOWUPJOBPLANID" minOccurs="0"/>
+                <xs:element ref="dsf:POSSIBLEFINDINGS" minOccurs="0"/>
+                <xs:element ref="dsf:JOBPLANID" minOccurs="0"/>
+                <xs:element ref="dsf:REUSABLE" minOccurs="0"/>
+                <xs:element ref="dsf:PARTID" minOccurs="0"/>
+                <xs:element ref="dsf:PARTCONDITIONTEMPLATECONDITIONCODE" minOccurs="0"/>
+                <xs:element ref="dsf:PARTCLASSID" minOccurs="0"/>
+                <xs:element ref="dsf:PARTCATEGORYID" minOccurs="0"/>
+                <xs:element ref="dsf:COLOR" minOccurs="0"/>
+                <xs:element ref="dsf:REFERENCE" minOccurs="0"/>
+                <xs:element ref="dsf:EQUIPMENTFILTER" minOccurs="0"/>
+                <xs:element ref="dsf:MAXIMUMSLIDERVALUE" minOccurs="0"/>
+                <xs:element ref="dsf:MINIMUMSLIDERVALUE" minOccurs="0"/>
+                <xs:element ref="dsf:CALCULATEDVALUESOURCE" minOccurs="0"/>				
+                <xs:element ref="dsf:CALCULATEDVALUEFORMULA" minOccurs="0"/>
+                <xs:element ref="dsf:DIRECTIONOPTIONAS" minOccurs="0"/>
+                <xs:element ref="dsf:NOTAPPLICABLEOPTIONS" minOccurs="0"/>
+                <xs:element ref="dsf:CONDITIONASFOUNDOPTIONS" minOccurs="0"/>
+                <xs:element ref="dsf:GROUPLABELID" minOccurs="0"/>
+                <xs:element ref="dsf:METRICFRACTIONSLIDER" minOccurs="0"/>
+                <xs:element ref="dsf:CHECKLISTRESPONSIBILITY" minOccurs="0"/>
+                <xs:element ref="dsf:MEASUREMENTRESPONSIBILITY" minOccurs="0"/>
+                <xs:element ref="dsf:HIDEFOLLOWUP" minOccurs="0"/>
+                <xs:element ref="dsf:HIDELINEARFIELDS" minOccurs="0"/>
+                <xs:element ref="dsf:ENABLENONCONFORMITIES" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

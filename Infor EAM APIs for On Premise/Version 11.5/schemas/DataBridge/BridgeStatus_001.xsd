@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity BridgeStatus    
+==================================================================================-->  
+ 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/BridgeStatus_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/BridgeStatus_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of BridgeStatus_001 ======================================-->
+	<xs:element name="BridgeStatus">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BRIDGESTATUSKEY"/>
+				<xs:element ref="dsf:SERVERSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:SVSTATUSASOF" minOccurs="0"/>
+				<xs:element ref="dsf:PARTNERSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:PNSTATUSASOF" minOccurs="0"/>
+				<xs:element ref="dsf:REFRESHPNSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:NUMOFDONE" minOccurs="0"/>
+				<xs:element ref="dsf:NUMOFPENDING" minOccurs="0"/>
+				<xs:element ref="dsf:NUMOFERROR" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSINCE" minOccurs="0"/>
+				<xs:element ref="dsf:TRANASOF" minOccurs="0"/>
+				<xs:element ref="dsf:REFRESHTRAN" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

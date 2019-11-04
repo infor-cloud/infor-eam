@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) YEAR Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+	
+	This schema defines MP entity Discounts for CustomerContract
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CustomerContractDiscount_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/CustomerContractDiscount_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of CustomerContractDiscount_001 ======= -->
+	<xs:element name="CustomerContractDiscount">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CUSTOMERCONTRACTDISCOUNTID"/>
+				<xs:element ref="dsf:USERCONTRACTID"/>
+				<xs:element ref="dsf:APPLYTOEACHINVOICE" minOccurs="0"/>
+				<xs:element ref="dsf:APPLYTOFULLAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:MINIMUMVALUE"/>
+				<xs:element ref="dsf:DISCOUNTPERCENTAGE"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

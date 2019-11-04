@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function result for function request MP7347_GetFleetVehicleTicket_001_Result
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7347_001" xmlns:dse-FleetVehicleTicket="http://schemas.datastream.net/MP_entities/FleetVehicleTicket_001" xmlns="http://schemas.datastream.net/MP_results/MP7347_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/FleetVehicleTicket_001" schemaLocation="FleetVehicleTicket_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP7347_GetFleetVehicleTicket_001_Result ======================================-->
+	<xs:element name="MP7347_GetFleetVehicleTicket_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-FleetVehicleTicket:FleetVehicleTicket"/>
+				<xs:element ref="AdditionalInfo" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="typeauth_can_update" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="billed_cannot_delete" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="gl_cannot_delete" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AdditionalInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-FleetVehicleTicket:VehicleDetails"/>
+				<xs:element ref="dse-FleetVehicleTicket:RecievedVehicleDetails" minOccurs="0"/>
+				<xs:element ref="dse-FleetVehicleTicket:CostDetails" minOccurs="0"/>		
+				<xs:element ref="dse-FleetVehicleTicket:AdditionalPMEventDetails" minOccurs="0"/>					
+				<xs:element ref="dsf:EXCEPTIONSEXIST"/>
+				<xs:element ref="dsf:CURRENCYID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

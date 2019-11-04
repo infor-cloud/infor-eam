@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+	Copyright (c) 2013 Infor. All rights reserved.
+	The word and design marks set forth herein are trademarks and/or registered
+	trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+	This schema defines MP entity PurchaseOrderTracking
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PurchaseOrderTracking_001"
+		xmlns="http://schemas.datastream.net/MP_entities/PurchaseOrderTracking_001"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:dsf="http://schemas.datastream.net/MP_fields"
+		elementFormDefault="qualified">
+		<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+		<!--===============================================================================-->
+		<xs:element name="PurchaseOrderTracking">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="dsf:PURCHASEORDERTRACKINGID"/>
+					<xs:element ref="dsf:TRACKTYPEID" minOccurs="0"/>
+					<xs:element ref="dsf:PURCHASEORDERLINENUM" minOccurs="0"/>
+					<xs:element ref="dsf:NUMRELEASED" minOccurs="0"/>
+					<xs:element ref="dsf:CONTROLNUM" minOccurs="0"/>
+					<xs:element ref="dsf:PARTID" minOccurs="0"/>
+					<xs:element ref="dsf:PARTDESC" minOccurs="0"/>
+					<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+					<xs:element ref="dsf:SUPPLIERPARTCODE" minOccurs="0"/>
+					<xs:element ref="dsf:PRICE" minOccurs="0"/>
+					<xs:element ref="dsf:ORDEREDQTY" minOccurs="0"/>
+					<xs:element ref="dsf:ORDERDATE" minOccurs="0"/>
+					<xs:element ref="dsf:CANCELLEDQTY" minOccurs="0"/>
+					<xs:element ref="dsf:RETURNQUANTITY" minOccurs="0"/>
+					<xs:element ref="dsf:BACKORDEREDQTY" minOccurs="0"/>
+					<xs:element ref="dsf:TAXAMOUNT" minOccurs="0"/>
+					<xs:element ref="ShippingDetails" minOccurs="0"/>
+					<xs:element ref="dsf:ADDITIONALCHARGES" minOccurs="0"/>
+					<xs:element ref="dsf:EXTRACHARGEDESC" minOccurs="0"/>
+					<xs:element ref="dsf:TRACKINGNOTES" minOccurs="0"/>
+					<xs:element ref="dsf:TRACKINGID" minOccurs="0"/>
+					<xs:element ref="dsf:TRACKINGURL" minOccurs="0"/>
+					<xs:element ref="SupplierContactDetails" minOccurs="0"/>
+					<xs:element ref="BuyerContactDetails" minOccurs="0"/>
+					<xs:element ref="dsf:CONTRACTCURRENCY" minOccurs="0"/>
+					<xs:element ref="dsf:VENDORCURRENCY" minOccurs="0"/>
+					<xs:element ref="dsf:INTERMEDIATECURRENCY" minOccurs="0"/>
+					<xs:element ref="dsf:GENERATEDATE" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="recordid" type="xs:long"></xs:attribute>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="ShippingDetails">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="dsf:SHIPPINGNUMBER" minOccurs="0"/>
+					<xs:element ref="dsf:CARRIER" minOccurs="0"/>
+					<xs:element ref="dsf:CARRIERURL" minOccurs="0"/>
+					<xs:element ref="dsf:SCHEDULEDSHIPDATE" minOccurs="0"/>
+					<xs:element ref="dsf:SHIPMENTQTY" minOccurs="0"/>
+					<xs:element ref="dsf:SHIPPINGCHARGES" minOccurs="0"/>
+					<xs:element ref="dsf:TRANSPORTTERMS" minOccurs="0"/>
+					<xs:element ref="dsf:TRANSPORTMETHOD" minOccurs="0"/>
+					<xs:element ref="dsf:HAZARDOUSMATERIAL" minOccurs="0"/>
+					<xs:element ref="dsf:FREIGHTTERMS" minOccurs="0"/>
+					<xs:element ref="dsf:SHIPNOTES" minOccurs="0"/>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		<xs:element name="SupplierContactDetails" type="ContactInfo_Type"/>
+		<xs:element name="BuyerContactDetails" type="ContactInfo_Type"/>
+		<xs:complexType name="ContactInfo_Type">
+			<xs:sequence>
+				<xs:element ref="dsf:CONTACTNAME" minOccurs="0"/>
+				<xs:element ref="dsf:CONTACTTITLE" minOccurs="0"/>
+				<xs:element ref="dsf:EMAIL" minOccurs="0"/>
+				<xs:element ref="dsf:CONTACTPHONE" minOccurs="0"/>
+				<xs:element ref="dsf:CONTACTEXTENSION" minOccurs="0"/>
+				<xs:element ref="dsf:CONTACTFAX" minOccurs="0"/>
+				<xs:element ref="dsf:STREETADDRESS1" minOccurs="0"/>
+				<xs:element ref="dsf:STREETADDRESS2" minOccurs="0"/>
+				<xs:element ref="dsf:STREETADDRESS3" minOccurs="0"/>
+				<xs:element ref="dsf:CITY" minOccurs="0"/>
+				<xs:element ref="dsf:STATE" minOccurs="0"/>
+				<xs:element ref="dsf:ZIP" minOccurs="0"/>
+				<xs:element ref="dsf:COUNTRY" minOccurs="0"/>
+				<xs:element ref="dsf:PHONE" minOccurs="0"/>
+				<xs:element ref="dsf:EXTENSION" minOccurs="0"/>
+				<xs:element ref="dsf:FAX" minOccurs="0"/>
+				<xs:element ref="dsf:CONTACTURL" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+</xs:schema>

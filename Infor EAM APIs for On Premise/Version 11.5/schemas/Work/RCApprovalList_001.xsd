@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines the RC Approval List entity
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/RCApprovalList_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://schemas.datastream.net/MP_entities/RCApprovalList_001" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+
+	<xs:element name="RCApprovalList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:APPROVALLISTID"/>
+				<xs:element ref="dsf:ISREVISIONCONTROLAPPROVERS" minOccurs="0"/>
+				<xs:element ref="dsf:ISRESERVATIONCALENDAROWNERS" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="rescalowner_with_sequence_or_responsibility" type="dsf:CONFIRMATION_Type" default="confirmed"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

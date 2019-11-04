@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity  ChangeNotice_001.
+====================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ChangeNotice_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/ChangeNotice_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of ChangeNotice_001 ======================================-->
+	<xs:element name="ChangeNotice">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ChangeNoticeDetails"/>
+				<xs:element ref="dsf:CLOSEDATE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ChangeNoticeDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CHANGENOTICEID"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:MANUFACTURERID"/>
+				<xs:element ref="dsf:FILTERASSET"/>
+				<xs:element ref="dsf:STARTDATE"/>
+				<xs:element ref="dsf:ENDDATE"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>	
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity WOAuthTypeGroup.
+=======================================================================================-->
+<!-- ======= This schema defines MP entity WOAuthTypeGroup ======= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WOAuthTypeGroup_002" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/WOAuthTypeGroup_002" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of WOAuthTypeGroup_002 ======= -->
+	<xs:element name="WOAuthTypeGroup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:GROUPWOAUTHID"/>
+				<xs:element ref="dsf:INSERT" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATE" minOccurs="0"/>
+				<xs:element ref="dsf:DELETE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2012 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+  This schema defines MP entity CustomerContractContractItem_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CustomerContractContractItem_001"
+    xmlns="http://schemas.datastream.net/MP_entities/CustomerContractContractItem_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="CustomerContractContractItem">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:USERCONTRACTID"/>
+                <xs:element ref="ContractItemDetails"/>
+                <xs:element ref="InvoicingDetails" minOccurs="0"/>
+                <xs:element ref="TimeBasedUsageDetails" minOccurs="0"/>
+                <xs:element ref="EquipmentSalesDetails" minOccurs="0"/>                    
+                <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ContractItemDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:CUSTOMERCONTRACTCONTRACTITEMID"/>
+                <xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+                <xs:element ref="dsf:PROJECTID" minOccurs="0"/>
+                <xs:element ref="dsf:BUDGETID" minOccurs="0"/>
+                <xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+                <xs:element ref="dsf:CUSTOMERID"/>
+                <xs:element ref="dsf:INVOICINGORGID"/>
+            </xs:sequence>                
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="InvoicingDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:TAXID" minOccurs="0"/>
+                <xs:element ref="dsf:CONTRACTTEMPLATEID" minOccurs="0"/>
+                <xs:element ref="dsf:INVOICINGDESCRIPTION" minOccurs="0"/>
+                <xs:element ref="dsf:USEFIXEDEXCHANGERATES" minOccurs="0"/>
+                <xs:element ref="dsf:EXCHRATE" minOccurs="0"/>
+                <xs:element ref="dsf:STARTDATE" minOccurs="0"/>
+                <xs:element ref="dsf:ENDDATE" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="TimeBasedUsageDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:USAGEQUANTITY" minOccurs="0"/>
+                <xs:element ref="dsf:USAGEUOMID" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EquipmentSalesDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:SALESPRICE" minOccurs="0"/>
+                <xs:element ref="dsf:SALESPRICECURRENCYID" minOccurs="0"/>
+                <xs:element ref="dsf:EXERCISEOPTION" minOccurs="0"/>
+                <xs:element ref="dsf:EXERCISEDATE" minOccurs="0"/>
+                <xs:element ref="dsf:SALESTAXID" minOccurs="0"/>
+                <xs:element ref="dsf:EQUIPMENTSTATUSAFTERSALE" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+    Copyright (c) 2015 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP entity WorkspaceMoveDefault
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WorkspaceMoveDefault_001"
+        xmlns="http://schemas.datastream.net/MP_entities/WorkspaceMoveDefault_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="WorkspaceMoveDefault">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:WORKSPACEMOVECODE" minOccurs="0"/>
+                    <xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+                    <xs:element ref="dsf:STATUS" minOccurs="0"/>
+                    <xs:element ref="dsf:ACTIVITYID" minOccurs="0"/>
+                    <xs:element ref="dsf:EQUIPMENTMOVE" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="JTAUTHCanUpdate" type="dsf:FLAG_Type" default="false"/>
+                <xs:attribute name="has_department_security" type="dsf:FLAG_Type" default="false"/>
+                <xs:attribute name="isWorkOrderReleased" type="dsf:FLAG_Type" default="false"/>
+                <xs:attribute name="isJobTypeWorkOrder" type="dsf:FLAG_Type" default="false"/>
+                <xs:attribute name="workOrderIsMECWorkOrder" type="dsf:FLAG_Type" default="false"/>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2005, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request UploadSet_001
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/UploadSet_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/UploadSet_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of UploadSet_001 ======================================-->
+	<xs:element name="UploadSet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UPLOADID"/>
+				<xs:element ref="dsf:UPLOADTABLE"/>
+				<xs:element ref="GRID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+  <xs:element name="GRID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="METADATA" minOccurs="0"/>
+        <xs:element ref="DATA" minOccurs="0"/>
+        <xs:element ref="FIELDS" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="METADATA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="REQUEST_TYPE_META" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="RECORDS" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="CLIENTROWS" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer"/>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ISSYSTEMUSER" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="PORTLETROWS" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer"/>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="MORERECORDPRESENT" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="+"/>
+              <xs:enumeration value="-"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="CURRENTCURSORPOSITION" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer"/>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="SERVERTIMESTAMP" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer"/>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="MULTIORGCOLUMN" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="PORTLETFLAG" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="+"/>
+              <xs:enumeration value="-"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="HASCREATEAUTH" minOccurs="0">
+          <xs:complexType>
+            <xs:attribute name="hasauth" type="xs:string"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EDITABLE" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="+"/>
+              <xs:enumeration value="-"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="GRIDID" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer"/>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="GRIDNAME" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="GRIDLABEL" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="GRIDTYPE" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer"/>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="DATASPYID" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer"/>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="DSUPDATECOUNT" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer"/>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="MULTIORG" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+	            <xs:enumeration value="ON"/>
+              <xs:enumeration value="OFF"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="ISTAB" minOccurs="0">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="+"/>
+              <xs:enumeration value="-"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="DATA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice>
+          <xs:element name="ROW" maxOccurs="unbounded">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="D" maxOccurs="unbounded">
+                  <xs:complexType mixed="true">
+                    <xs:attribute name="n" type="xs:integer"/>
+                  </xs:complexType>
+                </xs:element>
+              </xs:sequence>
+              <xs:attribute name="id" type="xs:integer"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="R" maxOccurs="unbounded">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="D" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FIELDS">
+    <xs:complexType>
+      <xs:sequence>
+          <xs:element ref="FIELD" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:attribute name="viewtype" type="GRID_TYPE_type"/>
+      <xs:attribute name="visibleColumn" type="xs:string"/>
+      <xs:attribute name="visiblerowcount" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FIELD">
+    <xs:complexType>
+      <xs:attribute name="type" type="FIELD_TYPE"/>
+      <xs:attribute name="control" type="xs:string"/>
+      <xs:attribute name="events" type="xs:string"/>
+      <xs:attribute name="filterable" type="xs:string"/>
+      <xs:attribute name="keyfield" type="xs:string"/>
+      <xs:attribute name="label" type="xs:string"/>
+      <xs:attribute name="lookup" type="xs:string"/>
+      <xs:attribute name="name" type="xs:string"/>
+      <xs:attribute name="order" type="xs:string"/>
+      <xs:attribute name="visible" type="xs:string"/>
+      <xs:attribute name="width" type="xs:string"/>
+      <xs:attribute name="aliasnum" type="xs:integer"/>
+      <xs:attribute name="sortable" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="FIELD_TYPE">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="VARCHAR"/>
+      <xs:enumeration value="MIXVARCHAR"/>
+      <xs:enumeration value="NUMBER"/>
+      <xs:enumeration value="CONTAINS"/>
+      <xs:enumeration value="LONG"/>
+      <xs:enumeration value="CURRENCY"/>
+      <xs:enumeration value="DECIMAL"/>
+      <xs:enumeration value="DURATION"/>
+      <xs:enumeration value="DATE"/>
+      <xs:enumeration value="DATETIME"/>
+      <xs:enumeration value="CHKBOOLEAN"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="GRID_TYPE_type">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LIST"/>
+      <xs:enumeration value="LOV"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

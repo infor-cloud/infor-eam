@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+* Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth herein are trademarks and/or 
+* registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved. All other trademarks 
+* listed herein are the property of their respective owners. www.infor.com.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EnergyStarSetup_001" xmlns="http://schemas.datastream.net/MP_entities/EnergyStarSetup_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Begining of EnergyStarSetup_001 ======================================-->
+	<xs:element name="EnergyStarSetup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ENERGYSTARSETUPID"/>
+				<xs:element ref="dsf:UOMID" minOccurs="0"/>
+				<xs:element ref="dsf:BUILDINGNAME" minOccurs="0"/>
+				<xs:element ref="dsf:BUILDINGADDRESS" minOccurs="0"/>
+				<xs:element ref="dsf:BUILDINGCITY" minOccurs="0"/>
+				<xs:element ref="dsf:BUILDINGSTATE" minOccurs="0"/>
+				<xs:element ref="dsf:BUILDINGZIP" minOccurs="0"/>
+				<xs:element ref="dsf:BUILDINGYEARBUILT" minOccurs="0"/>
+				<xs:element ref="dsf:METERNAME" minOccurs="0"/>
+				<xs:element ref="dsf:ENERGYTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:METERUNIT" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:ENERGYMATCHCONFIRMED" minOccurs="0"/>
+				<xs:element ref="dsf:HASBEENCONFIRMED" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth 
+	herein are trademarks and/or registered trademarks of Infor and/or related affiliates
+	and subsidiaries. All rights reserved. All other trademarks listed herein are the
+ 	property of their respective owners. www.infor.com.
+	
+    This schema defines MP entity StoreToStoreReqPart  
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/StoreToStoreReqPart_001" xmlns="http://schemas.datastream.net/MP_entities/StoreToStoreReqPart_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of StoreToStoreReqPart_001 ======================================-->
+	<xs:element name="StoreToStoreReqPart">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:REQUISITIONLINEID"/>
+				<xs:element ref="dsf:PARTID"/>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="dsf:QUANTITYREQUIRED" minOccurs="0"/>
+				<xs:element ref="dsf:UOMID"/>
+				<xs:element ref="dsf:PRICE"/>
+				<xs:element ref="dsf:CURRENCYID"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:DATEREQUIRED"/>
+				<xs:element ref="dsf:EXCHRATE"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:TAXID" minOccurs="0"/>
+				<xs:element ref="dsf:RECEIVEDQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:BUYER" minOccurs="0"/>
+				<xs:element ref="dsf:DELADDRESSCODE" minOccurs="0"/>
+				<xs:element ref="dsf:EXPENSETYPE" minOccurs="0"/>
+				<xs:element ref="dsf:COMMODITYID" minOccurs="0"/>
+				<xs:element ref="dsf:BYASSET" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:SCRAPQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:PARTTOTAL" minOccurs="0"/>
+				<xs:element ref="dsf:PARTCURRENCY" minOccurs="0"/>
+				<xs:element ref="dsf:QUOTATIONINDICATOR"/>
+				<xs:element ref="dsf:REPAIRABLE" minOccurs="0"/>
+				<xs:element ref="dsf:COREVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:STOCKPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERPARTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PARTCONDITIONTEMPLATECONDITIONCODE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

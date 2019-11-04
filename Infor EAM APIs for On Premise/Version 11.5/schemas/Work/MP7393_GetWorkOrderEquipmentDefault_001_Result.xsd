@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function result MP7393_GetWorkOrderEquipmentDefault_001_Result
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7393_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_results/MP7393_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP7393_GetWorkOrderEquipmentDefault_001_Result ======================================-->
+	<xs:element name="MP7393_GetWorkOrderEquipmentDefault_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:attribute name="hasNonMultipleEquipmentTypeChildWO" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="is_scheduled_by_msproject" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="is_scheduled_by_woloadbalance" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="is_scheduled_by_wodailysched" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="is_scheduling" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="isWorkOrderReleased" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="workOrderIsPMAndRevControlIsOn" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="workOrderRelatedToRouteAndROUTEEOBIsOn" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="workOrderHasNoEquipment" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="JTAUTHCanUpdate" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="workOrderIsMECWorkOrder" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+			<xs:attribute name="hasActiveResources" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

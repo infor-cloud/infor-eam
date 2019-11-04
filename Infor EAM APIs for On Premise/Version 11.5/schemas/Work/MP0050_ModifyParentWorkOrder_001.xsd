@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function request MP0050_ModifyParentWorkOrder_001    
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0050_001" xmlns="http://schemas.datastream.net/MP_functions/MP0050_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0050_ModifyParentWorkOrder_001 ======================================-->
+	<xs:element name="MP0050_ModifyParentWorkOrder_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WORKORDERID"/>
+				<xs:element ref="dsf:PARENTWO"/>
+				<xs:element ref="dsf:DEPEND" minOccurs="0"/>				
+			</xs:sequence>
+			<xs:attribute name="action" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

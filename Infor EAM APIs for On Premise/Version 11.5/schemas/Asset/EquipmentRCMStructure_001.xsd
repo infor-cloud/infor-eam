@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===================================================================================
+    Copyright (c) 2014 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. 
+    www.infor.com.
+
+    This schema defines MP business function entity EquipmentRCMStructure
+=========================================================================================--> 
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EquipmentRCMStructure_001"
+        xmlns="http://schemas.datastream.net/MP_entities/EquipmentRCMStructure_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="EquipmentRCMStructure">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:RCMLEVELID" minOccurs="0"/>
+                    <xs:element ref="FunctionNode" minOccurs="0"/>
+                    <xs:element ref="FailureModeNode" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:complexType name="FunctionNode_Type">
+            <xs:sequence>
+                    <xs:element ref="EquipmentRCMChildNode" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+        <xs:element name="FunctionNode" type="FunctionNode_Type"/>
+        <xs:element name="FailureModeNode" type="FunctionNode_Type"/>
+        <xs:element name="EquipmentRCMNodeDetail">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:EQUIPMENTFUNCTIONLEVELID"/>
+                    <xs:element ref="dsf:EQUIPMENTFUNCTIONLEVELTYPE"/>
+                    <xs:element ref="NodeDescription"/>
+                    <xs:element ref="dsf:ICONCODE" minOccurs="0"/>
+                    <xs:element ref="dsf:ICONPATH" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="EquipmentRCMChildNode">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="EquipmentRCMNodeDetail"/>
+                    <xs:element ref="EquipmentRCMChildNode" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="NodeDescription">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="300"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+</xs:schema>

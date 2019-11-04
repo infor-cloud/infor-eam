@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth herein are trademarks 
+and/or registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved. 
+All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business function result MP0012_GetWorkRequestResult_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0012_001" xmlns:dse-wo="http://schemas.datastream.net/MP_entities/WorkOrder_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_results/MP0012_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/WorkOrder_001" schemaLocation="WorkOrder_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0012_GetWorkRequest_001_Result ======================================-->
+	<xs:element name="MP0012_GetWorkRequest_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+			<xs:attribute name="jtauth_can_update" type="dsf:FLAG_Type" default="true"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-wo:WorkOrder"/>
+				<xs:element ref="dsf:EQUIPMENTCLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:SDMFLAG" minOccurs="0"/>
+				<xs:element ref="EQUIPMENTINFO" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EQUIPMENTINFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LINEARREFUOM" minOccurs="0" />
+				<xs:element ref="dsf:EQUIPMENTLENGTH" minOccurs="0" />
+				<xs:element ref="dsf:STARTINGAT" minOccurs="0" />
+				<xs:element ref="dsf:LINEARDIRECTIONID" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

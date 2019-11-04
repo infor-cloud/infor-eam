@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2004, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity AnalyticsVariable_001.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/AnalyticsVariable_001" xmlns="http://schemas.datastream.net/MP_entities/AnalyticsVariable_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dse1="http://schemas.datastream.net/MP_entities/AnalyticsVariableSymbol_001" xmlns:dse2="http://schemas.datastream.net/MP_entities/AnalyticsVariableLimit_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/AnalyticsVariableLimit_001" schemaLocation="AnalyticsVariableLimit_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/AnalyticsVariableSymbol_001" schemaLocation="AnalyticsVariableSymbol_001.xsd"/>
+	<xs:element name="AnalyticsVariable">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:OVD_ID" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_NAME"/>
+				<xs:element ref="dsf:OVD_SHORTNAME"/>
+				<xs:element ref="dsf:OVD_FACTTYPE"/>
+				<xs:element ref="dsf:OVD_STORERESULT"/>
+				<xs:element ref="dsf:OVD_ORG"/>
+				<xs:element ref="dsf:OVD_UNITS" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_VARTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_VARNUM" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_DESCRIPTION" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_VARSCOPE" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_DECPLACES" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_OBJECT" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_OBJ_ORG" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_LOCID" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_LOCATION" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_STORETCODE" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_MODIFIED" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_DELFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_ALLOWSYMBOL" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_CALCFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_CALCORDER" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_LASTCALC" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_CHKROLLOVER" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_ENTRYMIN" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_ENTRYMAX" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_QCMEAN" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_QCUCL" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_QCLCL" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_QCUWL" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_QCLWL" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_PRITHRESHOLD" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_SECTHRESHOLD" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_PRIOPERATOR" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_SECPERATOR" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_PRIOPPRT" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_SECOPPRT" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_UD1" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_UD2" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_UD3" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_UD4" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_UD5" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_UD6" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_UD7" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_UD8" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_UD9" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_EQINFIX" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_EQPOSTFIX" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_EQTRANSLATE" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_PARAMETER" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_CASCADERULE" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_LIST" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_LIMIT_TO_LIST" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_BARCODE" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_DDSPYID" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_DATASPYFIELDIDS" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_GRIDID" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_AUDITUSER" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_AUDITTIMESTAMP" minOccurs="0"/>
+				<xs:element ref="dsf:OVD_DTRESOLUTION" minOccurs="0"/>
+				<xs:element name="Attributes">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Attribute" maxOccurs="8">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="dsf:OAT_ID" minOccurs="0"/>
+										<xs:element ref="dsf:OVD_ATTRENTRYMIN" minOccurs="0"/>
+										<xs:element ref="dsf:OVD_ATTRENTRYMAX" minOccurs="0"/>
+										<xs:element ref="dsf:OVD_DSPYFLDID" minOccurs="0"/>
+										<xs:element ref="dsf:OVD_DSPYFLDNAME" minOccurs="0"/>
+										<xs:element ref="dsf:OVD_DSPYFLDLABEL" minOccurs="0"/>
+										<xs:element ref="dsf:OVD_DSPYFLDTYPE" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Symbols" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element ref="dse1:AnalyticsVariableSymbol"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Limits" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element ref="dse2:AnalyticsVariableLimit"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="hasdata" type="xs:boolean"/>
+			<xs:attribute name="hasequationdependency" type="xs:boolean"/>
+			<xs:attribute name="hasreportdependency" type="xs:boolean"/>
+			<xs:attribute name="gridname" type="xs:string"/>
+			<xs:attribute name="dataspyname" type="xs:string"/>
+			<xs:attribute name="isdataspysaved" type="xs:boolean"/>
+			<xs:attribute name="deletedata" type="xs:boolean" default="false"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

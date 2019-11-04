@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!-- ================================================================================ 
+    Copyright 2003, Datastream Systems, Inc. 
+    50 Datastream Plaza, Greenville, SC 29605, USA. 
+    All rights reserved. 
+
+    This schema defines MP entity AuditRecord
+================================================================================== -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/AuditRecord_001" 
+											xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+											xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+											xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+											xmlns="http://schemas.datastream.net/MP_entities/AuditRecord_001" 
+											elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of AuditRecord_001 ======= -->
+	<xs:element name="AuditRecord">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:FROMDATE"/>				
+				<xs:element ref="dsf:TODATE"/>
+				<xs:element ref="dsf:PURGEACTIONCODE" minOccurs="0"/>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

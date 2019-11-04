@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2018 Infor. All rights reserved.
+	The word and design marks set forth herein are trademarks and/or registered
+	trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. 
+	www.infor.com.
+	This schema defines MP business function result MP3542_ValidateServiceProblem_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP3542_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_results/MP3542_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP3542_ValidateServiceProblem_001 ======================================-->
+	<xs:element name="MP3542_ValidateServiceProblem_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ServiceProblemDetails"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ServiceProblemDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTSTRUCTUREDETAILS" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:SERVICECATEGORYID" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:AUTOCREATEWO" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDTOTALCOST" minOccurs="0"/>
+				<xs:element ref="dsf:TEMPORARYTURNAROUND" minOccurs="0"/>
+				<xs:element ref="dsf:PERMANENTTURNAROUND" minOccurs="0"/>
+				<xs:element ref="dsf:STANDARDRESPONSETIME" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERCLASSID" minOccurs="0"/> 
+				<xs:element ref="dsf:EQUIPMENTUSABILITYID" minOccurs="0"/>
+				<xs:element ref="dsf:PRIORITY" minOccurs="0"/>
+				<xs:element ref="dsf:WOTYPECATEGORYID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

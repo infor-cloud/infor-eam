@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+    
+    This schema defines MP entity InternalRepairReceiptPart    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/InternalRepairReceiptPart_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/InternalRepairReceiptPart_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===========================================================================================-->
+	<!--====  Begining of InternalRepairReceiptPart_001 ===========================================-->
+	<xs:element name="InternalRepairReceiptPart">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="InternalRepairReceiptPartBasic"/>
+				<xs:element ref="EventAndStoreInfo"/>
+				<xs:element ref="ReceivingInfo"/>
+				<xs:element ref="BinAndLotInfo"/>
+				<xs:element ref="AssetInfo"/>
+				<xs:element ref="SystemReadOnly" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="InternalRepairReceiptPartBasic">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TRANSACTIONLINEID"/>
+				<xs:element ref="dsf:PARTID"/>
+				<xs:element ref="dsf:TRANSACTIONSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:BYASSET" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRCONDITIONCODE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EventAndStoreInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WORKORDERID"/>
+				<xs:element ref="dsf:STOREID" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReceivingInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:RECEIPTQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:SCRAPQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:OUTSTANDINGQTY" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BinAndLotInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BINID" minOccurs="0"/>
+				<xs:element ref="dsf:LOTID" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTLOT" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTLOTEXPIRATIONDATE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AssetInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ASSETID" minOccurs="0"/>
+				<xs:element ref="dsf:ASSETTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:SERIALNUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SystemReadOnly">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PRICE" minOccurs="0"/>
+				<xs:element ref="dsf:AVERAGEPRICE" minOccurs="0"/>
+				<xs:element ref="dsf:WARRANTY" minOccurs="0"/>
+				<xs:element ref="dsf:PROJECTBUDGETID" minOccurs="0"/>
+				<xs:element ref="dsf:CONVERSIONFACTOR" minOccurs="0"/>
+				<xs:element ref="dsf:ForSystemInterfaceOnly" minOccurs="0"/>
+				<xs:element ref="dsf:GLTRANSFERFLAG" minOccurs="0"/>
+				<xs:element ref="dsf:GLTRANSFERDATE" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSORGID" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSCODE" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSGROUP" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERALIAS" minOccurs="0"/>
+				<xs:element ref="dsf:PRINTQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:PRICEUPDATE" minOccurs="0"/>
+				<xs:element ref="dsf:ORIGINALQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:ROUTERREC" minOccurs="0"/>
+				<xs:element ref="dsf:NEWDEPARTMENT" minOccurs="0"/>
+				<xs:element ref="dsf:NEWMANUFACTURER" minOccurs="0"/>
+				<xs:element ref="dsf:NEWCOSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:PARTCONDITIONTEMPLATECONDITIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRCONDITIONPARTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:TRACKBYCONDITION" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

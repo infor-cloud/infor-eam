@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function entity PurchasingContractText
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PurchasingContractText_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/PurchasingContractText_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>	
+	<!--====  Begining of PurchasingContractText_001 ======================================-->
+	<xs:element name="PurchasingContractText">	
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CONTRACTTEXTID"/>
+				<xs:element ref="dsf:SYSTEMRECORD" minOccurs="0"/>
+                                <xs:element ref="dsf:CONTRACTTEXT"/>
+				<xs:element ref="dsf:SUPPLIERTEXT"/>				
+				<xs:element ref="dsf:STARTDATETEXT"/>								
+				<xs:element ref="dsf:ENDDATETEXT"/>	
+				<xs:element ref="dsf:CLAUSESTEXT"/>
+				<xs:element ref="dsf:FINANCIALCONDITIONSTEXT"/>
+				<xs:element ref="dsf:PERORDERTEXT"/>
+				<xs:element ref="dsf:PERIODTEXT"/>
+				<xs:element ref="dsf:MINORDERVALUETEXT"/>
+				<xs:element ref="dsf:PARTTEXT"/>
+				<xs:element ref="dsf:MINQTYTEXT"/>
+				<xs:element ref="dsf:MINVALUEOFPARTSTEXT"/>
+				<xs:element ref="dsf:DISCOUNTPERCENTTEXT"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

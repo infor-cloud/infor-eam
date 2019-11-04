@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--====================================================================================
+    Copyright (c) 2014 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business function request MP6445_SyncFieldFilterSetupOperatorChecklist_001.
+====================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP6445_001"
+    xmlns="http://schemas.datastream.net/MP_functions/MP6445_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dse-FieldFilterSetupOperatorChecklist="http://schemas.datastream.net/MP_entities/FieldFilterSetupOperatorChecklist_001"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_entities/FieldFilterSetupOperatorChecklist_001" schemaLocation="FieldFilterSetupOperatorChecklist_001.xsd"/>
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--====================================================================================-->
+    <!--==================Beginning of MP6445_SyncFieldFilterSetupOperatorChecklist_001==================-->
+    <xs:element name="MP6445_SyncFieldFilterSetupOperatorChecklist_001">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dse-FieldFilterSetupOperatorChecklist:FieldFilterSetupOperatorChecklist"/>
+            </xs:sequence>
+            <xs:attribute name="verb" type="dsf:VERB_Type" fixed="Sync"/>
+            <xs:attribute name="noun" type="dsf:NOUN_Type" fixed="FieldFilterSetupOperatorChecklist"/>
+            <xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+            <xs:attribute name="confirm_default_screen_type_select" type="dsf:CONFIRMATION_Type"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

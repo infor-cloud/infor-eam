@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2019 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+  This schema defines MP entity MobileSyncRequest_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/MobileSyncRequest_001"
+    xmlns="http://schemas.datastream.net/MP_entities/MobileSyncRequest_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    xmlns:dsg="http://schemas.datastream.net/MP_entities/GridRequest"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <xs:import namespace="http://schemas.datastream.net/MP_entities/GridRequest" schemaLocation="../Grid/GridRequest.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="MobileSyncRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:MOBILEVERSION"/>
+                <xs:element ref="FUNCTION_REQUEST_INFO" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="FUNCTION_REQUEST_INFO">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:MOBILEGRIDID"/>
+                <xs:element ref="dsf:MOBILETEMPTABLENAME" minOccurs="0"/>
+                <xs:element ref="dsf:MOBILEDATASPYID" minOccurs="0"/>
+                <xs:element ref="dsg:LOV" minOccurs="0"/>
+                <xs:element ref="dsg:MULTIADDON_FILTERS" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

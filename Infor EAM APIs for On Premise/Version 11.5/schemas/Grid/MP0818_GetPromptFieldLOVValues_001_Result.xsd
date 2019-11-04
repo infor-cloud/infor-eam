@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function request MP0818_GetPromptFieldLOVValues_001_Result    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0818_GetPromptFieldLOVValues_001_Result" xmlns="http://schemas.datastream.net/MP_functions/MP0818_GetPromptFieldLOVValues_001_Result" xmlns:dst="http://schemas.datastream.net/MP_functions/GridToolbar" xmlns:dsg="http://schemas.datastream.net/MP_functions/GridResult" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_functions/GridResult" schemaLocation="GridResult.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_functions/GridToolbar" schemaLocation="GridToolbar.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0818_GetPromptFieldLOVValues_001_Result ======================================-->
+	<xs:element name="MP0818_GetPromptFieldLOVValues_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="GRIDRESULT"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GRIDRESULT">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dst:TOOLBAR"/>
+				<xs:element ref="dsg:GRID"/>
+			</xs:sequence>
+			<xs:attribute name="TYPE" type="FUNCTION_REQUEST_TYPE"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="FUNCTION_REQUEST_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LOVSQL.HEAD_DATA.STORED"/>
+			<xs:enumeration value="LOVSQL.DATA_ONLY.STORED"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

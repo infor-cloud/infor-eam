@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+        This schema defines MP entity GridValidation
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/GridValidation_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/GridValidation_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of GridValidation_001 ======================================-->
+	<xs:element name="GridValidation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:GRIDID"/>
+				<xs:element ref="dsf:SQLSTATEMENT" minOccurs="0"/>
+				<xs:element ref="dsf:ISACTIVE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

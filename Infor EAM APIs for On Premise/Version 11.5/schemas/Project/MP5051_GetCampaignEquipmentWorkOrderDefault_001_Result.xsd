@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2009 Infor.All rights reserved.The word and design marks set
+    forth herein are trademarks and/or registered trademarks of Infor and/or
+    related affiliates and subsidiaries.All rights reserved.All other trademarks
+    listed herein are the property of their respective owners.www.infor.com.
+
+    This schema defines MP business function result MP5051_GetCampaignEquipmentWorkOrderDefault_001_Result
+ ================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP5051_001"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://schemas.datastream.net/MP_results/MP5051_001"
+    xmlns:dse-cam="http://schemas.datastream.net/MP_entities/CampaignEquipmentWorkOrder_001"
+    elementFormDefault="qualified">
+    <!--============================= Imported Schemas ============================================-->
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <xs:import namespace="http://schemas.datastream.net/MP_entities/CampaignEquipmentWorkOrder_001" schemaLocation="CampaignEquipmentWorkOrder_001.xsd"/>
+    <!--===========================================================================================-->
+    <!--==================  Begining of MP5051_GetCampaignEquipmentWorkOrderDefault_001_Result ========-->
+    <xs:element name="MP5051_GetCampaignEquipmentWorkOrderDefault_001_Result">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ResultData"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResultData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dse-cam:CampaignEquipmentWorkOrder"/>
+                <xs:element ref="dsf:WOTYPECODE" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+

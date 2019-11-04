@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entityActivity
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/TelephoneInterface_001"
+           xmlns="http://schemas.datastream.net/MP_entities/TelephoneInterface_001"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:of="http://www.openapplications.org/oagis_fields"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="TelephoneInterface">
+        <xs:complexType>
+            <xs:sequence>
+            	<xs:choice>
+            		<xs:element ref="CreateWorkOrder" minOccurs="0"/>
+                	<xs:element ref="UpdateWorkOrderActivity" minOccurs="0"/>
+                	<xs:element ref="ValidateWorkOrder" minOccurs="0"/>
+                	<xs:element ref="ValidateWorkOrderActivity" minOccurs="0"/>
+                	<xs:element ref="StartWorkOrderActivity" minOccurs="0"/>
+                	<xs:element ref="StopWorkOrderActivity" minOccurs="0"/>
+                	<xs:element ref="ValidateEmployee" minOccurs="0"/>
+                	<xs:element ref="ValidateRoomNumber" minOccurs="0"/>
+                	<xs:element ref="ValidateStandardWO" minOccurs="0"/>
+                	<xs:element ref="ValidatePriority" minOccurs="0"/>
+                	<xs:element ref="CheckSecurity" minOccurs="0"/>
+               	</xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UpdateWorkOrderActivity">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element ref="dsf:WORKORDERID"/>
+				<xs:element ref="dsf:ACTIVITYCODE"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ValidateWorkOrder">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element ref="dsf:WORKORDERID"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element> 
+    <xs:element name="ValidateWorkOrderActivity">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element ref="dsf:WORKORDERID"/>
+				<xs:element ref="dsf:ACTIVITYCODE"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="StartWorkOrderActivity">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element ref="dsf:WORKORDERID"/>
+				<xs:element ref="dsf:ACTIVITYCODE"/>
+				<xs:element ref="dsf:EMPLOYEECODE"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="StopWorkOrderActivity">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element ref="dsf:WORKORDERID"/>
+				<xs:element ref="dsf:ACTIVITYCODE"/>
+				<xs:element ref="dsf:EMPLOYEECODE"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>        
+    <xs:element name="CheckSecurity">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element ref="SecurityPin"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>    
+    <xs:element name="CreateWorkOrder">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:EQUIPMENTID"/>
+                <xs:element ref="StandardWOSelection"/>
+                <xs:element ref="PrioritySelection"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ValidateEmployee">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element ref="dsf:EMPLOYEECODE"/>
+				<xs:element ref="dsf:WORKORDERID"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>   
+    <xs:element name="ValidateRoomNumber">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element ref="RoomNumber"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element> 
+    <xs:element name="ValidateStandardWO">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element ref="StandardWOSelection"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>    
+    <xs:element name="ValidatePriority">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element ref="PrioritySelection"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>                  
+	<xs:element name="SecurityPin" type="xs:string"/>
+	<xs:element name="StandardWOSelection" type="xs:string"/>
+	<xs:element name="PrioritySelection" type="xs:string"/>
+	<xs:element name="RoomNumber" type="dsf:CODE30_Type"/>
+</xs:schema>

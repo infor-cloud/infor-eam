@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity MPClass
+ ============================================================================= -->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/MPClass_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/MPClass_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="MPClass">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CLASSID"/>
+				<xs:element ref="dsf:CODINGENTITY" minOccurs="0"/>
+				<xs:element ref="dsf:LEVEL" minOccurs="0"/>
+				<xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+				<xs:element ref="dsf:ICONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:ICONPATH" minOccurs="0"/>
+                <xs:element ref="dsf:ENTITYDESCRIPTION" minOccurs="0"/>
+				<xs:element ref="dsf:PROPERTYDEFINITION" minOccurs="0"/>
+				<xs:element ref="dsf:MOBILENOTEBOOKDEFINITION" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

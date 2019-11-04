@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+* Copyright (c) 2009 Infor. All rights reserved. The word and design marks set forth herein are trademarks and/or 
+* registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved. All other trademarks 
+* listed herein are the property of their respective owners. www.infor.com.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP3103_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:dse-cam="http://schemas.datastream.net/MP_entities/EnergyStarSetup_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/EnergyStarSetup_001" schemaLocation="EnergyStarSetup_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:element name="MP3103_SyncEnergyStarSetup_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-cam:EnergyStarSetup"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Sync"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="EnergyStarSetup"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

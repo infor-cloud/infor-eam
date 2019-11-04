@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--
+===================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity PricingScheduleAdditionalCharge_001
+===================================================================
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PricingScheduleAdditionalCharge_001" xmlns="http://schemas.datastream.net/MP_entities/PricingScheduleAdditionalCharge_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of  PricingScheduleAdditionalCharge_001 ======================================-->
+	<xs:element name="PricingScheduleAdditionalCharge">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PricingScheduleAdditionalChargeDetails"/>
+				<xs:element ref="dsf:CURRENCYID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="PricingScheduleAdditionalChargeDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PRICINGSCHEDULEADDITIONALCHARGEID"/>
+				<xs:element ref="dsf:ADDITIONALCHARGE"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

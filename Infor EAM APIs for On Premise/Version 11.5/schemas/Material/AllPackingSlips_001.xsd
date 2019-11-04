@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function entity AllPackingSlips
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/AllPackingSlips_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/AllPackingSlips_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>	
+	<!--====  Begining of AllPackingSlips_001 ======================================-->
+	<xs:element name="AllPackingSlips">	
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PORECEIPTID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

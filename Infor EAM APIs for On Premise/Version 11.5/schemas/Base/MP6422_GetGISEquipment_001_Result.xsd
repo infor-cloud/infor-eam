@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2014 Infor.All rights reserved.The word and design marks set
+    forth herein are trademarks and/or registered trademarks of Infor and/or
+    related affiliates and subsidiaries.All rights reserved.All other trademarks
+    listed herein are the property of their respective owners.www.infor.com.
+
+    This schema defines MP business function request MP6422_GetGISEquipment_001_Result
+ ================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP6422_001"
+    xmlns="http://schemas.datastream.net/MP_results/MP6422_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <!--====  Begining of MP6422_GetGISEquipment_001_Result =================================-->
+    <xs:element name="MP6422_GetGISEquipment_001_Result">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="ResultData"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ResultData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="GISEquipmentDetails" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="EAMEquipmentsWithDiscrepancies" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="GISEquipmentDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:EQUIPMENTID"/>
+                <xs:element ref="dsf:GISOBJID"/>
+                <xs:element ref="dsf:OBJRTYPE"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EAMEquipmentsWithDiscrepancies">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="EAMEquipmentWithDiscrepancies" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>    
+    <xs:element name="EAMEquipmentWithDiscrepancies">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:GISOBJID"/>
+                <xs:element ref="dsf:EQUIPMENTID"/>
+                <xs:element ref="EAMAttributes" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EAMAttributes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="EAMAttribute" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="EAMAttribute">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:PARAMETERSET"/>
+                <xs:element ref="dsf:GRIDFIELDDATATYPE"/>
+                <xs:element ref="dsf:DATEFILED" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

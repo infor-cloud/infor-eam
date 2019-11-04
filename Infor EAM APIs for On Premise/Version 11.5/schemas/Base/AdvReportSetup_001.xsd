@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2004, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity AdvReportSetup_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/AdvReportSetup_001"
+    xmlns="http://schemas.datastream.net/MP_entities/AdvReportSetup_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<!--===============================================================================-->
+<!--====  Begining of AdvReportSetup ======================================-->
+	<xs:element name="AdvReportSetup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="REPORTSERVERURL" type="dsf:URL_Type"/>	
+				<xs:element name="ATTACHURL" type="dsf:URL_Type"/>	
+				<xs:element name="REDIRECTURL" type="dsf:URL_Type"/>
+				<xs:element name="PRINTURL" type="dsf:URL_Type"/>
+				<xs:element ref="dsf:LANGUAGEID" minOccurs="0"/>
+				<xs:element ref="dsf:PRODUCTVERSION"/>
+				<xs:element ref="dsf:ORGANIZATIONID"/>				
+				<xs:element ref="dsf:DUALCURRENCY" minOccurs="0"/>
+				<xs:element ref="dsf:DEFAULTORG" minOccurs="0"/>
+				<xs:element ref="dsf:TIMEZONE" minOccurs="0"/>
+				<xs:element ref="dsf:EMAIL" minOccurs="0"/>
+				<xs:element ref="dsf:USERDESC"/>
+				<xs:element ref="dsf:REPORTPERMISSIONS" minOccurs="0"/>
+				<xs:element ref="dsf:ADVREPORTSESSION" minOccurs="0"/>
+				<xs:element name="REPORTFILENAME" type="dsf:CODE255_Type" minOccurs="0"/>
+				<xs:element name="REPORTPATH" type="dsf:CODE255_Type" minOccurs="0"/>
+				<xs:element ref="dsf:REPORTCLASS" minOccurs="0"/>
+				<xs:element name="REPORTSUBTYPE" type="dsf:CODE1_Type" minOccurs="0"/>
+				<xs:element name="REPORT_CREATION" type="dsf:REPORT_CREATION_Type" minOccurs="0"/>
+				<xs:element name="NEWWINDOW" type="dsf:FLAG_Type" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
+

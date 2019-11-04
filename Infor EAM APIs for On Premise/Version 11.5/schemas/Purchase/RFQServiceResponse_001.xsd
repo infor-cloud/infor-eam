@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+	Copyright (c) 2007 Infor. All rights reserved.
+	The word and design marks set forth herein are trademarks and/or registered trademarks
+	of Infor and/or related affiliates and subsidiaries. All rights reserved. All other
+	trademarks listed herein are the property of their respective owners.
+	www.infor.com.
+
+	This schema defines MP business function entity RFQServiceResponse
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/RFQServiceResponse_001" xmlns="http://schemas.datastream.net/MP_entities/RFQServiceResponse_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Begining of RFQServiceResponse_001 ======================================-->
+	<xs:element name="RFQServiceResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:QUOTATIONLINEID"/>
+				<xs:element ref="dsf:NOTOFFERED" minOccurs="0"/>
+				<xs:element ref="dsf:PRICE" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID"/>
+				<xs:element ref="dsf:EXCHRATE"/>
+				<xs:element ref="dsf:FREEZERATE" minOccurs="0"/>
+				<xs:element ref="dsf:DUEDATE" minOccurs="0"/>
+				<xs:element ref="dsf:TAXID" minOccurs="0"/>
+				<xs:element ref="dsf:TAX2ID" minOccurs="0"/>
+				<xs:element ref="UserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserDefinedFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UDFCHAR01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR11" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR12" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR13" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR14" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR15" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX05" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

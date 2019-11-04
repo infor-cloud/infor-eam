@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =============================================================================================
+    Copyright (c) 2013 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+    This schema defines MP business function request MP7978_GetPermitToWorkEventLog_001_Result
+==================================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7978_001"
+        xmlns="http://schemas.datastream.net/MP_results/MP7978_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dse-PermitToWorkEventLog="http://schemas.datastream.net/MP_entities/PermitToWorkEventLog_001"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_entities/PermitToWorkEventLog_001" schemaLocation="PermitToWorkEventLog_001.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="MP7978_GetPermitToWorkEventLog_001_Result">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="ResultData"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="ResultData">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dse-PermitToWorkEventLog:PermitToWorkEventLog"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

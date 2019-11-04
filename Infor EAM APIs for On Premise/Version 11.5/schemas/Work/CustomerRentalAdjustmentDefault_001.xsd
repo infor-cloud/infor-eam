@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================================
+    Copyright (c) 2012 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. 
+    www.infor.com.
+  
+    This schema defines MP business function entity CustomerRentalAdjustment
+=========================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CustomerRentalAdjustmentDefault_001"
+        xmlns="http://schemas.datastream.net/MP_entities/CustomerRentalAdjustmentDefault_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="CustomerRentalAdjustmentDefault">
+            <xs:complexType>
+                <xs:sequence>
+                	<xs:element ref="dsf:CUSTOMERRENTALID" />
+                	<xs:element ref="dsf:ADJUSTMENTDATE" />
+                	<xs:element ref="dsf:ADJUSTMENTSTATUS" />
+                	<xs:element ref="dsf:ADJUSTMENTRSTATUS" />
+                	<xs:element ref="dsf:ADJUSTMENTTYPE" />
+                    <xs:element ref="dsf:TAXID" />
+                    <xs:element ref="dsf:TAXPERCENTAGE" minOccurs="0"/>
+                    <xs:element ref="dsf:RSTATUS" minOccurs="0"/>
+                    <xs:element ref="dsf:CURRENCYCODE" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

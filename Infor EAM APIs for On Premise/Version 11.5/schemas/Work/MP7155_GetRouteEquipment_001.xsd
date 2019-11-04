@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP business function request for MP7155_GetRouteEquipment_001.
+============================================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP7155_001"
+	xmlns="http://schemas.datastream.net/MP_functions/MP7155_001"
+	xmlns:dse-routeequipment="http://schemas.datastream.net/MP_entities/RouteEquipment_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:of="http://www.openapplications.org/oagis_fields"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/RouteEquipment_001" 
+		schemaLocation="RouteEquipment_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" 
+		schemaLocation="../MP_fields.xsd"/>
+	<!--======================================================================-->
+	<!--================  Begining of MP7155_GetRouteEquipment_001 ================-->
+	<xs:element name="MP7155_GetRouteEquipment_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ROUTEEQUIPMENTID"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Get"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="RouteEquipment"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2016 Infor. All rights reserved. 
+    The word and design marks set forth herein are trademarks and/or registered trademarks 
+    of Infor and/or related affiliates and subsidiaries. All rights reserved. All other 
+    trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business function request UserWidgetGrid_001
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/UserWidgetGrid_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/UserWidgetGrid_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	elementFormDefault="qualified">
+
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+
+	<!--===============================================================================-->
+	<!--====  Begining of UserWidgetGrid_001 ======================================-->
+	<xs:element name="UserWidgetGrid">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WIDGETID"/>
+				<xs:element ref="dsf:FUNCTIONCODE"/>
+				<xs:element ref="dsf:SYSTEMFUNCTION" minOccurs="0"/>
+				<xs:element ref="dsf:GRIDNAME"/>
+				<xs:element ref="dsf:GRIDID"/>
+				<xs:element ref="dsf:EWSDATASPYID"/>
+				<xs:element ref="dsf:DISPLAYCOLUMNS"/>
+				<xs:element ref="dsf:DISPLAYROW" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

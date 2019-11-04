@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity NonPOReceipt    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/NonPOReceipt_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/NonPOReceipt_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of NonPOReceipt_001 ======================================-->
+	<xs:element name="NonPOReceipt">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TRANSACTIONID"/>
+				<xs:element ref="dsf:TRANSACTIONSTATUS"/>
+				<xs:element ref="dsf:SUPPLIERID"/>
+				<xs:element ref="dsf:STOREID"/>
+				<xs:element ref="dsf:TRANSACTIONDATE"/>
+				<xs:element ref="dsf:ADVICENUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

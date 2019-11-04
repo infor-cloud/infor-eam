@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+     This schema defines MP entity Addresses
+     ============================================================================= -->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Addresses_001" xmlns="http://schemas.datastream.net/MP_entities/Addresses_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:os="http://www.openapplications.org/oagis_segments" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:osf="http://www.openapplications.org/oagis_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_segments" schemaLocation="../oagis_segments.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_fields" schemaLocation="../oagis_fields.xsd"/>
+	<!--====  Begining of Addresses_001 ======================================-->
+	<xs:element name="Addresses">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ADDRESSID"/>
+				<xs:element name="TEXT" type="dsf:CODE1000_Type" minOccurs="0"/>
+				<xs:element name="ADDRESS1" type="dsf:CODE64_Type" minOccurs="0"/>
+				<xs:element name="ADDRESS2" type="dsf:CODE64_Type" minOccurs="0"/>
+				<xs:element name="ADDRESS3" type="dsf:CODE64_Type" minOccurs="0"/>
+				<xs:element name="CITY" type="dsf:CODE20_Type" minOccurs="0"/>
+				<xs:element name="STATE" type="dsf:CODE30_Type" minOccurs="0"/>
+				<xs:element name="ZIP" type="dsf:CODE10_Type" minOccurs="0"/>
+				<xs:element name="COUNTRY" type="dsf:CODE30_Type" minOccurs="0"/>
+				<xs:element name="PHONE" type="dsf:CODE50_Type" minOccurs="0"/>
+				<xs:element name="PHONEEXT" type="dsf:CODE50_Type" minOccurs="0"/>
+				<xs:element name="FAX" type="dsf:CODE50_Type" minOccurs="0"/>
+				<xs:element name="EMAIL" type="dsf:CODE180_Type" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="updatecount" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

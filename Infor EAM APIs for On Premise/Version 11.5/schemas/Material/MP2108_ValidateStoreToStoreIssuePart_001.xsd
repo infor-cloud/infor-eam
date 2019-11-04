@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function request MP2108_ValidateStoreToStoreIssuePart_001    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP2108_001" xmlns="http://schemas.datastream.net/MP_functions/MP2108_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP2108_ValidateStoreToStoreIssuePart_001 ======================================-->
+	<xs:complexType name="ValidateStoreToStoreIssuePartBase">
+		<xs:sequence>
+			<xs:element ref="dsf:PARTID"/>
+			<xs:element ref="dsf:TRANSACTIONLINEID"/>
+			<xs:element ref="dsf:ASSETID" minOccurs="0"/>
+			<xs:element ref="dsf:BIN" minOccurs="0"/>
+			<xs:element ref="dsf:LOT" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Validate"/>
+		<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+	</xs:complexType>
+	<xs:element name="MP2108_ValidateStoreToStoreIssuePart_001">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ValidateStoreToStoreIssuePartBase">
+					<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="StoreToStoreIssuePart"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

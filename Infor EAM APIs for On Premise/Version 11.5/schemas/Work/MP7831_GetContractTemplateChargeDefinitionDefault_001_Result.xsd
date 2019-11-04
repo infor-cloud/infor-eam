@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2012 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business function request MP7831_GetContractTemplateChargeDefinitionDefault_001_Result
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7831_001"
+        xmlns="http://schemas.datastream.net/MP_results/MP7831_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="MP7831_GetContractTemplateChargeDefinitionDefault_001_Result">
+        <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="ResultData"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+        <xs:element name="ResultData">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:INVOICINGORGID" minOccurs="0"/>
+                    <xs:element ref="dsf:CHARGECATEGORY" minOccurs="0"/>
+                    <xs:element ref="dsf:CHARGELEVEL" minOccurs="0"/>
+                    <xs:element ref="dsf:CHARGESUBCATEGORY" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICE" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICECONDITIONAL" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXABLE" minOccurs="0"/>
+                    <xs:element ref="dsf:CHARGEESTIMATEDUSAGE" minOccurs="0"/>
+                    <xs:element ref="dsf:ROLLOVER" minOccurs="0"/>
+                    <xs:element ref="dsf:CURRENCYCODE" minOccurs="0"/>
+                    <xs:element ref="dsf:WHEREUSED" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

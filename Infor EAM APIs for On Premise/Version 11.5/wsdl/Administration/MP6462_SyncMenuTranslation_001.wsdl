@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<definitions targetNamespace="http://wsdls.datastream.net/MP6462_SyncMenuTranslation_001" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wssi="http://schemas.xmlsoap.org/ws/2002/04/secext" xmlns:resp0="http://schemas.datastream.net/MP_results/MP6462_001" xmlns:hdr="http://schemas.datastream.net/MP_functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdls.datastream.net/MP6462_SyncMenuTranslation_001" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rqst0="http://schemas.datastream.net/MP_functions/MP6462_001">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:import namespace="http://schemas.datastream.net/MP_functions" schemaLocation="../../schemas/headers.xsd"/><xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/secext" schemaLocation="../../schemas/secext.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_functions/MP6462_001" schemaLocation="../../schemas/Administration/MP6462_SyncMenuTranslation_001.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_results/MP6462_001" schemaLocation="../../schemas/Administration/MP6462_SyncMenuTranslation_001_Result.xsd"/></xsd:schema>
+  </types>
+  <message name="tenantHeader">
+    <part name="tenantHeader" element="hdr:Tenant"/>
+  </message>
+  <message name="SyncMenuTranslationResponseMsg">
+    <part name="SyncMenuTranslationResponseMsg" element="resp0:MP6462_SyncMenuTranslation_001_Result"/>
+  </message>
+  <message name="sessionHeader">
+    <part name="sessionHeader" element="hdr:Session"/>
+  </message>
+  <message name="messageConfigHeader">
+    <part name="messageConfigHeader" element="hdr:MessageConfig"/>
+  </message>
+  <message name="organizationHeader">
+    <part name="organizationHeader" element="hdr:Organization"/>
+  </message>
+  <message name="sessionScenarioHeader">
+    <part name="sessionScenarioHeader" element="hdr:SessionScenario"/>
+  </message>
+  <message name="securityHeader">
+    <part name="securityHeader" element="wssi:Security"/>
+  </message>
+  <message name="SyncMenuTranslationRequestMsg">
+    <part name="SyncMenuTranslationRequestMsg" element="rqst0:MP6462_SyncMenuTranslation_001"/>
+  </message>
+  <portType name="SyncMenuTranslationPT">
+    <operation name="SyncMenuTranslationOp">
+      <input name="SyncMenuTranslationRequestMsg" message="tns:SyncMenuTranslationRequestMsg"/>
+      <output name="SyncMenuTranslationResponseMsg" message="tns:SyncMenuTranslationResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="SyncMenuTranslationSoapBinding" type="tns:SyncMenuTranslationPT">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="SyncMenuTranslationOp">
+      <wsdlsoap:operation soapAction="processMessage"/>
+      <input name="SyncMenuTranslationRequestMsg">
+        <wsdlsoap:header message="tns:organizationHeader" part="organizationHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:securityHeader" part="securityHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionScenarioHeader" part="sessionScenarioHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:messageConfigHeader" part="messageConfigHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:tenantHeader" part="tenantHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="SyncMenuTranslationRequestMsg" use="literal"/>
+      </input>
+      <output name="SyncMenuTranslationResponseMsg">
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="SyncMenuTranslationResponseMsg" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SyncMenuTranslationService">
+    <port name="SyncMenuTranslationSoapBinding" binding="tns:SyncMenuTranslationSoapBinding">
+      <wsdlsoap:address location="http://localhost/axis/services/EWSConnector"/>
+    </port>
+  </service>
+</definitions>

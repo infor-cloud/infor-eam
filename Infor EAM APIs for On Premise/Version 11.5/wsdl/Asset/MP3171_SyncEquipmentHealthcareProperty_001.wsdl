@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<definitions targetNamespace="http://wsdls.datastream.net/MP3171_SyncEquipmentHealthcareProperty_001" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wssi="http://schemas.xmlsoap.org/ws/2002/04/secext" xmlns:resp0="http://schemas.datastream.net/MP_results/MP3171_001" xmlns:hdr="http://schemas.datastream.net/MP_functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdls.datastream.net/MP3171_SyncEquipmentHealthcareProperty_001" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rqst0="http://schemas.datastream.net/MP_functions/MP3171_001">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:import namespace="http://schemas.datastream.net/MP_functions" schemaLocation="../../schemas/headers.xsd"/><xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/secext" schemaLocation="../../schemas/secext.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_functions/MP3171_001" schemaLocation="../../schemas/Asset/MP3171_SyncEquipmentHealthcareProperty_001.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_results/MP3171_001" schemaLocation="../../schemas/Asset/MP3171_SyncEquipmentHealthcareProperty_001_Result.xsd"/></xsd:schema>
+  </types>
+  <message name="tenantHeader">
+    <part name="tenantHeader" element="hdr:Tenant"/>
+  </message>
+  <message name="organizationHeader">
+    <part name="organizationHeader" element="hdr:Organization"/>
+  </message>
+  <message name="messageConfigHeader">
+    <part name="messageConfigHeader" element="hdr:MessageConfig"/>
+  </message>
+  <message name="sessionHeader">
+    <part name="sessionHeader" element="hdr:Session"/>
+  </message>
+  <message name="SyncEquipmentHealthcarePropertyResponseMsg">
+    <part name="SyncEquipmentHealthcarePropertyResponseMsg" element="resp0:MP3171_SyncEquipmentHealthcareProperty_001_Result"/>
+  </message>
+  <message name="securityHeader">
+    <part name="securityHeader" element="wssi:Security"/>
+  </message>
+  <message name="sessionScenarioHeader">
+    <part name="sessionScenarioHeader" element="hdr:SessionScenario"/>
+  </message>
+  <message name="SyncEquipmentHealthcarePropertyRequestMsg">
+    <part name="SyncEquipmentHealthcarePropertyRequestMsg" element="rqst0:MP3171_SyncEquipmentHealthcareProperty_001"/>
+  </message>
+  <portType name="SyncEquipmentHealthcarePropertyPT">
+    <operation name="SyncEquipmentHealthcarePropertyOp">
+      <input name="SyncEquipmentHealthcarePropertyRequestMsg" message="tns:SyncEquipmentHealthcarePropertyRequestMsg"/>
+      <output name="SyncEquipmentHealthcarePropertyResponseMsg" message="tns:SyncEquipmentHealthcarePropertyResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="SyncEquipmentHealthcarePropertySoapBinding" type="tns:SyncEquipmentHealthcarePropertyPT">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="SyncEquipmentHealthcarePropertyOp">
+      <wsdlsoap:operation soapAction="processMessage"/>
+      <input name="SyncEquipmentHealthcarePropertyRequestMsg">
+        <wsdlsoap:header message="tns:organizationHeader" part="organizationHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:securityHeader" part="securityHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionScenarioHeader" part="sessionScenarioHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:messageConfigHeader" part="messageConfigHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:tenantHeader" part="tenantHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="SyncEquipmentHealthcarePropertyRequestMsg" use="literal"/>
+      </input>
+      <output name="SyncEquipmentHealthcarePropertyResponseMsg">
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="SyncEquipmentHealthcarePropertyResponseMsg" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SyncEquipmentHealthcarePropertyService">
+    <port name="SyncEquipmentHealthcarePropertySoapBinding" binding="tns:SyncEquipmentHealthcarePropertySoapBinding">
+      <wsdlsoap:address location="http://localhost/axis/services/EWSConnector"/>
+    </port>
+  </service>
+</definitions>

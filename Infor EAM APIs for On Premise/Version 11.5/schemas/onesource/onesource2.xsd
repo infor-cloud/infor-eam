@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:ns2="http://www.sabrix.com/services/taxcalculationservice/2011-09-01" xmlns:tns="http://www.boomi.com/connector/wss" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.boomi.com/connector/wss" version="1.0">
+  <xs:import namespace="http://www.sabrix.com/services/taxcalculationservice/2011-09-01" schemaLocation="onesource.xsd"/>
+  <xs:element name="getOneSourceTaxCalculation" type="tns:getOneSourceTaxCalculation"/>
+  <xs:complexType name="getOneSourceTaxCalculation">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:taxCalculationRequest"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="getOneSourceTaxCalculationResponse" type="tns:getOneSourceTaxCalculationResponse"/>
+  <xs:complexType name="getOneSourceTaxCalculationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:taxCalculationResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

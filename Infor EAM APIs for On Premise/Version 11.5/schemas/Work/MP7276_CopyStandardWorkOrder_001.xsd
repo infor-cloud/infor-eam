@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+	This schema defines MP business function request MP7276_CopyStandardWorkOrder_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP7276_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.datastream.net/MP_functions/MP7276_001" 
+	elementFormDefault="qualified">
+	<!-- ============================= Imported schemas ======================================= -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!-- ======= Beginning of MP7276_CopyStandardWorkOrder_001 ======= -->
+	<xs:element name="MP7276_CopyStandardWorkOrder_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CopyStdWOData"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Copy"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="StandardWorkOrder"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CopyStdWOData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SOURCESTDWO"/>
+				<xs:element ref="dsf:DESTSTDWO"/>
+				<xs:element ref="dsf:COPYCUSTOMFIELDS"/>
+				<xs:element ref="dsf:COPYCOMMENTS"/>
+				<xs:element ref="dsf:COPYDOCUMENTS"/>
+				<xs:element ref="dsf:COPYTRANSLATIONS"/>
+				<xs:element ref="dsf:COPYWOCUSTOMFIELDS"/>
+				<xs:element ref="dsf:COPYACTIVITIES"/>
+				<xs:element ref="dsf:COPYACTIVITYCOMMENTS"/>
+				<xs:element ref="dsf:COPYCHILDREN"/>
+				<xs:element ref="dsf:COPYTOOLS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

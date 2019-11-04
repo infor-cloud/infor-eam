@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+    Copyright (c) 2015 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP entity WorkspaceDefault
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WorkspaceDefault_001"
+        xmlns="http://schemas.datastream.net/MP_entities/WorkspaceDefault_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="WorkspaceDefault">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element ref="dsf:WORKSPACENUMBER" minOccurs="0"/>
+                    <xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+                    <xs:element ref="dsf:MULTIPLEEMPLOYEES" minOccurs="0"/>
+                    <xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

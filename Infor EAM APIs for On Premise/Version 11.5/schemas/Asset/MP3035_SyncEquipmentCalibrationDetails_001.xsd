@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP business function request MP3035_SyncEquipmentCalibrationDetails_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP3035_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP3035_SyncEquipmentCalibrationDetails_001 ======================================-->
+	<xs:element name="MP3035_SyncEquipmentCalibrationDetails_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CATEGORYID"/>
+			</xs:sequence>
+			<xs:attribute name="updateEquipmentCalibration" type="dsf:CONFIRMATION_Type" default="not_needed"/>
+		    <xs:attribute name="isupdateequipconfig" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Sync"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="EquipmentCalibrationDetails"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

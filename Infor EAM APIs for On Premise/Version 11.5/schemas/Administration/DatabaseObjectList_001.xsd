@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!-- ================================================================================ 
+    Copyright 2003, Datastream Systems, Inc. 
+    50 Datastream Plaza, Greenville, SC 29605, USA. 
+    All rights reserved. 
+
+    This schema defines MP entity DatabaseObjectList which in turn contains multiple DatabaseObjects
+================================================================================== -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/DatabaseObjectList_001" 
+										xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+										xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+										xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+										xmlns="http://schemas.datastream.net/MP_entities/DatabaseObjectList_001"
+										xmlns:dse-DatabaseObject="http://schemas.datastream.net/MP_entities/DatabaseObject_001" 
+										elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/DatabaseObject_001" schemaLocation="DatabaseObject_001.xsd"/>
+	<!-- ======= Beginning of DatabaseObject_001 ======= -->
+	<xs:element name="DatabaseObjectList">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="dse-DatabaseObject:DatabaseObject"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

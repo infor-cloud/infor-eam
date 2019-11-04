@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request MP5703_UpdateSessionWorkOrderActivities_001
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP5703_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_functions/MP5703_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP5703_UpdateSessionWorkOrderActivities_001 ======================================-->
+	<xs:element name="MP5703_UpdateSessionWorkOrderActivities_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SessionWOUpdateInfo"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Update"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="SessionWorkOrderActivities"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SessionWOUpdateInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SCHEDULESESSIONID"/>
+				<xs:element ref="SessionWOInfo" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SessionWOInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ACTIVITYID"/>
+				<xs:element ref="dsf:ACTSTART" minOccurs="0"/>
+				<xs:element ref="dsf:MPTASKNAME" minOccurs="0"/>
+				<xs:element ref="dsf:PRIORITY" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDHOURS" minOccurs="0"/>
+				<xs:element ref="dsf:PERCENTCOMPLETED" minOccurs="0"/>
+				<xs:element ref="dsf:INITIALRESOURCE" minOccurs="0"/>
+				<xs:element ref="dsf:PREDECESSORWORKORDERACTIVITIES" minOccurs="0"/>
+				<xs:element ref="dsf:MPDURATION" minOccurs="0"/>
+				<xs:element ref="dsf:PERSONS" minOccurs="0"/>
+				<xs:element ref="dsf:SCHEDEND" minOccurs="0"/>
+				<xs:element ref="RESOURCES" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RESOURCES">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RESOURCE" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RESOURCE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:RESOURCENAME"/>
+				<xs:element ref="dsf:RESOURCETYPE"/>
+				<xs:element ref="dsf:ORGANIZATIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:WOSCHEDULECODE" minOccurs="0"/>				
+				<xs:element ref="dsf:SCHEDULEDDATE"/>
+				<xs:element ref="dsf:SCHEDULEDVALUE"/>
+				<xs:element ref="dsf:SHIFTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:WOSCHEDULECOMMENT" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

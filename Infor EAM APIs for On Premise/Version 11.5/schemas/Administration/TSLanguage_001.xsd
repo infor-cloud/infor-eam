@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- ================================================================================ 
+	Copyright 2003, Datastream Systems, Inc. 
+	50 Datastream Plaza, Greenville, SC 29605, USA. 
+	All rights reserved. 
+
+	This schema defines MP entity TSLanguage
+================================================================================== --> 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/TSLanguage_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/TSLanguage_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of TSLanguage_001 ======= -->
+	<xs:element name="TSLanguage">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LANGUAGECODE"/>
+				<xs:element name="DESCRIPTION" type="dsf:CODE45_Type"/>
+				<xs:element ref="dsf:ISSYSTEMLANG" minOccurs="0"/>
+				<xs:element name="VERSION" type="dsf:CODE20_Type" minOccurs="0"/> 
+				<xs:element name="SOURCELANGUAGE" type="dsf:CODE2_Type" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

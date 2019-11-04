@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request MP0416_CreateNewPurchaseOrderRevision_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0416_001" xmlns="http://schemas.datastream.net/MP_functions/MP0416_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0416_CreateNewPurchaseOrderRevision_001 ======================================-->
+	<xs:element name="MP0416_CreateNewPurchaseOrderRevision_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="NEWREVISIONINFO"/>						
+			</xs:sequence>
+			<xs:attribute name="confirm_unfinish_polines" type="dsf:CONFIRMATION_Type" default="not_needed"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="NEWREVISIONINFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PURCHASEORDERID"/>
+				<xs:element name="NEWREVSTATUS" type="dsf:STATUS_Type" minOccurs="0"/>
+				<xs:element ref="dsf:NEWREVISIONREASON" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>

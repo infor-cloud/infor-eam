@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    GridRequest
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/GridRequest" xmlns="http://schemas.datastream.net/MP_functions/GridRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:os="http://www.openapplications.org/oagis_segments" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:simpleType name="CURSOR_POSITION">
+		<xs:restriction base="xs:integer"/>
+	</xs:simpleType>
+	<xs:element name="GRID">
+		<xs:complexType>
+			<xs:attribute name="GRID_NAME" type="xs:string"/>
+			<xs:attribute name="USER_FUNCTION_NAME" type="xs:string"/>
+			<xs:attribute name="GRID_ID" type="xs:integer"/>
+			<xs:attribute name="NUMBER_OF_ROWS_FIRST_RETURNED" type="xs:integer"/>
+			<xs:attribute name="CURSOR_POSITION" type="CURSOR_POSITION"/>
+			<xs:attribute name="TAB_NAME" type="xs:string"/>
+			<xs:attribute name="RESULT_IN_SAXORDER" type="dsf:FLAG_Type"/>
+			<xs:attribute name="TERSERESPONSE" type="dsf:FLAG_Type"/>
+			<xs:attribute name="LOCALIZE_RESULT" type="dsf:FLAG_Type"/>
+			<xs:attribute name="CUSTOM_FIELDS_CLASS_FILTER" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GRID_TYPE">
+		<xs:complexType>
+			<xs:attribute name="TYPE" type="GRID_TYPE_type"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DATASPY">
+		<xs:complexType>
+			<xs:attribute name="DATASPY_ID" type="xs:integer"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="GRID_TYPE_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LIST"/>
+			<xs:enumeration value="LOV"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FIELD_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="VARCHAR"/>
+			<xs:enumeration value="MIXVARCHAR"/>
+			<xs:enumeration value="NUMBER"/>
+			<xs:enumeration value="CONTAINS"/>
+			<xs:enumeration value="LONG"/>
+			<xs:enumeration value="CURRENCY"/>
+			<xs:enumeration value="DECIMAL"/>
+			<xs:enumeration value="DURATION"/>
+			<xs:enumeration value="DATE"/>
+			<xs:enumeration value="DATETIME"/>
+			<xs:enumeration value="NOBIND"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OPERATOR_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="="/>
+			<xs:enumeration value="IS EMPTY"/>
+			<xs:enumeration value="NOT EMPTY"/>
+			<xs:enumeration value="CONTAINS"/>
+			<xs:enumeration value="NOTCONTAINS"/>
+			<xs:enumeration value="BEGINS"/>
+			<xs:enumeration value="ENDS"/>
+			<xs:enumeration value="IN"/>
+			<xs:enumeration value="!="/>
+			<xs:enumeration value="&lt;"/>
+			<xs:enumeration value=">"/>
+			<xs:enumeration value=">="/>
+			<xs:enumeration value="=>"/>
+			<xs:enumeration value="=&lt;"/>
+			<xs:enumeration value="&lt;="/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AND_OR">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AND"/>
+			<xs:enumeration value="OR"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="POS_NEG">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="+"/>
+			<xs:enumeration value="-"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SORT_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ASC"/>
+			<xs:enumeration value="DESC"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ADDON_SORT">
+		<xs:complexType>
+			<xs:attribute name="ALIAS_NAME" type="xs:string"/>
+			<xs:attribute name="TYPE" type="SORT_TYPE"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="LOV">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LOV_PARAMETERS">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LOV_PARAMETER" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="ALIAS_NAME" type="xs:string"/>
+									<xs:attribute name="TYPE" type="xs:string"/>
+									<xs:attribute name="VALUE" type="xs:string"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MULTIADDON_FILTERS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="MADDON_FILTER" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="ALIAS_NAME" type="xs:string"/>
+						<xs:attribute name="OPERATOR" type="OPERATOR_TYPE"/>
+						<xs:attribute name="VALUE" type="xs:string"/>
+						<xs:attribute name="RPAREN" type="dsf:FLAG_Type"/>
+						<xs:attribute name="LPAREN" type="dsf:FLAG_Type"/>
+						<xs:attribute name="JOINER" type="AND_OR"/>
+						<xs:attribute name="SEQNUM" type="xs:integer"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ADDON_FILTER">
+		<xs:complexType>
+			<xs:attribute name="ALIAS_NAME" type="xs:string"/>
+			<xs:attribute name="OPERATOR" type="OPERATOR_TYPE"/>
+			<xs:attribute name="VALUE" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PROMPTFIELD">
+		<xs:complexType>
+			<xs:attribute name="TRANSACTIONTYPE" type="dsf:CODE4_Type"/>
+			<xs:attribute name="WSPROMPTCODE" type="dsf:CODE6_Type"/>
+			<xs:attribute name="SOURCEPROMPTSEQUENCE" type="xs:integer"/>
+			<xs:attribute name="TARGETPROMPTSEQUENCE" type="xs:integer"/>
+			<xs:attribute name="NUMBER_OF_ROWS_FIRST_RETURNED" type="xs:integer"/>
+			<xs:attribute name="CURSOR_POSITION" type="CURSOR_POSITION"/>
+			<xs:attribute name="TERSERESPONSE" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

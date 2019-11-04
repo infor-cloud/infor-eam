@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2004, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+    This schema defines MP entity PurchaseServiceReqLineInfo
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PurchaseServiceReqLineInfo_001"
+           xmlns="http://schemas.datastream.net/MP_entities/PurchaseServiceReqLineInfo_001"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           xmlns:of="http://www.openapplications.org/oagis_fields"
+           elementFormDefault="qualified">
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<!--===============================================================================-->
+<!--====  Begining of PurchaseServiceReqLineInfo_001 ======================================-->
+  <xs:element name="PurchaseServiceReqLineInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dsf:REQUISITIONLINEID" minOccurs="0"/>
+        <xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+        <xs:element ref="dsf:ACTIVITYID" minOccurs="0"/>
+        <xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/>
+        <xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+        <xs:element ref="dsf:PROJECTBUDGET" minOccurs="0"/>
+        <xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+        <xs:element ref="dsf:TRADEID" minOccurs="0"/>
+        <xs:element ref="dsf:TASKLISTID" minOccurs="0"/>
+        <xs:element ref="dsf:JOBPLANID" minOccurs="0"/>
+        <xs:element ref="dsf:TASKQUANTITY" minOccurs="0"/>
+        <xs:element ref="dsf:UOMID"  minOccurs="0"/>
+        <xs:element ref="dsf:HOURSREQUESTED"  minOccurs="0"/>
+        <xs:element ref="dsf:PRICE" minOccurs="0"/>
+        <xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+        <xs:element ref="dsf:TYPE" minOccurs="0"/>
+        <xs:element ref="dsf:DATEREQUIRED"/>
+        <xs:element ref="dsf:EXCHRATE" minOccurs="0"/>
+        <xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+        <xs:element ref="dsf:DELIVERYADDRESSID" minOccurs="0"/>
+        <xs:element ref="dsf:HOURSUNITRATIO" minOccurs="0"/>
+        <xs:element ref="dsf:RELATEDWORKORDERID" minOccurs="0"/>
+        <xs:element ref="dsf:MULTIEQUIP" minOccurs="0"/>
+        <xs:element ref="dsf:TAXID" minOccurs="0"/>
+        <xs:element ref="dsf:TAX2ID" minOccurs="0"/>
+        <xs:element ref="dsf:LINESUBTOTAL" minOccurs="0"/>
+        <xs:element ref="dsf:TOTALTAXAMOUNT" minOccurs="0"/>
+        <xs:element ref="dsf:SERVICETOTAL" minOccurs="0"/>
+        <xs:element ref="dsf:NOTES" minOccurs="0"/>
+        <xs:element ref="dsf:LONGDESCRIPTION" minOccurs="0"/>
+      </xs:sequence>
+	<xs:attribute name="recordid" type="xs:long"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

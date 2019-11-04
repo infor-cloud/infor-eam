@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+        This schema defines MP business function result MP0383_GetEstimatedClaimSettlementCosts_001
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0383_001" 
+           xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+           xmlns:dse-WarrantyClaim="http://schemas.datastream.net/MP_entities/WarrantyClaim_001" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://schemas.datastream.net/MP_results/MP0383_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/WarrantyClaim_001" schemaLocation="WarrantyClaim_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0383_GetEstimatedClaimSettlementCosts_001_Result ======================================-->
+	<xs:element name="MP0383_GetEstimatedClaimSettlementCosts_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WARRANTYCLAIMID" minOccurs="0"/>
+				<xs:choice minOccurs="0">			
+					<xs:element ref="dsf:WORKORDERID" minOccurs="0"/>				
+					<xs:element ref="dsf:ACTIVITYID" minOccurs="0"/>
+				</xs:choice>					
+				<xs:element ref="dsf:WARRANTYID" minOccurs="0"/>
+				<xs:element ref="dse-WarrantyClaim:WorkCosts" minOccurs="0"/>	
+				<xs:element ref="dsf:WORKORDERCOST" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>

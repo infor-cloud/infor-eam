@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+          This schema defines the result MP business function request MP0351_GetLocationStructure_002
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0351_002" 
+           xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns="http://schemas.datastream.net/MP_results/MP0351_002"
+           xmlns:dse-location1="http://schemas.datastream.net/MP_entities/Location_001"
+           xmlns:dse-location2="http://schemas.datastream.net/MP_entities/LocationHierarchy_002" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Location_001" schemaLocation="Location_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/LocationHierarchy_002" schemaLocation="LocationHierarchy_002.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0351_GetLocationStructure_002_Result ======================================-->
+	<xs:element name="MP0351_GetLocationStructure_002_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LOCATIONID"/>
+				<xs:element ref="dse-location1:LocationParentHierarchy" minOccurs="0"/>
+				<xs:element ref="dse-location2:LocationChildHierarchy" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>				
+</xs:schema>

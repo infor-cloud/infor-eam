@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2007 Infor. All rights reserved
+    The word and design marks set forth herein are trademarks and/or registered trademarks of Infor 
+    and/or related affiliates and subsidiaries. All rights reserved. All other trademarks listed herein 
+    are the property of their respective owners. www.infor.com
+    
+    This schema defines MP entity EquipmentEvaluation
+ ============================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EquipmentEvaluation_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/EquipmentEvaluation_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of EquipmentEvaluation_001 =================-->
+	<xs:element name="EquipmentEvaluation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EVALUATIONID"/>
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+				<xs:element ref="EquipmentUnderConsiderationDetails"/>
+				<xs:element ref="EnergyConsumptionDetails" minOccurs="0"/>
+				<xs:element ref="SelectionCriteriaDetails" minOccurs="0"/>
+				<xs:element ref="CapitalPlanningRequestDefaults" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREASEARCHCRITERIA" minOccurs="0"/>
+				<!-- This element is used solely on a Get and contains all possible custom
+				fields that can be searched.The USERDEFINEDAREASEARCHCRITERIA section 
+				should be used for saving custom field search parameters.-->
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EquipmentUnderConsiderationDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EVALMANUFACTURERDESC" minOccurs="0"/>
+				<xs:element ref="dsf:MODEL" minOccurs="0"/>
+				<xs:element ref="dsf:COSTOFCO2E"/>
+				<xs:element ref="dsf:ANNUALPMCOST"/>
+				<xs:element ref="dsf:ANNUALNONPMCOST"/>
+				<xs:element ref="dsf:ESTIMATEDMATERIALCOST" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDLABORCOST" minOccurs="0"/>
+				<xs:element ref="dsf:ESTIMATEDSALVAGE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EnergyConsumptionDetails">
+	<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EnergyConsumptionDetail1" type="EnergyConsumptionDetailType" minOccurs="0"/>
+				<xs:element name="EnergyConsumptionDetail2" type="EnergyConsumptionDetailType" minOccurs="0"/>
+				<xs:element name="EnergyConsumptionDetail3" type="EnergyConsumptionDetailType" minOccurs="0"/>
+				<xs:element name="EnergyConsumptionDetail4" type="EnergyConsumptionDetailType" minOccurs="0"/>
+				<xs:element name="EnergyConsumptionDetail5" type="EnergyConsumptionDetailType" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SelectionCriteriaDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>
+				<xs:element ref="dsf:MODEL" minOccurs="0"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:CATEGORYID" minOccurs="0"/>
+				<xs:element ref="dsf:SEARCHTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:SEARCHSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:GASTRACKED" minOccurs="0"/>
+				<xs:element ref="dsf:INCLUDEOUTOFSERVICE" minOccurs="0"/>
+				<xs:element ref="dsf:INCLUDEWITHDRAWNEQUIPMENT" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CapitalPlanningRequestDefaults">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PRIORITY" minOccurs="0"/>
+				<xs:element ref="dsf:MAJORGROUPELEMENTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:GROUPELEMENTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:INDIVIDUALELEMENTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:ADDITIONALINFO" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="EnergyConsumptionDetailType">
+		<xs:sequence>
+			<xs:element ref="dsf:COMMODITYID"></xs:element>
+			<xs:element minOccurs="0" ref="dsf:COMMODITYUOM"></xs:element>
+			<xs:element ref="dsf:DESIGNCONSUMPTIONRATE"></xs:element>
+			<xs:element ref="dsf:DESIGNCONSUMPTIONRATEUOM" minOccurs="0"/>
+			<xs:element ref="dsf:DESIGNUSAGEUOM"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

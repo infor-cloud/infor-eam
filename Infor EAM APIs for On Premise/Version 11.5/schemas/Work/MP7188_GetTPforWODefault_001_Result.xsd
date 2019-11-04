@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+    This schema defines MP business function result MP7188_GetTPforWODefault_001_Result
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7188_001" xmlns="http://schemas.datastream.net/MP_results/MP7188_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields"  elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP7188_GetTPforWODefault_001_Result ======================================-->
+	<xs:element name="MP7188_GetTPforWODefault_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EQUIPMENTID"/>
+				<xs:element ref="dsf:RELATEDWORKORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:TESTPOINTUOM" minOccurs="0"/>
+				<xs:element ref="dsf:ASFOUNDSTANDARDVALUEUOM" minOccurs="0"/>
+				<xs:element ref="dsf:ASFOUNDOUTPUTVALUEUOM" minOccurs="0"/>
+				<xs:element ref="dsf:CALIBRATIONSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:PRECISION" minOccurs="0"/>
+				<xs:element ref="dsf:OUTPUTCALCULATIONTYPECODE" minOccurs="0"/>
+				<xs:element ref="dsf:WOEQUIPOUTPUTCALCTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:ISALOOP" minOccurs="0"/>
+				<xs:element ref="dsf:WOPRECISION" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

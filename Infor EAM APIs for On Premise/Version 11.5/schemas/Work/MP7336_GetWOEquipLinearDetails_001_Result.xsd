@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+        Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth
+        herein are trademarks and/or registered trademarks of Infor and/or related affiliates
+        and subsidiaries. All rights reserved. All other trademarks listed herein are the
+        property of their respective owners. www.infor.com.
+
+        This schema defines MP business function result MP7336_GetWOEquipLinearDetails_001_Result
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7336_001" xmlns:dse-EquipLinearRef="http://schemas.datastream.net/MP_entities/EquipLinearRef_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_results/MP7336_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP7336_GetWOEquipLinearDetails_001_Result ======================================-->
+	<xs:element name="MP7336_GetWOEquipLinearDetails_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LINEARREFUOM" minOccurs="0"/>
+				<xs:element ref="dsf:LINEARREFERENCEEVENT" minOccurs="0"/>
+				<xs:element ref="dsf:INSPECTIONDIRECTIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:FLOWCODE" minOccurs="0"/>
+				<xs:element ref="AdditionalWOEquipDetails" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AdditionalWOEquipDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+				<xs:element ref="dsf:ISWARRANTYACTIVE" minOccurs="0"/>
+				<xs:element ref="dsf:LASTMETERREADING" minOccurs="0"/>
+				<xs:element ref="dsf:DORMANTSTART" minOccurs="0"/>
+				<xs:element ref="dsf:DORMANTEND" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONSAFETY" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

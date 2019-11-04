@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity ContactCenterSetup_001.
+====================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ContactCenterSetup_001" xmlns="http://schemas.datastream.net/MP_entities/ContactCenterSetup_001" xmlns:dse-ContactInfo="http://schemas.datastream.net/MP_entities/ContactInfo_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of ContactCenterSetup_001 ======================================-->
+	<xs:element name="ContactCenterSetup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ORGANIZATIONID"/>
+				<xs:element ref="dsf:CONTACTSOURCE"/>
+				<xs:element ref="dsf:LOOKBACKDAYS"/>
+				<xs:element ref="dsf:DEFAULTORG" minOccurs="0"/>
+				<xs:element ref="dsf:DEFAULTWOSTATUS"/>
+				<xs:element ref="dsf:REQOPENSTATUS"/>
+				<xs:element ref="dsf:REQFOLLOWUPSTATUS"/>
+				<xs:element ref="dsf:REQCANCLOSE"/>
+				<xs:element ref="dsf:COPYCUSTOMERINFO"/>
+				<xs:element ref="dsf:WOCLOSEDAYS" minOccurs="0"/>
+				<xs:element ref="dsf:TYPE" minOccurs="0"/>
+				<xs:element ref="dsf:SEARCHBYMETHOD"  minOccurs="0"/>
+				<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:HIGHLIGHTMAP" minOccurs="0"/>
+				<xs:element ref="dsf:IDENTIFYFEATURE" minOccurs="0"/>
+				<xs:element ref="dsf:SHOWPROVIDER" minOccurs="0"/>
+				<xs:element ref="dsf:SHOWSERVICECATEGORY" minOccurs="0"/>
+				<xs:element ref="dsf:RESULTSPERPAGE"/>
+				<xs:element ref="dsf:SHOWCHILDREN" minOccurs="0"/>
+				<xs:element ref="dsf:VIEWNEARESTADDRESS" minOccurs="0"/>
+				<xs:element ref="dsf:SCHEDULEWO" minOccurs="0"/>
+				<xs:element ref="dsf:PENALTYAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:ORGCURRENCY" minOccurs="0"/>
+				<xs:element ref="dsf:ISNEWCUSTOMERALLOWED" minOccurs="0"/>
+				<xs:element ref="dsf:DUPSTRUCTUREALLOWED" minOccurs="0"/>
+				<xs:element ref="dsf:USEDEFAULTORG" minOccurs="0"/>
+				<xs:element ref="dsf:CCTRSPCVALIDATION" minOccurs="0"/>
+				<xs:element ref="dsf:DUPLICATEWOCHECK" minOccurs="0"/>
+				<xs:element ref="dsf:DAYSTOSHOWOPENWO" minOccurs="0"/>
+				<xs:element ref="dsf:WOTYPELIST" minOccurs="0"/>
+				<xs:element ref="dsf:WOSTATUSLIST" minOccurs="0"/>
+				<xs:element ref="dsf:MATCHWOHEADERONLY" minOccurs="0"/>
+				<xs:element ref="dsf:MATCHSERVICECATEGORY" minOccurs="0"/>
+				<xs:element ref="dsf:MATCHSERVICEPROBLEMCODE" minOccurs="0"/>
+				<xs:element ref="dsf:USEEVENTTYPEFILTER" minOccurs="0"/>
+				<xs:element ref="dsf:SHOWSERVICEPROBLEMCODE" minOccurs="0"/>
+				<xs:element ref="dsf:CHECKDUPLICATEOPENREQUESTS" minOccurs="0"/>
+				<xs:element ref="dsf:CHECKRECURRINGCLOSEDREQUESTS" minOccurs="0"/>
+				<xs:element ref="dsf:RECURRINGREQUESTLOOKBACKDAYS" minOccurs="0"/>
+				<xs:element ref="dsf:PORTALSOURCE" minOccurs="0"/>
+				<xs:element ref="dsf:PORTALTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:PORTALSTATUS" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

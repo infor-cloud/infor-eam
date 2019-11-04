@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<definitions targetNamespace="http://wsdls.datastream.net/MP6406_GetReportOrganizationStructure_001" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wssi="http://schemas.xmlsoap.org/ws/2002/04/secext" xmlns:resp0="http://schemas.datastream.net/MP_results/MP6406_001" xmlns:hdr="http://schemas.datastream.net/MP_functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdls.datastream.net/MP6406_GetReportOrganizationStructure_001" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rqst0="http://schemas.datastream.net/MP_functions/MP6406_001">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:import namespace="http://schemas.datastream.net/MP_functions" schemaLocation="../../schemas/headers.xsd"/><xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/secext" schemaLocation="../../schemas/secext.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_functions/MP6406_001" schemaLocation="../../schemas/Administration/MP6406_GetReportOrganizationStructure_001.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_results/MP6406_001" schemaLocation="../../schemas/Administration/MP6406_GetReportOrganizationStructure_001_Result.xsd"/></xsd:schema>
+  </types>
+  <message name="GetReportOrganizationStructureResponseMsg">
+    <part name="GetReportOrganizationStructureResponseMsg" element="resp0:MP6406_GetReportOrganizationStructure_001_Result"/>
+  </message>
+  <message name="sessionScenarioHeader">
+    <part name="sessionScenarioHeader" element="hdr:SessionScenario"/>
+  </message>
+  <message name="GetReportOrganizationStructureRequestMsg">
+    <part name="GetReportOrganizationStructureRequestMsg" element="rqst0:MP6406_GetReportOrganizationStructure_001"/>
+  </message>
+  <message name="securityHeader">
+    <part name="securityHeader" element="wssi:Security"/>
+  </message>
+  <message name="tenantHeader">
+    <part name="tenantHeader" element="hdr:Tenant"/>
+  </message>
+  <message name="messageConfigHeader">
+    <part name="messageConfigHeader" element="hdr:MessageConfig"/>
+  </message>
+  <message name="organizationHeader">
+    <part name="organizationHeader" element="hdr:Organization"/>
+  </message>
+  <message name="sessionHeader">
+    <part name="sessionHeader" element="hdr:Session"/>
+  </message>
+  <portType name="GetReportOrganizationStructurePT">
+    <operation name="GetReportOrganizationStructureOp">
+      <input name="GetReportOrganizationStructureRequestMsg" message="tns:GetReportOrganizationStructureRequestMsg"/>
+      <output name="GetReportOrganizationStructureResponseMsg" message="tns:GetReportOrganizationStructureResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="GetReportOrganizationStructureSoapBinding" type="tns:GetReportOrganizationStructurePT">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="GetReportOrganizationStructureOp">
+      <wsdlsoap:operation soapAction="processMessage"/>
+      <input name="GetReportOrganizationStructureRequestMsg">
+        <wsdlsoap:header message="tns:organizationHeader" part="organizationHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:securityHeader" part="securityHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionScenarioHeader" part="sessionScenarioHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:messageConfigHeader" part="messageConfigHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:tenantHeader" part="tenantHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="GetReportOrganizationStructureRequestMsg" use="literal"/>
+      </input>
+      <output name="GetReportOrganizationStructureResponseMsg">
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="GetReportOrganizationStructureResponseMsg" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="GetReportOrganizationStructureService">
+    <port name="GetReportOrganizationStructureSoapBinding" binding="tns:GetReportOrganizationStructureSoapBinding">
+      <wsdlsoap:address location="http://localhost/axis/services/EWSConnector"/>
+    </port>
+  </service>
+</definitions>

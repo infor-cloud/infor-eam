@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<definitions targetNamespace="http://wsdls.datastream.net/MP8505_RunMobileSyncRequest_001" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wssi="http://schemas.xmlsoap.org/ws/2002/04/secext" xmlns:resp0="http://schemas.datastream.net/MP_results/MP8505_001" xmlns:hdr="http://schemas.datastream.net/MP_functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdls.datastream.net/MP8505_RunMobileSyncRequest_001" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rqst0="http://schemas.datastream.net/MP_functions/MP8505_001">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:import namespace="http://schemas.datastream.net/MP_functions" schemaLocation="../../schemas/headers.xsd"/><xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/secext" schemaLocation="../../schemas/secext.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_functions/MP8505_001" schemaLocation="../../schemas/Mobile/MP8505_RunMobileSyncRequest_001.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_results/MP8505_001" schemaLocation="../../schemas/Mobile/MP8505_RunMobileSyncRequest_001_Result.xsd"/></xsd:schema>
+  </types>
+  <message name="sessionScenarioHeader">
+    <part name="sessionScenarioHeader" element="hdr:SessionScenario"/>
+  </message>
+  <message name="securityHeader">
+    <part name="securityHeader" element="wssi:Security"/>
+  </message>
+  <message name="RunMobileSyncRequestResponseMsg">
+    <part name="RunMobileSyncRequestResponseMsg" element="resp0:MP8505_RunMobileSyncRequest_001_Result"/>
+  </message>
+  <message name="tenantHeader">
+    <part name="tenantHeader" element="hdr:Tenant"/>
+  </message>
+  <message name="RunMobileSyncRequestRequestMsg">
+    <part name="RunMobileSyncRequestRequestMsg" element="rqst0:MP8505_RunMobileSyncRequest_001"/>
+  </message>
+  <message name="sessionHeader">
+    <part name="sessionHeader" element="hdr:Session"/>
+  </message>
+  <message name="messageConfigHeader">
+    <part name="messageConfigHeader" element="hdr:MessageConfig"/>
+  </message>
+  <message name="organizationHeader">
+    <part name="organizationHeader" element="hdr:Organization"/>
+  </message>
+  <portType name="RunMobileSyncRequestPT">
+    <operation name="RunMobileSyncRequestOp">
+      <input name="RunMobileSyncRequestRequestMsg" message="tns:RunMobileSyncRequestRequestMsg"/>
+      <output name="RunMobileSyncRequestResponseMsg" message="tns:RunMobileSyncRequestResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="RunMobileSyncRequestSoapBinding" type="tns:RunMobileSyncRequestPT">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="RunMobileSyncRequestOp">
+      <wsdlsoap:operation soapAction="processMessage"/>
+      <input name="RunMobileSyncRequestRequestMsg">
+        <wsdlsoap:header message="tns:organizationHeader" part="organizationHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:securityHeader" part="securityHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionScenarioHeader" part="sessionScenarioHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:messageConfigHeader" part="messageConfigHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:tenantHeader" part="tenantHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="RunMobileSyncRequestRequestMsg" use="literal"/>
+      </input>
+      <output name="RunMobileSyncRequestResponseMsg">
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="RunMobileSyncRequestResponseMsg" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="RunMobileSyncRequestService">
+    <port name="RunMobileSyncRequestSoapBinding" binding="tns:RunMobileSyncRequestSoapBinding">
+      <wsdlsoap:address location="http://localhost/axis/services/EWSConnector"/>
+    </port>
+  </service>
+</definitions>

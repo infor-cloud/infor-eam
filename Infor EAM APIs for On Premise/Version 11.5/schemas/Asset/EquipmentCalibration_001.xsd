@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+         This schema defines MP entity Equipment Calibration
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EquipmentCalibration_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/EquipmentCalibration_001" elementFormDefault="qualified">
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of EquipmentCalibration_001 ======================================-->
+	<xs:element name="EquipmentCalibration">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="EquipmentID"/>
+				<xs:element ref="EquipmentDetails"/>
+				<xs:element ref="DeviceToleranceDetails"/>
+				<xs:element ref="PIDDetails" minOccurs="0"/>
+				<xs:element ref="UOMDetails" minOccurs="0"/>
+				<xs:element ref="OtherRanges" minOccurs="0"/>
+				<xs:element ref="OtherDetails" minOccurs="0"/>
+				<xs:element ref="UserDefinedFields" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTCONFIGURATIONRSTATUS" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EquipmentID">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice>
+					<xs:element ref="dsf:ASSETID"/>
+					<xs:element ref="dsf:POSITIONID"/>
+					<xs:element ref="dsf:SYSTEMID"/>
+					<xs:element ref="dsf:CATEGORYID"/>
+					<xs:element ref="dsf:EQUIPMENTID"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EquipmentDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ISALOOP"/>
+				<xs:element ref="dsf:ISANINSTRUMENT"/>
+				<xs:element ref="dsf:INSTRUMENTTYPE" minOccurs="0"/>				
+				<xs:element ref="dsf:OUTPUTCALCULATIONTYPE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PIDDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PIDNUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:PIDDRAWING" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UOMDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TESTPOINTUOM" minOccurs="0"/>
+				<xs:element ref="dsf:OUTPUTUOM" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DeviceToleranceDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEVICETOLERANCE" minOccurs="0"/>
+				<xs:element ref="dsf:DEVICETOLERANCETYPE"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OtherRanges">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEVICERANGE" minOccurs="0"/>
+				<xs:element ref="dsf:OUTPUTRANGE" minOccurs="0"/>
+				<xs:element ref="dsf:PROCESSTOLERANCE" minOccurs="0"/>
+				<xs:element ref="dsf:PROCESSRANGE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OtherDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CALIBRATIONSOP" minOccurs="0"/>
+				<xs:element ref="dsf:ALERTTOLERANCEPERCENT" minOccurs="0"/>
+				<xs:element ref="dsf:PRECISION" minOccurs="0"/>
+				<xs:element ref="dsf:INCREMENTVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:DEFAULTPMTESTPOINTSET"/>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserDefinedFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UDFCHAR01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR11" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR12" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR13" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR14" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR15" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR16" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR17" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR18" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR19" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR20" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR21" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR22" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR23" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR24" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR25" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR26" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR27" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR28" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR29" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR30" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR31" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR32" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR33" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR34" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR35" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR36" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR37" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR38" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR39" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR40" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR41" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR42" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR43" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR44" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR45" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNOTE01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNOTE02" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

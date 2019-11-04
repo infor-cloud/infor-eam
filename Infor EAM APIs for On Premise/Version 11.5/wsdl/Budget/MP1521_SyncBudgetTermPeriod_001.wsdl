@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<definitions targetNamespace="http://wsdls.datastream.net/MP1521_SyncBudgetTermPeriod_001" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wssi="http://schemas.xmlsoap.org/ws/2002/04/secext" xmlns:resp0="http://schemas.datastream.net/MP_results/MP1521_001" xmlns:hdr="http://schemas.datastream.net/MP_functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdls.datastream.net/MP1521_SyncBudgetTermPeriod_001" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rqst0="http://schemas.datastream.net/MP_functions/MP1521_001">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:import namespace="http://schemas.datastream.net/MP_functions" schemaLocation="../../schemas/headers.xsd"/><xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/secext" schemaLocation="../../schemas/secext.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_functions/MP1521_001" schemaLocation="../../schemas/Budget/MP1521_SyncBudgetTermPeriod_001.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_results/MP1521_001" schemaLocation="../../schemas/Budget/MP1521_SyncBudgetTermPeriod_001_Result.xsd"/></xsd:schema>
+  </types>
+  <message name="organizationHeader">
+    <part name="organizationHeader" element="hdr:Organization"/>
+  </message>
+  <message name="SyncBudgetTermPeriodResponseMsg">
+    <part name="SyncBudgetTermPeriodResponseMsg" element="resp0:MP1521_SyncBudgetTermPeriod_001_Result"/>
+  </message>
+  <message name="messageConfigHeader">
+    <part name="messageConfigHeader" element="hdr:MessageConfig"/>
+  </message>
+  <message name="sessionHeader">
+    <part name="sessionHeader" element="hdr:Session"/>
+  </message>
+  <message name="tenantHeader">
+    <part name="tenantHeader" element="hdr:Tenant"/>
+  </message>
+  <message name="SyncBudgetTermPeriodRequestMsg">
+    <part name="SyncBudgetTermPeriodRequestMsg" element="rqst0:MP1521_SyncBudgetTermPeriod_001"/>
+  </message>
+  <message name="securityHeader">
+    <part name="securityHeader" element="wssi:Security"/>
+  </message>
+  <message name="sessionScenarioHeader">
+    <part name="sessionScenarioHeader" element="hdr:SessionScenario"/>
+  </message>
+  <portType name="SyncBudgetTermPeriodPT">
+    <operation name="SyncBudgetTermPeriodOp">
+      <input name="SyncBudgetTermPeriodRequestMsg" message="tns:SyncBudgetTermPeriodRequestMsg"/>
+      <output name="SyncBudgetTermPeriodResponseMsg" message="tns:SyncBudgetTermPeriodResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="SyncBudgetTermPeriodSoapBinding" type="tns:SyncBudgetTermPeriodPT">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="SyncBudgetTermPeriodOp">
+      <wsdlsoap:operation soapAction="processMessage"/>
+      <input name="SyncBudgetTermPeriodRequestMsg">
+        <wsdlsoap:header message="tns:organizationHeader" part="organizationHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:securityHeader" part="securityHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionScenarioHeader" part="sessionScenarioHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:messageConfigHeader" part="messageConfigHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:tenantHeader" part="tenantHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="SyncBudgetTermPeriodRequestMsg" use="literal"/>
+      </input>
+      <output name="SyncBudgetTermPeriodResponseMsg">
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="SyncBudgetTermPeriodResponseMsg" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="SyncBudgetTermPeriodService">
+    <port name="SyncBudgetTermPeriodSoapBinding" binding="tns:SyncBudgetTermPeriodSoapBinding">
+      <wsdlsoap:address location="http://localhost/axis/services/EWSConnector"/>
+    </port>
+  </service>
+</definitions>

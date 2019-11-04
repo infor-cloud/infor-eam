@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- ================================================================================ 
+	Copyright 2003, Datastream Systems, Inc. 
+	50 Datastream Plaza, Greenville, SC 29605, USA. 
+	All rights reserved. 
+
+	This schema defines MP entity Provider
+================================================================================== --> 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/Provider_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/Provider_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of Provider_001 ======= -->
+	<xs:element name="Provider">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PROVIDERID"/>
+				<xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+				<xs:element ref="dsf:STREETADDRESS1" minOccurs="0"/>
+				<xs:element ref="dsf:STREETADDRESS2" minOccurs="0"/>
+				<xs:element ref="dsf:CITY" minOccurs="0"/>
+				<xs:element ref="dsf:STATE" minOccurs="0"/>
+				<xs:element ref="dsf:ZIP" minOccurs="0"/>
+				<xs:element ref="dsf:CONTACTNAME" minOccurs="0"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:PRIMARYPHONE" minOccurs="0"/>
+				<xs:element ref="dsf:SECONDARYPHONE" minOccurs="0"/>
+				<xs:element ref="dsf:TERTIARYPHONE" minOccurs="0"/>
+				<xs:element ref="dsf:PRIMARYFAX" minOccurs="0"/>
+				<xs:element ref="dsf:SECONDARYFAX" minOccurs="0"/>
+				<xs:element ref="dsf:EMAILFAX" minOccurs="0"/>
+				<xs:element ref="dsf:PRIMARYEMAIL" minOccurs="0"/>
+				<xs:element ref="dsf:SECONDARYEMAIL" minOccurs="0"/>
+				<xs:element ref="dsf:PREFERREDCONTACTMETHOD" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:CONVERTED" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="convert_to_suppliers" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===================================================================================
+	Copyright (c) 2012 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. 
+    www.infor.com.
+
+    This schema defines MP business function entity CustomerContractAdjustmentDefault
+=========================================================================================--> 
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CustomerContractAdjustment_001"
+        xmlns="http://schemas.datastream.net/MP_entities/CustomerContractAdjustment_001"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:dsf="http://schemas.datastream.net/MP_fields"
+        elementFormDefault="qualified">
+        <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+        <!--===============================================================================-->
+        <xs:element name="CustomerContractAdjustment">
+            <xs:complexType>
+                <xs:sequence>
+                	<xs:element ref="dsf:CUSTOMERCONTRACTADJUSTMENTID"/>
+                	<xs:element ref="dsf:USERCONTRACTID"/>
+                	<xs:element ref="dsf:CUSTOMERCONTRACTCONTRACTITEMID" minOccurs="0"/>
+                	<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+                    <xs:element ref="dsf:PROJECTID" minOccurs="0"/>
+                    <xs:element ref="dsf:WORKORDERID" minOccurs="0"/>                        	
+                    <xs:element ref="dsf:ADJUSTMENTID"/>
+                    <xs:element ref="dsf:ADJUSTMENTDATE" />
+                    <xs:element ref="dsf:ADJUSTMENTSTATUS" />
+                    <xs:element ref="dsf:ADJUSTMENTTYPE" />                    
+                    <xs:element ref="dsf:ADJUSTMENTQUANTITY" minOccurs="0"/>
+                    <xs:element ref="dsf:RATE" minOccurs="0"/>
+                    <xs:element ref="dsf:TOTALAMOUNT" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXID" minOccurs="0"/>
+                    <xs:element ref="dsf:TAXAMOUNT" minOccurs="0"/>
+                    <xs:element ref="dsf:EXCHRATE" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICEAMOUNT" minOccurs="0"/>
+                    <xs:element ref="dsf:INVOICETAXAMOUNT" minOccurs="0"/> 
+                    <xs:element ref="dsf:CUSTOMERCONTRACTINVOICEID" minOccurs="0"/>                
+                    <xs:element ref="dsf:CREATEDWORKORDERID" minOccurs="0"/>
+                    <xs:element ref="dsf:AJUSTMENTCOMMENTS" minOccurs="0"/>
+                    <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+					<xs:element ref="dsf:STANDARDWO" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="recordid" type="xs:long"/>
+            </xs:complexType>
+        </xs:element>
+</xs:schema>

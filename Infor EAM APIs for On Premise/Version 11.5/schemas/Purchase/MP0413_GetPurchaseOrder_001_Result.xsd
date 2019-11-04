@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function result MP0413_GetPurchaseOrder_001_Result
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0413_001" xmlns:dpo-PurchaseOrder="http://schemas.datastream.net/MP_entities/PurchaseOrder_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_results/MP0413_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/PurchaseOrder_001" schemaLocation="PurchaseOrder_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0413_GetPurchaseOrder_001_Result ======================================-->
+	<xs:element name="MP0413_GetPurchaseOrder_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dpo-PurchaseOrder:PurchaseOrder"/>
+				<xs:element name="SUPPLIERINFO">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dsf:LANGUAGEID" minOccurs="0"/>
+							<xs:element ref="dsf:LEADTIME" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>	
+				<xs:element name="GROUP" type="dsf:CODE12_Type" minOccurs="0"/>
+				<xs:element ref="dsf:CREDITCARDLASTFOUR" minOccurs="0"/>
+				<xs:element ref="dsf:TOTALTAXAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:TOTALEXTRA" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="multiorg" type="dsf:FLAG_Type" default="false"/>
+			<xs:attribute name="has_stat_auth_from_r" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

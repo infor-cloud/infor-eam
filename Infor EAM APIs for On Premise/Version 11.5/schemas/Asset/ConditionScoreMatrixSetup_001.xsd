@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2016 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+  This schema defines MP entity ConditionScoreMatrixSetup_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ConditionScoreMatrixSetup_001"
+    xmlns="http://schemas.datastream.net/MP_entities/ConditionScoreMatrixSetup_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="ConditionScoreMatrixSetup">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:CONDITIONSCOREMATRIXSETUPID" minOccurs="0"/>
+                <xs:element ref="dsf:RCMPROJECT"/>
+                <xs:element ref="dsf:NONCONFORMITYSEVERITY" minOccurs="0"/>
+                <xs:element ref="dsf:NONCONFORMITYINTENSITY" minOccurs="0"/>
+                <xs:element ref="dsf:SIZEFROM" minOccurs="0"/>
+                <xs:element ref="dsf:SIZETO" minOccurs="0"/>
+                <xs:element ref="dsf:NONCONFORMITYIMPORTANCE" minOccurs="0"/>
+                <xs:element ref="dsf:CONDITIONSCORE" minOccurs="0"/>
+                <xs:element ref="dsf:CONDITIONINDEX" minOccurs="0"/>
+                <xs:element ref="dsf:REINSPECTAFTER" minOccurs="0"/>
+                <xs:element ref="dsf:REINSPECTAFTERUOM" minOccurs="0"/>
+                <xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+                <xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+                <xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+                <xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+                <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

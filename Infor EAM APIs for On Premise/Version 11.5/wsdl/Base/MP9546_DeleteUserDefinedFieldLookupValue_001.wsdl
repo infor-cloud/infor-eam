@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+     Copyright (c) 2018 Infor.  All rights reserved. 
+==================================================================================-->
+<definitions targetNamespace="http://wsdls.datastream.net/MP9546_DeleteUserDefinedFieldLookupValue_001" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wssi="http://schemas.xmlsoap.org/ws/2002/04/secext" xmlns:resp0="http://schemas.datastream.net/MP_results/MP9546_001" xmlns:hdr="http://schemas.datastream.net/MP_functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://wsdls.datastream.net/MP9546_DeleteUserDefinedFieldLookupValue_001" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:rqst0="http://schemas.datastream.net/MP_functions/MP9546_001">
+  <types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"><xsd:import namespace="http://schemas.datastream.net/MP_functions" schemaLocation="../../schemas/headers.xsd"/><xsd:import namespace="http://schemas.xmlsoap.org/ws/2002/04/secext" schemaLocation="../../schemas/secext.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_functions/MP9546_001" schemaLocation="../../schemas/Base/MP9546_DeleteUserDefinedFieldLookupValue_001.xsd"/><xsd:import namespace="http://schemas.datastream.net/MP_results/MP9546_001" schemaLocation="../../schemas/Base/MP9546_DeleteUserDefinedFieldLookupValue_001_Result.xsd"/></xsd:schema>
+  </types>
+  <message name="DeleteUserDefinedFieldLookupValueResponseMsg">
+    <part name="DeleteUserDefinedFieldLookupValueResponseMsg" element="resp0:MP9546_DeleteUserDefinedFieldLookupValue_001_Result"/>
+  </message>
+  <message name="securityHeader">
+    <part name="securityHeader" element="wssi:Security"/>
+  </message>
+  <message name="sessionScenarioHeader">
+    <part name="sessionScenarioHeader" element="hdr:SessionScenario"/>
+  </message>
+  <message name="organizationHeader">
+    <part name="organizationHeader" element="hdr:Organization"/>
+  </message>
+  <message name="messageConfigHeader">
+    <part name="messageConfigHeader" element="hdr:MessageConfig"/>
+  </message>
+  <message name="sessionHeader">
+    <part name="sessionHeader" element="hdr:Session"/>
+  </message>
+  <message name="DeleteUserDefinedFieldLookupValueRequestMsg">
+    <part name="DeleteUserDefinedFieldLookupValueRequestMsg" element="rqst0:MP9546_DeleteUserDefinedFieldLookupValue_001"/>
+  </message>
+  <message name="tenantHeader">
+    <part name="tenantHeader" element="hdr:Tenant"/>
+  </message>
+  <portType name="DeleteUserDefinedFieldLookupValuePT">
+    <operation name="DeleteUserDefinedFieldLookupValueOp">
+      <input name="DeleteUserDefinedFieldLookupValueRequestMsg" message="tns:DeleteUserDefinedFieldLookupValueRequestMsg"/>
+      <output name="DeleteUserDefinedFieldLookupValueResponseMsg" message="tns:DeleteUserDefinedFieldLookupValueResponseMsg"/>
+    </operation>
+  </portType>
+  <binding name="DeleteUserDefinedFieldLookupValueSoapBinding" type="tns:DeleteUserDefinedFieldLookupValuePT">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="DeleteUserDefinedFieldLookupValueOp">
+      <wsdlsoap:operation soapAction="processMessage"/>
+      <input name="DeleteUserDefinedFieldLookupValueRequestMsg">
+        <wsdlsoap:header message="tns:organizationHeader" part="organizationHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:securityHeader" part="securityHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionScenarioHeader" part="sessionScenarioHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:messageConfigHeader" part="messageConfigHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:header message="tns:tenantHeader" part="tenantHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="DeleteUserDefinedFieldLookupValueRequestMsg" use="literal"/>
+      </input>
+      <output name="DeleteUserDefinedFieldLookupValueResponseMsg">
+        <wsdlsoap:header message="tns:sessionHeader" part="sessionHeader" use="literal">
+        </wsdlsoap:header>
+        <wsdlsoap:body parts="DeleteUserDefinedFieldLookupValueResponseMsg" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="DeleteUserDefinedFieldLookupValueService">
+    <port name="DeleteUserDefinedFieldLookupValueSoapBinding" binding="tns:DeleteUserDefinedFieldLookupValueSoapBinding">
+      <wsdlsoap:address location="http://localhost/axis/services/EWSConnector"/>
+    </port>
+  </service>
+</definitions>

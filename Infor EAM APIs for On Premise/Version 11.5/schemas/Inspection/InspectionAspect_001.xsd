@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- ================================================================================ 
+	Copyright 2003, Datastream Systems, Inc. 
+	50 Datastream Plaza, Greenville, SC 29605, USA. 
+	All rights reserved. 
+
+	This schema defines MP entity InspectionAspect
+================================================================================== --> 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/InspectionAspect_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/InspectionAspect_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of InspectionAspect_001 ======= -->
+	<xs:element name="InspectionAspect">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:INSPECTIONASPECTID"/>
+				<xs:element ref="dsf:METH_CODE" minOccurs="0"/>
+				<xs:element ref="dsf:CONFIDENCERATING" minOccurs="0"/>
+				<xs:element ref="dsf:UOMCODE" minOccurs="0"/>
+				<xs:element ref="dsf:RISKCODE" minOccurs="0"/>
+				<xs:element ref="dsf:NOMINALVALUE" minOccurs="0"/>
+				<xs:element ref="dsf:MINEXTREME" minOccurs="0"/>
+				<xs:element ref="dsf:MAXEXTREME" minOccurs="0"/>
+				<xs:element ref="dsf:MINCRITICAL" minOccurs="0"/>
+				<xs:element ref="dsf:MAXCRITICAL" minOccurs="0"/>
+				<xs:element ref="dsf:MINTOLERANCE" minOccurs="0"/>
+				<xs:element ref="dsf:MAXTOLERANCE" minOccurs="0"/>
+				<xs:element ref="dsf:MINSTDWO" minOccurs="0"/>
+				<xs:element ref="dsf:MAXSTDWO" minOccurs="0"/>
+				<xs:element ref="dsf:MINPPM" minOccurs="0"/>
+				<xs:element ref="dsf:MAXPPM" minOccurs="0"/>
+				<xs:element ref="dsf:MINFORMULA" minOccurs="0"/>
+				<xs:element ref="dsf:MAXFORMULA" minOccurs="0"/>
+				<xs:element ref="dsf:REPLACEFREQ" minOccurs="0"/>
+				<xs:element ref="dsf:FACTOR" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

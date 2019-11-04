@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2012 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+  This schema defines MP entity CustomerContractContractItemDefault_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CustomerContractContractItemDefault_001"
+    xmlns="http://schemas.datastream.net/MP_entities/CustomerContractContractItemDefault_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="CustomerContractContractItemDefault">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:CUSTOMERID"/>
+                <xs:element ref="dsf:INVOICINGORGID"/>
+                <xs:element ref="dsf:TAXID" minOccurs="0"/>
+                <xs:element ref="dsf:USEFIXEDEXCHANGERATES" minOccurs="0"/>
+                <xs:element ref="dsf:EXCHRATE" minOccurs="0"/>
+                <xs:element ref="dsf:SALESTAXID" minOccurs="0"/>
+                <xs:element ref="dsf:EXERCISEOPTION"/>
+                <xs:element ref="dsf:SALESPRICECURRENCYID"/>
+                <xs:element ref="dsf:RSTATUS"/>
+                <xs:element ref="dsf:ENDDATE"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

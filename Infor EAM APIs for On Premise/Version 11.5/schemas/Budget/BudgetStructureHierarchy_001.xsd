@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity  BudgetStructureHierarchy_001.
+====================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/BudgetStructureHierarchy_001" xmlns="http://schemas.datastream.net/MP_entities/BudgetStructureHierarchy_001" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Begining of BudgetStructureHierarchy_001 ======================================-->
+	<xs:element name="BudgetStructureHierarchy">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BUDGETSID" minOccurs="0"/>
+				<xs:element ref="BudgetStructureData" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="isbudgetapproved" type="dsf:FLAG_Type"/>
+			<xs:attribute name="isparentbudget" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BudgetStructureData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CURRENTLEVEL" minOccurs="0"/>
+				<xs:element ref="dsf:LEVEL" minOccurs="0"/>
+				<xs:element ref="dsf:ENTITY" minOccurs="0"/>
+				<xs:element ref="dsf:NEXTLEVELENTITY" minOccurs="0"/>
+				<xs:element ref="BudgetEntities" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="isgroup" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BudgetEntities">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:BUDGETENTITYID" minOccurs="0"/>
+				<xs:element ref="dsf:BUDGETAMOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:CURRENCYID" minOccurs="0"/>
+				<xs:element ref="dsf:BUDGETDETAILID" minOccurs="0"/>
+				<xs:element ref="dsf:SEQUENCENUMBER" minOccurs="0"/>
+				<xs:element ref="BudgetStructureData" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

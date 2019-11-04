@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2007 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered trademarks
+    of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+    
+    This schema defines MP entity PhysicalInventoryLine
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PhysicalInventoryLine_001" xmlns="http://schemas.datastream.net/MP_entities/PhysicalInventoryLine_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <!--====  Begining of PhysicalInventoryLine_001 ======================================-->
+    <xs:element name="PhysicalInventoryLine">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:TRANSACTIONLINEID"/>
+                <xs:element ref="dsf:PARTID" minOccurs="0"/>
+                <xs:element ref="dsf:BIN" minOccurs="0"/>
+                <xs:element ref="dsf:LOT" minOccurs="0"/>
+                <xs:element ref="dsf:EXPECTEDQUANTITY" minOccurs="0"/>
+                <xs:element ref="dsf:PHYSICALQUANTITY" minOccurs="0"/>
+                <xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>
+                <xs:element ref="dsf:MANUFACTURERPARTCODE" minOccurs="0"/>
+                <xs:element ref="dsf:STOREID" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="recordid" type="xs:long"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--	================================================================================
+	Copyright(c)2015 Infor.	All	rights reserved. The word and design marks set forth herein	are	trademarks	
+	and/or registered trademarks of	Infor and/or related affiliates	and	subsidiaries. All rights reserved.
+	All	other trademarks listed	herein are the property	of their respective	owners.	www.infor.com.
+
+	This schema	defines	MP entity CaseTask
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/CaseTask_001"	
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"	
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"	
+	xmlns="http://schemas.datastream.net/MP_entities/CaseTask_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element	name="CaseTask">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element	ref="dsf:CASETASKID"/>
+				<xs:element	ref="dsf:SERVICEPROBLEMID"/>
+				<xs:element	ref="dsf:CASETASKNOTE" minOccurs="0"/>
+				<xs:element	ref="dsf:SEQUENCE"/>
+				<xs:element	ref="dsf:STEP" minOccurs="0"/>
+				<xs:element	ref="dsf:CHECKLISTTASKPLANID" minOccurs="0"/>
+				<xs:element	ref="dsf:ESTIMATEDCOSTS" minOccurs="0"/>
+				<xs:element	ref="dsf:CURRENCYCODE" minOccurs="0"/>
+				<xs:element	ref="dsf:PRIORITY" minOccurs="0"/>
+				<xs:element	ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+				<xs:element	ref="dsf:RESPONSIBLEROLE" minOccurs="0"/>				
+				<xs:element	ref="dsf:PERSONRESPONSIBLE" minOccurs="0"/>
+				<xs:element	ref="dsf:EMAIL"	minOccurs="0"/>
+				<xs:element	ref="dsf:ASSIGNEDTOROLE" minOccurs="0"/>
+				<xs:element	ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+				<xs:element	ref="dsf:ASSIGNEDTOEMAIL" minOccurs="0"/>
+				<xs:element	ref="dsf:PLANNEDDURATION" minOccurs="0"/>
+				<xs:element	ref="dsf:FIRMDATES"	minOccurs="0"/>
+				<xs:element	ref="dsf:NOTIFYCOMPLETE" minOccurs="0"/>
+				<xs:element	ref="dsf:NOTIFYREADYTOSTART" minOccurs="0"/>
+				<xs:element	ref="dsf:STANDARDWO" minOccurs="0"/>
+				<xs:element	ref="dsf:WORKORDERTYPE"	minOccurs="0"/>
+				<xs:element	ref="dsf:WORKORDERCLASSID" minOccurs="0"/>
+				<xs:element	ref="dsf:WORKORDERSTATUS" minOccurs="0"/>
+				<xs:element	ref="dsf:WOPRIORITY" minOccurs="0"/>
+				<xs:element	ref="dsf:TASKSID" minOccurs="0"/>
+				<xs:element	ref="dsf:CASETASKJOBPLANID"	minOccurs="0"/>
+				<xs:element	ref="dsf:TRADEID" minOccurs="0"/>
+				<xs:element	ref="dsf:ESTIMATEDHOURS" minOccurs="0"/>
+				<xs:element	ref="dsf:PERSONS" minOccurs="0"/>
+				<xs:element	ref="dsf:StandardUserDefinedFields"	minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="is_enhancedplanning_task" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

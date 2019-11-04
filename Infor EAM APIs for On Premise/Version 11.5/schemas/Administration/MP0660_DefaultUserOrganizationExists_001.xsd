@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+	This schema defines MP business function request MP0660_DefaultUserOrganizationExists_001
+ ============================================================================= -->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP0660_001" xmlns="http://schemas.datastream.net/MP_functions/MP0660_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dse-UserOrganization="http://schemas.datastream.net/MP_entities/UserOrganization_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/UserOrganization_001" schemaLocation="UserOrganization_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP0660_DefaultUserOrganizationExists_001 ======================================-->
+	<xs:element name="MP0660_DefaultUserOrganizationExists_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-UserOrganization:UserOrganization"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

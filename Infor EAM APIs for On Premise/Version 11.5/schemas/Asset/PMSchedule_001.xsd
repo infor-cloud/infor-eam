@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003,	Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity PMSchedule for Equipment
+================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PMSchedule_001"
+	xmlns="http://schemas.datastream.net/MP_entities/PMSchedule_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of PMSchedule_001 ======= -->
+	<xs:element name="PMSchedule">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PMScheduleData"/>
+				<xs:element ref="dsf:JOBNUM" minOccurs="0"/>
+				<xs:element ref="dsf:WORKPACKAGE" minOccurs="0"/>
+				<xs:element ref="dsf:FIXED" minOccurs="0"/>
+				<xs:element ref="dsf:OBJTYPE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PMScheduleData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PMSCHEDULEEQUIPMENTID"/>
+				<xs:element ref="dsf:EQUIPMENTID"/>
+				<xs:element ref="dsf:PMSCHEDULETYPE"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERCLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:ROUTE" minOccurs="0"/>
+				<xs:element ref="dsf:CHANGED"/>
+				<xs:element ref="dsf:DEACTIVATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:PERIODINTERVAL" minOccurs="0"/>
+				<xs:element ref="dsf:METER1INTERVAL" minOccurs="0"/>
+				<xs:element ref="dsf:METER2INTERVAL" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+				<xs:element ref="dsf:LINEARREFERENCEEVENT" minOccurs="0"/>
+				<xs:element ref="dsf:STARTINGAT" minOccurs="0"/>
+				<xs:element name="DORMANT" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dsf:DORMANTSTART" minOccurs="0"/>
+							<xs:element ref="dsf:DORMANTEND" minOccurs="0"/>
+							<xs:element ref="dsf:DORMANTREUSE" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="dsf:SUPERVISORID" minOccurs="0"/>
+				<xs:element ref="dsf:TESTPOINTSET" minOccurs="0"/>
+				<xs:element ref="dsf:PMCALENDARWEEKDAY"  minOccurs="0"/>
+				<xs:element ref="dsf:INCLUDENONCONFORMITIES"  minOccurs="0"/>
+				<xs:element ref="dsf:DUENONCONFORMITIESONLY"  minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

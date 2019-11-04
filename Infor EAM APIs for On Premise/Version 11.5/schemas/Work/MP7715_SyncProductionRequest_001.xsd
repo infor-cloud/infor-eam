@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2008 Infor. All rights reserved. The word and design marks set forth
+    herein are trademarks and/or registered trademarks of Infor and/or related affiliates
+    and subsidiaries. All rights reserved. All other trademarks listed herein are the
+    property of their respective owners. www.infor.com
+
+    This schema defines MP business function request MP7715_SyncProductionRequest_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP7715_001"
+    xmlns="http://schemas.datastream.net/MP_functions/MP7715_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    xmlns:dse-ProductionRequest="http://schemas.datastream.net/MP_entities/ProductionRequest_001"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <xs:import namespace="http://schemas.datastream.net/MP_entities/ProductionRequest_001" schemaLocation="ProductionRequest_001.xsd"/>
+    <!--===============================================================================-->
+    <!--====  Begining of MP7715_SyncProductionRequest_001 ==================-->
+    <xs:element name="MP7715_SyncProductionRequest_001">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dse-ProductionRequest:ProductionRequest"/>
+            </xs:sequence>
+            <xs:attribute name="verb" type="dsf:VERB_Type" fixed="Sync"/>
+            <xs:attribute name="noun" type="dsf:NOUN_Type" fixed="ProductionRequest"/>
+            <xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+	Copyright (c) 2016 Infor. All rights reserved.
+	The word and design marks set forth herein are trademarks and/or registered
+	trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+	This schema defines MP entity Nonconformity
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/MobileNotebook_001"
+		xmlns="http://schemas.datastream.net/MP_entities/MobileNotebook_001"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:dsf="http://schemas.datastream.net/MP_fields"
+		elementFormDefault="qualified">
+		<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+		<!--===============================================================================-->
+		<xs:element name="MobileNotebook">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="dsf:MOBILENOTEBOOKID"/>
+					<xs:element ref="dsf:PRIVATE" minOccurs="0"/>
+					<xs:element ref="dsf:HISTORY" minOccurs="0"/>
+					<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+					<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>
+					<xs:element ref="dsf:MOBILECREATEDDATE" minOccurs="0"/>
+					<xs:element ref="dsf:MOBILENOTEBOOKNOTE" minOccurs="0"/>
+					<xs:element ref="dsf:DEFECT" minOccurs="0"/>
+					<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+					<xs:element ref="dsf:NONCONFORMITYSEVERITY" minOccurs="0"/>
+					<xs:element ref="dsf:NONCONFORMITYTYPEID" minOccurs="0"/>
+					<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+					<xs:element ref="dsf:NONCONFORMITYCLASSID" minOccurs="0"/>
+					<xs:element ref="dsf:LEVEL1ID" minOccurs="0"/>
+					<xs:element ref="dsf:LEVEL2ID" minOccurs="0"/>
+					<xs:element ref="dsf:LEVEL3AID" minOccurs="0"/>
+					<xs:element ref="dsf:LEVEL3ID" minOccurs="0"/>
+					<xs:element ref="dsf:LEVEL4ID" minOccurs="0"/>
+					<xs:element ref="dsf:STATIONINGMAJOR" minOccurs="0"/>
+					<xs:element ref="dsf:STATIONINGMINOR" minOccurs="0"/>
+					<xs:element ref="dsf:DETAILEDLOCATION" minOccurs="0"/>
+					<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+					<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+					<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+					<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+					<xs:element ref="dsf:NONCONFORMITYOBSERVATIONID" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="recordid" type="xs:long"></xs:attribute>
+				<xs:attribute name="protect_private_notebook" type="dsf:FLAG_Type" default="false"/>
+				<xs:attribute name="has_readonly_department_security" type="dsf:FLAG_Type"/>
+			</xs:complexType>
+		</xs:element>
+</xs:schema>

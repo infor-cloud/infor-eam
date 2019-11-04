@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function request MP7348_AddFleetVehicleTicket_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP7348_001" xmlns="http://schemas.datastream.net/MP_functions/MP7348_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:os="http://www.openapplications.org/oagis_segments" xmlns:osf="http://www.openapplications.org/oagis_fields" xmlns:dse-FleetVehicleTicket="http://schemas.datastream.net/MP_entities/FleetVehicleTicket_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/FleetVehicleTicket_001" schemaLocation="FleetVehicleTicket_001.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_segments" schemaLocation="../oagis_segments.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_fields" schemaLocation="../oagis_fields.xsd"/>	
+	<!--===============================================================================-->
+	<!--====  Begining of MP7348_AddFleetVehicleTicket_001 ======================================-->
+	<xs:element name="MP7348_AddFleetVehicleTicket_001">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="dsf:BaseSchemaRequestElement">		
+					<xs:sequence>
+						<xs:element ref="dse-FleetVehicleTicket:VehicleTicketBasicInformation"/>
+						<xs:element ref="dse-FleetVehicleTicket:VehicleInformation"/>
+						<xs:element ref="dse-FleetVehicleTicket:CustomerDetails"/>
+						<xs:element ref="dse-FleetVehicleTicket:IssuedToDetails" minOccurs="0"/>
+						<xs:element ref="dse-FleetVehicleTicket:VehicleIssueDetails" minOccurs="0"/>
+						<xs:element ref="dse-FleetVehicleTicket:VehicleReturnDetails" minOccurs="0"/>				
+						<xs:element ref="dse-FleetVehicleTicket:PMEventDetails" minOccurs="0"/>				
+						<xs:element ref="dse-FleetVehicleTicket:BillingDetails" minOccurs="0"/>
+						<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>				
+					</xs:sequence>
+					<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Add"/>
+					<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="FleetVehicleTicket"/>
+					<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+					<xs:attribute name="confirm_billingcodes_exist" type="dsf:CONFIRMATION_Type"   
+								default="prompt"/>
+					<xs:attribute name="confirm_vehicle_in_pmreleasewindow" type="dsf:CONFIRMATION_Type"   
+								default="prompt"/>
+					<xs:attribute name="check_issue_mileage" type="dsf:CONFIRMATION_Type"   
+								default="prompt"/>
+					<xs:attribute name="check_return_mileage" type="dsf:CONFIRMATION_Type"   
+								default="prompt"/>	
+				</xs:extension>
+			</xs:complexContent>									
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+

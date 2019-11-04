@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP business function result for function request MP2074_GetPartRepairDetails_001_Result.
+====================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP2074_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:dse-PartRepairDetails="http://schemas.datastream.net/MP_entities/PartRepairDetails_001" 
+	xmlns="http://schemas.datastream.net/MP_results/MP2074_001" 
+	elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/PartRepairDetails_001" 
+		schemaLocation="PartRepairDetails_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====================================================================================-->
+	<!--==============Begining of MP2074_GetPartRepairDetails_001_Result================-->
+	<xs:element name="MP2074_GetPartRepairDetails_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-PartRepairDetails:PartRepairDetails"/>
+				<xs:element ref="dsf:ISPARTREPAIRABLE"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

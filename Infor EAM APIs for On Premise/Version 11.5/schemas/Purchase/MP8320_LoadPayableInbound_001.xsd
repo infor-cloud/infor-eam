@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- ================================================================================ 
+    Copyright 2003, Datastream Systems, Inc. 
+    50 Datastream Plaza, Greenville, SC 29605, USA. 
+    All rights reserved. 
+
+     ================================================================================
+    This schema defines MP business function request MP8320_LoadPayableInbound_001
+-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP8320_001" xmlns:dse-invoice="http://schemas.datastream.net/MP_entities/Invoice_001" xmlns:dse-invline="http://schemas.datastream.net/MP_entities/InvoiceLine_001" xmlns:dse-invdistribution="http://schemas.datastream.net/MP_entities/InvoiceDistribution_001" xmlns:dse-acctdetail="http://schemas.datastream.net/MP_entities/AccountDetail_001" xmlns:dse-extcharge="http://schemas.datastream.net/MP_entities/ExtraCharge_001" xmlns:os="http://www.openapplications.org/oagis_fields" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_functions/MP8320_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/Invoice_001" schemaLocation="Invoice_001.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP8320_LoadPayableInbound_001 ======================================-->
+	<xs:element name="MP8320_LoadPayableInbound_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-invoice:Invoice"/>
+				<xs:element ref="dsf:MSGID"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Load"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="Payable"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =================================================================================== 
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP business function request MP6248_ExportBaseConfiguration_001 
+===================================================================================== -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP6248_001" 
+	xmlns="http://schemas.datastream.net/MP_functions/MP6248_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	elementFormDefault="qualified">
+<!-- =========== Imported namespaces =========== -->
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<!-- ============================================= -->
+
+<!-- ========Begining of MP6248_ExportBaseConfiguration_001 ============ -->
+	<xs:element name="MP6248_ExportBaseConfiguration_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ExportBaseConfiguration"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Export"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="BaseConfiguration"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExportBaseConfiguration">
+		<xs:complexType>
+			<xs:sequence>
+					<xs:element ref="HeaderInfo" minOccurs="0"/>
+					<xs:element ref="dsf:DBSESSIONID" minOccurs="0"/>
+					<xs:element name="IDENTIFIER" type="xs:string" minOccurs="0"/>
+					<xs:element name="DeliveryMethod" type="DeliveryMethodType"/>
+					<xs:element ref="ExportUsersAndUserGroups" minOccurs="0"/>
+					<xs:element ref="ExportGeneralSetup" minOccurs="0"/>
+					<xs:element ref="ExportConfigurationSetup" minOccurs="0"/>
+					<xs:element ref="ExportOptionalSetup" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HeaderInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CREATEDDATE"/>
+				<xs:element ref="dsf:USERID"/>
+				<xs:element ref="dsf:ENTITYDBSCHEMA"/>
+				<xs:element ref="dsf:LANGUAGEID"/>
+				<xs:element ref="dsf:DATABASETYPE"/>
+				<xs:element ref="dsf:DATABASEVERSION"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:complexType name="DeliveryMethodType">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="SaveOnClient" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element ref="SaveOnServer" minOccurs="0"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SaveOnServer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EMAIL" minOccurs="0"/>
+				<xs:element ref="dsf:PATH" minOccurs="0"/>
+				<xs:element name="INCLUDEFILEINEMAIL" type="dsf:FLAG_Type" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExportUsersAndUserGroups">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EXPORTUSERGROUPSANDPERMISSIONS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTSTATUSAUTHORIZATIONS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element ref="UserGroupList" minOccurs="0"/>
+				<xs:element ref="FILTER" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExportGeneralSetup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EXPORTORGANIZATIONS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTMULTIORGSECURITY" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTINSTALLPARAMETERS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTAUDITSETUP" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTSCREENSANDREPORTS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTUSERS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTDEPARTMENTS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTLOCALES" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="CLOSINGCODES" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="TRADES" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="CATEGORY" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="RELIABILITYRANKING" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element ref="FILTER" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExportConfigurationSetup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EXPORTCUSTOMFIELDS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTFLEXSQL" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTUPDATEDTEXT" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTSYSTEMCODES" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTINFOREAMMOBILE" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="INCLUDETRANSLATIONS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element ref="FILTER" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExportOptionalSetup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EXPORTMESSENGERSETUP" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTKPISANDINBOXES" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTACCOUNTDETAILSETUP" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTDATACOLLECTIONSETUP" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTERECORDSETUP" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTWEBSERVICEPROMPTS" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="EXPORTCALLCENTERSETUP" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element name="ALERTSETUP" type="dsf:FLAG_Type" minOccurs="0"/>
+				<xs:element ref="FILTER" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FILTER">
+		<xs:complexType>
+			<xs:sequence>
+					<xs:element ref="UserGroupList"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserGroupList" type="xs:string"/>
+</xs:schema>

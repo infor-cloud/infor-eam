@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!--====================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity AssociateCustomFields.
+=======================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/AssociateCustomFields_001" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns="http://schemas.datastream.net/MP_entities/AssociateCustomFields_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<!--====================================================================================-->
+<!--====================Begining of AssociateCustomFields_001===========================-->
+	<xs:element name="AssociateCustomFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ASSOCIATECUSTOMFIELDID"/>
+				<xs:element ref="dsf:LINE"/>
+				<xs:element ref="dsf:UOMCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PRINTCUSTOMFIELDS" minOccurs="0"/>
+				<xs:element ref="dsf:LOOKUPVALUES"/>
+				<xs:element ref="dsf:VALIDATION" minOccurs="0"/>
+				<xs:element ref="dsf:REQUIRED" minOccurs="0"/>
+				<xs:element ref="dsf:NOTUPDATEABLE" minOccurs="0"/>
+				<xs:element ref="dsf:GROUPLABEL" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
+
+
+
+
+

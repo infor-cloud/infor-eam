@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2016 Infor. All rights reserved.
+	The word and design marks set forth herein are trademarks and/or registered
+	trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+	This schema defines MP entity EquipmentSegment.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EquipmentSegment_001" 
+	xmlns="http://schemas.datastream.net/MP_entities/EquipmentSegment_001" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="EquipmentSegment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SEGMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:HEADEREQUIPMENTID"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:LINEARDIRECTIONID" minOccurs="0"/>
+				<xs:element ref="dsf:FROMPOINT"/>
+				<xs:element ref="dsf:FROMREFERENCEID" minOccurs="0"/>
+				<xs:element ref="dsf:FROMOFFSET" minOccurs="0"/>
+				<xs:element ref="dsf:FROMOFFSETPERCENTAGE" minOccurs="0"/>
+				<xs:element ref="dsf:FROMOFFSETDIRECTION" minOccurs="0"/>
+				<xs:element ref="dsf:FROMCOORDINATE" minOccurs="0"/>
+				<xs:element ref="dsf:FROMLATITUDE" minOccurs="0"/>
+				<xs:element ref="dsf:FROMLONGITUDE" minOccurs="0"/>
+				<xs:element ref="dsf:TOPOINT" minOccurs="0"/>
+				<xs:element ref="dsf:TOREFERENCEID" minOccurs="0"/>
+				<xs:element ref="dsf:TOOFFSET" minOccurs="0"/>
+				<xs:element ref="dsf:TOOFFSETDIRECTION" minOccurs="0"/>
+				<xs:element ref="dsf:TOCOORDINATE" minOccurs="0"/>
+				<xs:element ref="dsf:TOLATITUDE" minOccurs="0"/>
+				<xs:element ref="dsf:TOLONGITUDE" minOccurs="0"/>
+				<xs:element ref="dsf:LINEARREFUOM" minOccurs="0"/>
+				<xs:element ref="dsf:DATEEFFECTIVE"/>
+				<xs:element ref="dsf:DATEEXPIRED"/>
+				<xs:element ref="dsf:BRANCHPOINT" minOccurs="0"/>
+				<xs:element ref="dsf:BRANCHIDENTIFIER" minOccurs="0"/>
+				<xs:element ref="dsf:BRANCHDIRECTION" minOccurs="0"/>
+				<xs:element ref="dsf:REFERENCEDESCRIPTION" minOccurs="0"/>
+				<xs:element ref="dsf:GEOGRAPHICALREFERENCE" minOccurs="0"/>
+				<xs:element ref="dsf:LINEARREFERENCETYPE" minOccurs="0"/>
+				<xs:element ref="dsf:STARTINGAT" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTLENGTH" minOccurs="0"/>
+				<xs:element ref="OverviewDetails" minOccurs="0"/>
+				<xs:element ref="SourceDetails" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+				<xs:element ref="dsf:PARENTLENGTH" minOccurs="0"/>
+				<xs:element ref="dsf:PARENTLINEARREFUOM" minOccurs="0"/>
+				<xs:element ref="dsf:PARENTFROMPOINT" minOccurs="0"/>
+				<xs:element ref="dsf:PARENTLINEARDIRECTIONID" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+			<xs:attribute name="has_department_security" type="dsf:FLAG_Type"/>
+			<xs:attribute name="isSegmentParent" type="dsf:FLAG_Type" default="false"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OverviewDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DISPLAYONOVERVIEW" minOccurs="0"/>
+				<xs:element ref="dsf:COLOR" minOccurs="0"/>
+				<xs:element ref="dsf:ICONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:ICONPATH" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SourceDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>	
+				<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

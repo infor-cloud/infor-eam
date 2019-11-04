@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity - ExtMenus
+======================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ExtMenus_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/ExtMenus_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--======================  Begining of ExtMenus_001======= ===================-->
+	<xs:element name="ExtMenus">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EXTMENUID" minOccurs="0"/>
+				<xs:element ref="dsf:USERGROUPID"/>
+				<xs:element ref="dsf:FUNCTIONID"/>
+				<xs:element ref="dsf:EXTMENUPARENT" minOccurs="0"/>
+				<xs:element ref="dsf:EXTMENUTYPE"/>
+				<xs:element ref="dsf:SEQUENCENUMBER"/>
+				<xs:element ref="dsf:HIDEMENU" minOccurs="0"/>
+				<xs:element ref="dsf:MOBILE" minOccurs="0"/>
+				<xs:element ref="dsf:MOBILEICON" minOccurs="0"/>
+				<xs:element name="UPDATECOUNT" type="xs:long" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

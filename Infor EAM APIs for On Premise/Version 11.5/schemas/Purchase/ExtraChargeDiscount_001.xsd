@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function entity ExtraChargeDiscount
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ExtraChargeDiscount_001" xmlns="http://schemas.datastream.net/MP_entities/ExtraChargeDiscount_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====================  Begining of ExtraChargeDiscount ====================-->
+	<xs:element name="ExtraChargeDiscount">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EXTRACHARGEDISCOUNTID"/>
+				<xs:element ref="dsf:TYPE"/>
+				<xs:element ref="dsf:ORDERDISCPERC" minOccurs="0"/>
+				<xs:element ref="dsf:DISCOUNT" minOccurs="0"/>
+				<xs:element ref="dsf:INCLUDE" minOccurs="0"/>
+				<xs:element ref="dsf:CUMULATIVE" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

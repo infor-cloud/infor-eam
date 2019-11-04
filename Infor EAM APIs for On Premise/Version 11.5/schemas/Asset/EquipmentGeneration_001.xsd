@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+	Copyright (c) 2013 Infor. All rights reserved.
+	The word and design marks set forth herein are trademarks and/or registered
+	trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+	All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+	This schema defines MP entity EquipmentGeneration
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/EquipmentGeneration_001"
+		xmlns="http://schemas.datastream.net/MP_entities/EquipmentGeneration_001"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns:dsf="http://schemas.datastream.net/MP_fields"
+		elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="EquipmentGeneration">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EQUIPMENTGENERATIONID"/>
+				<xs:element ref="dsf:PROCESSED" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVE" minOccurs="0"/>
+				<xs:element ref="dsf:AWAITINGPURCHASE" minOccurs="0"/>
+				<xs:element ref="dsf:PROCESSERROR" minOccurs="0"/>
+				<xs:element ref="dsf:PROCESSRUNNING" minOccurs="0"/>
+				<xs:element ref="dsf:LASTUPDATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDBY" minOccurs="0"/>				   
+				<xs:element ref="dsf:UPDATEDBY" minOccurs="0"/>
+				<xs:element ref="dsf:DATEUPDATED" minOccurs="0"/>
+				<xs:element ref="EquipmentDetails"/>
+				<xs:element ref="PMScheduleandMaintenancePatternDetails" minOccurs="0"/>
+				<xs:element ref="CommissioningWorkOrderDetails" minOccurs="0"/>
+				<xs:element ref="CreateEquipmentStructure" minOccurs="0"/>
+				<xs:element ref="CopyData" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"></xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EquipmentDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EQUIPMENTCONFIGURATIONID"/>
+				<xs:element ref="dsf:EQUIPMENTCONFIGSTATUS" minOccurs="0"/>
+				<xs:element ref="dsf:ALLSPECIFIC" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:COMMISSIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTSTATUS"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+				<xs:element ref="dsf:STOREID" minOccurs="0"/>
+				<xs:element ref="dsf:BIN" minOccurs="0"/>
+				<xs:element ref="dsf:LOTID" minOccurs="0"/>
+				<xs:element ref="dsf:GENERATECOUNT"/>
+				<xs:element ref="dsf:OBJTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:PARTID" minOccurs="0"/>
+				<xs:element ref="dsf:BYLOT" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PMScheduleandMaintenancePatternDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+				<xs:element ref="dsf:SCHEDGROUP" minOccurs="0"/>
+				<xs:element ref="dsf:SETDUEVALUES" minOccurs="0"/>
+				<xs:element ref="dsf:DUEDATEREFERENCE" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIVATEMPS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CommissioningWorkOrderDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:COMMISSIONINGWORKORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:CREATECOMMISSIONINGWO" minOccurs="0"/>				
+				<xs:element ref="dsf:STATUS" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:ASSIGNEDTO" minOccurs="0"/>
+				<xs:element ref="dsf:SCHEDGROUP" minOccurs="0"/>			
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CreateEquipmentStructure">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TOPLEVELONLY" minOccurs="0"/>
+				<xs:element ref="dsf:ALLDEPENDENT" minOccurs="0"/>				
+				<xs:element ref="dsf:ALLCOSTROLLUP" minOccurs="0"/>			
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CopyData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:COPYCOMMENTS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYDOCUMENTS" minOccurs="0"/>				
+				<xs:element ref="dsf:COPYCUSTOMFIELDS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYDEPRECIATION" minOccurs="0"/>
+				<xs:element ref="dsf:COPYMETERS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYPARTSASSOCIATED" minOccurs="0"/>
+				<xs:element ref="dsf:COPYWARRANTIES" minOccurs="0"/>
+				<xs:element ref="dsf:COPYPMSCHEDULES" minOccurs="0"/>
+				<xs:element ref="dsf:COPYMAINTENANCEPATTERNS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYSAFETY" minOccurs="0"/>
+				<xs:element ref="dsf:COPYPERMITS" minOccurs="0"/>
+				<xs:element ref="dsf:COPYCALIBRATION" minOccurs="0"/>
+				<xs:element ref="dsf:COPYTESTPOINTS" minOccurs="0"/>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

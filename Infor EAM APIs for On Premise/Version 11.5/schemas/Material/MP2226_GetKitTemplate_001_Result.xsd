@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2008 Infor. All rights reserved. 
+    The word and design marks set forth herein are trademarks and/or registered trademarks 
+    of Infor and/or related affiliates and subsidiaries. All rights reserved. All other 
+    trademarks listed herein are the property of their respective owners. www.infor.com.
+	
+    This schema defines MP business function request MP2226_GetKitTemplate_001_Result   
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP2226_001" xmlns:dse="http://schemas.datastream.net/MP_entities/KitTemplate_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:of="http://www.openapplications.org/oagis_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_results/MP2226_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/KitTemplate_001" schemaLocation="KitTemplate_001.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="MP2226_GetKitTemplate_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultData">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dse:KitTemplate" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

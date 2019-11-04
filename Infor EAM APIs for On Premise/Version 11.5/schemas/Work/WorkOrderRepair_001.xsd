@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+    Copyright (c) 2014 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP business Function entity WorkOrderRepair
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/WorkOrderRepair_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/WorkOrderRepair_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="WorkOrderRepair">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:WORKORDERREPAIRPK" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERID"/>
+				<xs:element ref="dsf:ACTIVITYCODE"/>
+				<xs:element ref="dsf:JOBSEQUENCE" minOccurs="0"/>
+				<xs:element ref="dsf:REASONFORREPAIR" />
+				<xs:element ref="dsf:WORKACCOMPLISHED" minOccurs="0"/>
+				<xs:element ref="dsf:TECHNICIANPARTFAILURE" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>
+				<xs:element ref="dsf:SYSTEMLEVEL" minOccurs="0"/>
+				<xs:element ref="dsf:ASSEMBLYLEVEL" minOccurs="0"/>
+				<xs:element ref="dsf:COMPONENTLEVEL" minOccurs="0"/>
+				<xs:element ref="dsf:PARTLOCATIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:WARRANTY" minOccurs="0"/>
+				<xs:element ref="dsf:COMPLETED" minOccurs="0"/>
+				<xs:element ref="dsf:PERCENTCOMPLETED" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:RELATEDWORKORDERID" minOccurs="0"/>
+				<xs:element ref="UserDefinedFields" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRCOMMENT" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserDefinedFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UDFCHAR01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX05" minOccurs="0"/>
+			</xs:sequence>	
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

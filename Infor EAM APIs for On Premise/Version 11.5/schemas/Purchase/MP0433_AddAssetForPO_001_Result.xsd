@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP business function result MP0433_AddAssetForPO_001_Result
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP0433_001"  xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_results/MP0433_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	
+	<!--===============================================================================-->
+	<!--====  Begining of MP0433_AddAssetForPO_001_Result ======================================-->
+	<xs:element name="MP0433_AddAssetForPO_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ResultData"/>
+			</xs:sequence>
+		</xs:complexType>		
+	</xs:element>
+	<xs:element name="ResultData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PURCHASEORDERLINEID"/>
+				<xs:element ref="dsf:ASSETID"/>				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

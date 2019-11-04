@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =============================================================================================
+  Copyright (c) 2012 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+  This schema defines MP business function request MP3202_SyncAssetInventoryResult_001
+==================================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP3202_001"
+    xmlns="http://schemas.datastream.net/MP_functions/MP3202_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    xmlns:dse-AssetInventoryResult="http://schemas.datastream.net/MP_entities/AssetInventoryResult_001"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <xs:import namespace="http://schemas.datastream.net/MP_entities/AssetInventoryResult_001" schemaLocation="AssetInventoryResult_001.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="MP3202_SyncAssetInventoryResult_001">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dse-AssetInventoryResult:AssetInventoryResult"/>
+            </xs:sequence>
+            <xs:attribute name="verb" type="dsf:VERB_Type" fixed="Sync"/>
+            <xs:attribute name="noun" type="dsf:NOUN_Type" fixed="AssetInventoryResult"/>
+            <xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+            <xs:attribute name="isMobileSync" type="dsf:FLAG_Type" default="false"/>
+            <!-- The possible values of afterupdate are the following
+            	 NONE 		- for doing normal Sync operation
+            	 UPDATELOC  - for doing Update System with Observed Physical Location after Sync operation
+            	 MOVEWO		- for doing Create Move WO after Sync operation
+             -->
+			<xs:attribute name="afterupdate" type="dsf:CODE10_Type" default="NONE"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

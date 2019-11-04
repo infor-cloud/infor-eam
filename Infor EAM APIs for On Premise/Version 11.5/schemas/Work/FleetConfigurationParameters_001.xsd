@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity for Parameters for FleetConfiguration
+================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/FleetConfigurationParameters_001"
+	xmlns="http://schemas.datastream.net/MP_entities/FleetConfigurationParameters_001"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dsf="http://schemas.datastream.net/MP_fields"
+	elementFormDefault="qualified">
+	<!-- =========== Imported namespaces ============ -->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of FleetConfigurationParameters_001 ======= -->
+	<xs:element name="FleetConfigurationParameters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:FLEETCONFIGURATIONPARAMETERSID"/>
+				<xs:element ref="dsf:PMTICKETTYPE"/>
+				<xs:element ref="dsf:MINHOURSBILLED" minOccurs="0"/>
+				<xs:element ref="dsf:OFFSHIFTHOURS" minOccurs="0"/>
+				<xs:element ref="dsf:ROUNDBILLINGHRS" minOccurs="0"/>
+				<xs:element ref="dsf:BILLINGSTARTTIME" minOccurs="0"/>
+				<xs:element ref="dsf:BILLINGENDTIME" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATECOSTCODEPOOL" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATECOSTCODELOANER" minOccurs="0"/>
+				<xs:element ref="dsf:UPDATECOSTCODEASSIGN" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTNOBILLING" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function result MP7433_SyncReleasedPM_001_Result    
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP7433_001" xmlns:dse-ReleasedPM="http://schemas.datastream.net/MP_entities/ReleasedPM_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns="http://schemas.datastream.net/MP_results/MP7433_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/ReleasedPM_001" schemaLocation="ReleasedPM_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of MP7433_SyncReleasedPM_001_Result ======================================-->
+	<xs:element name="MP7433_SyncReleasedPM_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResultData">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dse-ReleasedPM:ReleasedPM"/>
+							<xs:element ref="dsf:SEQUENCENUMBER"/>
+							<xs:element ref="dsf:SEQUENCE"/>
+							<xs:element ref="dsf:PPMID" minOccurs="0"/>
+							<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+							<xs:element ref="dsf:EQUIPMENTTYPE" minOccurs="0"/>
+							<xs:element ref="dsf:WORKORDERTYPE" minOccurs="0"/>
+							<xs:element ref="dsf:DUEDATE" minOccurs="0"/>
+							<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+							<xs:element ref="dsf:PROJECTID" minOccurs="0"/>
+							<xs:element ref="dsf:LOCATIONID" minOccurs="0"/>
+							<xs:element ref="dsf:PRIORITY" minOccurs="0"/>
+							<xs:element ref="dsf:PERIODINTERVAL" minOccurs="0"/>
+							<xs:element ref="dsf:METER1INTERVAL" minOccurs="0"/>
+							<xs:element ref="dsf:RSTATUS" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

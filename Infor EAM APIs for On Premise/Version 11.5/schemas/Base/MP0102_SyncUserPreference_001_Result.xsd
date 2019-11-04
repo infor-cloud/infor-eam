@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function result for
+    function request MP0102_SyncUserPreference_001
+==================================================================================-->  
+ 
+<xs:schema targetNamespace="http://schemas.datastream.net/MP0102_SyncUserPreference_001_Result"
+           xmlns="http://schemas.datastream.net/MP0102_SyncUserPreference_001_Result" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields"
+           xmlns:base="http://schemas.datastream.net/MP0101_GetUserPreference_001_Result"
+           elementFormDefault="qualified">
+
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd" />
+	<xs:import namespace="http://schemas.datastream.net/MP0101_GetUserPreference_001_Result" schemaLocation="MP0101_GetUserPreference_001_Result.xsd" />
+
+	<xs:element name="MP0102_SyncUserPreference_001_Result">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="base:PortletPreference" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

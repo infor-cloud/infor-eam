@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Naeem (Datastream Systems, Inc) -->
+<!-- ================================================================================
+    Copyright 2006, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+     This schema defines MP entity IPPOTransmitRequestBody
+     ============================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/IPPOTransmitRequestBody_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:ipf="http://schemas.datastream.net/IP_fields" xmlns="http://schemas.datastream.net/MP_entities/IPPOTransmitRequestBody_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/IP_fields" schemaLocation="../IP_fields.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- Beginning of IPPOTransmitRequestBody_001 -->
+	<xs:element name="BLOCKACTSUBMITPO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BLOCKCUSTOMERID" minOccurs="0"/>
+				<xs:element ref="BLOCKVENDORLIST" minOccurs="0"/>
+				<xs:element ref="BLOCKPO" minOccurs="0"/>
+				<xs:element ref="BLOCKITEMLIST" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKCUSTOMERID">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ipf:SITENAME" minOccurs="0"/>
+				<xs:element ref="BLOCKCOMPANY" minOccurs="0"/>
+				<xs:element ref="BLOCKBILLING" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKCOMPANY">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ipf:CUSTOMERNAME" minOccurs="0"/>
+				<xs:element ref="BLOCKADDRESS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKADDRESS">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ipf:ATTENTIONOF" minOccurs="0"/>
+				<xs:element ref="ipf:ADDRESS1" minOccurs="0"/>
+				<xs:element ref="ipf:ADDRESS2" minOccurs="0"/>
+				<xs:element ref="ipf:ADDRESS3" minOccurs="0"/>
+				<xs:element ref="dsf:CITY" minOccurs="0"/>
+				<xs:element ref="dsf:STATE" minOccurs="0"/>
+				<xs:element ref="dsf:ZIP" minOccurs="0"/>
+				<xs:element ref="ipf:COUNTRY" minOccurs="0"/>
+				<xs:element ref="dsf:PHONE" minOccurs="0"/>
+				<xs:element ref="ipf:EXT" minOccurs="0"/>
+				<xs:element ref="dsf:FAX" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKBILLING">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BLOCKADDRESS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKVENDORLIST">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BLOCKVENDOR" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKVENDOR">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ipf:VENDORNUM" minOccurs="0"/>
+				<xs:element ref="BLOCKCUSTOMERVENDORID" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKCUSTOMERVENDORID">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ipf:ACCOUNTNUM" minOccurs="0"/>
+				<xs:element ref="BLOCKSHIPTO" minOccurs="0"/>
+				<xs:element ref="BLOCKCONFIRMATION" minOccurs="0"/>
+				<xs:element ref="BLOCKCREDITCARD" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKSHIPTO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BLOCKADDRESS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKCONFIRMATION">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BLOCKADDRESS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKCREDITCARD">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ipf:CREDITCARDNUM" minOccurs="0"/>
+				<xs:element ref="ipf:EXPIRATION" minOccurs="0"/>
+				<xs:element ref="ipf:NAME" minOccurs="0"/>
+				<xs:element ref="BLOCKADDRESS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKPO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ipf:VALIDATEBEFORESUBMIT"/>
+				<xs:element ref="ipf:PURCHASINGCENTER"/>
+				<xs:element ref="ipf:PONUM"/>
+				<xs:element ref="ipf:PODESC" minOccurs="0"/>
+				<xs:element ref="ipf:RELEASENUM" minOccurs="0"/>
+				<xs:element ref="ipf:PROCESS" minOccurs="0"/>
+				<xs:element ref="ipf:POSTATUS" minOccurs="0"/>
+				<xs:element ref="ipf:POTYPE"/>
+				<xs:element ref="ipf:BUYER" minOccurs="0"/>
+				<xs:element ref="ipf:ORIGINATOR" minOccurs="0"/>
+				<xs:element ref="BLOCKBUYER" minOccurs="0"/>
+				<xs:element ref="ipf:MP2CURRENCY" minOccurs="0"/>
+				<xs:element ref="ipf:EXCHANGERATE" minOccurs="0"/>
+				<xs:element ref="ipf:SHIPVIACODENUM" minOccurs="0"/>
+				<xs:element ref="ipf:ORDERDATE" minOccurs="0"/>
+				<xs:element ref="ipf:ACKREQUIRED" minOccurs="0"/>
+				<xs:element ref="ipf:MP2VENDORNAME" minOccurs="0"/>
+				<xs:element ref="ipf:NOTES" minOccurs="0"/>
+				<xs:element ref="ipf:CLAUSE" minOccurs="0"/>
+				<xs:element ref="UserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKBUYER">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BLOCKADDRESS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKITEMLIST">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="BLOCKITEM" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BLOCKITEM">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ipf:MP2ITEMID" minOccurs="0"/>
+				<xs:element ref="ipf:USERITEMNUM" minOccurs="0"/>
+				<xs:element ref="ipf:DESCRIPTION" minOccurs="0"/>
+				<xs:element ref="ipf:ITEMCOMMENTS" minOccurs="0"/>
+				<xs:element ref="ipf:QUANTITYREQUESTED" minOccurs="0"/>
+				<xs:element ref="ipf:DUEDATE" minOccurs="0"/>
+				<xs:element ref="ipf:UOP" minOccurs="0"/>
+				<xs:element ref="ipf:COSTCENTER" minOccurs="0"/>
+				<xs:element ref="ipf:UNITCOST" minOccurs="0"/>
+				<xs:element ref="ipf:TOTAL" minOccurs="0"/>
+				<xs:element ref="ipf:VENDORITEMNUM" minOccurs="0"/>
+				<xs:element ref="BLOCKADDRESS" minOccurs="0"/>
+				<xs:element ref="UserDefinedFields" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UserDefinedFields">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:UDFCHAR01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR06" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR07" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR08" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR09" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR10" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR11" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR12" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR13" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR14" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR15" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR16" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR17" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR18" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR19" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR20" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR21" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR22" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR23" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR24" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR25" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR26" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR27" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR28" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR29" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHAR30" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFNUM05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFDATE05" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX01" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX02" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX03" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX04" minOccurs="0"/>
+				<xs:element ref="dsf:UDFCHKBOX05" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>

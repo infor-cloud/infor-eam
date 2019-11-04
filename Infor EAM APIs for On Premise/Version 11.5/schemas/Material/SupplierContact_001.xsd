@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity SupplierContact    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/SupplierContact_001" 
+           xmlns="http://schemas.datastream.net/MP_entities/SupplierContact_001" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:dsf="http://schemas.datastream.net/MP_fields" 
+           xmlns:of="http://www.openapplications.org/oagis_fields" 
+           elementFormDefault="qualified">
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<!--===============================================================================-->
+<!--====  Begining of SupplierContact_001 ======================================-->
+  <xs:element name="SupplierContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dsf:SUPPLIERCONTACTID"/>
+        <xs:element ref="dsf:CONTACTINFO" minOccurs="0"/>
+        <xs:element ref="dsf:STREETADDRESS1" minOccurs="0"/>
+        <xs:element ref="dsf:STREETADDRESS2" minOccurs="0"/>
+        <xs:element ref="dsf:CITY" minOccurs="0"/>
+        <xs:element ref="dsf:STATE" minOccurs="0"/>
+        <xs:element ref="dsf:ZIP" minOccurs="0"/>
+        <xs:element ref="dsf:SECONDARYEMAIL" minOccurs="0"/>
+        <xs:element ref="dsf:SECONDARYPHONE" minOccurs="0"/>
+        <xs:element ref="dsf:TERTIARYPHONE" minOccurs="0"/>
+        <xs:element ref="dsf:SECONDARYFAX" minOccurs="0"/>
+        <xs:element ref="dsf:EMAILFAX" minOccurs="0"/>
+        <xs:element ref="dsf:PREFERREDCONTACTMETHOD" minOccurs="0"/>
+        <xs:element ref="dsf:OUTOFSERVICE" minOccurs="0"/>
+      </xs:sequence>
+	<xs:attribute name="recordid" type="xs:long"/>
+    </xs:complexType>
+  </xs:element>	
+</xs:schema>

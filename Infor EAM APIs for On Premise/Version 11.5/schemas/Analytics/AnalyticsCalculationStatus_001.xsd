@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by John Clouse (Datastream Systems, Inc) -->
+<!-- ================================================================================
+	Copyright 2004, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity AnalyticsCalculationStatus_001.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/AnalyticsCalculationStatus_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/AnalyticsCalculationStatus_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:element name="AnalyticsCalculationStatus">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FailedVariables" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="Variable" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:attribute name="count" type="xs:integer"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="requestid" type="xs:integer"/>
+			<xs:attribute name="status" type="Status_Type"/>
+			<xs:attribute name="countdone" type="xs:integer"/>
+			<xs:attribute name="counttotal" type="xs:integer"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="Status_Type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="F"/>
+			<!-- Finished -->
+			<xs:enumeration value="C"/>
+			<!-- Canceled -->
+			<xs:enumeration value="A"/>
+			<!-- Aborted -->
+			<xs:enumeration value="P"/>
+			<!-- Pending -->
+			<xs:enumeration value="W"/>
+			<!-- Working -->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Variable">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Error"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Error">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="code" type="xs:integer"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

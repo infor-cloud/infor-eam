@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by Datastream (Datastream Systems, Inc) -->
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity GISMap 
+ ============================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/GISMapData_001" xmlns="http://schemas.datastream.net/MP_entities/GISMapData_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ======= Beginning of GISMapData_001 ======= -->
+	<xs:element name="GISMapData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:GISMAPDATAID" minOccurs="0"/>
+				<xs:element ref="dsf:GISLAYER"/>
+				<xs:element name="LAYERATTRIBUTE" type="dsf:CODE64_Type" minOccurs="0"/>
+				<xs:element name="LAYERCONSTANT" type="dsf:CODE1000_Type" minOccurs="0"/>
+				<xs:element name="ASSETATTRIBUTE" type="dsf:CODE64_Type" minOccurs="0"/>
+				<xs:element name="ASSETCONSTANT" type="dsf:CODE1000_Type" minOccurs="0"/>
+				<xs:element ref="dsf:MAPPINGSOURCE"/>
+				<xs:element ref="dsf:MAPPINGACTION"/>
+				<xs:element ref="dsf:MAPPINGOWNER" minOccurs="0"/>
+				<xs:element ref="dsf:MAPPINGSEQUENCE"/>
+				<xs:element name="MAPPINGDELIMITER" type="dsf:CODE10_Type" minOccurs="0"/>
+				<xs:element ref="dsf:GISMAPLRS" minOccurs="0"/>
+				<xs:element ref="dsf:GISMAPTYPE" minOccurs="0"/>
+				<xs:element ref="dsf:GISMAPGRIDLOOKUPNAME" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

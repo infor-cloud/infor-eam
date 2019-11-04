@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+    Copyright 2003, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity - TrackingData
+======================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/TrackingData_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/TrackingData_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--======================  Begining of TrackingData_001======= ===================-->
+	<xs:element name="TrackingData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TRANSID" minOccurs="0"/>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCESYSTEM" minOccurs="0"/>
+				<xs:element ref="dsf:SOURCECODE" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSCODE" />
+				<xs:element ref="dsf:SCANDATE" minOccurs="0"/>
+				<xs:element ref="dsf:SESSIONID" minOccurs="0"/>
+				<xs:element ref="dsf:CHANGED" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA1" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA2" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA3" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA4" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA5" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA6" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA7" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA8" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA9" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA10" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA11" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA12" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA13" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA14" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA15" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA16" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA17" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA18" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA19" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA20" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA21" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA22" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA23" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA24" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA25" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA26" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA27" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA28" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA29" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA30" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA31" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA32" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA33" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA34" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA35" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA36" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA37" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA38" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA39" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA40" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA41" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA42" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA43" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA44" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA45" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA46" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA47" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA48" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA49" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA50" minOccurs="0"/>
+				<xs:element ref="dsf:PROMPTDATA51" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

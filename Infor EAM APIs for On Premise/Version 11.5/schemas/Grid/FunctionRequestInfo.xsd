@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+        Copyright 2003, Datastream Systems, Inc.
+        50 Datastream Plaza, Greenville, SC 29605, USA.
+        All rights reserved.
+
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/FunctionRequestInfo" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsg="http://schemas.datastream.net/MP_entities/GridRequest" xmlns="http://schemas.datastream.net/MP_entities/FunctionRequestInfo" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/GridRequest" schemaLocation="GridRequest.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of FUNCTION_REQUEST_INFO ======================================-->
+	<xs:element name="FUNCTION_REQUEST_INFO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsg:GRID"/>
+				<xs:element ref="dsg:ADDON_SORT" minOccurs="0"/>
+				<xs:element ref="dsg:ADDON_FILTER" minOccurs="0"/>
+				<xs:element ref="dsg:MULTIADDON_FILTERS" minOccurs="0"/>
+				<xs:element ref="dsg:GRID_TYPE"/>
+				<xs:element ref="dsg:DATASPY" minOccurs="0"/>
+				<xs:element ref="dsg:LOV" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="REQUEST_TYPE" type="FUNCTION_REQUEST_TYPE"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="FUNCTION_REQUEST_TYPE">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LIST.COUNT.STORED"/>
+			<xs:enumeration value="LIST.DATA_ONLY.STORED"/>
+			<xs:enumeration value="LOV.DATA_ONLY.STORED"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

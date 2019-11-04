@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+    This schema defines MP business function request MP1230_SyncReqPart_001
+==================================================================================-->
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP1230_001"
+  xmlns="http://schemas.datastream.net/MP_functions/MP1230_001"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:dse-ReqPart="http://schemas.datastream.net/MP_entities/ReqPart_001"
+  xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<xs:import namespace="http://schemas.datastream.net/MP_entities/ReqPart_001" schemaLocation="ReqPart_001.xsd"/>
+<!--===============================================================================-->
+<!--====  Begining of MP1230_SyncReqPart_001 ======================================-->
+	<xs:element name="MP1230_SyncReqPart_001">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="dsf:BaseSchemaRequestElement">
+					<xs:sequence>
+						<xs:element ref="dse-ReqPart:ReqPart"/>
+					</xs:sequence>
+					<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Sync"/>
+					<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="ReqPart"/>
+					<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+
+					<!-- Confirmation for using a part manufacturer number that is not the primary one for the specified part -->
+					<xs:attribute name="confirm_use_primary_manufacturerpartnumber" type="dsf:CONFIRMATION_Type" default="prompt"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

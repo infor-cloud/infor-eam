@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+	This schema defines MP entity PurchasingContract
+	============================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PurchasingContract_001"
+		xmlns:dsf="http://schemas.datastream.net/MP_fields"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		xmlns="http://schemas.datastream.net/MP_entities/PurchasingContract_001"
+		elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Begining of PurchasingContract_001 ======================================-->
+	<xs:element name="PurchasingContract">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PURCHASINGCONTRACTID" />
+				<xs:element ref="dsf:STATUS"/>
+				<xs:element ref="dsf:CLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID"/>
+				<xs:element ref="dsf:SUPPLIERREFERENCE" minOccurs="0"/>
+				<xs:element ref="dsf:STARTDATE"/>
+				<xs:element ref="dsf:ENDDATE"/>
+				<xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+				<xs:element ref="dsf:LANGUAGEID" />
+				<xs:element ref="dsf:EMPLOYEEID" />
+				<xs:element ref="dsf:CURRENCYID" />
+				<xs:element ref="dsf:STOREID" minOccurs="0"/>
+				<xs:element ref="dsf:CONTRACTCONTACT" minOccurs="0"/>
+				<xs:element ref="dsf:COPYFROMCONTRACT" minOccurs="0"/>
+				<xs:element ref="dsf:RENEWALDATE" minOccurs="0" />
+				<xs:element ref="dsf:PRINTED" minOccurs="0" />
+				<xs:element ref="dsf:OWNCONTRACT" minOccurs="0" />
+				<xs:element ref="dsf:USERDEFINEDAREA" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

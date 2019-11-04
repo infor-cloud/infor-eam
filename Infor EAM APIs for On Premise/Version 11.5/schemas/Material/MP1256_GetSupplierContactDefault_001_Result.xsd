@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP business function result MP1227_GetSupplierContactDefault_001_Result    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_results/MP1256_001"
+  xmlns="http://schemas.datastream.net/MP_results/MP1256_001"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:dse-SupplierContactDefault="http://schemas.datastream.net/MP_entities/SupplierContactDefault_001"
+  xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+<xs:import namespace="http://schemas.datastream.net/MP_entities/SupplierContactDefault_001" schemaLocation="SupplierContactDefault_001.xsd"/>
+<!--===============================================================================-->
+<!--====  Begining of MP1256_GetSupplierContactDefault_001_Result ======================================-->
+  <xs:element name="MP1256_GetSupplierContactDefault_001_Result">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ResultData"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResultData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="dse-SupplierContactDefault:SupplierContactDefault"/>
+      </xs:sequence>
+	<xs:attribute name="multiorg" type="dsf:FLAG_Type" default="false"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

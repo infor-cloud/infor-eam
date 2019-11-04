@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.	
+    
+==================================================================================-->  
+<xs:schema targetNamespace="http://schemas.datastream.net/BaseLib" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mpl="http://schemas.datastream.net/BaseLib" xmlns:mpf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- 
+	+++ definition of the encryption type 
+	-->
+	<xs:simpleType name="encodingType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="none"/>
+			<xs:enumeration value="base64"/>
+			<xs:enumeration value="zipbase64"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- 
+	+++ definition of the action type 
+	-->
+	<xs:simpleType name="actionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="insert"/>
+			<xs:enumeration value="delete"/>
+			<xs:enumeration value="update"/>
+			<xs:enumeration value="select"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--
+	+++ definition of the field type 
+	-->
+	<xs:complexType name="fieldType">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="value">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="mpf:DSString">
+							<xs:attribute name="encoding" type="mpl:encodingType" default="none"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!--
+	+++ defintiion of the result presented as the fileset
+	-->
+	<xs:complexType name="fileResult">
+		<xs:sequence>
+			<xs:element name="ticket" type="xs:string"/>
+			<xs:element name="members">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="sequence">
+							<xs:annotation>
+								<xs:documentation>This is used for sequence that can be presented as sequnce of the numbers</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="min" type="xs:integer"/>
+								<xs:attribute name="max" type="xs:integer"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="lables">
+							<xs:annotation>
+								<xs:documentation>This is used for discrete labels of the failes</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="fr-label" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="xs:string">
+													<xs:attribute name="aid" type="xs:string"/>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

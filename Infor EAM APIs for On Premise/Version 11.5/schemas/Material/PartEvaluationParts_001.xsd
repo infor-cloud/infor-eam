@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright (c) 2007 Infor.All rights reserved.The word and design marks set
+	forth herein are trademarks and/or registered trademarks of Infor and/or
+	related affiliates and subsidiaries.All rights reserved.All other trademarks
+	listed herein are the property of their respective owners.www.infor.com.
+
+	This schema defines MP entity PartEvaluationParts_001
+ ================================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/PartEvaluationParts_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+
+	<!--============================= Imported Schemas ============================================-->
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===========================================================================================-->
+	
+	<!--==========================  Beginning of PartEvaluationParts_001 ===========================-->
+	<xs:element name="PartEvaluationParts">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:EVALUATIONID"/>
+				<xs:element ref="dsf:PARTID"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

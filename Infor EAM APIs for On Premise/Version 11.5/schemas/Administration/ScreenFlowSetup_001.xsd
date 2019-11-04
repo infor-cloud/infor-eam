@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================ 
+    Copyright 2003, Datastream Systems, Inc. 
+    50 Datastream Plaza, Greenville, SC 29605, USA. 
+    All rights reserved. 
+
+    This schema defines MP entity ScreenFlowSetup 
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/ScreenFlowSetup_001" xmlns="http://schemas.datastream.net/MP_entities/ScreenFlowSetup_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!-- ==== Beginning of ScreenFlowSetup_001 ================ -->
+	<xs:element name="ScreenFlowSetup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:SCREENFLOWSETUPID" minOccurs="0"/>
+				<xs:element ref="dsf:SCREENFLOWID"/>
+				<xs:element ref="dsf:SCREENFLOWSEQUENCE"/>
+				<xs:element ref="dsf:SEQUENCENAME"/>
+				<xs:element ref="dsf:SCREENFLOWICON"/>
+				<xs:element ref="dsf:SCREENNAME"/>
+				<xs:element ref="dsf:SYSTEMFUNCTION" minOccurs="0"/>
+				<xs:element ref="ALTERNATEFLOW" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ALTERNATEFLOW">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:THENSEQUENCE" minOccurs="0"/>
+				<xs:element ref="dsf:ELSESEQUENCE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

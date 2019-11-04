@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+	
+    This schema defines MP entity LowStockRequisition    
+==================================================================================-->  
+
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/LowStockRequisition_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/LowStockRequisition_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of LowStockRequisition_001 ======================================-->
+	<xs:element name="LowStockRequisition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:ORGANIZATIONID"/>
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+				<xs:element ref="dsf:STOREID" minOccurs="0"/>
+				<xs:element ref="dsf:BUYER" minOccurs="0"/>
+				<xs:element ref="dsf:PREFERREDSTORE" minOccurs="0"/>
+				<xs:element ref="dsf:ABCCODE" minOccurs="0"/>
+				<xs:element ref="dsf:PARTCLASSID" minOccurs="0"/>
+				<xs:element ref="dsf:REQUESTEDBY"/>
+				<xs:element ref="dsf:DEFAULTAPPROVER" minOccurs="0"/>
+				<xs:element ref="dsf:COSTCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:CONSIGNMENTITEM" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRABLE" minOccurs="0"/>
+				<xs:element ref="dsf:GENPOREQUISITION" minOccurs="0"/>
+				<xs:element ref="dsf:GENSTOREREQUISITION" minOccurs="0"/>
+				<xs:element ref="dsf:PRINTREQUISITION" minOccurs="0"/>
+				<xs:element ref="dsf:DBSESSIONID" minOccurs="0"/>
+				<xs:element ref="dsf:INCLUDECHILDSTOREQTY" minOccurs="0"/>
+				<xs:element ref="dsf:WORKORDERID" minOccurs="0"/>
+				<xs:element ref="dsf:DEPARTMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:GENLABORREQUISITION" minOccurs="0"/>
+				<xs:element ref="dsf:DEFAULTSTORE" minOccurs="0"/>
+				<xs:element ref="dsf:AUTOSELECTPREVIEWRECORDS" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

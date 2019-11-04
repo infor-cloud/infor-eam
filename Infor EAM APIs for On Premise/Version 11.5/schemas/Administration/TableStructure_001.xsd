@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright 2004, Datastream Systems, Inc.
+    50 Datastream Plaza, Greenville, SC 29605, USA.
+    All rights reserved.
+
+    This schema defines MP entity TableStructure
+============================================================================= -->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/TableStructure_001" xmlns="http://schemas.datastream.net/MP_entities/TableStructure_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--====  Beginning of TableStructure_001 ======================================-->
+	<xs:element name="TableStructure">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TABLE"/>
+				<xs:element ref="Metadata" minOccurs="0" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Metadata">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Columns" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element ref="PrimaryKey" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="UniqueKeys" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="ForeignKeys" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="CheckConstraints" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Triggers" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Indexes" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="ForeignKeyReferences" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Columns">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:COLUMNDETAILS" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PrimaryKey">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DBOBJECTNAME"/>
+				<xs:element ref="dsf:COLUMN" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UniqueKeys">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="UniqueKey" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="UniqueKey">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DBOBJECTNAME"/>
+				<xs:element ref="dsf:COLUMN" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ForeignKeys">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ForeignKey" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ForeignKey">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DBOBJECTNAME"/>
+				<xs:element ref="dsf:COLUMN" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CheckConstraints">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="CheckConstraint" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CheckConstraint">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DBOBJECTNAME"/>
+				<xs:element name="CHKCONDITION" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Triggers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DBOBJECTNAME" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Indexes">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Index" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Index">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DBOBJECTNAME"/>
+				<xs:element ref="dsf:COLUMN" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ForeignKeyReferences">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ForeignKeyReference" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ForeignKeyReference">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:DBOBJECTNAME"/>
+				<xs:element ref="dsf:COLUMN" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

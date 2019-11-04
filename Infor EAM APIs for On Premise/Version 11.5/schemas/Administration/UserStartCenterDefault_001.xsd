@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+  Copyright (c) 2013 Infor. All rights reserved.
+  The word and design marks set forth herein are trademarks and/or registered
+  trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+  All other trademarks listed herein are the property of their respective owners. www.infor.com.
+  
+  This schema defines MP entity UserStartCenterDefault_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/UserStartCenterDefault_001" xmlns="http://schemas.datastream.net/MP_entities/UserStartCenterDefault_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--=====================================================================-->
+	<!--====  Begining of UserStartCenterDefault_001 ======================================-->
+	<xs:element name="UserStartCenterDefault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:USERID"/>
+                <xs:element ref="ChartSection" minOccurs="0"/>
+                <xs:element ref="InboxSection" minOccurs="0"/>
+                <xs:element ref="KPISection" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ChartSection">
+		<xs:complexType>
+			<xs:sequence>
+                <xs:element ref="dsf:ORGANIZATIONID" minOccurs="0"/>
+                <xs:element ref="dsf:CHARTTYPE" minOccurs="0"/>
+                <xs:element ref="dsf:CHARTPERIOD" minOccurs="0"/>
+                <xs:element ref="dsf:CHARTGROUPBY" minOccurs="0"/>
+                <xs:element ref="dsf:CHARTSHOWYEAR" minOccurs="0"/>
+                <xs:element ref="dsf:ORGCURRENCY" minOccurs="0"/>
+				<xs:element ref="dsf:USERDEFAULTCHARTSTATE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+    <xs:element name="InboxSection">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:INBOXTAB" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+    <xs:element name="KPISection">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:KPISIZE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>    
+</xs:schema>

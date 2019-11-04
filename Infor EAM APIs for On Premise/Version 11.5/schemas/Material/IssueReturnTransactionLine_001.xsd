@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+    This schema defines MP entity transaction
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/IssueReturnTransactionLine_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_entities/IssueReturnTransactionLine_001" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<!--===============================================================================-->
+	<!--====  Begining of IssueReturnTransactionLine_001 ======================================-->
+	<xs:element name="IssueReturnTransactionLines">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="IssueReturnTransactionLine" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IssueReturnTransactionLine">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:TRANSACTIONLINEID"/>
+				<xs:element ref="dsf:PARTID"/>
+				<xs:element ref="dsf:BYASSET" minOccurs="0"/>
+				<xs:element ref="dsf:TRANSACTIONQUANTITY"/>
+				<xs:element ref="dsf:AVAILABLEQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:BIN" minOccurs="0"/>
+				<xs:element ref="dsf:LOT" minOccurs="0"/>
+				<xs:element ref="dsf:KIT" minOccurs="0"/>
+				<xs:element ref="dsf:EQUIPMENTID" minOccurs="0"/>
+				<xs:element ref="dsf:EXPIRATIONDATE" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTLOT" minOccurs="0"/>
+				<xs:element ref="dsf:SERIALNUMBER" minOccurs="0"/>
+				<xs:element ref="dsf:TOOLHOURS" minOccurs="0"/>
+				<xs:element ref="dsf:REPAIRABLE" minOccurs="0"/>
+				<xs:element ref="dsf:REQUISITIONLINEID" minOccurs="0"/>
+				<xs:element ref="dsf:PURCHASEORDERLINEID" minOccurs="0"/>
+				<xs:element ref="dsf:PICKLISTID" minOccurs="0"/>
+				<xs:element ref="dsf:PRICE" minOccurs="0"/>
+				<xs:element ref="dsf:PRINTQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:PRINTCORERETURNQUANTITY" minOccurs="0"/>
+				<xs:element ref="dsf:FORREPAIR" minOccurs="0"/>
+				<xs:element ref="dsf:LABELPRINTINGDEFAULT" minOccurs="0"/>
+				<xs:element ref="dsf:SWAPRETURN" minOccurs="0"/>
+				<xs:element ref="dsf:ATTACHEQUIPMENT" minOccurs="0"/>
+				<xs:element ref="dsf:ATTACHTOEQUIPMENT" minOccurs="0"/>
+				<xs:element ref="dsf:SCRAPOBJECT" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERID" minOccurs="0"/>
+				<xs:element ref="dsf:MANUFACTURERPARTCODE" minOccurs="0"/>
+				<xs:element ref="dsf:HELDITEM" minOccurs="0"/>
+				<xs:element ref="dsf:LEAK" minOccurs="0"/>
+				<xs:element ref="dsf:PARTCONDITIONTEMPLATECONDITIONCODE" minOccurs="0"/>
+				<xs:element ref="dsf:RETURNCONDITIONCODE" minOccurs="0"/>
+				<xs:element ref="WorkOrderPartFailure" minOccurs="0"/>
+				<xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+				<!-- The following field(s) are not used on submission of transaction lines.
+				     They are used as additional information when returning lines from
+				     Material Lists, Pick Tickets, Reserved Items, and Held Items -->
+				<xs:element ref="dsf:FUGITIVEGAS" minOccurs="0"/>
+				<xs:element ref="dsf:PARTUOM" minOccurs="0"/>
+				<xs:element ref="dsf:ISOPTIONAL" minOccurs="0"/>
+				<xs:element ref="dsf:SUPPLIERID" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="recordid" type="xs:long"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="WorkOrderPartFailure">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dsf:PARTFAILUREQUANTITY" />
+				<xs:element ref="dsf:PARTFAILUREDATE" minOccurs="0"/>
+				<xs:element ref="dsf:PROBLEMCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:FAILURECODEID" minOccurs="0"/>
+				<xs:element ref="dsf:ACTIONCODEID" minOccurs="0"/>
+				<xs:element ref="dsf:CAUSECODEID" minOccurs="0"/>
+				<xs:element ref="dsf:FAILURENOTES" minOccurs="0"/>
+				<xs:element ref="dsf:PARTLOCATIONCODE" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

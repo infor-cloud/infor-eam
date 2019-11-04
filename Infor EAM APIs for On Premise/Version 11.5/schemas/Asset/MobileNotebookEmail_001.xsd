@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+    Copyright (c) 2017 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks and/or registered
+    trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+    
+    This schema defines MP entity MobileNotebookEmail.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/MobileNotebookEmail_001"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://schemas.datastream.net/MP_entities/MobileNotebookEmail_001" elementFormDefault="qualified">
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--===============================================================================-->
+    <xs:element name="MobileNotebookEmail">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:MOBILENOTEBOOKEMAILID"  minOccurs="0"/>
+                <xs:element ref="dsf:MOBILENOTEBOOKID" minOccurs="0"/>
+                <xs:element ref="dsf:EMPLOYEEID" minOccurs="0"/>
+                <xs:element ref="dsf:EMAIL" minOccurs="0"/>
+                <xs:element ref="dsf:MOBILEPHONENUMBER" minOccurs="0"/>
+                <xs:element ref="dsf:MAILEVENT" minOccurs="0"/>
+                <xs:element ref="dsf:STATUS" minOccurs="0"/>
+                <xs:element ref="dsf:MOBILECREATEDDATE" minOccurs="0"/>
+                <xs:element ref="dsf:CREATEDDATE" minOccurs="0"/>
+                <xs:element ref="dsf:SENTDATE" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="allow_add_to_notebook" type="dsf:FLAG_Type" default="false"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

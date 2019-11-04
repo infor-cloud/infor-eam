@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ================================================================================
+	Copyright 2003, Datastream Systems, Inc.
+	50 Datastream Plaza, Greenville, SC 29605, USA.
+	All rights reserved.
+
+    This schema defines MP business function request MP7191_ValidateDeviceReading_001
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP7191_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.datastream.net/MP_functions/MP7191_001" xmlns:os="http://www.openapplications.org/oagis_segments" xmlns:osf="http://www.openapplications.org/oagis_fields" elementFormDefault="qualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_segments" schemaLocation="../oagis_segments.xsd"/>
+	<xs:import namespace="http://www.openapplications.org/oagis_fields" schemaLocation="../oagis_fields.xsd"/>
+	<!--===============================================================================-->
+	<xs:element name="MP7191_ValidateDeviceReading_001">
+		<xs:complexType>
+			<xs:sequence>
+			<xs:element ref="dsf:WORKORDERID"/>
+			<xs:element ref="dsf:NOTUSED"/>
+			<xs:choice>
+				<xs:element ref="dsf:ASFOUNDTESTPOINTSDETAILS" />
+				<xs:element ref="dsf:ASLEFTTESTPOINTSDETAILS" />
+			</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

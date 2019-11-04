@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- ================================================================================
+* Copyright (c) 2007 Infor. All rights reserved. The word and design marks set forth herein are trademarks and/or 
+* registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved. All other trademarks 
+* listed herein are the property of their respective owners. www.infor.com.
+==================================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_functions/MP7751_001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dse-mp="http://schemas.datastream.net/MP_entities/MaintenancePattern_001" xmlns:dsf="http://schemas.datastream.net/MP_fields" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://schemas.datastream.net/MP_entities/MaintenancePattern_001" schemaLocation="MaintenancePattern_001.xsd"/>
+	<xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+	<xs:element name="MP7751_AddMaintenancePattern_001">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dse-mp:MaintenancePattern"/>
+			</xs:sequence>
+			<xs:attribute name="verb" type="dsf:VERB_Type" fixed="Add"/>
+			<xs:attribute name="noun" type="dsf:NOUN_Type" fixed="MaintenancePattern"/>
+			<xs:attribute name="version" type="dsf:VERSION" fixed="001"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

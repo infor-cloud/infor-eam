@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--===================================================================
+    Copyright (c) 2018 Infor. All rights reserved.
+    The word and design marks set forth herein are trademarks
+    and/or registered trademarks of Infor and/or related affiliates and subsidiaries. All rights reserved.
+    All other trademarks listed herein are the property of their respective owners. www.infor.com.
+
+    This schema defines MP entity HeldItem
+===================================================================-->
+<xs:schema targetNamespace="http://schemas.datastream.net/MP_entities/HeldItem_001"
+    xmlns="http://schemas.datastream.net/MP_entities/HeldItem_001"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:dsf="http://schemas.datastream.net/MP_fields"
+    elementFormDefault="qualified">
+    <!-- =========== Imported namespaces ================== -->
+    <xs:import namespace="http://schemas.datastream.net/MP_fields" schemaLocation="../MP_fields.xsd"/>
+    <!--======== Beginning of HeldItem_001 ===============================-->
+    <xs:element name="HeldItem">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="dsf:PARTID"/>
+                <xs:element ref="dsf:TRANSACTIONQUANTITY" minOccurs="0"/>
+                <xs:element ref="dsf:TOBIN" minOccurs="0"/>
+                <xs:element ref="dsf:KEYFIELDCODE" minOccurs="0"/>
+                <xs:element ref="dsf:PRINTQUANTITY" minOccurs="0"/>
+                <xs:element ref="dsf:StandardUserDefinedFields" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
